@@ -12,9 +12,9 @@ function App() {
     <div className="w-full bg-white">
       <Header />
       <Hero />
+      <Body />
       <Register />
       <Sponsor />
-      <Body />
       <main></main>
       <Footer />
     </div>
