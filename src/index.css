@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Cabinet-Grotesk';
-    src: url(./fonts/Cabinet-Grotesk/CabinetGrotesk-Variable.ttf);
+  font-family: "Cabinet-Grotesk";
+  src: url(./fonts/Cabinet-Grotesk/CabinetGrotesk-Variable.ttf);
+}
+
+footer {
+  background-image: url("/src/assets/footer-bg-image.svg");
+  background-size: cover;
+  background-position: center center;
 }
