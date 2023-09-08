@@ -14,6 +14,7 @@ function App() {
       <Hero />
       <Register />
       <Sponsor />
+      <Body />
       <main></main>
       <Footer />
     </div>
