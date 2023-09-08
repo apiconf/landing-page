@@ -13,6 +13,9 @@ export default {
       maxWidth: {
         'dsktp': '1440px'
       },
+      colors: {
+        "custom-blue": "#4334D3"
+      },
       boxShadow: {
         'timerBtn': '0px 0px 8px 0px rgba(47, 28, 129, 0.10), 0px 4px 24px 0px rgba(47, 28, 129, 0.35)',
         'bannerBtn': '0px 0px 8px 0px rgba(47, 28, 129, 0.10), 0px 4px 32px 0px rgba(47, 28, 129, 0.15)',
