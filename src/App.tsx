@@ -11,7 +11,7 @@ function App() {
       <Hero />
       <Body />
       <main></main>
-      <footer></footer>
+      <Footer />
     </div>
   );
 }
