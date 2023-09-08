@@ -1,0 +1,7 @@
+/* custom-styles.css */
+@layer utilities {
+    .cta__gradient--transition {
+      background-image: linear-gradient(180deg, #FBF3EA 0%, rgba(255, 255, 255, 0.00) 100%);
+      transition: background 0.3s ease-in-out; /* You can adjust the duration and easing as needed */
+    }
+}

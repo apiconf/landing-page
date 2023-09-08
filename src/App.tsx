@@ -1,8 +1,16 @@
 import "./App.css";
-import Body from "./components/About/Card.tsx";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 function App() {
-  return <Body />;
+  return (
+    <div className="w-full bg-white">
+    <Header />
+    <Hero />
+    <main></main>
+    <footer></footer>
+  </div>
+  );
 }
 
 export default App;
