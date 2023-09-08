@@ -7,9 +7,15 @@
   src: url(./fonts/Cabinet-Grotesk/CabinetGrotesk-Variable.ttf);
 }
 
+.days-section {
+  background-image: url("./assets/days-to-go-bg-image.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
 footer {
   background-image: url("/src/assets/footer-bg-image.svg");
   background-size: cover;
   background-position: center center;
 }
-
