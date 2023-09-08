@@ -1,11 +1,12 @@
 import "./App.css";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 function App() {
   return (
-    <div>
-      <header>
-        <h1 className="text-9xl underline">hello world</h1>
-      </header>
+    <div className="w-full bg-white">
+      <Header />
+      <Hero />
       <main></main>
       <footer></footer>
     </div>
