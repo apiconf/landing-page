@@ -9,7 +9,6 @@ function App() {
     <div className="w-full bg-white">
       <Header />
       <Hero />
-      <Body />
       <main></main>
       <Footer />
     </div>

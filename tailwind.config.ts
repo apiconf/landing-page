@@ -38,7 +38,8 @@ export default {
     },
     fontFamily: {
       'sans': ['Cabinet-Grotesk']
-    },
+    }
+    }
   },
   plugins: [],
 } satisfies Config;
