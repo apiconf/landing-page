@@ -9,8 +9,8 @@ const Sponsor = () => {
     <div className='w-full h-max mb-5 bg-[#4121CF] lg:p-12 p-8 flex flex-col items-start gap-5 '>
       <div className='flex lg:flex-row items-start justify-between flex-col  w-full gap-4'>
         <div className='flex flex-col items-start justify-around gap-4 col-span-1'>
-          <h1 className='text-white text-3xl font-semibold'>Sponsor API Conf Lagos</h1>
-          <p className='text-gray-300 '>Step into the future with us. Be an integral part of API Conf, Lagos 2023.</p>
+          <h1 className='text-primary-white text-3xl font-semibold'>Sponsor API Conf Lagos</h1>
+          <p className='text-[color:#E2EF9C] '>Step into the future with us. Be an integral part of API Conf, Lagos 2023.</p>
           <button className='btn flex items-center justify-center bg-gradient-to-r from-[#ECC89D] to-[#E2EF9C] rounded-full w-[200px] text-[#4121CF] font-semibold py-4 gap-2'> <div className='bg-[#4121CF] p-1 rounded'><img src={heart} alt="" /></div> Sponsor Us</button>
         </div>
         {/* replace image here */}
