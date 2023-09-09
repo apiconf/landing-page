@@ -9,7 +9,7 @@ import img2 from '../assets/icons/Rectangle90.png'
 
 const Register = () => {
   return (
-    <div className='w-full grid lg:grid-cols-2 mb-10 items-center justify-center gap-8 px-4 lg:px-16'>
+    <div className='w-full grid lg:grid-cols-2 mt-10 mb-10 items-center justify-center gap-8 px-4 lg:px-16'>
       <div className='h-[270px] bg-[#4121CF]  rounded-3xl p-6  grid grid-cols-3 gap-4'>
         <div className='flex flex-col items-start col-span-2 justify-around'>
           <h1 className='text-3xl font-semibold text-white'>Register to Save your Seat!</h1>
