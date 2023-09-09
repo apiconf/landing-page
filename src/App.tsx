@@ -1,8 +1,9 @@
 import "./App.css";
+import DaysToGo from "./components/DaysToGo";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Body from "./components/About/Card";
+// import Body from "./components/About/Card";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Hero />
       <main></main>
+      <DaysToGo />
       <Footer />
     </div>
   );
