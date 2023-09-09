@@ -39,6 +39,9 @@ export default {
         "6xl": "32px",
       },
     },
+    colors: {
+      "custom-blue": "#4334D3"
+    },
     fontFamily: {
       sans: ["Cabinet-Grotesk"],
     },
