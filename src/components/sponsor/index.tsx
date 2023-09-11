@@ -35,12 +35,12 @@ const Sponsor = () => {
         </h3>
         <InquireContact
           contactName="SODIQ AKINJOBI"
-          linkedInUrl="https://engcareerexpo.com"
+          linkedInUrl="https://www.linkedin.com/in/geektutor/"
           email="sodiq.akinjobi@gmail.com"
         />
         <InquireContact
           contactName="GBADEBO BELLO"
-          linkedInUrl="https://engcareerexpo.com"
+          linkedInUrl="https://www.linkedin.com/in/gbahdeyboh/"
           email="gbahdeybohbello@gmail.com"
         />
       </div>
