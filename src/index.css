@@ -7,6 +7,11 @@
   src: url(./fonts/Cabinet-Grotesk/CabinetGrotesk-Variable.ttf);
 }
 
+@font-face {
+  font-family: "MonumentExtended-extrabold";
+  src: url(./fonts/MonumentExtended/extrabold.otf);
+}
+
 .days-section {
   background-image: url("./assets/days-bg.svg");
   background-size: cover;

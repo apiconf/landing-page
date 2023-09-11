@@ -9,7 +9,6 @@ const timeDifference = () => {
     "UTC+1",
   );
 
-  console.log(currentDateTime.toISODate(), eventDateTime.toISODate());
   if (currentDateTime.toISODate() === eventDateTime.toISODate()) {
     message = "It's Today!";
   } else if (currentDateTime > eventDateTime) {

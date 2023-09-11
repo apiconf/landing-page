@@ -7,7 +7,7 @@ interface ctaActionObj {
 }
 const HeroCards = ({ image, title, children }: ctaActionObj) => {
   return (
-    <div className="max-w-[358px] lg:max-w-[308px] w-full lg:h-[280px] lg:flex lg:flex-col justify-between lg:p-5 lg:p-6 xl:p-8 lg:bg-primary-white lg:rounded-3xl lg:shadow-heroCard">
+    <div className="max-w-[358px] lg:max-w-[308px] w-full lg:h-[280px] lg:flex lg:flex-col justify-between lg:p-5 lg:p-6 xl:p-8 lg:bg-white lg:rounded-3xl lg:shadow-heroCard">
       <img
         className="hidden lg:block max-w-[88px] w-full"
         src={image}
