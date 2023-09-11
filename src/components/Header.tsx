@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="w-full flex justify-center pt-[22px] pb-[21.31px] px-[16px] lg:pt-[25px] lg:pb-[27px] lg:px-[64px]">
+    <header className="w-full flex justify-center pt-[22px] pb-[21.31px] px-[5%] sm:px-[4%] lg:pt-[25px] lg:pb-[27px]">
       <div className="relative max-w-dsktp w-full flex justify-between font-bold text-base text-[#666]">
         <div className="max-w-[221px] w-full hidden md:flex items-center gap-x-1">
           <span className="block w-4 h-4 bg-[#ECC89D] rounded"></span>
