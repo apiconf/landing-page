@@ -4,8 +4,8 @@ import HeaderDateTime from "./dateTime";
 
 const Header = () => {
   return (
-<header className="w-full flex justify-center pt-[22px] pb-[21.31px] px-[5%] sm:px-[4%] lg:pt-[25px] lg:pb-[27px]">
-      <div className="relative max-w-dsktp w-full flex justify-between font-bold text-base text-[#666]">
+    <header className="w-full flex justify-center pt-[22px] pb-[21.31px] px-[5%] sm:px-[4%] lg:pt-[25px] lg:pb-[27px]">
+      <div className="relative w-full flex justify-between font-bold text-base text-[#666]">
         <HeaderDateTime />
         <nav className="w-full flex justify-between">
           <Link to="/" rel="noopener noreferrer">
