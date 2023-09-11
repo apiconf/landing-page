@@ -1,14 +1,12 @@
-import logo from "../assets/logo.svg";
+import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
+import HeaderDateTime from "./dateTime";
 
 const Header = () => {
   return (
-    <header className="w-full flex justify-center pt-[22px] pb-[21.31px] px-[5%] sm:px-[4%] lg:pt-[25px] lg:pb-[27px]">
+<header className="w-full flex justify-center pt-[22px] pb-[21.31px] px-[5%] sm:px-[4%] lg:pt-[25px] lg:pb-[27px]">
       <div className="relative max-w-dsktp w-full flex justify-between font-bold text-base text-[#666]">
-        <div className="max-w-[221px] w-full hidden md:flex items-center gap-x-1">
-          <span className="block w-4 h-4 bg-[#ECC89D] rounded"></span>
-          <span>09:28 GMT Lagos, Nigeria</span>
-        </div>
+        <HeaderDateTime />
         <nav className="w-full flex justify-between">
           <Link to="/" rel="noopener noreferrer">
             <img

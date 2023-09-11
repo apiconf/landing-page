@@ -1,9 +1,9 @@
-import IconTimer from "../../assets/icon-play.svg";
 import ImageTicket from "../../assets/image-ticket.png";
 import ImageSpeaker from "../../assets/image-speaker.png";
 import IconTicket from "../../assets/icon-ticket.svg";
 import HeroCards from "./cards";
 import { ApplyBtn, VolunteerBtn } from "./heroBtn";
+import DaysCount from "./daysCount";
 
 const Hero = () => {
   return (
@@ -11,12 +11,7 @@ const Hero = () => {
       <div className="max-w-dsktp w-full flex flex-col gap-y-12">
         <div className="flex flex-col md:flex-row md:justify-between items-center gap-y-6 md:gap-x-6">
           <div className="max-w-[358px] md:max-w-[450px] lg:max-w-[600px] flex flex-col items-center md:items-start gap-y-4">
-            <button className="w-[163px] rounded-3xl py-3 bg-[#000] flex justify-center items-center gap-x-2 shadow-timerBtn">
-              <span className="text-base font-extrabold text-[#F1F1F1]">
-                X Days to Go
-              </span>
-              <img src={IconTimer} alt="" />
-            </button>
+            <DaysCount />
             <h1 className="font-[720] text-[32px] text-center md:text-3xl md:text-left lg:text-4xl xl:text-5xl text-primary-black">
               Convening the Driving Force to Shape the Future of APIs
             </h1>
