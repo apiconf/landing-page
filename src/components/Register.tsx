@@ -1,11 +1,8 @@
-import React from 'react'
-
-// icons
-import ticket from '../assets/icons/ion_ticket.svg'
-import mic from '../assets/icons/mingcute_mic-fill.svg'
-
 import img1 from '../assets/icons/Frame86.svg'
 import img2 from '../assets/icons/Rectangle90.png'
+import mic from '../assets/icons/mingcute_mic-fill.svg'
+// icons
+import ticket from '../assets/icons/ion_ticket.svg'
 
 const Register = () => {
   return (

@@ -1,5 +1,3 @@
-import React from 'react'
-
 // icons
 import heart from '../assets/icons/iconamoon_heart-fill.svg'
 import rectangle from '../assets/icons/Frame30.png'
