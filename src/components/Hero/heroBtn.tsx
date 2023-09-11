@@ -20,7 +20,7 @@ export const ApplyBtn = ({ text, extra }: props) => {
 
 export const VolunteerBtn = ({ text, extra }: props) => {
   return (
-    <button className="w-full h-[52px] p-4 flex justify-center items-center gap-x-2 rounded-6xl border-2 border-solid border-[rgba(238, 246, 198, 0.00)] bg-gradient-to-b from-[#FBF3EA] from-[0%] via-[rgba(255, 255, 255, 0)] via-[100%] to-[#E2EF9C] hover:to-[#C8E042]">
+    <button className="w-full h-[52px] p-4 flex justify-center items-center gap-x-2 rounded-6xl border-2 border-solid border-[#eef6c6] bg-gradient-to-b from-[#FBF3EA] from-[0%] via-[rgba(255, 255, 255, 0)] via-[100%] to-[#E2EF9C] hover:to-[#C8E042]">
       <img className="w-4" src={IconSpeaker} alt="" />
       <span className="text-base font-bold text-primary-purple">
         {text} <span className="inline lg:hidden xl:inline">{extra}</span>
