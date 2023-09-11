@@ -4,7 +4,7 @@ import rectangle from "../assets/icons/Frame30.png";
 
 const Sponsor = () => {
   return (
-    <div className="w-full h-max mb-5 bg-[#4121CF] lg:p-12 p-8 flex flex-col items-start gap-5 ">
+    <div className="w-full h-max mb-5 bg-[#4121CF] lg:p-12 py-8 px-[5%] sm:px-[4%] flex flex-col items-start gap-5 ">
       <div className="flex lg:flex-row items-start justify-between flex-col  w-full gap-4">
         <div className="flex flex-col items-start justify-around gap-4 col-span-1">
           <h1 className="text-primary-white text-3xl font-semibold">

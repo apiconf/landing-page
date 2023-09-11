@@ -7,7 +7,7 @@ const Body = () => {
     <>
       <body className="bg-custom-blue">
         <div className="relative">
-          <p className="absolute text-[color:#E2EF9C] font-medium py-10 px-10 max-[480px]:text-3xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl lg:px-28 lg:py-24">
+          <p className="absolute text-[color:#E2EF9C] font-medium py-10 px-[5%] sm:px-[7%] max-[480px]:text-3xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-4xl lg:py-24">
             The goal of <b>API Conf Lagos</b> is to promote API literacy amongst
             the different developer ecosystems that exist within Lagos, and in
             the future, Nigeria/Africa regardless of your expertise or skill
@@ -23,7 +23,7 @@ const Body = () => {
 const Card = () => {
   return (
     <body className="bg-custom-blue">
-      <div className="px-10 pt-[160px] lg:pt-10 pb-8">
+      <div className="px-[5%] sm:px-[4%] pt-[160px] lg:pt-10 pb-8">
         <div className="bg-[color:white] rounded-2xl flex lg:flex-col flex-col justify-end items-start self-stretch gap-2 lg:gap-4 p-6">
           <h1 className=" text-[color:#4334D3] text-2xl lg:text-3xl font-bold">
             API Conf Lagos is Tailored For You
