@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import BgSponsor from "../../assets/sponsor-title-bg.svg";
 interface inquireContactProps {
   contactName: string;
   linkedInUrl: string;
@@ -12,8 +12,18 @@ const InquireContact = ({
 }: inquireContactProps) => {
   return (
     <div className="max-w-[467px] w-full p-6 flex flex-col gap-2 items-center rounded-3xl bg-gradient-to-r from-[#ECC89D] to-[#E2EF9C]">
-      <h4 className="w-full max-w-[231px] w-full h-[37px] bg-sponsorTitleBg bg-no-repeat bg-contain flex justify-center items-center text-custom-blue text-center font-MonumentExtended-extrabold text-[18.414px] leading-[1]">
-        <Link to={linkedInUrl} rel="noreferrer noopener" target="_blank">
+      <h4 className="relative w-full max-w-[231px] w-full h-[37px] flex justify-center items-center text-custom-blue text-center font-MonumentExtended-extrabold text-[18.414px] md:text-[16px] lg:text-[18.414px] leading-[1]">
+        <img
+          className="absolute inset-0 margin-auto w-full"
+          src={BgSponsor}
+          alt=""
+        />
+        <Link
+          className="z-10"
+          to={linkedInUrl}
+          rel="noreferrer noopener"
+          target="_blank"
+        >
           {contactName}
         </Link>
       </h4>

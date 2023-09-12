@@ -5,7 +5,7 @@ import IconTimer from "../../assets/icon-play.svg";
 const timeDifference = () => {
   let message = "3 Days to Go";
   const currentDateTime = DateTime.local().setZone("UTC+1");
-  const eventDateTime = DateTime.fromISO("2023-09-15T12:00:00").setZone(
+  const eventDateTime = DateTime.fromISO("2023-10-15T12:00:00").setZone(
     "UTC+1",
   );
 
@@ -17,7 +17,11 @@ const timeDifference = () => {
     const interval = Interval.fromDateTimes(currentDateTime, eventDateTime);
     const duration = interval.length("seconds");
 
-    if (duration >= 86400) {
+    if (interval.length("months") >= 1) {
+      // Calculate months
+      const months = Math.floor(interval.length("months"));
+      message = `${months} month${months !== 1 ? "s" : ""} to Go`;
+    } else if (duration >= 86400) {
       // Calculate days
       const days = Math.floor(duration / 86400);
       message = `${days} Day${days !== 1 ? "s" : ""} to Go`;
