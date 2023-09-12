@@ -6,12 +6,14 @@ import Register from "./components/Register";
 import Sponsor from "./components/sponsor";
 import DaysToGo from "./components/DaysToGo";
 import Footer from "./components/Footer";
+import FloatingBtn from "./components/floatingBtn";
 
 function App() {
   return (
     <div className="w-full bg-white">
       <Header />
       <Hero />
+      <FloatingBtn />
       <main>
         <About />
         <Register />
