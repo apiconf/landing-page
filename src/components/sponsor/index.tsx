@@ -29,8 +29,8 @@ const Sponsor = () => {
         </div>
         <img className="hidden md:block w-[250px]" src={ImageSponsor} alt="" />
       </div>
-      <div className="w-full flex flex-col md:flex-row items-center gap-6 md:items-stretch md:justify-between">
-        <h3 className="w-full sm:max-w-[467px] md:max-w-[330px] bg-white p-6 flex flex-col text-center items-center justify-center text-base font-extrabold text-custom-blue font-MonumentExtended-extrabold leading-[110%] rounded-3xl">
+      <div className="w-full flex flex-col md:flex-row items-center gap-6 md:items-stretch md:justify-between break-all text-center">
+        <h3 className="max-w-[467px] md:max-w-[330px] w-full bg-white p-6 flex flex-col items-center justify-center text-base font-extrabold text-custom-blue font-MonumentExtended-extrabold leading-[110%] rounded-3xl">
           For More Inquiries on Sponsorship
         </h3>
         <InquireContact
