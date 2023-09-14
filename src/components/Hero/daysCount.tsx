@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
 import { DateTime, Interval } from "luxon";
+import { useEffect, useState } from "react";
+
 import IconTimer from "../../assets/icon-play.svg";
 
 const timeDifference = () => {
@@ -17,12 +18,13 @@ const timeDifference = () => {
     const interval = Interval.fromDateTimes(currentDateTime, eventDateTime);
     const duration = interval.length("seconds");
 
-    if (interval.length("months") >= 1) {
-      // Calculate months
-      const months = Math.floor(interval.length("months"));
-      message = `${months} month${months !== 1 ? "s" : ""} to Go`;
-    } else if (duration >= 86400) {
-      // Calculate days
+    // if (interval.length("months") >= 1) {
+    //   // Calculate months
+    //   const months = Math.floor(interval.length("months"));
+    //   message = `${months} month${months !== 1 ? "s" : ""} to Go`;
+    // } else 
+    if (duration >= 86400) {
+      // Calculate days`
       const days = Math.floor(duration / 86400);
       message = `${days} Day${days !== 1 ? "s" : ""} to Go`;
     } else if (duration >= 3600) {
