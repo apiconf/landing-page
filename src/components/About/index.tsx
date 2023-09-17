@@ -3,7 +3,9 @@ import AboutLogo from "../../assets/about-logo.svg";
 
 const About = () => {
   return (
-    <section className="px-[5%] sm:px-[4%] pt-[32px] pb-[8.5px] sm:py-[64px] bg-custom-blue bg-sm-aboutSectionBg bg-no-repeat bg-top bg-contain md:bg-[93.4%_auto] sm:bg-lg-aboutSectionBg">
+    <section className="relative bg-custom-blue">
+      <div className="w-full h-full absolute inset-0 z-10 opacity-40 bg-sm-aboutSectionBg bg-no-repeat bg-top bg-contain md:bg-[93.4%_auto] sm:bg-lg-aboutSectionBg"></div>
+      <div className="px-[5%] sm:px-[4%] pt-[32px] pb-[8.5px] sm:py-[64px] z-20">
       <div className="flex flex-col items-center gap-y-[71px] lg:gap-y-32">
         <p className="max-w-[1184px] text-[#E2EF9C] font-medium text-[25px] md:text-3xl lg:text-4xl xl:text-5xl leading-tight md:leading-tight lg:leading-tight xl:leading-tight">
           The goal{" "}
@@ -30,12 +32,13 @@ const About = () => {
               info="Individuals keen on understanding APIs, with a foundational understanding of coding."
             />
             <img
-              className="block md:hidden lg:block max-w-[310px] md:max-w-[210px] w-full md:w-[20%]"
+              className="block md:hidden xl:block max-w-[310px] md:max-w-[210px] w-full md:w-[20%]"
               src={AboutLogo}
               alt="APICONF Logo without the name."
             />
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
