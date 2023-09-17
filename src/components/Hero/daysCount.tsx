@@ -51,7 +51,7 @@ const DaysCount = () => {
   }, []);
 
   return (
-    <button className="rounded-3xl py-3 pl-6 pr-4 bg-[#000] flex justify-center items-center gap-x-2 shadow-timerBtn">
+    <button className="h-12 pl-6 pr-4 bg-[#000] flex justify-center items-center gap-x-2 rounded-3xl shadow-timerBtn">
       <span className="text-base font-extrabold text-[#F1F1F1]">{daysNo}</span>
       <img src={IconTimer} alt="" />
     </button>
