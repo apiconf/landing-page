@@ -1,10 +1,10 @@
 import email from "../assets/mail-icon.svg";
-import x from "../assets/x-icon.svg";
+import emailMobile from "../assets/email-blue-bg.svg";
 import instagram from "../assets/instagram-icon.svg";
+import instagramMobile from "../assets/instagram-blue-bg.svg";
 import logo from "../assets/logo-white.svg";
 import play from "../assets/icon-play.svg";
-import instagramMobile from "../assets/instagram-blue-bg.svg";
-import emailMobile from "../assets/email-blue-bg.svg";
+import x from "../assets/x-icon.svg";
 import xMobile from "../assets/x-blue-bg.svg";
 
 const Footer = () => {
@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col gap-[24px] items-end">
-            <p>Made with Love and Pashunz</p>
+            <p></p>
             <img src={play} alt="play" width="57" height="57" />
           </div>
         </div>
@@ -60,7 +60,7 @@ const Footer = () => {
             </span>
           </div>
 
-          <p>Made with Love and Pashunz</p>
+          <p></p>
         </div>
       </div>
     </footer>
