@@ -1,36 +1,35 @@
 import ImageSponsor from "../../assets/Image-sponsor.svg";
-import heart from "../../assets/icons/iconamoon_heart-fill.svg";
+import IconHeart from "../../assets/Icon-heart.svg";
 import InquireContact from "./card";
 
 const Sponsor = () => {
   return (
     <section className="w-full px-[5%] sm:px-[4%] pt-[40.5px] pb-[99px] sm:pb-[33px] sm:py-[64px] bg-custom-blue flex flex-col items-center gap-[48px]">
-      <div className="flex justify-center md:justify-between w-full gap-4">
-        <div className="flex flex-col items-start justify-around gap-4 col-span-1">
-          <h1 className="text-white text-3xl font-semibold">
+      <div className="flex justify-center md:justify-between w-full gap-8">
+        <div className="w-full flex flex-col items-start sm:items-center md:items-start">
+          <h2 className="font-[720] text-[25px] text-center md:text-3xl md:text-left lg:text-4xl xl:text-[40px] text-white">
             Sponsor API Conf Lagos
-          </h1>
-          <p className="text-[color:#E2EF9C] ">
-            <span className="hidden md:block">
+          </h2>
+          <p className="text-white opacity-90 pt-2 pb-5 font-medium">
+            <span className="hidden md:block text-base">
               Step into the future with us. Be an integral part of API Conf,
               Lagos 2023.
             </span>
-            <span className="block md:hidden">
+            <span className="block md:hidden text-[20px] leading-normal">
               Learn and connect through the major driving force.
             </span>
           </p>
-          <button className="btn flex items-center justify-center bg-gradient-to-r from-[#ECC89D] to-[#E2EF9C] rounded-full w-full md:w-[200px] text-[#4121CF] font-semibold py-4 gap-2">
-            {" "}
-            <div className="bg-[#4121CF] p-1 rounded">
-              <img src={heart} alt="" />
-            </div>{" "}
-            Sponsor Us
+          <button className="max-w-full sm:max-w-[358px] md:max-w-fit  w-full h-[52px] px-6 flex gap-2 justify-center items-center bg-gradient-to-b from-[#FBF3EA] from-[0%] via-[rgba(255, 255, 255, 0)] via-[100%] to-[#E2EF9C] hover:to-[#C8E042] rounded-6xl">
+            <span className="block w-4 h-4 bg-[#4121CF] flex justify-center items-center rounded">
+              <img src={IconHeart} alt="" />
+            </span>
+            <span className="text-[#4121CF] font-extrabold">Sponsor Us</span>
           </button>
         </div>
         <img className="hidden md:block w-[250px]" src={ImageSponsor} alt="" />
       </div>
       <div className="w-full flex flex-col md:flex-row items-center gap-6 md:items-stretch md:justify-between text-center">
-        <h3 className="max-w-[467px] md:max-w-[330px] w-full bg-white p-6 flex flex-col items-center justify-center text-base font-extrabold text-custom-blue font-MonumentExtended-extrabold leading-[110%] rounded-3xl">
+        <h3 className="max-w-full sm:max-w-[467px] md:max-w-[330px] w-full bg-white p-6 flex flex-col items-center justify-center text-base font-extrabold text-custom-blue font-MonumentExtended-extrabold leading-[110%] rounded-3xl">
           For More Inquiries on Sponsorship
         </h3>
         <InquireContact
