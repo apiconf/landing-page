@@ -1,17 +1,17 @@
-import {DateTime, Interval} from "luxon"
+import { DateTime, Interval } from "luxon";
 
 import ticket from "../assets/ticket-blue-bg.svg";
 
-const calcDiff = ()=>{
+const calcDiff = () => {
   const currentDateTime = DateTime.local().setZone("UTC+1");
   const eventDateTime = DateTime.fromISO("2023-10-15T12:00:00").setZone(
     "UTC+1",
   );
- if(currentDateTime >= eventDateTime) return "It's Today";
+  if (currentDateTime >= eventDateTime) return "It's Today";
   const interval = Interval.fromDateTimes(currentDateTime, eventDateTime);
   const duration = Math.floor(interval.length("days"));
-  return duration === 1 ? "1 Day to Go" : duration+" Days to Go"
-}
+  return duration === 1 ? "1 Day to Go" : duration + " Days to Go";
+};
 
 const DaysToGo = () => {
   const diff = calcDiff();

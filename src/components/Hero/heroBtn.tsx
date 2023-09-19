@@ -7,7 +7,7 @@ interface props {
 }
 export const ApplyBtn = ({ text, extra }: props) => {
   return (
-    <button className="w-full h-[52px] p-4 flex justify-center items-center gap-x-2 rounded-6xl border-2 border-solid border-[#7147F6] bg-gradient-to-b from-[#7147F6] from-[0%] via-[rgba(255, 255, 255, 0)] via-[100%] to-[#4334D3] hover:to-[#2F1C81]">
+    <button className="w-full h-[52px] p-4 flex justify-center items-center gap-x-2 rounded-6xl border-2 border-solid border-[#7147F6] bg-gradient-to-b from-[#7147F6] from-[0%] via-[rgba(255, 255, 255, 0)] via-[100%] to-custom-blue hover:to-[#2F1C81]">
       <span className="flex w-4 h-4 bg-white justify-center items-center rounded">
         <img className="w-3" src={IconTicket} alt="" />
       </span>
