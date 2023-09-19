@@ -12,6 +12,9 @@
   src: url(./fonts/MonumentExtended/extrabold.otf);
 }
 
+button, button:hover {
+  outline: none;
+}
 .days-section {
   background-image: url("./assets/days-bg.svg");
   background-size: cover;

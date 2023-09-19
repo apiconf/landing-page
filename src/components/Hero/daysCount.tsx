@@ -22,7 +22,7 @@ const timeDifference = () => {
     //   // Calculate months
     //   const months = Math.floor(interval.length("months"));
     //   message = `${months} month${months !== 1 ? "s" : ""} to Go`;
-    // } else 
+    // } else
     if (duration >= 86400) {
       // Calculate days`
       const days = Math.floor(duration / 86400);
