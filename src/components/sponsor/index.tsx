@@ -29,7 +29,7 @@ const Sponsor = () => {
         <img className="hidden md:block w-[250px]" src={ImageSponsor} alt="" />
       </div>
       <div className="w-full flex flex-col md:flex-row items-center gap-6 md:items-stretch md:justify-between text-center">
-        <h3 className="max-w-full sm:max-w-[467px] md:max-w-[330px] w-full bg-white p-6 flex flex-col items-center justify-center text-base font-extrabold text-custom-blue font-MonumentExtended-extrabold leading-[110%] rounded-3xl">
+        <h3 className="max-w-full sm:max-w-[467px] md:max-w-full md:flex-[1_1_330px] w-full bg-white p-6 flex flex-col items-center justify-center text-base font-extrabold text-custom-blue font-MonumentExtended-extrabold leading-[110%] rounded-3xl">
           For More Inquiries on Sponsorship
         </h3>
         <InquireContact
