@@ -19,12 +19,17 @@ const Sponsor = () => {
               Learn and connect through the major driving force.
             </span>
           </p>
-          <button className="max-w-full sm:max-w-[358px] md:max-w-fit  w-full h-[52px] px-6 flex gap-2 justify-center items-center bg-gradient-to-b from-[#FBF3EA] from-[0%] via-[rgba(255, 255, 255, 0)] via-[100%] to-[#E2EF9C] hover:to-[#C8E042] rounded-6xl">
+          <a
+            href="https://forms.gle/Mt4YqBtmzTEPw3EK7"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="cursor-pointer max-w-full sm:max-w-[358px] md:max-w-fit  w-full h-[52px] px-6 flex gap-2 justify-center items-center bg-gradient-to-b from-[#FBF3EA] from-[0%] via-[rgba(255, 255, 255, 0)] via-[100%] to-[#E2EF9C] hover:to-[#C8E042] rounded-6xl"
+          >
             <span className="block w-4 h-4 bg-[#4121CF] flex justify-center items-center rounded">
               <img src={IconHeart} alt="" />
             </span>
             <span className="text-[#4121CF] font-extrabold">Sponsor Us</span>
-          </button>
+          </a>
         </div>
         <img className="hidden md:block w-[250px]" src={ImageSponsor} alt="" />
       </div>

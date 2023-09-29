@@ -16,11 +16,11 @@ const Footer = () => {
           <div className="flex flex-col gap-[28px]">
             <span className="flex gap-[14px] items-center">
               <img src={email} alt="email" loading="lazy" />
-              <a href="mailto:info@apiconf.io">info@apiconf.io</a>
+              <a href="mailto:info@apiconf.io" rel="noopener noreferrer" target="_blank">info@apiconf.io</a>
             </span>
             <span className="flex gap-[14px] items-center">
               <img src={x} alt="x" loading="lazy" />
-              <p>Twitter</p>
+              <a href="https://x.com/apiconflagos/" rel="noopener noreferrer" target="_blank">Twitter</a>
             </span>
             <span className="flex gap-[14px] items-center">
               <img src={instagram} alt="instagram" loading="lazy" />
@@ -48,11 +48,11 @@ const Footer = () => {
           <div className="flex flex-col gap-[20px]">
             <span className="flex gap-[10px] items-center">
               <img src={emailMobile} alt="email" loading="lazy" />
-              <a href="mailto:info@apiconf.io">info@apiconf.io</a>
+              <a href="mailto:info@apiconf.io" rel="noopener noreferrer" target="_blank">info@apiconf.io</a>
             </span>
             <span className="flex gap-[10px] items-center">
               <img src={xMobile} alt="x" loading="lazy" />
-              <p>Twitter</p>
+              <a href="https://x.com/apiconflagos/" rel="noopener noreferrer" target="_blank">Twitter</a>
             </span>
             <span className="flex gap-[10px] items-center">
               <img src={instagramMobile} alt="instagram" loading="lazy" />
