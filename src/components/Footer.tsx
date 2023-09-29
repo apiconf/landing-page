@@ -1,7 +1,7 @@
 import email from "../assets/mail-icon.svg";
 import emailMobile from "../assets/email-blue-bg.svg";
-import instagram from "../assets/instagram-icon.svg";
-import instagramMobile from "../assets/instagram-blue-bg.svg";
+import linkedIn from "../assets/linkedIn-icon.svg";
+import linkedInMobile from "../assets/linkedIn-blue-bg.svg";
 import logo from "../assets/logo-white.svg";
 import play from "../assets/icon-play.svg";
 import x from "../assets/x-icon.svg";
@@ -16,15 +16,33 @@ const Footer = () => {
           <div className="flex flex-col gap-[28px]">
             <span className="flex gap-[14px] items-center">
               <img src={email} alt="email" loading="lazy" />
-              <a href="mailto:info@apiconf.io" rel="noopener noreferrer" target="_blank">info@apiconf.io</a>
+              <a
+                href="mailto:info@apiconf.io"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                info@apiconf.io
+              </a>
             </span>
             <span className="flex gap-[14px] items-center">
               <img src={x} alt="x" loading="lazy" />
-              <a href="https://x.com/apiconflagos/" rel="noopener noreferrer" target="_blank">Twitter</a>
+              <a
+                href="https://x.com/apiconflagos/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Twitter
+              </a>
             </span>
             <span className="flex gap-[14px] items-center">
-              <img src={instagram} alt="instagram" loading="lazy" />
-              <p>Instagram</p>
+              <img src={linkedIn} alt="linkedIn" loading="lazy" />
+              <a
+                href="https:www.linkedin.com/company/api-conf-lagos"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                linkedIn
+              </a>
             </span>
           </div>
 
@@ -34,7 +52,6 @@ const Footer = () => {
           </div>
 
           <div className="flex flex-col gap-[24px] items-end">
-            <p></p>
             <img src={play} alt="play" width="57" height="57" />
           </div>
         </div>
@@ -48,19 +65,35 @@ const Footer = () => {
           <div className="flex flex-col gap-[20px]">
             <span className="flex gap-[10px] items-center">
               <img src={emailMobile} alt="email" loading="lazy" />
-              <a href="mailto:info@apiconf.io" rel="noopener noreferrer" target="_blank">info@apiconf.io</a>
+              <a
+                href="mailto:info@apiconf.io"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                info@apiconf.io
+              </a>
             </span>
             <span className="flex gap-[10px] items-center">
               <img src={xMobile} alt="x" loading="lazy" />
-              <a href="https://x.com/apiconflagos/" rel="noopener noreferrer" target="_blank">Twitter</a>
+              <a
+                href="https://x.com/apiconflagos/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Twitter
+              </a>
             </span>
             <span className="flex gap-[10px] items-center">
-              <img src={instagramMobile} alt="instagram" loading="lazy" />
-              <p>Instagram</p>
+              <img src={linkedInMobile} alt="linkedIn" loading="lazy" />
+              <a
+                href="https:www.linkedin.com/company/api-conf-lagos"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                linkedIn
+              </a>
             </span>
           </div>
-
-          <p></p>
         </div>
       </div>
     </footer>
