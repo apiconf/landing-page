@@ -19,6 +19,7 @@ const CallToAction = () => {
           subTitle="Professionals with experience in working with APIs in software systems."
           btnIcon={IconTicket}
           btnText="Register to Attend"
+          link="https://bit.ly/apiconflagos-reg"
         />
       </div>
       <div className="relative w-full bg-custom-blue rounded-3xl overflow-hidden">
@@ -33,6 +34,7 @@ const CallToAction = () => {
           subTitle="Professionals with experience in working with APIs in software systems."
           btnIcon={IconSpeaker}
           btnText="Apply to Speak"
+          link="https://sessionize.com/api-conf-lagos-2023/"
         />
       </div>
     </div>
