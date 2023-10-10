@@ -86,7 +86,9 @@ const Footer = () => {
             <span className="flex gap-[10px] items-center">
               <img src={linkedInMobile} alt="linkedIn" loading="lazy" />
               <a
+
                 href="https://www.linkedin.com/company/api-conf-lagos"
+
                 rel="noopener noreferrer"
                 target="_blank"
               >
