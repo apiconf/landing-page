@@ -2,9 +2,10 @@ import IconTicket from "../assets/icon-ticket.svg";
 
 const FloatingBtn = () => {
   return (
-    <div className="z-50 fixed inset-x-0 bottom-8 mx-auto hidden md:flex max-w-[384px] h-[68px] w-full flex justify-between items-center pl-8 py-9 pr-2 rounded-[40px] bg-white shadow-bannerBtn text-base">
+    <div className="z-50 fixed inset-x-0 bottom-8 mx-auto hidden md:flex max-w-[340px] h-[68px] w-full flex justify-between items-center pl-8 py-9 pr-2 rounded-[40px] bg-white shadow-bannerBtn text-base">
       <span className="text-primary-black font-extrabold">
-        14th, October 2023
+        {/* 14th, October 2023 */}
+        Coming soon
       </span>
       <a
         href="https://bit.ly/apiconflagos-reg"

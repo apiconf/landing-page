@@ -20,10 +20,11 @@ const DaysToGo = () => {
       <div className="flex flex-col text-[#FFFFFF] items-center gap-[5px]">
         <h2 className="text-[45px] font-bold">
           {/* {diff} */}
-          Coming soon...
+          Coming soon
         </h2>
         <p className="text-[24px] font-medium">
-          14th October, 2023
+          {/* 14th October, 2023 */}
+          2023
           <span className="hidden sm:inline"> - Unilag Hall, Lagos***</span>
         </p>
         <a

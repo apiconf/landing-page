@@ -54,7 +54,7 @@ const DaysCount = () => {
     <button className="h-12 pl-6 pr-4 bg-[#000] flex justify-center items-center gap-x-2 rounded-3xl shadow-timerBtn">
       <span className="text-base font-extrabold text-[#F1F1F1]">
         {/* {daysNo} */}
-        Coming soon...
+        Coming soon
       </span>
       <img src={IconTimer} alt="" />
     </button>
