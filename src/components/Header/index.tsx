@@ -1,6 +1,6 @@
-import logo from "../../assets/logo.svg";
-import { Link } from "react-router-dom";
 import HeaderDateTime from "./dateTime";
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.svg";
 
 const Header = () => {
   return (
@@ -20,7 +20,7 @@ const Header = () => {
               About <span className="hidden md:inline">APICONF</span>
             </li>
 
-            <Link to="https://forms.gle/Mt4YqBtmzTEPw3EK7">
+            <Link to="https://forms.gle/Mt4YqBtmzTEPw3EK7" target="_blank">
               <li>Support Us</li>
             </Link>
           </ul>
