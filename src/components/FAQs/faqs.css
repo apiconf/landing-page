@@ -8,6 +8,7 @@
     box-shadow: 0px 0px 16px 0px rgba(47, 28, 129, 0.08), 0px 0px 2px 0px rgba(47, 28, 129, 0.12);
     transition: .2s ease-in-out all;
     overflow:hidden;
+    cursor:pointer;
 }  
 .faqitem-container > div{
     width:100%;
