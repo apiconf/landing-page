@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import logo from "../../assets/logo.svg";
 import FaqItem from "./FAQs";
 import decoration from "../../assets/faq-decoration.svg"
 import "./FAQs.css";

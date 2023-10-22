@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 import "./faqs.css";
 import chevron from "../../Assets/chevron-icon.svg";
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface faqItemProps {
   faqQuestion: string;
