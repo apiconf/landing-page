@@ -7,6 +7,7 @@ import Sponsor from "./components/sponsor";
 import DaysToGo from "./components/DaysToGo";
 import Footer from "./components/Footer";
 import FloatingBtn from "./components/floatingBtn";
+import FAQs from "./components/FAQs";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <FloatingBtn />
       <main>
         <About />
+        <FAQs />
         <CallToAction />
         <Sponsor />
         <aside>
