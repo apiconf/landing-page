@@ -24,8 +24,8 @@ const DaysToGo = () => {
         </h2>
         <p className="text-[24px] font-medium">
           {/* 14th October, 2023 */}
-          2023
-          <span className="hidden sm:inline"> - Unilag Hall, Lagos***</span>
+          2024
+          <span className="hidden sm:inline"> - Lagos***</span>
         </p>
         <a
           href="https://bit.ly/apiconflagos-reg"
