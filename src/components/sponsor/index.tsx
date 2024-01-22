@@ -1,5 +1,5 @@
-import ImageSponsor from "../../assets/Image-sponsor.svg";
 import IconHeart from "../../assets/Icon-heart.svg";
+import ImageSponsor from "../../assets/Image-sponsor.svg";
 import InquireContact from "./card";
 
 const Sponsor = () => {
@@ -13,7 +13,7 @@ const Sponsor = () => {
           <p className="text-white opacity-90 pt-2 pb-5 font-medium">
             <span className="hidden md:block text-base">
               Step into the future with us. Be an integral part of API Conf,
-              Lagos 2023.
+              Lagos 2024.
             </span>
             <span className="block md:hidden text-[20px] leading-normal">
               Learn and connect through the major driving force.

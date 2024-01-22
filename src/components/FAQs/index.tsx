@@ -23,7 +23,7 @@ const Faq = () => {
           />
           <FaqItem
             faqQuestion="What is the cost of attending?"
-            faqResponse="Specific ticket pricing and packages will be released closer to the event date. Stay tuned to our official channels for updates."
+            faqResponse="The event is absolutely free. Lookout for when we open up registrations."
           />
           <FaqItem
             faqQuestion="What topics will be covered at the conference?"
@@ -36,10 +36,10 @@ const Faq = () => {
         </div>
 
         <div>
-          <FaqItem
+          {/* <FaqItem
             faqQuestion="When and where is the event taking place?"
             faqResponse="The event is scheduled for October 14, 2023, in Lagos. The specific venue details will be provided closer to the event date."
-          />
+          /> */}
           <FaqItem
             faqQuestion="How can I register for the event?"
             faqResponse="You can pre-register for the event through the provided link on our social media pages and official website. An official registration link will be shared once registrations are open."

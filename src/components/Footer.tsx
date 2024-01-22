@@ -48,7 +48,7 @@ const Footer = () => {
 
           <div className="flex flex-col w-[35%]">
             <img src={logo} alt="apiconf" />
-            <p className="text-center mt-[64px]">2023 API Conf</p>
+            <p className="text-center mt-[64px]">2024 API Conf</p>
           </div>
 
           <div className="flex flex-col gap-[24px] items-end">
