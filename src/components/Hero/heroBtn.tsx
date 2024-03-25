@@ -1,5 +1,5 @@
-import IconTicket from "../../assets/icon-ticket.svg";
 import IconSpeaker from "../../assets/icon-speaker.svg";
+import IconTicket from "../../assets/icon-ticket.svg";
 
 interface props {
   text: string;
@@ -8,7 +8,7 @@ interface props {
 export const ApplyBtn = ({ text, extra }: props) => {
   return (
     <a
-      href="https://bit.ly/apiconflagos-reg"
+      href="https://lu.ma/apiconflagos24"
       rel="noopener noreferrer"
       target="_blank"
       className="cursor-pointer w-full h-[52px] p-4 flex justify-center items-center gap-x-2 rounded-6xl border-2 border-solid border-[#7147F6] bg-gradient-to-b from-[#7147F6] from-[0%] via-[rgba(255, 255, 255, 0)] via-[100%] to-custom-blue hover:to-[#2F1C81]"
@@ -26,7 +26,7 @@ export const ApplyBtn = ({ text, extra }: props) => {
 export const VolunteerBtn = ({ text, extra }: props) => {
   return (
     <a
-      href="https://sessionize.com/api-conf-lagos-2023/"
+      href="https://sessionize.com/api-conf-lagos-2024/"
       rel="noopener noreferrer"
       target="_blank"
       className="cursor-pointer w-full h-[52px] p-4 flex justify-center items-center gap-x-2 rounded-6xl border-2 border-solid border-[#eef6c6] bg-gradient-to-b from-[#FBF3EA] from-[0%] via-[rgba(255, 255, 255, 0)] via-[100%] to-[#E2EF9C] hover:to-[#C8E042]"
