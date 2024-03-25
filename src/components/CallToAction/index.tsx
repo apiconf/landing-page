@@ -1,8 +1,8 @@
+import CTACard from "./card";
+import IconSpeaker from "../../assets/icon-speaker-no-bg.svg";
+import IconTicket from "../../assets/icon-ticket-white.svg";
 import ImageRegister from "../../assets/img-register-attend.svg";
 import ImageVolunteer from "../../assets/img-volunteer-speak.svg";
-import IconTicket from "../../assets/icon-ticket-white.svg";
-import IconSpeaker from "../../assets/icon-speaker-no-bg.svg";
-import CTACard from "./card";
 
 const CallToAction = () => {
   return (
@@ -19,7 +19,7 @@ const CallToAction = () => {
           subTitle="Professionals with experience in working with APIs in software systems."
           btnIcon={IconTicket}
           btnText="Register to Attend"
-          link="https://bit.ly/apiconflagos-reg"
+          link="https://lu.ma/apiconflagos24"
         />
       </div>
       <div className="relative w-full bg-custom-blue rounded-3xl overflow-hidden">
@@ -34,7 +34,7 @@ const CallToAction = () => {
           subTitle="Professionals with experience in working with APIs in software systems."
           btnIcon={IconSpeaker}
           btnText="Apply to Speak"
-          link="https://sessionize.com/api-conf-lagos-2023/"
+          link="https://sessionize.com/api-conf-lagos-2024/"
         />
       </div>
     </div>

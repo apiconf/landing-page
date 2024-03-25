@@ -17,11 +17,11 @@ const Footer = () => {
             <span className="flex gap-[14px] items-center">
               <img src={email} alt="email" loading="lazy" />
               <a
-                href="mailto:info@apiconf.io"
+                href="mailto:apiconferencelagos@gmail.com"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                info@apiconf.io
+                apiconferencelagos@gmail.com
               </a>
             </span>
             <span className="flex gap-[14px] items-center">

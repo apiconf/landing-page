@@ -23,7 +23,7 @@ const Faq = () => {
           />
           <FaqItem
             faqQuestion="What is the cost of attending?"
-            faqResponse="The event is absolutely free. Lookout for when we open up registrations."
+            faqResponse="The event is absolutely free. Registration is now open. Be sure to sign up!"
           />
           <FaqItem
             faqQuestion="What topics will be covered at the conference?"
@@ -42,7 +42,7 @@ const Faq = () => {
           /> */}
           <FaqItem
             faqQuestion="How can I register for the event?"
-            faqResponse="You can pre-register for the event through the provided link on our social media pages and official website. An official registration link will be shared once registrations are open."
+            faqResponse="You can register for the event through the provided link on our social media pages and official website. Registration is now open, so go ahead and secure your spot! An official registration link is available for immediate sign-up."
           />
           <FaqItem
             faqQuestion="Are there sponsorship opportunities available?"
