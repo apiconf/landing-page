@@ -8,7 +8,7 @@ import './index.css';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Apcp />,
+    element: <App />,
     errorElement: <NotFound />,
   },
   {
