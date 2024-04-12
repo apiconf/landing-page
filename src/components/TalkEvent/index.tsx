@@ -7,8 +7,14 @@ import ArrowUp from "../../assets/arrow-up.svg";
 const TalkEvent = () => {
   return (
     <section className="w-full bg-dark-purple flex justify-center items-center ">
-      <div className=" w-[75%] bg-spaces bg-no-repeat bg-contain bg-top " data-aos="fade-up">
-        <div className="flex justify-center items-center flex-wrap gap-5" data-aos="fade-up">
+      <div
+        className=" w-full md:w-[75%] bg-spaces bg-no-repeat bg-contain md:bg-top"
+        data-aos="fade-up"
+      >
+        <div
+          className="md:w-[70%] md:m-auto md:flex justify-center lg:justify-start gap-5"
+          data-aos="fade-up"
+        >
           <Spaces
             iconOne={Mic}
             iconTwo={MicFrequency}

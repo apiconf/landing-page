@@ -17,7 +17,7 @@ const Spaces = ({
   link,
 }: SpacesProps) => {
   return (
-    <div className="bg-white w-[469px] h-[236px] p-5 rounded-[30px] my-[170px]">
+    <div className="bg-white p-5 rounded-[30px] my-8 lg:my-[150px] md:w-[500px] md:max-w-[500px] max-w-[300px] mx-auto lg:flex lg:items-center">
       <div className="max-w-[400px] w-full h-full flex flex-col justify-between z-20">
         <div className="flex gap-4 p-4">
           <img src={iconOne} />
@@ -36,7 +36,7 @@ const Spaces = ({
           className="cursor-pointer flex gap-2 items-center"
         >
           <span className="text-[#4121CF] font-extrabold">{btnText}</span>
-          <span className="block w-4 h-4  flex justify-center items-center rounded">
+          <span className=" w-4 h-4  flex justify-center items-center rounded">
             <img src={btnIcon} alt="" />
           </span>
         </a>
