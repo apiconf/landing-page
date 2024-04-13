@@ -22,22 +22,22 @@ function Carousel({}: Props) {
 
   const dragX = useMotionValue(0);
 
-  // useEffect(() => {
-  //   const intervalRef = setInterval(() => {
-  //     const x = dragX.get();
+  useEffect(() => {
+    const intervalRef = setInterval(() => {
+      const x = dragX.get();
 
-  //     if (x === 0) {
-  //       setImgIndex((pv) => {
-  //         if (pv === mockArray.length - 1) {
-  //           return 0;
-  //         }
-  //         return pv + 1;
-  //       });
-  //     }
-  //   }, AUTO_DELAY);
+      if (x === 0) {
+        setImgIndex((pv) => {
+          if (pv === mockArray.length - 1) {
+            return 0;
+          }
+          return pv + 1;
+        });
+      }
+    }, AUTO_DELAY);
 
-  //   return () => clearInterval(intervalRef);
-  // }, []);
+    return () => clearInterval(intervalRef);
+  }, []);
 
   const onDragEnd = () => {
     const x = dragX.get();

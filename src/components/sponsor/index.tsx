@@ -3,7 +3,7 @@ import InquireContact from './card';
 
 const Sponsor = () => {
   return (
-    <section className="bg-[#90EAF2] w-screen  overflow-hidden  justify-around  md:grid grid-cols-5 px-[5%] py-12">
+    <section className="relative w-screen  overflow-hidden bg-highlight  justify-around  md:grid grid-cols-5 px-[5%] py-12">
       <div className="col-span-3 space-y-16 md:py-32">
         <div className="space-y-2 w-full">
           <h2 className="font-[720] w-full text-[48px] md:text-[25px] md:text-3xl text-left lg:text-4xl xl:text-[40px] text-black">
@@ -35,6 +35,7 @@ const Sponsor = () => {
       <div className="hidden md:block col-span-2">
         <img src={SponsorImage} alt="" />
       </div>
+      <div className="inset-0 bg-new-sponsor absolute  w-full bottom-0 shadow-md" />
     </section>
   );
 };
