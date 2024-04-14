@@ -3,16 +3,25 @@ import Speaker from "./Speaker";
 import Mic from "../../assets/mic.svg";
 import MicFrequency from "../../assets/mic-frequency.svg";
 import ArrowUp from "../../assets/arrow-up.svg";
+import BGSpaces from "../../assets/Spaces.png";
+import BGSpacesMobile from "../../assets/Spaces-mobile.png";
 
 const TalkEvent = () => {
   return (
-    <section className="w-full bg-dark-purple flex justify-center items-center ">
-      <div
-        className=" w-full md:w-[75%] bg-spaces bg-no-repeat bg-contain md:bg-top"
+    <section className="w-full relative  bg-dark-purple flex justify-center items-center ">
+      <img
+        src={BGSpacesMobile}
+        className="absolute md:hidden block right-0 top-0 z-0"
         data-aos="fade-up"
-      >
+      />
+      <img
+        src={BGSpaces}
+        className="absolute md:block hidden bottom-0 top-0 z-0"
+        data-aos="fade-up"
+      />
+      <div className=" w-full  md:w-[75%]" data-aos="fade-up">
         <div
-          className="md:w-[70%] md:m-auto md:flex justify-center lg:justify-start gap-5"
+          className="md:w-[70%] md:mt-0 mt-28 md:mb-0 mb-32 relative z-50 md:mx-auto flex md:flex-row flex-col justify-center lg:justify-start gap-5"
           data-aos="fade-up"
         >
           <Spaces
