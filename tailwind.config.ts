@@ -13,7 +13,7 @@ export default {
           "0px 0px 8px 0px rgba(47, 28, 129, 0.10), 0px 4px 32px 0px rgba(47, 28, 129, 0.15)",
         heroCard:
           "0px 0px 16px 0px rgba(47, 28, 129, 0.08), 0px 0px 2px 0px rgba(47, 28, 129, 0.12)",
-        aboutCard:
+        aboutCard: 
           "0px 0px 16px 0px rgba(47, 28, 129, 0.08), 0px 0px 2px 0px rgba(47, 28, 129, 0.12)"
       },
       textColor: {
@@ -24,23 +24,16 @@ export default {
       },
       backgroundColor: {
         "white": "#FFF",
-        "black": "#000",
       },
       backgroundImage: {
         "lg-banner": "url('/src/assets/lg-banner.png')",
         "sm-banner": "url('/src/assets/sm-banner.png')",
         "lg-aboutSectionBg": "url('/src/assets/lg-about-section-bg.svg')",
-        "sm-aboutSectionBg": "url('/src/assets/sm-about-section-bg.svg')",
-        "sponsor": `linear-gradient(0deg, #90EAF2, #90EAF2),linear- gradient(180deg, rgba(255, 255, 255, 0) 0 %, rgba(255, 255, 255, 0) 33.33%, rgba(255, 255, 255, 0) 66.67%, #FFFFFF 100%)`,
-        "new-sponsor": `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 33.33%, rgba(255, 255, 255, 0) 66.67%, #FFFFFF 100%)`,
-        "highlight": `linear-gradient(0deg, #90EAF2, #90EAF2)`
+        "sm-aboutSectionBg": "url('/src/assets/sm-about-section-bg.svg')"
       },
       borderRadius: {
         "6xl": "32px",
       },
-      rotate: {
-        '17': '17deg',
-      }
     },
     colors: {
       "custom-blue": "#4334D3"
