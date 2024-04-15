@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "framer-motion": "^11.0.27",
     "localforage": "^1.10.0",
     "luxon": "^3.4.3",
     "match-sorter": "^6.3.1",
