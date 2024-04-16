@@ -1,0 +1,6 @@
+.date {
+  @apply font-bold text-5xl sm:text-7xl md:text-8xl 3xl:text-9xl leading-[59.52px] sm:leading-[89.25px] md:leading-[119.04px] 3xl:leading-[158.72px];
+}
+.register {
+  @apply max-w-[329px] md:max-w-[280px] 3xl:max-w-[324px] bg-[#E1EF9A] px-4 py-6 sm:py-8 lg:py-10 3xl:py-12 rounded-[320px] cursor-pointer text-center font-bold text-2xl leading-[29.76px];
+}
