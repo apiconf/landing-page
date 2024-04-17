@@ -19,6 +19,27 @@ export const SPRING_OPTIONS = {
 
 function Carousel({}: Props) {
   const [imgIndex, setImgIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById('carousel');
+      if (section) {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (sectionTop < windowHeight * 0.75) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const dragX = useMotionValue(0);
 
@@ -50,7 +71,13 @@ function Carousel({}: Props) {
   };
 
   return (
-    <div className="relative overflow-hidden bg-neutral-950 py-8">
+    <motion.div
+      id="carousel"
+      initial={{ y: 100, opacity: 0 }}
+      animate={isVisible ? { y: 0, opacity: 1 } : {}}
+      transition={{ duration: 0.5 }}
+      className="relative overflow-hidden bg-neutral-950 py-8"
+    >
       <motion.div
         drag="x"
         dragConstraints={{
@@ -70,7 +97,7 @@ function Carousel({}: Props) {
         <HiglightCards index={imgIndex} />
       </motion.div>
       <GradientEdges />
-    </div>
+    </motion.div>
   );
 }
 
