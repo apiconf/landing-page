@@ -1,6 +1,6 @@
-import image3D from '../assets/3D-Image.png'
-import conf2024 from '../assets/conf-2024.png'
-import arrow from '../assets/arrow-icon.svg'
+import image3D from "../assets/3D-Image.png";
+import conf2024 from "../assets/conf-2024.png";
+import arrow from "../assets/arrow-icon.svg";
 
 const Footer = () => {
   return (
@@ -58,7 +58,7 @@ const Footer = () => {
         alt="api-conf"
       />
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

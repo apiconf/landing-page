@@ -5,6 +5,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import FloatingBtn from "./components/floatingBtn";
 import FAQs from "./components/FAQs";
+import Copyright from "./components/Copyright";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <FAQs />
       </main>
       <Footer />
+      <Copyright />
     </div>
   );
 }
