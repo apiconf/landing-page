@@ -9,7 +9,6 @@ const Footer = () => {
         API Conference
       </h2>
       <ul className="mt-12 mb-4 sm:mt-0 sm:mb-0">
-        s
         <li className="flex items-center gap-2">
           <a href="#">about API conference</a>
           <img
