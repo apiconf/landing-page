@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import TalkEvent from "./components/TalkEvent";
-import DaysToGo from "./components/DaysToGo";
 import Footer from "./components/Footer";
 import FloatingBtn from "./components/floatingBtn";
 import FAQs from "./components/FAQs";
@@ -24,9 +23,6 @@ function App() {
         <About />
         <FAQs />
         <TalkEvent />
-        <aside>
-          <DaysToGo />
-        </aside>
       </main>
       <Footer />
     </div>
