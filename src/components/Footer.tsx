@@ -1,6 +1,6 @@
-import image3D from '../assets/3D-Image.png'
-import conf2024 from '../assets/conf-2024.png'
-import arrow from '../assets/arrow-icon.svg'
+import image3D from "../assets/3D-Image.png";
+import conf2024 from "../assets/conf-2024.png";
+import arrow from "../assets/arrow-icon.svg";
 
 const Footer = () => {
   return (
@@ -9,7 +9,6 @@ const Footer = () => {
         API Conference
       </h2>
       <ul className="mt-12 mb-4 sm:mt-0 sm:mb-0">
-        s
         <li className="flex items-center gap-2">
           <a href="#">about API conference</a>
           <img
@@ -58,7 +57,7 @@ const Footer = () => {
         alt="api-conf"
       />
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
