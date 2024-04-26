@@ -16,8 +16,8 @@ function App() {
       <FloatingBtn />
       <main>
         <About />
-        <FAQs />
         <TalkEvent />
+        <FAQs />
       </main>
       <Footer />
       <Copyright />
