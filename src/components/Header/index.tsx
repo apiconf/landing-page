@@ -1,31 +1,65 @@
-import HeaderDateTime from './dateTime';
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
+import { useIsVisible } from '../../hooks';
 
 const Header = () => {
-  return (
-    <header className="w-full flex justify-center pt-[22px] pb-[21.31px] px-[5%] sm:px-[4%] lg:pt-[25px] lg:pb-[27px]">
-      <div className="relative w-full flex justify-between font-bold text-base text-[#666]">
-        <HeaderDateTime />
-        <nav className="w-full flex justify-between">
-          <Link to="/" rel="noopener noreferrer">
-            <img
-              className="max-w-[103px] sm:max-w-[172.48px] w-full md:absolute md:inset-0 md:mx-auto"
-              src={logo}
-              alt="apiconf logo"
-            />
-          </Link>
-          <ul className="max-w-[148px] md:max-w-[217px] w-full flex gap-x-6 items-center">
-            <li>
-              About <span className="hidden md:inline">APICONF</span>
-            </li>
+  const headerRef = useRef(null);
+  const isHeaderVisible = useIsVisible(headerRef);
 
-            <Link to="https://forms.gle/Mt4YqBtmzTEPw3EK7" target="_blank">
-              <li>Support Us</li>
-            </Link>
-          </ul>
-        </nav>
-      </div>
+  return (
+    <header ref={headerRef} className="w-full">
+      <motion.nav
+        initial={{ y: '-100%' }}
+        animate={{ y: isHeaderVisible ? 0 : '-100%' }}
+        transition={{
+          duration: 1,
+          ease: [0, 0, 0.25, 1],
+          delay: 0.5,
+        }}
+        className="w-full flex items-center gap-x-16 sm:gap-x-20 justify-between py-4 px-[8%] sm:px-[5%] 2xl:px-[7.4%]"
+      >
+        <Link to="/" rel="noopener noreferrer">
+          <img className="w-[155px] w-full" src={logo} alt="apiconf logo" />
+        </Link>
+        <ul className="max-w-[133px] sm:max-w-[400px] lg:max-w-[520px] xl:max-w-[775px] 2xl:max-w-[894px] w-full flex justify-between xl:gap-x-6 2xl:gap-x-8 items-center">
+          <li>
+            <a>
+              <dl className="flex flex-col gap-1">
+                <dt className="font-bold text-lg sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                  Spaces
+                </dt>
+                <dd className="hidden xl:inline font-normal text-base 2xl:text-lg">
+                  Catch up on Twitter Spaces
+                </dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a>
+              <dl className="flex flex-col gap-1">
+                <dt className="font-bold text-lg sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
+                  FAQs
+                </dt>
+                <dd className="hidden xl:inline font-normal text-base 2xl:text-lg">
+                  Questions, Questions
+                </dd>
+              </dl>
+            </a>
+          </li>
+          <li className="hidden sm:inline">
+            <a className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl">
+              Register
+            </a>
+          </li>
+          <li className="hidden sm:inline">
+            <a className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl">
+              <span className="hidden lg:inline">Become A</span> Sponsor
+            </a>
+          </li>
+        </ul>
+      </motion.nav>
     </header>
   );
 };
