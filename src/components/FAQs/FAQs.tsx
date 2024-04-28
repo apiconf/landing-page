@@ -21,7 +21,7 @@ const FaqItem = ({
   return (
     <motion.div
       layout
-      className="cursor-pointer mb-4 last:mb-0 bg-white p-4 rounded-3xl select-none"
+      className="cursor-pointer bg-white p-[8.054%] sm:p-6 rounded-2xl select-none"
       onClick={() => {
         if (itemOpen) {
           setActiveQues(-1);
@@ -30,20 +30,28 @@ const FaqItem = ({
         setActiveQues(index);
       }}
     >
-      <div className="flex items-center justify-between mb-2 gap-4">
-        <p className="font-bold text-lg">{faqQuestion}</p>
+      <div className="flex items-center justify-between gap-4">
+        <p className="font-bold text-lg md:text-xl lg:text-2xl leading-none">
+          {faqQuestion}
+        </p>
         <motion.img
-          initial={{ rotate: itemOpen ? "0" : "180deg" }}
-          animate={{ rotate: itemOpen ? "180deg" : "0" }}
+          initial={{ rotate: itemOpen ? "0" : "90deg" }}
+          animate={{ rotate: itemOpen ? "90deg" : "0" }}
           transition={{ type: "tween" }}
           src={chevron}
           alt="chevron"
         />
       </div>
       <motion.p
-        initial={{ height: itemOpen ? "0" : "auto" }}
-        animate={{ height: itemOpen ? "auto" : "0" }}
-        className="text-lg overflow-hidden"
+        initial={{
+          height: itemOpen ? "0" : "auto",
+          marginTop: itemOpen ? "8px" : "0",
+        }}
+        animate={{
+          height: itemOpen ? "auto" : "0",
+          marginTop: itemOpen ? "8px" : "0",
+        }}
+        className="text-lg md:text-xl lg:text-2xl leading-[22.32px] md:leading-[24.8px] lg:leading-[29.76px] overflow-hidden"
       >
         {faqResponse}
       </motion.p>
