@@ -1,6 +1,9 @@
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useIsVisible } from "../../hooks";
 import FaqItem from "./FAQs";
-import { useState } from "react";
+import AnyQuestionLG from "../../assets/any-questions-lg.png";
+import AnyQuestionSM from "../../assets/any-questions-sm.png";
 
 const faqs = [
   {
@@ -54,12 +57,22 @@ const faqs = [
 
 const Faq = () => {
   const [activeQues, setActiveQues] = useState(-1);
+  const faqsRef = useRef(null);
+  const isFaqVisible = useIsVisible(faqsRef);
 
   return (
-    <div className="relative z-20 w-full bg-[#FFFFFF] py-8">
+    <div
+      ref={faqsRef}
+      className="relative w-full py-16 md:pt-[9.144%] md:pb-[9.086%] 3xl:pt-[158px] 3xl:pb-[157px] px-[8%] sm:px-[5%] 2xl:px-[7.4%] bg-[#FFFFFF]"
+    >
       <motion.div
-        layout
-        className="bg-[#F7F7F7] p-4 w-[min(90%,_900px)] mx-auto rounded-3xl"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isFaqVisible ? 1 : 0 }}
+        transition={{
+          duration: 1,
+          ease: [0, 0, 0.75, 1],
+        }}
+        className="relative z-20 bg-[#F7F7F7] p-4 md:p-8 rounded-2xl flex flex-col gap-4 md:gap-8"
       >
         {faqs.map((faq, idx) => (
           <FaqItem
@@ -71,6 +84,16 @@ const Faq = () => {
           />
         ))}
       </motion.div>
+      <img
+        src={AnyQuestionSM}
+        alt=""
+        className="block md:hidden absolute z-10 top-0 right-0 h-full"
+      />
+      <img
+        src={AnyQuestionLG}
+        alt=""
+        className="hidden md:block absolute z-10 w-full right-0 left-0 bottom-[25px] px-[5%] 2xl:px-[7.4%]"
+      />
     </div>
   );
 };
