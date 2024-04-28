@@ -1,7 +1,7 @@
 import { EmblaOptionsType } from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import HiglightCard from './card';
 
 type PropType = {
@@ -14,41 +14,13 @@ const Carousel: React.FC<PropType> = (props) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({ playOnInit: false, delay: 3000 }),
   ]);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const onButtonAutoplayClick = useCallback(
-    (callback: () => void) => {
-      const autoplay = emblaApi?.plugins()?.autoplay;
-      if (!autoplay) return;
-
-      const resetOrStop =
-        autoplay.options.stopOnInteraction === false
-          ? autoplay.reset
-          : autoplay.stop;
-
-      resetOrStop();
-      callback();
-    },
-    [emblaApi]
-  );
 
   const toggleAutoplay = useCallback(() => {
     const autoplay = emblaApi?.plugins()?.autoplay;
     if (!autoplay) return;
 
-    const playOrStop = autoplay.play;
+    const playOrStop = autoplay.play as any;
     playOrStop();
-  }, [emblaApi]);
-
-  useEffect(() => {
-    const autoplay = emblaApi?.plugins()?.autoplay;
-    if (!autoplay) return;
-
-    setIsPlaying(autoplay.isPlaying());
-    emblaApi
-      .on('autoplay:play', () => setIsPlaying(true))
-      .on('autoplay:stop', () => setIsPlaying(false))
-      .on('reInit', () => setIsPlaying(autoplay.isPlaying()));
   }, [emblaApi]);
 
   useEffect(() => {
