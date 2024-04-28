@@ -19,7 +19,7 @@ function HiglightCards({ index }: Props) {
               transform: 'rotate(17deg)',
             }}
             transition={SPRING_OPTIONS}
-            className="h-[200px] md:h-[400px] lg:h-[700px] w-screen transform    shrink-0 rounded-3xl bg-black object-cover"
+            className="h-[200px] md:h-[400px] lg:h-[700px] w-screen transform     shrink-0 rounded-3xl bg-black object-cover"
           />
         );
       })}

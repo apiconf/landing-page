@@ -24,6 +24,24 @@ function Higlight({}: Props) {
           The Next Meetup
         </Link>
       </div>
+
+      <div className="embla w-screen h-scre en">
+        <div className="embla__viewport">
+          33
+          <div className="embla__container">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <div
+                className="embla__slide bg-black mx-8 h-[200px] md:h-[400px] lg:h-[700px] rounded-3xl"
+                key={index}
+              >
+                <div className="embla__slide__number">
+                  <span>{index + 1}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

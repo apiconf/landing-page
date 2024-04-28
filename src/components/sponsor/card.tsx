@@ -6,10 +6,10 @@ interface inquireContactProps {
 }
 const InquireContact = ({ contactName, email }: inquireContactProps) => {
   return (
-    <div className="text-xl">
-      <h4 className="font-bold">{contactName}</h4>
+    <div className="text-xl space-y-2">
+      <h4 className="font-bold tetx-[18px] md:text-[25px]">{contactName}</h4>
       <Link
-        className="text-primary-black leading-[110%]"
+        className="text-primary-black inline-block text-[18px] md:text-[25px] leading-[110%]"
         to={`mailto:${email}`}
         rel="noreferrer noopener"
         target="_blank"

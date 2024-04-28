@@ -92,7 +92,7 @@ const Sponsor = () => {
               <h2 className="font-[720] w-full text-[48px] md:text-[25px] md:text-3xl text-left lg:text-4xl xl:text-[40px] text-black">
                 Sponsor API Conf Lagos
               </h2>
-              <p className="md:max-w-[500px] text-lg text-justify">
+              <p className="md:max-w-[90%]  text-left text-[18px] md:text-[25px]">
                 Contribute to organising the biggest Convention of API
                 Enthusiasts and Builders in Lagos!
               </p>
