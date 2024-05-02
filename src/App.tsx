@@ -1,14 +1,14 @@
-import './App.css';
-import About from './components/About';
-import Copyright from './components/Copyright';
-import FAQs from './components/FAQs';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Hero from './components/Hero';
+import "./App.css";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import FloatingBtn from "./components/floatingBtn";
+import About from "./components/About";
+import Talks from "./components/Talks";
 import Higlight from './components/Highlight';
-import TalkEvent from './components/TalkEvent';
-import FloatingBtn from './components/floatingBtn';
 import Sponsor from './components/sponsor';
+import FAQs from "./components/FAQs";
+import Footer from "./components/Footer";
+import Copyright from "./components/Copyright";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <FloatingBtn />
       <main>
         <About />
-        <TalkEvent />
+        <Talks />
         <FAQs />
         <Higlight />
         <Sponsor />

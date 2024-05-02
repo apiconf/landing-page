@@ -24,8 +24,8 @@ export default {
       },
       textColor: {
         "primary-black": "#1F1F1F",
-        "white": "#FFF",
-        "dark": "#000000",
+        white: "#FFF",
+        dark: "#000000",
         gray: "#666",
         "purple": "#4334D3",
       },
@@ -34,16 +34,23 @@ export default {
         "white": "#FFF",
         "black": "#000",
         "peach": "#ECC89D"
+        purple: "#4334D3",
+      },
+      backgroundColor: {
+        "dark-purple": "#2F20BF",
+        white: "#FFF",
+        peach: "#ECC89D",
       },
       backgroundImage: {
         "lg-banner": "url('/src/assets/lg-banner.png')",
-        "spaces": "url('/src/assets/Spaces.png')",
+        spaces: "url('/src/assets/Spaces.png')",
         "sm-banner": "url('/src/assets/sm-banner.png')",
         "lg-aboutSectionBg": "url('/src/assets/lg-about-section-bg.svg')",
         "sm-aboutSectionBg": "url('/src/assets/sm-about-section-bg.svg')",
         "sponsor": `linear-gradient(0deg, #90EAF2, #90EAF2),linear- gradient(180deg, rgba(255, 255, 255, 0) 0 %, rgba(255, 255, 255, 0) 33.33%, rgba(255, 255, 255, 0) 66.67%, #FFFFFF 100%)`,
         "new-sponsor": `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 33.33%, rgba(255, 255, 255, 0) 66.67%, #FFFFFF 100%)`,
         "highlight": `linear-gradient(0deg, #90EAF2, #90EAF2)`
+        "speaker-bg": "url('/src/assets/speak-image.png')",
       },
       borderRadius: {
         "6xl": "32px",
