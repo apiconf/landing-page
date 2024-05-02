@@ -3,50 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Cabinet-Grotesk';
+  font-family: "Cabinet-Grotesk";
   src: url(./fonts/Cabinet-Grotesk/CabinetGrotesk-Variable.ttf);
 }
 
 @font-face {
-  font-family: 'MonumentExtended-extrabold';
+  font-family: "MonumentExtended-extrabold";
   src: url(./fonts/MonumentExtended/extrabold.otf);
 }
 
 button,
 button:hover {
   outline: none;
-}
-.days-section {
-  background-image: url('./assets/days-bg.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 80% 100%;
-}
-
-footer {
-  grid-template-areas: 'list header' 'logo header' 'attr header';
-}
-footer h2 {
-  grid-area: header;
-  writing-mode: vertical-lr;
-}
-footer > div {
-  grid-area: attr;
-}
-footer ul {
-  grid-area: list;
-}
-footer li {
-  margin-bottom: 0.3em;
-}
-footer .logo {
-  grid-area: logo;
-}
-@media (min-width: 640px) {
-  footer {
-    grid-template-areas: 'header header' 'logo list' 'attr list';
-  }
-  footer h2 {
-    writing-mode: unset;
-  }
 }
