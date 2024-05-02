@@ -4,11 +4,10 @@ import Hero from "./components/Hero";
 import FloatingBtn from "./components/floatingBtn";
 import About from "./components/About";
 import Talks from "./components/Talks";
-import Higlight from './components/Highlight';
-import Sponsor from './components/sponsor';
+import Higlight from "./components/Highlight";
+import Sponsor from "./components/sponsor";
 import FAQs from "./components/FAQs";
 import Footer from "./components/Footer";
-import Copyright from "./components/Copyright";
 
 function App() {
   return (
@@ -19,12 +18,11 @@ function App() {
       <main>
         <About />
         <Talks />
-        <FAQs />
         <Higlight />
         <Sponsor />
+        <FAQs />
       </main>
       <Footer />
-      <Copyright />
     </div>
   );
 }
