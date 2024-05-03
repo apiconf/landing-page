@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 interface InquireContactProps {
   contactName: string;
   linkedInUrl?: string;
@@ -6,16 +5,18 @@ interface InquireContactProps {
 }
 const InquireContact = ({ contactName, email }: InquireContactProps) => {
   return (
-    <div className="text-xl space-y-2">
-      <h4 className="font-bold tetx-[18px] md:text-[25px]">{contactName}</h4>
-      <Link
-        className="text-primary-black inline-block text-[18px] md:text-[25px] leading-[110%]"
-        to={`mailto:${email}`}
+    <div>
+      <h4 className="text-black font-bold text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]">
+        {contactName}
+      </h4>
+      <a
+        className="text-black inline-block font-medium text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px] opacity-80"
+        href={`mailto:${email}`}
         rel="noreferrer noopener"
         target="_blank"
       >
         {email}
-      </Link>
+      </a>
     </div>
   );
 };

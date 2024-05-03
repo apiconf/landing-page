@@ -1,7 +1,7 @@
-import { EmblaOptionsType } from 'embla-carousel';
-import { Link } from 'react-router-dom';
-import highlightLogo from '../../assets/highlight-logo.svg';
-import Carousel from './carousel';
+import { EmblaOptionsType } from "embla-carousel";
+import { Link } from "react-router-dom";
+import highlightLogo from "../../assets/highlight-logo.svg";
+import Carousel from "./carousel";
 
 type Props = {};
 
@@ -12,7 +12,7 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 function Higlight({}: Props) {
   return (
     <>
-      <div className="relative md:min-h-screen flex flex-col  justify-center  bg-[#90EAF2] w-screen py-4">
+      <div className="relative w-full md:min-h-screen bg-[#90EAF2] py-4 flex flex-col  justify-center overflow-hidden">
         <img
           className="absolute top-4  md:top-12 left-4 md:left-12 z-20 h-16 md:h-[100px]"
           src={highlightLogo}

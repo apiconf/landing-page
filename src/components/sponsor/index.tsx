@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-import SponsorImage from "../../assets/sponsor.png";
 import InquireContact from "./card";
 
 const Sponsor = () => {
@@ -30,43 +28,56 @@ const Sponsor = () => {
 
   console.log("Is Scroll", isVisible);
 
-  const leftVariants = {
+  const childVariant = {
     visible: {
-      opacity: 1,
       y: 0,
+      opacity: 1,
       transition: {
-        duration: 0.5,
-        delayChildren: 0.2,
-        staggerChildren: 0.2,
+        ease: [0, 0, 0.75, 1],
+        duration: 1,
       },
     },
     hidden: {
+      y: 32,
       opacity: 0,
-      y: -100, // Start above the viewport
     },
   };
-  const rightVariants = {
+  const contactVariant = {
     visible: {
-      opacity: 1,
-      y: 0,
+      ...childVariant.visible,
       transition: {
-        delay: 0.5,
-        duration: 0.5,
+        ...childVariant.visible.transition,
+        delay: 0.1,
       },
     },
     hidden: {
-      opacity: 0,
-      y: -100,
+      ...childVariant.hidden,
     },
   };
-
-  const childVariants = {
+  const buttonVariant = {
     visible: {
-      y: 0,
-      opacity: 1,
+      ...childVariant.visible,
+      transition: {
+        ease: [0, 0, 0.58, 1],
+        delay: 0.3,
+        y: { duration: 0.75 },
+        opacity: { duration: 1 },
+      },
     },
     hidden: {
-      y: -20,
+      ...childVariant.hidden,
+    },
+  };
+  const bannerVariant = {
+    visible: {
+      opacity: 1,
+      transition: {
+        ease: [0.25, 0, 0.75, 1],
+        delay: 0.3,
+        duration: 1,
+      },
+    },
+    hidden: {
       opacity: 0,
     },
   };
@@ -74,34 +85,33 @@ const Sponsor = () => {
   return (
     <section
       id="left-section"
-      className="relative w-screen overflow-hidden bg-highlight min-h-[400px]  justify-around  md:grid grid-cols-5 px-[5%] py-12"
+      className="w-full bg-sponsor sm:px-[5%] 2xl:px-[7.4%] pt-16 sm:py-12 flex flex-col items-center sm:items-start lg:items-stretch lg:flex-row lg:justify-between gap-16"
     >
       <AnimatePresence>
         {isVisible ? (
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={leftVariants}
-            className="col-span-3 space-y-16 md:py-32"
-          >
+          <div className="lg:mb-[3.18%] px-[8%] sm:px-0 lg:flex flex-col justify-center space-y-8 sm:space-y-16">
             <motion.div
-              variants={childVariants}
-              transition={{ delay: 0.2, duration: 0.5 }}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={childVariant}
               className="space-y-2 w-full"
             >
-              <h2 className="font-[720] w-full text-[48px] md:text-[25px] md:text-3xl text-left lg:text-4xl xl:text-[40px] text-black">
-                Sponsor API Conf Lagos
+              <h2 className="w-full font-bold text-5xl lg:text-6xl 3xl:text-[64px] leading-[59.52px] lg:leading-[74.4px] 3xl:leading-[79.36px] text-black">
+                Sponsor API Conference
               </h2>
-              <p className="md:max-w-[90%]  text-left text-[18px] md:text-[25px]">
+              <p className="max-w-[330px] sm:max-w-[500px] md:max-w-[594px] text-left font-medium text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px] opacity-80">
                 Contribute to organising the biggest Convention of API
                 Enthusiasts and Builders in Lagos!
               </p>
             </motion.div>
 
             <motion.div
-              variants={childVariants}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="md:flex items-start gap-x-16 space-y-8 md:space-y-0"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={contactVariant}
+              className="flex flex-col sm:flex-row lg:flex-wrap items-start gap-x-16 gap-y-8"
             >
               <InquireContact
                 contactName="Sodiq Akinjobi"
@@ -115,30 +125,31 @@ const Sponsor = () => {
               />
             </motion.div>
 
-            <motion.button
-              variants={childVariants}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="bg-white font-bold rounded-full text-black text-center max-w-[340px] h-[68px] w-full"
+            <motion.a
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={buttonVariant}
+              className="w-full max-w-[330px] lg:max-w-[467px] lg:w-[70.01%] p-6 sm:px-4 sm:py-8 md:px-8 lg:py-[7.21%] cursor-pointer bg-white flex gap-2 justify-center items-center rounded-[320px]"
             >
-              More Details in Deck
-            </motion.button>
-          </motion.div>
+              <span className="text-black font-extrabold text-2xl leading-[29.76px]">
+                More Details in Deck
+              </span>
+            </motion.a>
+          </div>
         ) : null}
       </AnimatePresence>
       <AnimatePresence>
         {isVisible ? (
           <motion.div
-            id="right-section"
             initial="hidden"
             animate="visible"
-            variants={rightVariants}
-            className="hidden md:block col-span-2"
-          >
-            <img src={SponsorImage} alt="" />
-          </motion.div>
+            exit="hidden"
+            variants={bannerVariant}
+            className="block sm:hidden lg:block object-cover w-full h-[451.78px] lg:w-[40.414%] md:h-auto rounded-t-[32px] sm:rounded-[32px] bg-[url('/src/assets/sponsor.png')] bg-no-repeat bg-top bg-cover pt-[46.459%]"
+          ></motion.div>
         ) : null}
       </AnimatePresence>
-      <div className="inset-0 bg-new-sponsor absolute  w-full bottom-0 shadow-md" />
     </section>
   );
 };

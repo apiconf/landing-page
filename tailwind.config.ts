@@ -33,7 +33,7 @@ export default {
         "dark-purple": "#2F20BF",
         white: "#FFF",
         peach: "#ECC89D",
-        "sponsor": `linear-gradient(0deg, #90EAF2, #90EAF2),linear- gradient(180deg, rgba(255, 255, 255, 0) 0 %, rgba(255, 255, 255, 0) 33.33%, rgba(255, 255, 255, 0) 66.67%, #FFFFFF 100%)`,
+        sponsor: `linear-gradient(0deg, #90EAF2, #90EAF2),linear- gradient(180deg, rgba(255, 255, 255, 0) 0 %, rgba(255, 255, 255, 0) 33.33%, rgba(255, 255, 255, 0) 66.67%, #FFFFFF 100%)`,
         "new-sponsor": `linear-gradient(0deg, #90EAF2, #90EAF2),linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 33.33%, rgba(255, 255, 255, 0) 66.67%, #FFFFFF 100%)`,
       },
       backgroundImage: {
@@ -42,9 +42,8 @@ export default {
         "sm-banner": "url('/src/assets/sm-banner.png')",
         "lg-aboutSectionBg": "url('/src/assets/lg-about-section-bg.svg')",
         "sm-aboutSectionBg": "url('/src/assets/sm-about-section-bg.svg')",
-        "sponsor": `linear-gradient(0deg, #90EAF2, #90EAF2),linear- gradient(180deg, rgba(255, 255, 255, 0) 0 %, rgba(255, 255, 255, 0) 33.33%, rgba(255, 255, 255, 0) 66.67%, #FFFFFF 100%)`,
-        "new-sponsor": `linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 33.33%, rgba(255, 255, 255, 0) 66.67%, #FFFFFF 100%)`,
-        "highlight": `linear-gradient(0deg, #90EAF2, #90EAF2)`
+        sponsor: `linear-gradient(180deg, #90EAF2 66.67%, #FFFFFF 100%)`,
+        highlight: `linear-gradient(0deg, #90EAF2, #90EAF2)`,
       },
       borderRadius: {
         "6xl": "32px",
