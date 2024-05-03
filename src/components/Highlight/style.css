@@ -1,22 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@font-face {
-  font-family: "Cabinet-Grotesk";
-  src: url(./fonts/Cabinet-Grotesk/CabinetGrotesk-Variable.ttf);
-}
-
-@font-face {
-  font-family: "MonumentExtended-extrabold";
-  src: url(./fonts/MonumentExtended/extrabold.otf);
-}
-
-button,
-button:hover {
-  outline: none;
-}
-
 .embla {
   margin: auto;
   --slide-spacing: 2rem;
