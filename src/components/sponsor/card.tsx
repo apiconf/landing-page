@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
-interface inquireContactProps {
+import { Link } from "react-router-dom";
+interface InquireContactProps {
   contactName: string;
   linkedInUrl?: string;
   email: string;
 }
-const InquireContact = ({ contactName, email }: inquireContactProps) => {
+const InquireContact = ({ contactName, email }: InquireContactProps) => {
   return (
     <div className="text-xl space-y-2">
       <h4 className="font-bold tetx-[18px] md:text-[25px]">{contactName}</h4>

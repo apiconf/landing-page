@@ -1,4 +1,5 @@
 .embla {
+  @apply py-10 w-full;
   margin: auto;
   --slide-spacing: 2rem;
   --slide-size: 80%;
@@ -13,7 +14,8 @@
   margin-left: calc(var(--slide-spacing) * -1);
 }
 .embla__slide {
+  @apply mx-4 h-[200px] md:h-[400px] lg:h-[700px] w-screen transform shrink-0 flex items-center  object-cover;
   flex: 0 0 var(--slide-size);
   min-width: 0;
-  padding-left: var(--slide-spacing);
+  /* padding-left: var(--slide-spacing); */
 }

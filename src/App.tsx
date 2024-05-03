@@ -18,9 +18,9 @@ function App() {
       <main>
         <About />
         <Talks />
-        <FAQs />
         <Higlight />
         <Sponsor />
+        <FAQs />
       </main>
       <Footer />
     </div>

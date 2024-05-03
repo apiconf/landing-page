@@ -3,7 +3,7 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import React, { useCallback, useEffect } from "react";
 import HiglightCard from "./card";
-import "./style.css";
+import styles from "./css/style.module.css";
 
 type PropType = {
   slides: number[];
@@ -29,9 +29,9 @@ const Carousel: React.FC<PropType> = (props) => {
   }, []);
 
   return (
-    <div className={`embla py-10 w-full`}>
-      <div className="embla__viewport" ref={emblaRef}>
-        <div className="embla__container">
+    <div className={styles.embla}>
+      <div className={styles["embla__viewport"]} ref={emblaRef}>
+        <div className={styles["embla__container"]}>
           {slides.map((index) => (
             <HiglightCard key={index} />
           ))}

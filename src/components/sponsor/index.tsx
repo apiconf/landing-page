@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 import SponsorImage from "../../assets/sponsor.png";
 import InquireContact from "./card";
 
@@ -73,7 +74,7 @@ const Sponsor = () => {
   return (
     <section
       id="left-section"
-      className="relative w-screen overflow-hidden bg-highlight min-h-[400px]  justify-around  md:grid grid-cols-5 px-[5%] py-12 bg-[#90EAF2]"
+      className="relative w-screen overflow-hidden bg-highlight min-h-[400px]  justify-around  md:grid grid-cols-5 px-[5%] py-12"
     >
       <AnimatePresence>
         {isVisible ? (

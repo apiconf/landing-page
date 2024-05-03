@@ -16,23 +16,3 @@ button,
 button:hover {
   outline: none;
 }
-
-.embla {
-  margin: auto;
-  --slide-spacing: 2rem;
-  --slide-size: 80%;
-}
-.embla__viewport {
-  overflow: hidden;
-}
-.embla__container {
-  backface-visibility: hidden;
-  display: flex;
-  touch-action: pan-y;
-  margin-left: calc(var(--slide-spacing) * -1);
-}
-.embla__slide {
-  flex: 0 0 var(--slide-size);
-  min-width: 0;
-  padding-left: var(--slide-spacing);
-}
