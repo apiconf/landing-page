@@ -12,22 +12,28 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 function Higlight({}: Props) {
   return (
     <>
-      <div className="relative w-full md:min-h-screen bg-[#90EAF2] py-4 flex flex-col  justify-center overflow-hidden">
+      <div className="relative w-full bg-[#90EAF2] pt-16 md:pt-28 flex flex-col justify-center overflow-hidden">
         <img
-          className="absolute top-4  md:top-12 left-4 md:left-12 z-20 h-16 md:h-[100px]"
+          className="absolute z-20 top-8 md:top-16 left-[4%] sm:left-[2.5%] 2xl:left-[3.7%] max-w-[182.77px] lg:max-w-[365.53px] w-full"
           src={highlightLogo}
           alt=""
         />
 
-        <div className="hidden md:block bg-[#ECC89D]/40 blur-md   md:h-[128px] md:w-[128px] absolute -right-10 top-0 rounded-full"></div>
+        <div className="hidden md:block bg-[#ECC89D]/40 blur-md  md:h-[128px] md:w-[128px] absolute -right-10 top-0 rounded-full"></div>
         {/* <Carousel /> */}
         <Carousel slides={SLIDES} options={OPTIONS} />
 
-        <div className="flex text-black items-center justify-between p-6 md:p-12 font-bold bg-red-400">
-          <Link className="z-10" to="/">
+        <div className="flex items-center justify-between py-8 md:py-16 px-[8%] sm:px-[5%] 2xl:px-[7.4%]">
+          <Link
+            className="text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
+            to="/"
+          >
             2023 Highlights
           </Link>
-          <Link className="z-10" to="/">
+          <Link
+            className="text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
+            to="/"
+          >
             The Next Meetup
           </Link>
         </div>
