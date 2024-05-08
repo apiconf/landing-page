@@ -6,6 +6,8 @@ import About from "./components/About";
 import Talks from "./components/Talks";
 import FAQs from "./components/FAQs";
 import Footer from "./components/Footer";
+import Higlight from "./components/Highlight";
+import Sponsor from "./components/sponsor";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <main>
         <About />
         <Talks />
+        <Higlight />
+        <Sponsor />
         <FAQs />
       </main>
       <Footer />

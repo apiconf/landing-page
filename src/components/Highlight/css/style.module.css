@@ -1,0 +1,20 @@
+.embla {
+  @apply py-0 w-full;
+  margin: 0 auto;
+  --slide-spacing: 2rem;
+  --slide-size: 80%;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  @apply mx-4 md:mx-8 h-[200px] md:h-[400px] lg:h-[700px] w-screen transform shrink-0 flex items-center  object-cover;
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+}
