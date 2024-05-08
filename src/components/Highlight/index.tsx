@@ -5,7 +5,11 @@ import Carousel from "./carousel";
 
 type Props = {};
 
-const OPTIONS: EmblaOptionsType = { loop: true };
+const OPTIONS: EmblaOptionsType = {
+  loop: true,
+  dragFree: true,
+  dragThreshold: 50000,
+};
 const SLIDE_COUNT = 5;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
