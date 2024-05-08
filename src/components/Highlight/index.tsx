@@ -8,7 +8,7 @@ type Props = {};
 const OPTIONS: EmblaOptionsType = {
   loop: true,
   dragFree: true,
-  dragThreshold: 50000,
+  watchDrag: false,
 };
 const SLIDE_COUNT = 5;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
@@ -29,16 +29,16 @@ function Higlight({}: Props) {
 
         <div className="flex items-center justify-between py-8 md:py-16 px-[8%] sm:px-[5%] 2xl:px-[7.4%]">
           <Link
-            className="text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
+            className="w-min hsm:w-fit text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
             to="/"
           >
             2023 Highlights
           </Link>
           <Link
-            className="text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
+            className="w-min hsm:w-fit text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
             to="/"
           >
-            The Next Meetup
+            <span className="hidden hsm:inline">The</span> Nest Meetup
           </Link>
         </div>
       </div>

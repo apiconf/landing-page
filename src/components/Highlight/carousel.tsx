@@ -43,6 +43,7 @@ const Carousel: React.FC<PropType> = (props) => {
     (e: WheelEvent) => {
       if (!emblaApi) return;
       const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+
       if (isHorizontal) {
         if (e.deltaX > 0) {
           emblaApi.scrollPrev();
@@ -81,12 +82,14 @@ const Carousel: React.FC<PropType> = (props) => {
     };
   }, [emblaApi, swipeHandler, keyHandler]);
 
+  const data = { url: "", alt: "" };
+
   return (
     <div className={styles.embla}>
       <div className={styles["embla__viewport"]} ref={emblaViewportRef}>
         <div className={styles["embla__container"]} ref={emblaRef}>
           {slides.map((index) => (
-            <HiglightCard key={index} num={index} />
+            <HiglightCard key={index} {...data} id={index} />
           ))}
         </div>
       </div>
