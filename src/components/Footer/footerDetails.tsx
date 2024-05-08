@@ -32,13 +32,16 @@ const FooterDetails = () => {
           API Conference
         </motion.span>
         <motion.span
-          initial={{ x: "-100%" }}
-          animate={{ x: isHeaderTextVisible ? "0%" : "-100%" }}
+          initial={{ right: 100, transform: "rotate(90deg)" }}
+          animate={{
+            right: isHeaderTextVisible ? 0 : 100,
+            transform: "rotate(90deg)",
+          }}
           transition={{
             duration: 1,
             ease: [0.35, 0, 0.25, 1],
           }}
-          className="block sm:hidden relative bottom-0 right-0"
+          className="absolute top-0 right-0 bottom-0 inline-block sm:hidden rotate-90"
         >
           API Conference
         </motion.span>
