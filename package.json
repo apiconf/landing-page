@@ -11,6 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "embla-carousel-autoplay": "^8.0.2",
+    "embla-carousel-react": "^8.0.2",
     "framer-motion": "^11.0.27",
     "localforage": "^1.10.0",
     "luxon": "^3.4.3",
