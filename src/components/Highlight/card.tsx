@@ -7,7 +7,7 @@ interface HighlightPicsProps {
   alt: string;
 }
 
-function HiglightCard({ id, url, alt }: HighlightPicsProps) {
+function HiglightCard({ url, alt }: HighlightPicsProps) {
   return (
     <div className={styles["embla__slide"]}>
       {/* Use an Image instead */}
