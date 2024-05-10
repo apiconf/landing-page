@@ -7,7 +7,7 @@ const Speaker = () => {
   const applyBtnRef = useRef(null);
   const speakImgRef = useRef(null);
   const isSpeakText = useIsVisible(speakTextRef);
-  const isApplyBtn = useIsVisible(applyBtnRef);
+  const isApplyBtn = useIsVisible(applyBtnRef, 0.9);
   const isSpeakImg = useIsVisible(speakImgRef);
   return (
     <div className="w-full pt-16 sm:py-16 sm:px-[5%] 2xl:px-[7.4%] flex flex-col sm:items-center md:items-stretch md:flex-row gap-16">

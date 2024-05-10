@@ -58,7 +58,7 @@ const faqs = [
 const Faq = () => {
   const [activeQues, setActiveQues] = useState(-1);
   const faqsRef = useRef(null);
-  const isFaqVisible = useIsVisible(faqsRef);
+  const isFaqVisible = useIsVisible(faqsRef, 0.3);
 
   return (
     <div

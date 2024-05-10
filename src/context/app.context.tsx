@@ -16,7 +16,6 @@ export const AppContextProvider = ({ children }: AppContextProp) => {
     document.addEventListener("DOMContentLoaded", () => {
       setIsLoaded(true);
     });
-    console.log("is loaded");
 
     // Clean up event listener on component unmount
     return () => {

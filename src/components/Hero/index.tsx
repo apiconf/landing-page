@@ -14,13 +14,13 @@ const Hero = () => {
   const dateRef = useRef(null);
   const figureRef = useRef(null);
   const marqueeRef = useRef(null);
-  const isElevateVisible = useIsVisible(elevateRef);
-  const isTheGoalVisible = useIsVisible(theGoalRef);
-  const isLagosVisible = useIsVisible(lagosRef);
-  const isDetailsVisible = useIsVisible(detailsRef);
-  const isDateVisible = useIsVisible(dateRef);
-  const isFigureVisible = useIsVisible(figureRef);
-  const isMarqueeVisible = useIsVisible(marqueeRef);
+  const isElevateVisible = useIsVisible(elevateRef, -0.8);
+  const isTheGoalVisible = useIsVisible(theGoalRef, -0.6);
+  const isLagosVisible = useIsVisible(lagosRef, 0.8);
+  const isDetailsVisible = useIsVisible(detailsRef, 0.8);
+  const isDateVisible = useIsVisible(dateRef, 0.8);
+  const isFigureVisible = useIsVisible(figureRef, 0.6);
+  const isMarqueeVisible = useIsVisible(marqueeRef, 1);
 
   return (
     <section className="w-full">
@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="max-w-[621px] w-full flex flex-col gap-8 text-[#1F1F1F]">
           <motion.h1
             initial={{ y: 32 }}
-            animate={{ y: isElevateVisible ? 0 : 32 }}
+            animate={{ y: isElevateVisible ? 32 : 0 }}
             transition={{
               duration: 1,
               ease: [0, 0, 0.25, 1],
@@ -42,8 +42,8 @@ const Hero = () => {
           <motion.p
             initial={{ y: 32, opacity: 0 }}
             animate={{
-              y: isTheGoalVisible ? 0 : 32,
-              opacity: isTheGoalVisible ? 1 : 0,
+              y: isTheGoalVisible ? 32 : 0,
+              opacity: isTheGoalVisible ? 0 : 1,
             }}
             transition={{
               duration: 1,
