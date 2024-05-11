@@ -33,7 +33,7 @@ const Carousel: React.FC<PropType> = (props) => {
         setSpan((num) => (num += 1));
       }
 
-      if (Math.abs(span) < 1) return;
+      if (Math.abs(span) < 5) return;
 
       if (span > 0) {
         emblaApi.scrollPrev();
@@ -44,6 +44,22 @@ const Carousel: React.FC<PropType> = (props) => {
       setSpan(0);
     },
     [emblaApi, span]
+  );
+
+  const miniSwipeHandler = useCallback(
+    (e: WheelEvent) => {
+      if (!emblaApi) return;
+      const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+
+      if (isHorizontal) {
+        if (e.deltaX > 0) {
+          emblaApi.scrollPrev();
+        } else {
+          emblaApi.scrollNext();
+        }
+      }
+    },
+    [emblaApi]
   );
 
   const keyHandler = useCallback(
@@ -64,12 +80,31 @@ const Carousel: React.FC<PropType> = (props) => {
     const containerNode = emblaApi.containerNode();
     if (!containerNode) return;
 
+    const isTouchScreen =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|iPad|Tablet/i.test(
+        navigator.userAgent
+      );
+    const isTouchDevice =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
     containerNode.addEventListener("wheel", swipeHandler as EventListener);
     window.addEventListener("keydown", keyHandler);
+    if (isTouchScreen || isTouchDevice) {
+      containerNode.addEventListener(
+        "wheel",
+        miniSwipeHandler as EventListener
+      );
+    }
 
     return () => {
       containerNode.removeEventListener("wheel", swipeHandler as EventListener);
       window.removeEventListener("keydown", keyHandler);
+      if (isTouchScreen || isTouchDevice) {
+        containerNode.removeEventListener(
+          "wheel",
+          miniSwipeHandler as EventListener
+        );
+      }
     };
   }, [emblaApi, swipeHandler, keyHandler]);
 
