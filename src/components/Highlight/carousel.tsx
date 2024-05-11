@@ -88,14 +88,13 @@ const Carousel: React.FC<PropType> = (props) => {
       "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
     window.addEventListener("keydown", keyHandler);
-    if (isTouchScreen || isTouchDevice) {
+    if (!isTouchScreen || !isTouchDevice) {
+      containerNode.addEventListener("wheel", swipeHandler as EventListener);
+    } else {
       containerNode.addEventListener(
         "wheel",
         miniSwipeHandler as EventListener
       );
-    }
-    if (!isTouchDevice || !isTouchScreen) {
-      containerNode.addEventListener("wheel", swipeHandler as EventListener);
     }
 
     return () => {
@@ -104,14 +103,13 @@ const Carousel: React.FC<PropType> = (props) => {
           "wheel",
           swipeHandler as EventListener
         );
-      }
-      window.removeEventListener("keydown", keyHandler);
-      if (isTouchScreen || isTouchDevice) {
+      } else {
         containerNode.removeEventListener(
           "wheel",
           miniSwipeHandler as EventListener
         );
       }
+      window.removeEventListener("keydown", keyHandler);
     };
   }, [emblaApi, swipeHandler, keyHandler]);
 
