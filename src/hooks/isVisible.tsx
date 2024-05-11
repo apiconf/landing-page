@@ -2,26 +2,34 @@ import { useEffect, useState } from "react";
 
 export type RefType = React.RefObject<HTMLDivElement | null>;
 
-export const useIsVisible = (ref: RefType) => {
+export const useIsVisible = (
+  ref: RefType,
+  threshold = 0.6,
+  extra = 0,
+  minus = 0
+) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const currentRef = ref.current;
-    if (currentRef) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setIsVisible(entry.isIntersecting);
-        },
-        { threshold: 0.3 }
-      );
+    const handleScroll = () => {
+      const currentRef = ref.current;
+      if (currentRef) {
+        const currentRefTop = currentRef.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
 
-      observer.observe(currentRef);
+        if (currentRefTop < windowHeight * threshold + extra - minus) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }
+    };
 
-      return () => {
-        observer.unobserve(currentRef);
-      };
-    }
-  }, [ref]);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return isVisible;
 };

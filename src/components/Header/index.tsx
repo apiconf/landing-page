@@ -6,13 +6,13 @@ import logo from "../../assets/logo.svg";
 
 const Header = () => {
   const headerRef = useRef(null);
-  const isHeaderVisible = useIsVisible(headerRef);
+  const isHeaderVisible = useIsVisible(headerRef, -1);
 
   return (
     <header ref={headerRef} className="w-full">
       <motion.nav
         initial={{ y: "-100%" }}
-        animate={{ y: isHeaderVisible ? 0 : "-100%" }}
+        animate={{ y: isHeaderVisible ? "-100%" : 0 }}
         transition={{
           duration: 1,
           ease: [0, 0, 0.25, 1],

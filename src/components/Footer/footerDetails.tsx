@@ -11,18 +11,20 @@ const FooterDetails = () => {
   const footerNavRef = useRef(null);
   const footerSaluteRef = useRef(null);
   const image3DRef = useRef(null);
+  const image3DMbRef = useRef(null);
 
   const isFooterNavVisible = useIsVisible(footerNavRef);
   const isFooterSaluteVisible = useIsVisible(footerSaluteRef);
   const isHeaderTextVisible = useIsVisible(headerTextRef);
   const isImage3DVisible = useIsVisible(image3DRef);
+  const isImage3DMbVisible = useIsVisible(image3DMbRef, 1);
 
   return (
     <div className={footerDetailStyle.container}>
       <h2 ref={headerTextRef} className={footerDetailStyle.headerText}>
         <motion.span
-          initial={{ y: "0%" }}
-          animate={{ y: isHeaderTextVisible ? "0%" : "100%" }}
+          initial={{ y: "116%" }}
+          animate={{ y: isHeaderTextVisible ? "0%" : "116%" }}
           transition={{
             duration: 1,
             ease: [0.35, 0, 0.25, 1],
@@ -123,6 +125,22 @@ const FooterDetails = () => {
       </div>
       <motion.img
         src={image3D}
+        ref={image3DMbRef}
+        initial={{ y: 32, opacity: 0 }}
+        animate={{
+          y: isImage3DMbVisible ? 0 : 32,
+          opacity: isImage3DMbVisible ? 1 : 0,
+        }}
+        transition={{
+          y: { duration: 0.5, ease: [0, 0, 0.75, 1], delay: 0.4 },
+          opacity: { duration: 1, ease: [0, 0, 0.75, 1], delay: 0.4 },
+        }}
+        className={`block sm:hidden ${footerDetailStyle.image3D}`}
+        alt="api-conf"
+      />
+      <motion.img
+        id="elevate"
+        src={image3D}
         ref={image3DRef}
         initial={{ y: 32, opacity: 0 }}
         animate={{
@@ -133,7 +151,7 @@ const FooterDetails = () => {
           y: { duration: 0.5, ease: [0, 0, 0.75, 1], delay: 0.4 },
           opacity: { duration: 1, ease: [0, 0, 0.75, 1], delay: 0.4 },
         }}
-        className={footerDetailStyle.image3D}
+        className={`hidden sm:block ${footerDetailStyle.image3D}`}
         alt="api-conf"
       />
     </div>
