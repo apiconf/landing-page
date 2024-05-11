@@ -87,7 +87,6 @@ const Carousel: React.FC<PropType> = (props) => {
     const isTouchDevice =
       "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
-    containerNode.addEventListener("wheel", swipeHandler as EventListener);
     window.addEventListener("keydown", keyHandler);
     if (isTouchScreen || isTouchDevice) {
       containerNode.addEventListener(
@@ -95,9 +94,17 @@ const Carousel: React.FC<PropType> = (props) => {
         miniSwipeHandler as EventListener
       );
     }
+    if (!isTouchDevice || !isTouchScreen) {
+      containerNode.addEventListener("wheel", swipeHandler as EventListener);
+    }
 
     return () => {
-      containerNode.removeEventListener("wheel", swipeHandler as EventListener);
+      if (!isTouchDevice || !isTouchScreen) {
+        containerNode.removeEventListener(
+          "wheel",
+          swipeHandler as EventListener
+        );
+      }
       window.removeEventListener("keydown", keyHandler);
       if (isTouchScreen || isTouchDevice) {
         containerNode.removeEventListener(
