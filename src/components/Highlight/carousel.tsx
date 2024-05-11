@@ -1,7 +1,6 @@
 import { EmblaOptionsType } from "embla-carousel";
-//import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import React, { useRef, useCallback, useEffect } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import HiglightCard from "./card";
 import styles from "./css/style.module.css";
 
@@ -12,47 +11,39 @@ type PropType = {
 
 const Carousel: React.FC<PropType> = (props) => {
   const { slides, options } = props;
-  // const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-  //   Autoplay({ playOnInit: false, delay: 3000 }),
-  // ]);
-
-  // const toggleAutoplay = useCallback(() => {
-  //   const autoplay = emblaApi?.plugins()?.autoplay;
-  //   if (!autoplay) return;
-
-  //   const playOrStop = autoplay.play as any;
-  //   playOrStop();
-  // }, [emblaApi]);
-
-  // useEffect(() => {
-  //   toggleAutoplay();
-  // }, []);
 
   const emblaRef = useRef(null);
   const [emblaViewportRef, emblaApi] = useEmblaCarousel(options);
 
-  // const scrollPrev = useCallback(() => {
-  //   if (emblaApi) emblaApi.scrollPrev()
-  // }, [emblaApi])
-
-  // const scrollNext = useCallback(() => {
-  //   if (emblaApi) emblaApi.scrollNext()
-  // }, [emblaApi])
+  const [span, setSpan] = useState(0);
 
   const swipeHandler = useCallback(
     (e: WheelEvent) => {
       if (!emblaApi) return;
-      const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
 
-      if (isHorizontal) {
-        if (e.deltaX > 0) {
-          emblaApi.scrollPrev();
-        } else {
-          emblaApi.scrollNext();
-        }
+      // track only horizontal wheel event
+      if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
+        return;
       }
+
+      // reduce the span if you swipe to the right, increase the span if you swipe to the left
+      if (e.deltaX > 0) {
+        setSpan((num) => (num -= 1));
+      } else {
+        setSpan((num) => (num += 1));
+      }
+
+      if (Math.abs(span) < 5) return;
+
+      if (span > 0) {
+        emblaApi.scrollPrev();
+      } else if (span < 0) {
+        emblaApi.scrollNext();
+      }
+
+      setSpan(0);
     },
-    [emblaApi]
+    [emblaApi, span]
   );
 
   const keyHandler = useCallback(

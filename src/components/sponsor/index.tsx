@@ -11,7 +11,7 @@ const Sponsor = () => {
         const leftSectionTop = leftSection.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
 
-        console.log(leftSectionTop, windowHeight * 0.75);
+        //console.log(leftSectionTop, windowHeight * 0.75);
         if (leftSectionTop < windowHeight * 0.75) {
           setIsVisible(true);
         } else {
@@ -26,7 +26,7 @@ const Sponsor = () => {
     };
   }, []);
 
-  console.log("Is Scroll", isVisible);
+  //console.log("Is Scroll", isVisible);
 
   const childVariant = {
     visible: {
