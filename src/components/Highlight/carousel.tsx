@@ -33,7 +33,7 @@ const Carousel: React.FC<PropType> = (props) => {
         setSpan((num) => (num += 1));
       }
 
-      if (Math.abs(span) < 5) return;
+      if (Math.abs(span) < 1) return;
 
       if (span > 0) {
         emblaApi.scrollPrev();
