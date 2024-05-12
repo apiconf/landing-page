@@ -2,7 +2,7 @@
   @apply bg-[#2F20BF] overflow-hidden relative text-white capitalize pt-16 sm:pt-[76.32px] pb-16 px-[8%] sm:px-[5%] 2xl:px-[7.4%];
 }
 .headerText {
-  @apply absolute sm:relative z-10 sm:z-20 w-[50px] sm:w-full h-full sm:h-[9vw] 2xl:h-[8.6vw] inset-[0_0_auto_auto] sm:mb-[5.2%] font-bold text-[66.3px] text-end sm:text-start rotate-180 sm:rotate-0 sm:text-start sm:text-[12.9vw] 2xl:text-[12.35vw] leading-[0.6] align-bottom sm:align-middle whitespace-nowrap overflow-hidden;
+  @apply absolute sm:relative z-10 sm:z-20 w-[50px] sm:w-full h-full sm:h-[9vw] 2xl:h-[8.6vw] inset-[0_0_auto_auto] sm:mb-[5.2%] font-bold text-[66.3px] text-end rotate-180 sm:rotate-0 sm:text-start sm:text-[12.9vw] 2xl:text-[12.35vw] leading-[0.6] align-bottom sm:align-middle whitespace-nowrap overflow-hidden;
 }
 .content {
   @apply relative z-20 max-w-[630px] w-full flex flex-col gap-y-16 gap-x-10 sm:flex-row sm:items-stretch lg:justify-between;
