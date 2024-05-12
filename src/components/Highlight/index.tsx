@@ -22,12 +22,12 @@ function Higlight() {
         <Carousel slides={SLIDES} options={OPTIONS} />
 
         <div className="flex items-center justify-between py-8 md:py-16 px-[8%] sm:px-[5%] 2xl:px-[7.4%]">
-          <Link
+          <a
             className="text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
-            to="/"
+            href="https://photos.app.goo.gl/eCNfTAnKczQfqu9x5"
           >
             2023 Highlights
-          </Link>
+          </a>
           <Link
             className="text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
             to="/"
