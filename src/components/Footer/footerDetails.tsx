@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useIsVisible, useScreenWidth } from "../../hooks";
 import image3D from "../../assets/3D-Image.png";
 import conf2024 from "../../assets/conf-2024.png";
@@ -68,9 +69,9 @@ const FooterDetails = () => {
           className={footerDetailStyle.footerNav}
         >
           <li className={footerDetailStyle.link}>
-            <a href="#" className={footerDetailStyle.linkText}>
+            <Link to="/#about" className={footerDetailStyle.linkText}>
               about API conference
-            </a>
+            </Link>
             <img
               className={footerDetailStyle.linkIcon}
               src={arrow}
@@ -78,9 +79,12 @@ const FooterDetails = () => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <a href="#" className={footerDetailStyle.linkText}>
+            <Link
+              to="/#become-a-sponsor"
+              className={footerDetailStyle.linkText}
+            >
               Our Sponsors
-            </a>
+            </Link>
             <img
               className={footerDetailStyle.linkIcon}
               src={arrow}

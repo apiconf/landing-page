@@ -11,7 +11,7 @@ const About = () => {
   const isSubtitleVisible = useIsVisible(subtitleRef);
   const isRow2Visible = useIsVisible(row2Ref);
   return (
-    <section className={aboutStyles.aboutCont}>
+    <section id="about" className={aboutStyles.aboutCont}>
       <div className={aboutStyles.row_one}>
         <div className={aboutStyles.headerCont}>
           <motion.h2
