@@ -113,7 +113,7 @@ const Sponsor = () => {
         </motion.div>
 
         <motion.a
-          href="https://forms.gle/Mt4YqBtmzTEPw3EK7"
+          href="https://drive.google.com/file/d/1jigu4C3Len_5aA3mm-LinO2Gz7HgzIiQ/view?usp=sharing"
           ref={buttonRef}
           initial="hidden"
           animate="visible"
