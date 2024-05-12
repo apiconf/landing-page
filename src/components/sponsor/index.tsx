@@ -113,6 +113,7 @@ const Sponsor = () => {
         </motion.div>
 
         <motion.a
+          href="https://forms.gle/Mt4YqBtmzTEPw3EK7"
           ref={buttonRef}
           initial="hidden"
           animate="visible"
