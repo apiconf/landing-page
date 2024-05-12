@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 import highlightLogo from "../../assets/highlight-logo.svg";
 import Carousel from "./carousel";
 
-type Props = {};
-
 const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDE_COUNT = 5;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-function Higlight({}: Props) {
+function Higlight() {
   return (
     <>
       <div className="relative w-full bg-[#90EAF2] pt-16 md:pt-28 flex flex-col justify-center overflow-hidden">
