@@ -60,7 +60,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="w-full py-[72.5px] px-[8%] sm:px-[5%] 2xl:px-[7.4%] flex justify-between bg-[#2F20BF] shadow-[0_-40px_96px_-24px_#2F20BF33]">
-        <div className="max-w-[840px] w-full flex flex-col gap-y-8">
+        <div className="max-w-[870px] w-full flex flex-col gap-y-8">
           <div className="flex flex-col gap-4 text-white">
             <div className="flex flex-col gap-4">
               <motion.h3
