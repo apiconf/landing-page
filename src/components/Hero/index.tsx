@@ -104,7 +104,7 @@ const Hero = () => {
               ref={dateRef}
               className={heroStyles.date}
             >
-              13th July 2024
+              20th July 2024
             </motion.h3>
           </div>
           <a
