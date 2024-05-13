@@ -13,6 +13,7 @@ export const useIsVisible = (
   useEffect(() => {
     const handleScroll = () => {
       const currentRef = ref.current;
+
       if (currentRef) {
         const currentRefTop = currentRef.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
@@ -24,6 +25,7 @@ export const useIsVisible = (
         }
       }
     };
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => {
