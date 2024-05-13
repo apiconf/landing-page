@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { motion } from "framer-motion";
+import { useRef, useState } from "react";
+import { easeInOut, motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
 import aboutStyles from "./about.module.css";
 
@@ -10,6 +10,8 @@ const About = () => {
   const isH2Visible = useIsVisible(h2Ref);
   const isSubtitleVisible = useIsVisible(subtitleRef);
   const isRow2Visible = useIsVisible(row2Ref);
+  const [endpointIndex, setEndpointIndex] = useState(2)
+
   return (
     <section className={aboutStyles.aboutCont}>
       <div className={aboutStyles.row_one}>
@@ -171,10 +173,17 @@ const About = () => {
             </div>
           </div>
           <div className={aboutStyles.api_calls}>
-            <div>
-              <span className={`${aboutStyles.calls} ${aboutStyles.get}`}>
-                GET
-              </span>
+            <div className='cursor-pointer' onClick={() => setEndpointIndex(1)}>
+              {endpointIndex === 1 ? (
+                <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
+                  POST
+                </span>
+              ) : (
+                <span className={`${aboutStyles.calls} ${aboutStyles.get}`}>
+                  GET
+                </span>
+              )
+              }
               <div className={aboutStyles.api_url}>
                 <p>
                   <span>apiconf.net/api/</span>
@@ -183,64 +192,152 @@ const About = () => {
               </div>
               <h3 className={aboutStyles.builder}>The Builders</h3>
             </div>
-            <div>
-              <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
-                POST
-              </span>
+            <div className='cursor-pointer' onClick={() => setEndpointIndex(2)}>
+              {endpointIndex === 2 ? (
+                <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
+                  POST
+                </span>
+              ) : (
+                <span className={`${aboutStyles.calls} ${aboutStyles.get}`}>
+                  GET
+                </span>
+              )
+              }
               <div className={aboutStyles.api_url}>
                 <p>
                   <span>apiconf.net/api/</span>
                   <span>...</span>
                 </p>
               </div>
-              <h3 className={aboutStyles.builder}>The Builders</h3>
+              <h3 className={aboutStyles.builder}>The Curious Minds</h3>
             </div>
-            <div>
-              <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
-                POST
-              </span>
+            <div className='cursor-pointer' onClick={() => setEndpointIndex(3)}>
+              {endpointIndex === 3 ? (
+                <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
+                  POST
+                </span>
+              ) : (
+                <span className={`${aboutStyles.calls} ${aboutStyles.get}`}>
+                  GET
+                </span>
+              )
+              }
               <div className={aboutStyles.api_url}>
                 <p>
                   <span>apiconf.net/api/</span>
                   <span>...</span>
                 </p>
               </div>
-              <h3 className={aboutStyles.builder}>The Builders</h3>
+              <h3 className={aboutStyles.builder}>The Connectors</h3>
             </div>
-            <div>
-              <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
-                POST
-              </span>
+            <div className='cursor-pointer' onClick={() => setEndpointIndex(4)}>
+              {endpointIndex === 4 ? (
+                <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
+                  POST
+                </span>
+              ) : (
+                <span className={`${aboutStyles.calls} ${aboutStyles.get}`}>
+                  GET
+                </span>
+              )
+              }
               <div className={aboutStyles.api_url}>
                 <p>
                   <span>apiconf.net/api/</span>
                   <span>...</span>
                 </p>
               </div>
-              <h3 className={aboutStyles.builder}>The Builders</h3>
+              <h3 className={aboutStyles.builder}>The Visionaries</h3>
             </div>
           </div>
         </div>
         <div
-          className={`${aboutStyles.row_two_col} ${aboutStyles.row_two_col_two}`}
+          className={`${aboutStyles.row_two_col} ${aboutStyles.row_two_col_two} h-auto relative`}
         >
-          <div>
-            <h3 className={aboutStyles.head3_one}>The Builders</h3>
-          </div>
-          <div>
-            <h3 className={aboutStyles.head3}>Seasoned Developers</h3>
-            <p className={aboutStyles.para_dark}>
-              Expertise in software development and experience in harnessing the
-              power of APIs for intricate integrations and solutions.
-            </p>
-          </div>
-          <div>
-            <h3 className={aboutStyles.head3}>Emerging Tech Talents</h3>
-            <p className={aboutStyles.para_dark}>
-              Young and enthusiastic coders eager to explore the vast world of
-              APIs, bringing fresh perspectives and innovative approaches.
-            </p>
-          </div>
+          {endpointIndex === 1 ?
+            (<div className='flex flex-col justify-start items-start h-auto'>
+              <div>
+                <h3 className={aboutStyles.head3_one}>The Builders</h3>
+              </div>
+              <div>
+                <h3 className={aboutStyles.head3}>Seasoned Developers</h3>
+                <p className={aboutStyles.para_dark}>
+                  Expertise in software development and experience in harnessing the
+                  power of APIs for intricate integrations and solutions.
+                </p>
+              </div>
+              <div>
+                <h3 className={aboutStyles.head3}>Emerging Tech Talents</h3>
+                <p className={aboutStyles.para_dark}>
+                  Young and enthusiastic coders eager to explore the vast world of
+                  APIs, bringing fresh perspectives and innovative approaches.
+                </p>
+              </div>
+            </div>
+            ) :
+            endpointIndex === 2 ?
+              (<div
+                className='flex flex-col justify-start h-auto'>
+                <div>
+                  <h3 className={aboutStyles.head3_one}>Curious Minds</h3>
+                </div>
+                <div>
+                  <h3 className={aboutStyles.head3}>Enthusiasts</h3>
+                  <p className={aboutStyles.para_dark}>
+                    Individuals who while not directly involved in hands-on development,
+                    are intrigued by the potential and prospects of APIs,
+                    They could be from adjacent sectors like marketing, finance,
+                    or design, keen to understand how APIs influence their domains.
+                  </p>
+                </div>
+                <div>
+                  <h3 className={aboutStyles.head3}>Coding Newbies</h3>
+                  <p className={aboutStyles.para_dark}>
+                    They bring a blend of curiousity and ambition, while their journey in the tech world
+                    has just begun, their aspirations are sky-high. They're here to learn, network and get inspired.
+                  </p>
+                </div>
+              </div>) :
+              endpointIndex === 3 ?
+                (<div className='flex flex-col justify-start h-auto'>
+                  <div>
+                    <h3 className={aboutStyles.head3_one}>The Connectors</h3>
+                  </div>
+                  <div>
+                    <h3 className={aboutStyles.head3}>Seasoned Developers</h3>
+                    <p className={aboutStyles.para_dark}>
+                      Expertise in software development and experience in harnessing the
+                      power of APIs for intricate integrations and solutions.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className={aboutStyles.head3}>Emerging Tech Talents</h3>
+                    <p className={aboutStyles.para_dark}>
+                      Young and enthusiastic coders eager to explore the vast world of
+                      APIs, bringing fresh perspectives and innovative approaches.
+                    </p>
+                  </div>
+                </div>) :
+                (<div className='flex flex-col justify-start h-auto'>
+                  <div>
+                    <h3 className={aboutStyles.head3_one}>The Visionaries</h3>
+                  </div>
+                  <div>
+                    <h3 className={aboutStyles.head3}>Seasoned Developers</h3>
+                    <p className={aboutStyles.para_dark}>
+                      Expertise in software development and experience in harnessing the
+                      power of APIs for intricate integrations and solutions.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className={aboutStyles.head3}>Emerging Tech Talents</h3>
+                    <p className={aboutStyles.para_dark}>
+                      Young and enthusiastic coders eager to explore the vast world of
+                      APIs, bringing fresh perspectives and innovative approaches.
+                    </p>
+                  </div>
+                </div>)
+          }
         </div>
       </motion.div>
       <div className={aboutStyles.bottom_glow}></div>
