@@ -3,7 +3,7 @@ import Speaker from "./speakers";
 
 const Talks = () => {
   return (
-    <section className="relative z-20 w-full bg-[#2F20BF]">
+    <section id="spaces" className="relative z-20 w-full bg-[#2F20BF]">
       <Spaces />
       <Speaker />
     </section>

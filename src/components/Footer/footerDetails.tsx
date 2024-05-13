@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { useIsVisible } from "../../hooks";
+import { Link } from "react-router-dom";
+import { useIsVisible, useScreenWidth } from "../../hooks";
 import image3D from "../../assets/3D-Image.png";
 import conf2024 from "../../assets/conf-2024.png";
 import arrow from "../../assets/arrow-icon.svg";
@@ -19,6 +20,11 @@ const FooterDetails = () => {
   const isImage3DVisible = useIsVisible(image3DRef);
   const isImage3DMbVisible = useIsVisible(image3DMbRef, 1);
 
+  const { isLaptop } = useScreenWidth();
+
+  const isVisibleOnLaptop = (falseVal: boolean) =>
+    isLaptop ? isHeaderTextVisible : falseVal;
+
   return (
     <div className={footerDetailStyle.container}>
       <h2 ref={headerTextRef} className={footerDetailStyle.headerText}>
@@ -34,13 +40,16 @@ const FooterDetails = () => {
           API Conference
         </motion.span>
         <motion.span
-          initial={{ x: "-100%" }}
-          animate={{ x: isHeaderTextVisible ? "0%" : "-100%" }}
+          initial={{ x: "-100%", y: 0 }}
+          animate={{
+            x: isHeaderTextVisible ? "0%" : "-100%",
+            y: "100%",
+          }}
           transition={{
             duration: 1,
             ease: [0.35, 0, 0.25, 1],
           }}
-          className="block sm:hidden relative bottom-0 right-0"
+          className="block sm:hidden !rotate-90 relative bottom-0 right-0"
         >
           API Conference
         </motion.span>
@@ -51,7 +60,7 @@ const FooterDetails = () => {
           initial={{ y: 32, opacity: 0 }}
           animate={{
             y: isFooterNavVisible ? 0 : 32,
-            opacity: isFooterNavVisible ? 1 : 0,
+            opacity: isVisibleOnLaptop(isFooterNavVisible) ? 1 : 0,
           }}
           transition={{
             y: { duration: 0.5, ease: [0, 0, 0.75, 1], delay: 0.2 },
@@ -60,8 +69,31 @@ const FooterDetails = () => {
           className={footerDetailStyle.footerNav}
         >
           <li className={footerDetailStyle.link}>
-            <a href="#" className={footerDetailStyle.linkText}>
+            <Link to="/#about" className={footerDetailStyle.linkText}>
               about API conference
+            </Link>
+            <img
+              className={footerDetailStyle.linkIcon}
+              src={arrow}
+              alt="arrow-icon"
+            />
+          </li>
+          <li className={footerDetailStyle.link}>
+            <Link
+              to="/#become-a-sponsor"
+              className={footerDetailStyle.linkText}
+            >
+              Our Sponsors
+            </Link>
+            <img
+              className={footerDetailStyle.linkIcon}
+              src={arrow}
+              alt="arrow-icon"
+            />
+          </li>
+          <li className={footerDetailStyle.link}>
+            <a href="#" className={footerDetailStyle.linkText}>
+              Sessions
             </a>
             <img
               className={footerDetailStyle.linkIcon}
@@ -71,27 +103,7 @@ const FooterDetails = () => {
           </li>
           <li className={footerDetailStyle.link}>
             <a href="#" className={footerDetailStyle.linkText}>
-              something{" "}
-            </a>
-            <img
-              className={footerDetailStyle.linkIcon}
-              src={arrow}
-              alt="arrow-icon"
-            />
-          </li>
-          <li className={footerDetailStyle.link}>
-            <a href="#" className={footerDetailStyle.linkText}>
-              something{" "}
-            </a>
-            <img
-              className={footerDetailStyle.linkIcon}
-              src={arrow}
-              alt="arrow-icon"
-            />
-          </li>
-          <li className={footerDetailStyle.link}>
-            <a href="#" className={footerDetailStyle.linkText}>
-              speakers{" "}
+              speakers
             </a>
             <img
               className={footerDetailStyle.linkIcon}
@@ -105,7 +117,7 @@ const FooterDetails = () => {
           initial={{ y: 32, opacity: 0 }}
           animate={{
             y: isFooterSaluteVisible ? 0 : 32,
-            opacity: isFooterSaluteVisible ? 1 : 0,
+            opacity: isVisibleOnLaptop(isFooterNavVisible) ? 1 : 0,
           }}
           transition={{
             duration: 0.5,
@@ -142,7 +154,7 @@ const FooterDetails = () => {
         initial={{ y: 32, opacity: 0 }}
         animate={{
           y: isImage3DVisible ? 0 : 32,
-          opacity: isImage3DVisible ? 1 : 0,
+          opacity: isVisibleOnLaptop(isFooterNavVisible) ? 1 : 0,
         }}
         transition={{
           y: { duration: 0.5, ease: [0, 0, 0.75, 1], delay: 0.4 },

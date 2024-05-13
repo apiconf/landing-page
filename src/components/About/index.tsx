@@ -13,7 +13,7 @@ const About = () => {
   const [endpointIndex, setEndpointIndex] = useState(2)
 
   return (
-    <section className={aboutStyles.aboutCont}>
+    <section id="about" className={aboutStyles.aboutCont}>
       <div className={aboutStyles.row_one}>
         <div className={aboutStyles.headerCont}>
           <motion.h2

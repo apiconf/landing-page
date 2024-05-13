@@ -25,7 +25,7 @@ const Header = () => {
         </Link>
         <ul className="max-w-[133px] sm:max-w-[400px] lg:max-w-[520px] xl:max-w-[775px] 2xl:max-w-[894px] w-full flex justify-between xl:gap-x-6 2xl:gap-x-8 items-center">
           <li>
-            <a>
+            <Link to="/#spaces">
               <dl className="flex flex-col gap-1">
                 <dt className="font-bold text-lg sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
                   Spaces
@@ -34,10 +34,10 @@ const Header = () => {
                   Catch up on Twitter Spaces
                 </dd>
               </dl>
-            </a>
+            </Link>
           </li>
           <li>
-            <a>
+            <Link to="/#FAQ">
               <dl className="flex flex-col gap-1">
                 <dt className="font-bold text-lg sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
                   FAQs
@@ -46,17 +46,25 @@ const Header = () => {
                   Questions, Questions
                 </dd>
               </dl>
-            </a>
+            </Link>
           </li>
           <li className="hidden sm:inline">
-            <a className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl">
+            <a
+              href="https://lu.ma/apiconflagos24"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl"
+            >
               Register
             </a>
           </li>
           <li className="hidden sm:inline">
-            <a className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl">
+            <Link
+              to="/#become-a-sponsor"
+              className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl"
+            >
               <span className="hidden lg:inline">Become A</span> Sponsor
-            </a>
+            </Link>
           </li>
         </ul>
       </motion.nav>
