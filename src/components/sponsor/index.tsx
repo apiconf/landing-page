@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
 import InquireContact from "./card";
+import PostmanImage from "../../assets/Postman.svg";
+import Marquee from "react-fast-marquee";
 
 const Sponsor = () => {
   const headerRef = useRef(null);
@@ -70,7 +72,10 @@ const Sponsor = () => {
   };
 
   return (
-    <section className="w-full bg-sponsor sm:px-[5%] 2xl:px-[7.4%] pt-16 sm:py-12 flex flex-col items-center sm:items-start lg:items-stretch lg:flex-row lg:justify-between gap-16">
+    <section
+      id="become-a-sponsor"
+      className="w-full bg-sponsor sm:px-[5%] 2xl:px-[7.4%] pt-16 sm:py-12 flex flex-col items-center sm:items-start lg:items-stretch lg:flex-row lg:justify-between gap-16"
+    >
       <div className="lg:mb-[3.18%] px-[8%] sm:px-0 lg:flex flex-col justify-center space-y-8 sm:space-y-16">
         <motion.div
           ref={headerRef}
@@ -108,6 +113,7 @@ const Sponsor = () => {
         </motion.div>
 
         <motion.a
+          href="https://drive.google.com/file/d/1jigu4C3Len_5aA3mm-LinO2Gz7HgzIiQ/view?usp=sharing"
           ref={buttonRef}
           initial="hidden"
           animate="visible"
@@ -118,15 +124,35 @@ const Sponsor = () => {
             More Details in Deck
           </span>
         </motion.a>
+        <h2 className="w-full font-bold text-5xl text-center pt-32 pb-8 mb-16 md:hidden">
+          Our Sponsors
+        </h2>
       </div>
       <motion.div
         ref={bannerRef}
         initial="hidden"
         animate="visible"
         variants={bannerVariant}
-        className="block sm:hidden lg:block object-cover w-full h-[451.78px] lg:w-[40.414%] md:h-auto rounded-t-[32px] sm:rounded-[32px] bg-[url('/src/assets/sponsor.png')] bg-no-repeat bg-top bg-cover pt-[46.459%]"
-      ></motion.div>
+        className="block sm:hidden lg:block object-cover w-full h-[451.78px] lg:w-[40.414%] md:h-auto rounded-t-[32px] sm:rounded-[32px] bg-white"
+      >
+        <div className="grid grid-cols-1 mt-16 gap-y-16">
+          <SponsorsMarquee delay={2} />
+          <SponsorsMarquee />
+          <SponsorsMarquee delay={2} />
+        </div>
+      </motion.div>
     </section>
   );
 };
 export default Sponsor;
+
+function SponsorsMarquee({ delay = 0 }: { delay?: number }) {
+  return (
+    <Marquee delay={delay}>
+      <img src={PostmanImage} alt="Postman" className="mx-8 md:mx-4" />
+      <img src={PostmanImage} alt="Postman" className="mx-8 md:mx-4" />
+      <img src={PostmanImage} alt="Postman" className="mx-8 md:mx-4" />
+      <img src={PostmanImage} alt="Postman" className="mx-8 md:mx-4" />
+    </Marquee>
+  );
+}

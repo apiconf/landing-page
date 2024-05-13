@@ -104,10 +104,17 @@ const Hero = () => {
               ref={dateRef}
               className={heroStyles.date}
             >
-              13th July 2024
+              20th July 2024
             </motion.h3>
           </div>
-          <a className={heroStyles.register}>Register to Attend</a>
+          <a
+            className={heroStyles.register}
+            href="https://lu.ma/apiconflagos24"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Register to Attend
+          </a>
         </div>
         <figure className="hidden lg:block relative max-w-[27vw] 3xl:max-w-[469px] w-full">
           <motion.img
