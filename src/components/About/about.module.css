@@ -31,7 +31,7 @@
 
 /* second row, first column */
 .row_two_col_one {
-  @apply p-4 sm:p-2 md:p-4 xl:p-6 2xl:p-7 3xl:p-8 flex-col lg:flex-row sm:gap-4 xl:gap-8 items-start xl:items-center;
+  @apply p-4 sm:p-2 md:p-4 xl:p-6 2xl:p-7 3xl:p-8 flex-col lg:flex-row sm:gap-4 xl:gap-8 items-start;
 }
 .custom_transition {
   @apply transition-all duration-300 ease-linear;
@@ -79,24 +79,24 @@
   @apply block sm:hidden shrink-0;
 }
 .builder {
-  @apply ml-4 sm:ml-0 w-[140px] w-full text-[#1F1F1F] text-lg sm:text-xl xl:text-2xl font-bold whitespace-nowrap;
+  @apply ml-4 sm:ml-0 w-[140px] w-full text-[#1F1F1F] text-lg sm:text-xl xl:text-2xl font-bold whitespace-nowrap cursor-pointer;
 }
 
 /* second row, second column */
 .row_two_col_two {
-  @apply py-8 xl:py-10 2xl:py-14 3xl:py-16 px-4 lg:px-8 xl:px-10 2xl:px-14 3xl:px-16 flex-col gap-y-8 sm:gap-y-4 xl:gap-y-7 2xl:gap-y-8 justify-center;
+  @apply py-8 xl:py-10 2xl:py-14 3xl:py-16 px-4 lg:px-8 xl:px-10 2xl:px-14 3xl:px-16 flex-col gap-y-8 sm:gap-y-4 xl:gap-y-7 2xl:gap-y-8 justify-start items-start;
 }
 .row_two_col_two > div {
-  @apply flex flex-col gap-y-2;
+  @apply flex flex-col gap-y-8;
 }
 .para_dark {
-  @apply w-full text-[#1F1F1F] text-lg sm:text-xl xl:text-2xl leading-[22.32px] sm:leading-[24.8px] xl:leading-[29.76px];
+  @apply w-full text-[#1f1f1f] text-lg sm:text-xl xl:text-2xl leading-[22.32px] sm:leading-[24.8px] xl:leading-[29.76px];
 }
 .head3 {
   @apply w-full text-[#1F1F1F] text-lg sm:text-xl xl:text-2xl leading-[22.32px] sm:leading-[24.8px] xl:leading-[29.76px] font-bold;
 }
 .head3_one {
-  @apply w-full text-[#1F1F1F] text-2xl sm:text-xl xl:text-2xl leading-[29.76px] sm:leading-[24.8px] xl:leading-[29.76px] font-bold opacity-10;
+  @apply w-full text-[#1f1f1f2f] text-2xl sm:text-xl xl:text-2xl leading-[29.76px] sm:leading-[24.8px] xl:leading-[29.76px] font-bold;
 }
 
 .bottom_glow {
