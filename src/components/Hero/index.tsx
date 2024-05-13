@@ -60,7 +60,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="w-full py-[72.5px] px-[8%] sm:px-[5%] 2xl:px-[7.4%] flex justify-between bg-[#2F20BF] shadow-[0_-40px_96px_-24px_#2F20BF33]">
-        <div className="max-w-[840px] w-full flex flex-col gap-y-8">
+        <div className="max-w-[850px] w-full flex flex-col gap-y-8">
           <div className="flex flex-col gap-4 text-white">
             <div className="flex flex-col gap-4">
               <motion.h3
@@ -116,7 +116,7 @@ const Hero = () => {
             Register to Attend
           </a>
         </div>
-        <figure className="hidden lg:block relative max-w-[27vw] 3xl:max-w-[469px] w-full">
+        <figure className="hidden lg:block relative max-w-[24vw] xl:max-w-[27vw] 3xl:max-w-[469px] w-full">
           <motion.img
             initial={{ opacity: 0 }}
             animate={{ opacity: isFigureVisible ? 0 : 1 }}
