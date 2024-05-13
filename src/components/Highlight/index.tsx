@@ -1,5 +1,4 @@
 import { EmblaOptionsType } from "embla-carousel";
-import { Link } from "react-router-dom";
 import highlightLogo from "../../assets/highlight-logo.svg";
 import Carousel from "./carousel";
 
@@ -28,12 +27,12 @@ function Higlight() {
           >
             2023 Highlights
           </a>
-          <Link
+          <a
             className="text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
-            to="/"
+            href="https://lu.ma/apiconflagos24"
           >
             The Next Meetup
-          </Link>
+          </a>
         </div>
       </div>
     </>
