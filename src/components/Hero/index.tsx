@@ -13,14 +13,14 @@ const Hero = () => {
   const detailsRef = useRef(null);
   const dateRef = useRef(null);
   const figureRef = useRef(null);
-  const marqueeRef = useRef(null);
+  // const marqueeRef = useRef(null);
   const isElevateVisible = useIsVisible(elevateRef, -0.8);
   const isTheGoalVisible = useIsVisible(theGoalRef, -0.6);
-  const isLagosVisible = useIsVisible(lagosRef, 0.8);
-  const isDetailsVisible = useIsVisible(detailsRef, 0.8);
-  const isDateVisible = useIsVisible(dateRef, 0.8);
-  const isFigureVisible = useIsVisible(figureRef, 0.6);
-  const isMarqueeVisible = useIsVisible(marqueeRef, 1);
+  const isLagosVisible = useIsVisible(lagosRef, -0.8);
+  const isDetailsVisible = useIsVisible(detailsRef, -0.8);
+  const isDateVisible = useIsVisible(dateRef, -0.8);
+  const isFigureVisible = useIsVisible(figureRef, -0.8);
+  // const isMarqueeVisible = useIsVisible(marqueeRef, 1);
 
   return (
     <section className="w-full">
@@ -65,7 +65,7 @@ const Hero = () => {
             <div className="flex flex-col gap-4">
               <motion.h3
                 initial={{ y: 32 }}
-                animate={{ y: isLagosVisible ? 0 : 32 }}
+                animate={{ y: isLagosVisible ? 32 : 0 }}
                 transition={{
                   duration: 1,
                   ease: [0, 0, 0.25, 1],
@@ -79,8 +79,8 @@ const Hero = () => {
               <motion.h4
                 initial={{ y: 32, opacity: 0 }}
                 animate={{
-                  y: isDetailsVisible ? 0 : 32,
-                  opacity: isDetailsVisible ? 1 : 0,
+                  y: isDetailsVisible ? 32 : 0,
+                  opacity: isDetailsVisible ? 0 : 1,
                 }}
                 transition={{
                   duration: 1,
@@ -95,7 +95,7 @@ const Hero = () => {
             </div>
             <motion.h3
               initial={{ y: 32 }}
-              animate={{ y: isDateVisible ? 0 : 32 }}
+              animate={{ y: isDateVisible ? 32 : 0 }}
               transition={{
                 duration: 1,
                 ease: [0, 0, 0.25, 1],
@@ -112,7 +112,7 @@ const Hero = () => {
         <figure className="hidden lg:block relative max-w-[27vw] 3xl:max-w-[469px] w-full">
           <motion.img
             initial={{ opacity: 0 }}
-            animate={{ opacity: isFigureVisible ? 1 : 0 }}
+            animate={{ opacity: isFigureVisible ? 0 : 1 }}
             transition={{
               duration: 1,
               ease: [0, 0, 0.25, 1],
@@ -125,7 +125,7 @@ const Hero = () => {
           />
         </figure>
       </div>
-      <motion.div
+      {/* <motion.div
         initial={{ y: 32 }}
         animate={{ y: isMarqueeVisible ? 0 : 32 }}
         transition={{
@@ -134,19 +134,19 @@ const Hero = () => {
           delay: 0.4,
         }}
         ref={marqueeRef}
+      >   
+      </motion.div> */}
+      <Marquee
+        autoFill={true}
+        className="w-full py-3 bg-[#E1EF9A] flex overflow-hidden"
       >
-        <Marquee
-          autoFill={true}
-          className="w-full py-3 bg-[#E1EF9A] flex overflow-hidden"
-        >
-          <h4 className=" flex justify-between items-center">
-            <span className="w-[786px] font-bold text-[64px] leading-[52.52px] mx-8">
-              API Conference Lagos 2024
-            </span>
-            <img src={scrollImg} alt="" className="w-[56.6px]" />
-          </h4>
-        </Marquee>
-      </motion.div>
+        <h4 className=" flex justify-between items-center">
+          <span className="w-[786px] font-bold text-[64px] leading-[52.52px] mx-8">
+            API Conference Lagos 2024
+          </span>
+          <img src={scrollImg} alt="" className="w-[56.6px]" />
+        </h4>
+      </Marquee>
     </section>
   );
 };
