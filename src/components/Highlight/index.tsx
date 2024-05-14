@@ -21,16 +21,16 @@ function Higlight() {
 
         <div className="flex items-center justify-between py-8 md:py-16 px-[8%] sm:px-[5%] 2xl:px-[7.4%]">
           <a
-            className="text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
+            className="w-min hsm:w-fit text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
             href="https://photos.app.goo.gl/eCNfTAnKczQfqu9x5"
           >
             2023 Highlights
           </a>
           <a
-            className="text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
+            className="w-min hsm:w-fit text-black font-bold z-10 text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px]"
             href="https://lu.ma/apiconflagos24"
           >
-            The Next Meetup
+            <span className="hidden hsm:inline">The</span> Nest Meetup
           </a>
         </div>
       </div>
