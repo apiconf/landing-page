@@ -174,16 +174,15 @@ const About = () => {
           </div>
           <div className={aboutStyles.api_calls}>
             <div className='cursor-pointer' onClick={() => setEndpointIndex(1)}>
-              {endpointIndex === 1 ? (
-                <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
+              <div className='relative w-full'>
+                <span className={`${aboutStyles.calls} ${aboutStyles.post} absolute left-0 transition-opacity duration-500  ${endpointIndex === 1 ? 'opacity-0' : 'opacity-100'} `}>
                   POST
                 </span>
-              ) : (
-                <span className={`${aboutStyles.calls} ${aboutStyles.get}`}>
+                <span className={`${aboutStyles.calls} ${aboutStyles.get} absolute left-0 transition-opacity duration-500 ${endpointIndex === 1 ? 'opacity-100' : 'opacity-0'}`}>
                   GET
                 </span>
-              )
-              }
+              </div>
+
               <div className={aboutStyles.api_url}>
                 <p>
                   <span>apiconf.net/api/</span>
@@ -193,16 +192,14 @@ const About = () => {
               <h3 className={aboutStyles.builder}>The Builders</h3>
             </div>
             <div className='cursor-pointer' onClick={() => setEndpointIndex(2)}>
-              {endpointIndex === 2 ? (
-                <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
+              <div className='relative w-full'>
+                <span className={`${aboutStyles.calls} ${aboutStyles.post} absolute left-0 transition-opacity duration-500 ${endpointIndex === 2 ? 'opacity-0' : 'opacity-100'}`}>
                   POST
                 </span>
-              ) : (
-                <span className={`${aboutStyles.calls} ${aboutStyles.get}`}>
+                <span className={`${aboutStyles.calls} ${aboutStyles.get} absolute left-0 transition-opacity duration-500 ${endpointIndex === 2 ? 'opacity-100' : 'opacity-0'}`}>
                   GET
                 </span>
-              )
-              }
+              </div>
               <div className={aboutStyles.api_url}>
                 <p>
                   <span>apiconf.net/api/</span>
@@ -212,16 +209,14 @@ const About = () => {
               <h3 className={aboutStyles.builder}>The Curious Minds</h3>
             </div>
             <div className='cursor-pointer' onClick={() => setEndpointIndex(3)}>
-              {endpointIndex === 3 ? (
-                <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
+              <div className='relative w-full'>
+                <span className={`${aboutStyles.calls} ${aboutStyles.post} absolute left-0 transition-opacity duration-500 ${endpointIndex === 3 ? 'opacity-0' : 'opacity-100'}`}>
                   POST
                 </span>
-              ) : (
-                <span className={`${aboutStyles.calls} ${aboutStyles.get}`}>
+                <span className={`${aboutStyles.calls} ${aboutStyles.get} absolute left-0 transition-opacity duration-500 ${endpointIndex === 3 ? 'opacity-100' : 'opacity-0'}`}>
                   GET
                 </span>
-              )
-              }
+              </div>
               <div className={aboutStyles.api_url}>
                 <p>
                   <span>apiconf.net/api/</span>
@@ -231,16 +226,14 @@ const About = () => {
               <h3 className={aboutStyles.builder}>The Connectors</h3>
             </div>
             <div className='cursor-pointer' onClick={() => setEndpointIndex(4)}>
-              {endpointIndex === 4 ? (
-                <span className={`${aboutStyles.calls} ${aboutStyles.post}`}>
+              <div className='relative w-full'>
+                <span className={`${aboutStyles.calls} ${aboutStyles.post} absolute left-0 transition-opacity duration-500 ${endpointIndex === 4 ? 'opacity-0' : 'opacity-100'}`}>
                   POST
                 </span>
-              ) : (
-                <span className={`${aboutStyles.calls} ${aboutStyles.get}`}>
+                <span className={`${aboutStyles.calls} ${aboutStyles.get} absolute left-0 transition-opacity duration-500 ${endpointIndex === 4 ? 'opacity-100' : 'opacity-0'}`}>
                   GET
                 </span>
-              )
-              }
+              </div>
               <div className={aboutStyles.api_url}>
                 <p>
                   <span>apiconf.net/api/</span>
@@ -251,11 +244,12 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div
+        <motion.div
+          initial={{ height: '470px' }} animate={{ height: endpointIndex === 2 ? '520px' : endpointIndex === 4 ? '500px' : '470px' }}
           className={`${aboutStyles.row_two_col} ${aboutStyles.row_two_col_two} h-auto relative`}
         >
-          {endpointIndex === 1 ?
-            (<div className='flex flex-col justify-start items-start h-auto'>
+          <div className='flex flex-col justify-start items-start h-auto w-full relative'>
+            <div className={`flex flex-col gap-6 justify-between absolute left-0 top-0 w-full h-full transition-opacity duration-300 ${endpointIndex === 1 ? 'opacity-100' : 'opacity-0'}`}>
               <div>
                 <h3 className={aboutStyles.head3_one}>The Builders</h3>
               </div>
@@ -274,74 +268,72 @@ const About = () => {
                 </p>
               </div>
             </div>
-            ) :
-            endpointIndex === 2 ?
-              (<div
-                className='flex flex-col justify-start h-auto'>
-                <div>
-                  <h3 className={aboutStyles.head3_one}>Curious Minds</h3>
-                </div>
-                <div>
-                  <h3 className={aboutStyles.head3}>Enthusiasts</h3>
-                  <p className={aboutStyles.para_dark}>
-                    Individuals who while not directly involved in hands-on development,
-                    are intrigued by the potential and prospects of APIs,
-                    They could be from adjacent sectors like marketing, finance,
-                    or design, keen to understand how APIs influence their domains.
-                  </p>
-                </div>
-                <div>
-                  <h3 className={aboutStyles.head3}>Coding Newbies</h3>
-                  <p className={aboutStyles.para_dark}>
-                    They bring a blend of curiousity and ambition, while their journey in the tech world
-                    has just begun, their aspirations are sky-high. They're here to learn, network and get inspired.
-                  </p>
-                </div>
-              </div>) :
-              endpointIndex === 3 ?
-                (<div className='flex flex-col justify-start h-auto'>
-                  <div>
-                    <h3 className={aboutStyles.head3_one}>The Connectors</h3>
-                  </div>
-                  <div>
-                    <h3 className={aboutStyles.head3}>Seasoned Developers</h3>
-                    <p className={aboutStyles.para_dark}>
-                      Expertise in software development and experience in harnessing the
-                      power of APIs for intricate integrations and solutions.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className={aboutStyles.head3}>Emerging Tech Talents</h3>
-                    <p className={aboutStyles.para_dark}>
-                      Young and enthusiastic coders eager to explore the vast world of
-                      APIs, bringing fresh perspectives and innovative approaches.
-                    </p>
-                  </div>
-                </div>) :
-                (<div className='flex flex-col justify-start h-auto'>
-                  <div>
-                    <h3 className={aboutStyles.head3_one}>The Visionaries</h3>
-                  </div>
-                  <div>
-                    <h3 className={aboutStyles.head3}>Seasoned Developers</h3>
-                    <p className={aboutStyles.para_dark}>
-                      Expertise in software development and experience in harnessing the
-                      power of APIs for intricate integrations and solutions.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className={aboutStyles.head3}>Emerging Tech Talents</h3>
-                    <p className={aboutStyles.para_dark}>
-                      Young and enthusiastic coders eager to explore the vast world of
-                      APIs, bringing fresh perspectives and innovative approaches.
-                    </p>
-                  </div>
-                </div>)
-          }
-        </div>
+            <div className={`flex flex-col gap-6 justify-between absolute left-0 top-0 w-full h-full transition-opacity duration-300 ${endpointIndex === 2 ? 'opacity-100' : 'opacity-0'}`}>
+              <div>
+                <h3 className={aboutStyles.head3_one}>The Curious Minds</h3>
+              </div>
+              <div>
+                <h3 className={aboutStyles.head3}>Enthusiasts</h3>
+                <p className={aboutStyles.para_dark}>
+                  Individuals who, while not directly involved in hands-on development,
+                  are intrigued by the potential and prospects of APIs,
+                  They could be from adjacent sectors like marketing, finance,
+                  or design, keen to understand how APIs influence their domains.
+                </p>
+              </div>
+              <div>
+                <h3 className={aboutStyles.head3}>Coding Newbies</h3>
+                <p className={aboutStyles.para_dark}>
+                  They bring a blend of curiousity and ambition, while their journey in the tech world
+                  has just begun, their aspirations are sky-high. They're here to learn, network and get inspired.
+                </p>
+              </div>
+            </div>
+            <div className={`flex flex-col gap-6 justify-between absolute left-0 top-0 w-full h-full transition-opacity duration-300 ${endpointIndex === 3 ? 'opacity-100' : 'opacity-0'}`}>
+              <div>
+                <h3 className={aboutStyles.head3_one}>The Connectors</h3>
+              </div>
+              <div>
+                <h3 className={aboutStyles.head3}>Industry Influencers</h3>
+                <p className={aboutStyles.para_dark}>
+                  They don't just observe the trends; they set them. With vast followers, these individuals have the power
+                  to amplify messages and shape opinions.
+                </p>
+              </div>
+              <div>
+                <h3 className={aboutStyles.head3}>API Vendors and Solution Providers</h3>
+                <p className={aboutStyles.para_dark}>
+                  The entities that provide the tools, platforms, and solutions which
+                  developers and companies rely upon. They're always on the prowl for new partnerships, collaborations, and opportunities.
+                </p>
+              </div>
+            </div>
+            <div className={`flex flex-col gap-6 justify-between absolute left-0 top-0 w-full h-full transition-opacity duration-300 ${endpointIndex === 4 ? 'opacity-100' : 'opacity-0'}`}>
+              <div>
+                <h3 className={aboutStyles.head3_one}>The Visionaries</h3>
+              </div>
+              <div>
+                <h3 className={aboutStyles.head3}>Tech Strategists & Decision Makers</h3>
+                <p className={aboutStyles.para_dark}>
+                  Senior management and executives who see the larger picture. They gauge market trends, forecast future trajectories,
+                  and make pivotal decisions that shape the tech landscape.
+                </p>
+              </div>
+              <div>
+                <h3 className={aboutStyles.head3}>Startup Founders</h3>
+                <p className={aboutStyles.para_dark}>
+                  The problem solvers who embark on the challenging journey of turning visions into reality. They're always on the lookout for
+                  leveraging APIs to offer innovative solutions to everyday problems.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </motion.div>
       <div className={aboutStyles.bottom_glow}></div>
-    </section>
+    </section >
   );
 };
 export default About;
+
+
