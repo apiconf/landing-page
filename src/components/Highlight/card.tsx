@@ -13,7 +13,7 @@ function HiglightCard({ url, alt }: HighlightPicsProps) {
       {/* Use an Image instead */}
       <div className="h-[95%] w-full bg-[#000000] rounded-[64px] -rotate-2 relative overflow-hidden">
         <img
-          src={url ? `${url}` : sampleImg}
+          src={url ? url : sampleImg}
           alt={alt ? alt : ""}
           className="w-full h-full object-cover"
         />
