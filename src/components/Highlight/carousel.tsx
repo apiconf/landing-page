@@ -5,7 +5,7 @@ import HiglightCard from "./card";
 import styles from "./css/style.module.css";
 
 type PropType = {
-  slides: number[];
+  slides: { id: number; url: string; alt: string }[];
   options?: EmblaOptionsType;
 };
 
@@ -42,7 +42,7 @@ const Carousel: React.FC<PropType> = (props) => {
         setSpan((num) => (num += 1));
       }
 
-      if (Math.abs(span) < 5) return;
+      if (Math.abs(span) < 10) return;
 
       if (span > 0) {
         emblaApi.scrollPrev();
@@ -76,14 +76,12 @@ const Carousel: React.FC<PropType> = (props) => {
     };
   }, [swipeHandler]);
 
-  const data = { url: "", alt: "" };
-
   return (
     <div className={styles.embla}>
       <div className={styles["embla__viewport"]} ref={emblaRef}>
         <div className={styles["embla__container"]}>
-          {slides.map((index) => (
-            <HiglightCard key={index} {...data} id={index} />
+          {slides.map((slide, index) => (
+            <HiglightCard key={index} {...slide} />
           ))}
         </div>
       </div>
