@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
+        hsm: "330px",
         "3xl": "1650px",
       },
       fontFamily: {

@@ -11,7 +11,7 @@ function HiglightCard({ url, alt }: HighlightPicsProps) {
   return (
     <div className={styles["embla__slide"]}>
       {/* Use an Image instead */}
-      <div className="h-[95%] w-full bg-[#000000] rounded-[64px] -rotate-2 relative">
+      <div className="h-[95%] w-full bg-[#000000] rounded-[64px] -rotate-2 relative overflow-hidden">
         <img
           src={url ? url : sampleImg}
           alt={alt ? alt : ""}
