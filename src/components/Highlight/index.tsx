@@ -1,10 +1,9 @@
 import { EmblaOptionsType } from "embla-carousel";
 import highlightLogo from "../../assets/highlight-logo.svg";
 import Carousel from "./carousel";
+import SLIDES from "./highlight.json";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
-const SLIDE_COUNT = 5;
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 function Higlight() {
   return (
