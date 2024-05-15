@@ -1,11 +1,12 @@
 import { EmblaOptionsType } from "embla-carousel";
 import highlightLogo from "../../assets/highlight-logo.svg";
 import Carousel from "./carousel";
-import SLIDES from "./highlight.json";
+import { useGetSlides } from "../../hooks";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 
 function Higlight() {
+  const SLIDES = useGetSlides();
   return (
     <>
       <div className="relative w-full bg-[#90EAF2] pt-16 md:pt-28 flex flex-col justify-center overflow-hidden">
