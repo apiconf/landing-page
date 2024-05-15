@@ -102,7 +102,7 @@ const FooterDetails = () => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <a href="#" className={footerDetailStyle.linkText}>
+            <a href="/speakers" className={footerDetailStyle.linkText}>
               speakers
             </a>
             <img
