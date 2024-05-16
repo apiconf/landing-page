@@ -92,9 +92,9 @@ const FooterDetails = () => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <a href="#" className={footerDetailStyle.linkText}>
+            <Link to="/sessions" className={footerDetailStyle.linkText}>
               Sessions
-            </a>
+            </Link>
             <img
               className={footerDetailStyle.linkIcon}
               src={arrow}
@@ -102,9 +102,9 @@ const FooterDetails = () => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <a href="/speakers" className={footerDetailStyle.linkText}>
+            <Link to="/speakers" className={footerDetailStyle.linkText}>
               speakers
-            </a>
+            </Link>
             <img
               className={footerDetailStyle.linkIcon}
               src={arrow}
