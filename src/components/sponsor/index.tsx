@@ -114,6 +114,8 @@ const Sponsor = () => {
 
         <motion.a
           href="https://drive.google.com/file/d/1jigu4C3Len_5aA3mm-LinO2Gz7HgzIiQ/view?usp=sharing"
+          rel="noopener noreferrer"
+          target="_blank"
           ref={buttonRef}
           initial="hidden"
           animate="visible"
