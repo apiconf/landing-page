@@ -62,20 +62,20 @@ const Spaces = () => {
         <Space
           iconOne={Mic}
           iconTwo={MicFrequency}
-          title="API Error Handling"
-          subTitle="@Anitaihuman • 30th March 2024"
+          title="API Security: Strategies for Protecting Sensitive Data"
+          subTitle="@PaschalDev • 18th May 2024"
           btnIcon={ArrowUp}
           btnText="Play Recording"
-          link="https://lu.ma/apiconflagos24"
+          link="https://x.com/i/spaces/1lPKqbVRmqAGb"
         />
         <Space
           iconOne={Mic}
           iconTwo={MicFrequency}
-          title="API Error Handling"
-          subTitle="@Anitaihuman • 30th March 2024"
+          title="Best Practices for Integrating APIs with Mobile Applications"
+          subTitle="@MajorE_1 • 11th May 2024"
           btnIcon={ArrowUp}
           btnText="Play Recording"
-          link="https://lu.ma/apiconflagos24"
+          link="https://x.com/i/spaces/1OyJAWpymdwKb"
         />
       </motion.div>
     </section>
