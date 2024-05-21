@@ -1,11 +1,10 @@
-import "./FAQs.css";
-
-import FaqItem from "./FAQs";
+import "./faqs.css";
+import FaqItem from "./faqs";
 import decoration from "../../assets/faq-decoration.svg";
 
 const Faq = () => {
   return (
-    <div className="faq-section">
+    <div className="w-full overflow-hidden faq-section">
       <div className="faq-title" id="faq">
         <h1>Frequently Asked Questions</h1>
         <img src={decoration} alt="" />

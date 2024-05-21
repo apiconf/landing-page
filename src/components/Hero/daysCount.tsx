@@ -6,7 +6,7 @@ import IconTimer from "../../assets/icon-play.svg";
 export const timeDifference = () => {
   let message = "3 Days to Go";
   const currentDateTime = DateTime.local().setZone("UTC+1");
-  const eventDateTime = DateTime.fromISO("2024-07-13T12:00:00").setZone(
+  const eventDateTime = DateTime.fromISO("2024-07-20T12:00:00").setZone(
     "UTC+1"
   );
 
