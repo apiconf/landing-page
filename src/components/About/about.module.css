@@ -61,10 +61,10 @@
   @apply rounded-[32px] h-[30px] flex justify-center items-center whitespace-nowrap text-base xl:text-lg leading-[19.84px] xl:leading-[29.76px];
 }
 .get {
-  @apply min-w-[52px] xl:min-w-[65px] w-[52px] xl:w-[65px] bg-[#E1EF9A] text-[#2F20BF];
+  @apply min-w-[52px] xl:min-w-[65px] w-[52px] xl:w-[65px];
 }
 .post {
-  @apply min-w-[62px] xl:min-w-[77px] w-[62px] xl:w-[77px] bg-[#ECC89D] text-[#ffffff];
+  @apply min-w-[62px] xl:min-w-[77px] w-[62px] xl:w-[77px];
 }
 .api_url {
   @apply shrink max-w-[158px] sm:max-w-[168px] w-full overflow-hidden align-middle;
