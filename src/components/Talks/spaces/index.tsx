@@ -7,6 +7,88 @@ import BGSpacesMobile from "../../../assets/Spaces-mobile.png";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../../hooks";
+import SpacesCarousel from "./spaces-carousel";
+
+type SpaceItem = {
+  key: string;
+  title: string;
+  subTitle: string;
+  link: string;
+  iconOne?: string;
+  iconTwo?: string;
+  btnIcon?: string;
+  btnText?: string;
+};
+
+const spaceItems: SpaceItem[] = [
+  {
+    key: "API_Versioning_and_Backward_Compatibility",
+    title: "API Versioning and Backward Compatibility.",
+    subTitle: "@horlaarsco • 25th May 2024",
+    link: "https://x.com/i/spaces/1BRKjPYNjbRJw",
+  },
+  {
+    key: "API_Security_Strategies_for_Protecting_Sensitive_Data",
+    title: "API Security: Strategies for Protecting Sensitive Data",
+    subTitle: "@PaschalDev • 18th May 2024",
+    link: "https://x.com/i/spaces/1lPKqbVRmqAGb",
+  },
+  {
+    key: "Best_Practices_for_Integrating_APIs_with_Mobile_Applications",
+    title: "Best Practices for Integrating APIs with Mobile Applications",
+    subTitle: "@MajorE_1 • 11th May 2024",
+    link: "https://x.com/i/spaces/1OyJAWpymdwKb",
+  },
+  {
+    key: "API_and_Webhooks",
+    title: "API & Webhooks",
+    subTitle: "@subomiOluwalana • 4th May 2024",
+    link: "https://x.com/i/spaces/1jMJgmOdMOmKL",
+  },
+  {
+    key: "API_Monitoring_and_Observability",
+    title: "API Monitoring and Observability",
+    subTitle: "@tonialaribe • 27th April 2024",
+    link: "https://x.com/i/spaces/1eaKbgVgblQGX",
+  },
+  {
+    key: "Web_API_Security_Risks",
+    title: "Web API Security Risks",
+    subTitle: "@bigdevlarry • 20th April 2024",
+    link: "https://x.com/i/spaces/1gqxvQploXOJB",
+  },
+  {
+    key: "Best_Practices_for_Testing_APIs_Effectively",
+    title: "Best Practices for Testing APls Effectively",
+    subTitle: "@chidi_godwn • 13th April 2024",
+    link: "https://x.com/i/spaces/1MYxNojoXkyKw",
+  },
+  {
+    key: "AMA_Session_With_The_Team",
+    title: "AMA Session With The Team",
+    subTitle: "@oluwabamikemi • 6th April 2024",
+    link: "https://x.com/i/spaces/1lPKqbwmnNNGb",
+  },
+  {
+    key: "Best_Practices_for_API_Error_Handling",
+    title: "Best Practices for API Error Handling",
+    subTitle: "@lucciddev • 30th March 2024",
+    link: "https://x.com/i/spaces/1vOxwjvoOvmJB",
+  },
+  {
+    key: "Best_Practices_for_writing_good_API_Documentation",
+    title: "Best Practices for writing good API Documentation",
+    subTitle: "@Anita_ihuman • 23th March 2024",
+    link: "https://x.com/i/spaces/1vAxRvggRrPxl",
+  },
+  {
+    key: "API_Literacy_101_What_should_developers_know_about_APIs_that_they_don't",
+    title:
+      "API Literacy 101: What should developers know about APIs that they don't?",
+    subTitle: "@theshalvah & @chukwurah__ • 27th January 2024",
+    link: "https://x.com/i/spaces/1RDxllOoRPMxL",
+  },
+];
 
 const Spaces = () => {
   const bgSpacesMobileRef = useRef(null);
@@ -59,24 +141,20 @@ const Spaces = () => {
         ref={spacesInnerContainerRef}
         className="w-full py-32 md:pt-[12.091%] md:pb-[9.8154%] 3xl:pt-[178px] 3xl:pb-[144.5px] relative z-50 flex md:flex-row flex-col justify-center gap-8"
       >
-        <Space
-          iconOne={Mic}
-          iconTwo={MicFrequency}
-          title="API Error Handling"
-          subTitle="@Anitaihuman • 30th March 2024"
-          btnIcon={ArrowUp}
-          btnText="Play Recording"
-          link="https://lu.ma/apiconflagos24"
-        />
-        <Space
-          iconOne={Mic}
-          iconTwo={MicFrequency}
-          title="API Error Handling"
-          subTitle="@Anitaihuman • 30th March 2024"
-          btnIcon={ArrowUp}
-          btnText="Play Recording"
-          link="https://lu.ma/apiconflagos24"
-        />
+        <SpacesCarousel>
+          {spaceItems.map((item) => (
+            <Space
+              key={item.key}
+              title={item.title}
+              subTitle={item.subTitle}
+              link={item.link}
+              iconOne={item.iconOne ?? Mic}
+              iconTwo={item.iconTwo ?? MicFrequency}
+              btnIcon={item.btnIcon ?? ArrowUp}
+              btnText={item.btnText ?? "Play Recording"}
+            />
+          ))}
+        </SpacesCarousel>
       </motion.div>
     </section>
   );
