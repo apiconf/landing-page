@@ -24,8 +24,8 @@ const Space = ({
       className={`${styles.emblaSlide} min-w-[80%] sm:min-w-0 md:mx-8 min-h-[14.7rem] transform`}
     >
       <div className="w-[112px] flex gap-4">
-        <img src={iconOne} />
-        <img className="hidden sm:block" src={iconTwo} />
+        <img src={iconOne} alt="Mic icon" />
+        <img className="hidden sm:block" src={iconTwo} alt="Soundwave" />
       </div>
       <div className="text-primary-black flex flex-col gap-3">
         <h3 className="text-2xl leading-none font-bold text-inherit">
