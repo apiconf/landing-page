@@ -36,9 +36,9 @@ const SpacesCarousel = ({ children }: props) => {
 
       // reduce the span if you swipe to the right, increase the span if you swipe to the left
       if (e.deltaX > 0) {
-        setSpan((num) => (num -= 1));
+        setSpan((num) => num - 1);
       } else {
-        setSpan((num) => (num += 1));
+        setSpan((num) => num + 1);
       }
 
       if (Math.abs(span) < 10) return;
