@@ -70,7 +70,7 @@
   @apply shrink max-w-[158px] sm:max-w-[168px] w-full overflow-hidden align-middle;
 }
 .api_url > p {
-  @apply pl-4 sm:pl-0 flex w-full text-[#D9D9D9] text-lg sm:text-xl xl:text-2xl font-bold whitespace-nowrap;
+  @apply pl-4 sm:pl-0 flex w-full text-lg sm:text-xl xl:text-2xl font-bold whitespace-nowrap;
 }
 .api_url > p > span:nth-child(1) {
   @apply shrink overflow-hidden;
