@@ -45,6 +45,7 @@ export default {
         "sm-aboutSectionBg": "url('/src/assets/sm-about-section-bg.svg')",
         sponsor: `linear-gradient(180deg, #90EAF2 66.67%, #FFFFFF 100%)`,
         highlight: `linear-gradient(0deg, #90EAF2, #90EAF2)`,
+        confirmation: "url('/src/assets/confirmation-background.png')",
       },
       borderRadius: {
         "6xl": "32px",
