@@ -90,7 +90,6 @@ const Hero = () => {
                 ref={detailsRef}
                 className="font-normal text-lg leading-[22.32px]"
               >
-                More Details Soon
               </motion.h4>
             </div>
             <motion.h3

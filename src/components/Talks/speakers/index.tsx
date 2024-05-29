@@ -29,7 +29,9 @@ const Speaker = () => {
           Speak at APIConf Lagos 2024
         </h2>
         <p className="text-inherit opacity-90 pt-8 pb-8 font-medium w-full sm:w-[73%] lg:text-left text-2xl leading-[29.76px]">
-          Some body of text to accompany visually solid idea per section.
+          Our speakers are pioneers and innovators, drawn from a variety of industries, all united by their
+          expertise in APIs. Stay tuned as we reveal our lineup of
+          thought leaders and industry veterans who will provide valuable perspectives and inspiring stories.
         </p>
         <motion.a
           initial={{ y: 32, opacity: 0 }}
