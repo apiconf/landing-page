@@ -20,7 +20,7 @@ function App() {
         <About />
         <Talks />
         <Higlight />
-        <Sponsor />
+        {/* <Sponsor /> */}
         <FAQs />
       </main>
       <Footer />
