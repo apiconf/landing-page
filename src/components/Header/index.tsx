@@ -59,12 +59,12 @@ const Header = () => {
             </a>
           </li>
           <li className="hidden sm:inline">
-            {/* <Link
+            <Link
               to="/#become-a-sponsor"
               className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl"
             >
               <span className="hidden lg:inline">Become A</span> Sponsor
-            </Link> */}
+            </Link>
           </li>
         </ul>
       </motion.nav>
