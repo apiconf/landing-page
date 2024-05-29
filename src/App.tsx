@@ -7,7 +7,7 @@ import Talks from "./components/Talks";
 import FAQs from "./components/FAQs";
 import Footer from "./components/Footer";
 import Higlight from "./components/Highlight";
-import Sponsor from "./components/sponsor";
+// import Sponsor from "./components/sponsor";
 import ScrollToAnchor from "./components/ScrollToAnchor";
 
 function App() {
