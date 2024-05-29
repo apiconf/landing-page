@@ -137,7 +137,7 @@ const Sponsor = () => {
         variants={bannerVariant}
         className="block sm:hidden lg:block object-cover w-full h-[451.78px] lg:w-[40.414%] md:h-auto rounded-t-[32px] sm:rounded-[32px] bg-white"
       >
-        <div className="grid grid-cols-1 mt-16 gap-y-16">
+        <div className="grid grid-cols-1 mt-16 gap-y-16 blur-2xl">
           <SponsorsMarquee delay={2} />
           <SponsorsMarquee />
           <SponsorsMarquee delay={2} />
