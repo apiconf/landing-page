@@ -78,7 +78,7 @@ const FooterDetails = () => {
               alt="arrow-icon"
             />
           </li>
-          {/* <li className={footerDetailStyle.link}>
+          <li className={footerDetailStyle.link}>
             <Link
               to="/#become-a-sponsor"
               className={footerDetailStyle.linkText}
@@ -90,7 +90,7 @@ const FooterDetails = () => {
               src={arrow}
               alt="arrow-icon"
             />
-          </li> */}
+          </li>
           <li className={footerDetailStyle.link}>
             <a href="#" className={footerDetailStyle.linkText}>
               Sessions
