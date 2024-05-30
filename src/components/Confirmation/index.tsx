@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useRef } from "react";
 import Styles from "./confirmation.module.css";
 import { toPng } from "html-to-image";
 
@@ -27,6 +27,7 @@ export default function Confirmation() {
     "/src/assets/confirmation-default-bg.svg"
   );
   const [isGenerateBtnHidden, setIsGenerateBtnHidden] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files! || []);
@@ -53,14 +54,15 @@ export default function Confirmation() {
       alert("Please select an image.");
       return;
     }
-
     setIsGenerateBtnHidden(true);
   };
 
-  const handleDownloadImage = () => {
-    const confirmationFlyer = document.getElementById("confirmation-flyer")!;
+  const handleDownloadImage = useCallback(() => {
+    if (ref.current === null) {
+      return;
+    }
 
-    toPng(confirmationFlyer)
+    toPng(ref.current, { cacheBust: true })
       .then((dataUrl) => {
         const link = document.createElement("a");
         link.download = "api-conf-confirmation-flyer.png";
@@ -70,7 +72,7 @@ export default function Confirmation() {
       .catch((error) => {
         console.error("Error generating image", error);
       });
-  };
+  }, [ref]);
 
   const handleRedo = () => {
     setName("");
@@ -151,7 +153,7 @@ export default function Confirmation() {
           </div>
           <div className="flex flex-col">
             <div
-              id="confirmation-flyer"
+              ref={ref}
               className="relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px]"
             >
               <img
