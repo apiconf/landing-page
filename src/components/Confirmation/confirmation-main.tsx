@@ -1,0 +1,194 @@
+import { useState, useCallback, useRef } from "react";
+import { toPng } from "html-to-image";
+import Styles from "./confirmation.module.css";
+
+// https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types
+const fileTypes = [
+  "image/apng",
+  "image/bmp",
+  "image/gif",
+  "image/jpeg",
+  "image/pjpeg",
+  "image/png",
+  "image/svg+xml",
+  "image/tiff",
+  "image/webp",
+  "image/x-icon",
+];
+
+function validFileType(file: File) {
+  return fileTypes.includes(file.type);
+}
+
+function ImageIcon() {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M28 25.3333V6.66667C28 5.2 26.8 4 25.3333 4H6.66667C5.2 4 4 5.2 4 6.66667V25.3333C4 26.8 5.2 28 6.66667 28H25.3333C26.8 28 28 26.8 28 25.3333ZM11.8667 18.64L14.6667 22.0133L18.8 16.6933C19.0667 16.3467 19.6 16.3467 19.8667 16.7067L24.5467 22.9467C24.621 23.0457 24.6662 23.1635 24.6773 23.2868C24.6884 23.4101 24.665 23.5341 24.6096 23.6448C24.5543 23.7555 24.4691 23.8487 24.3638 23.9138C24.2585 23.9789 24.1371 24.0133 24.0133 24.0133H8.02667C7.46667 24.0133 7.16 23.3733 7.50667 22.9333L10.8267 18.6667C11.08 18.32 11.5867 18.3067 11.8667 18.64Z"
+        fill="#2F20BF"
+      />
+    </svg>
+  );
+}
+
+export default function ConfirmationMain() {
+  const [image, setImage] = useState<string>(
+    "/src/assets/confirmation-default-bg.svg"
+  );
+  const [name, setName] = useState("");
+  const [selectAPicture, setSelectAPicture] = useState("Select a Picture...");
+  const [isGenerateBtnHidden, setIsGenerateBtnHidden] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(event.target.files! || []);
+    const file = files[0];
+    if (!file) {
+      return;
+    }
+    if (!validFileType(file)) {
+      alert("Invalid file type. Please select an image.");
+      return;
+    }
+
+    setSelectAPicture(file.name);
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setImage(e.target!.result as string);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!image) {
+      alert("Please select an image.");
+      return;
+    }
+    setIsGenerateBtnHidden(true);
+  };
+
+  const handleDownloadImage = useCallback(() => {
+    if (ref.current === null) {
+      return;
+    }
+
+    toPng(ref.current, { cacheBust: true })
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "api-conf-confirmation-flyer.png";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((error) => {
+        console.error("Error generating image", error);
+      });
+  }, [ref]);
+
+  const handleRedo = () => {
+    setName("");
+    setSelectAPicture("Select a Picture...");
+    setImage("/src/assets/confirmation-default-bg.svg");
+    setIsGenerateBtnHidden(false);
+  };
+  return (
+    <div className={`${Styles.FlexContainer} xl:mb-40 min-[1440px]:mb-56`}>
+      <div className="flex flex-col gap-y-16">
+        <div className="text-[#F1F1F1]">
+          <h1 className="font-bold text-5xl">
+            Tell your friends
+            <br />
+            you're attending!
+          </h1>
+          <p className="mt-4 font-medium text-lg">
+            Make a shareable image for yourself
+          </p>
+        </div>
+        <form
+          className="flex flex-col gap-y-8"
+          method="post"
+          onSubmit={handleFormSubmit}
+        >
+          <label htmlFor="your-name" className="hidden">
+            Your Name
+          </label>
+          <input
+            type="text"
+            name="your-name"
+            id="your-name"
+            placeholder="Your Name"
+            className="outline-none border-none p-6 font-extrabold rounded-3xl placeholder:text-[#A6A6A6] placeholder:font-extrabold"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <label
+            htmlFor="your-picture"
+            className="inline-flex gap-x-4 justify-center items-center bg-white p-6 rounded-3xl"
+          >
+            <span className="text-[#2F20BF] font-extrabold">
+              {selectAPicture}
+            </span>
+            <ImageIcon />
+          </label>
+          <input
+            type="file"
+            name="your-picture"
+            id="your-picture"
+            className="opacity-0 w-0 h-0"
+            multiple={false}
+            accept="image/*"
+            onChange={handleFileUpload}
+          />
+          {!isGenerateBtnHidden ? (
+            <button
+              type="submit"
+              title="Generate"
+              className="bg-[#E1EF9A] py-12 px-32 text-dark font-bold text-2xl rounded-[320px]"
+            >
+              Generate
+            </button>
+          ) : (
+            <button
+              onClick={handleRedo}
+              title="Redo"
+              className="bg-[#4536DD] max-w-[120px] self-center text-white rounded-[320px] py-4 px-8 text-2xl font-bold"
+            >
+              Redo
+            </button>
+          )}
+        </form>
+      </div>
+      <div className="flex flex-col">
+        <div
+          ref={ref}
+          className="relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px]"
+        >
+          <img
+            src={image}
+            alt=""
+            className="absolute top-1/4 sm:top-1/3 lg:top-1/4 ml-8 md:ml-20 bg-white rounded-3xl w-1/2 md:w-52 aspect-square"
+          />
+          <p className="absolute md:left-20 max-w-[250px] bottom-28 text-white font-bold text-xl">
+            {name}
+          </p>
+        </div>
+        {isGenerateBtnHidden && (
+          <button
+            title="Download image"
+            onClick={handleDownloadImage}
+            className="mt-14 self-center bg-[#E1EF9A] py-12 px-32 text-dark font-bold text-2xl rounded-[320px]"
+          >
+            Download Image
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
