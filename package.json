@@ -14,6 +14,7 @@
     "embla-carousel-autoplay": "^8.0.2",
     "embla-carousel-react": "^8.0.2",
     "framer-motion": "^11.0.27",
+    "html-to-image": "^1.11.11",
     "localforage": "^1.10.0",
     "luxon": "^3.4.3",
     "match-sorter": "^6.3.1",
