@@ -23,7 +23,10 @@ function validFileType(file: File) {
 export default function Confirmation() {
   const [name, setName] = useState("");
   const [selectAPicture, setSelectAPicture] = useState("Select a Picture...");
-  const [image, setImage] = useState<string | undefined>(undefined);
+  const [image, setImage] = useState<string>(
+    "/src/assets/confirmation-default-bg.svg"
+  );
+  const [isGenerateBtnHidden, setIsGenerateBtnHidden] = useState(false);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files! || []);
@@ -51,18 +54,29 @@ export default function Confirmation() {
       return;
     }
 
+    setIsGenerateBtnHidden(true);
+  };
+
+  const handleDownloadImage = () => {
     const confirmationFlyer = document.getElementById("confirmation-flyer")!;
 
     toPng(confirmationFlyer)
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "confirmation-flyer.png";
+        link.download = "api-conf-confirmation-flyer.png";
         link.href = dataUrl;
         link.click();
       })
       .catch((error) => {
         console.error("Error generating image", error);
       });
+  };
+
+  const handleRedo = () => {
+    setName("");
+    setSelectAPicture("Select a Picture...");
+    setImage("/src/assets/confirmation-default-bg.svg");
+    setIsGenerateBtnHidden(false);
   };
 
   return (
@@ -116,16 +130,26 @@ export default function Confirmation() {
                 accept="image/*"
                 onChange={handleFileUpload}
               />
-              <button
-                type="submit"
-                title="Generate"
-                className="bg-[#E1EF9A] py-12 px-32 text-dark font-bold text-2xl rounded-[320px]"
-              >
-                Generate
-              </button>
+              {!isGenerateBtnHidden ? (
+                <button
+                  type="submit"
+                  title="Generate"
+                  className="bg-[#E1EF9A] py-12 px-32 text-dark font-bold text-2xl rounded-[320px]"
+                >
+                  Generate
+                </button>
+              ) : (
+                <button
+                  onClick={handleRedo}
+                  title="Redo"
+                  className="bg-[#4536DD] max-w-[120px] self-center text-white rounded-[320px] py-4 px-8 text-2xl font-bold"
+                >
+                  Redo
+                </button>
+              )}
             </form>
           </div>
-          <div>
+          <div className="flex flex-col">
             <div
               id="confirmation-flyer"
               className="relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px]"
@@ -139,6 +163,15 @@ export default function Confirmation() {
                 {name}
               </p>
             </div>
+            {isGenerateBtnHidden && (
+              <button
+                title="Download image"
+                onClick={handleDownloadImage}
+                className="mt-14 self-center bg-[#E1EF9A] py-12 px-32 text-dark font-bold text-2xl rounded-[320px]"
+              >
+                Download Image
+              </button>
+            )}
           </div>
         </div>
         <div className={Styles.FlexContainer}>
