@@ -4,14 +4,6 @@
   row-gap: 1rem;
 }
 
-.ConfirmationContainer {
-  min-height: 530px;
-  aspect-ratio: 1/1;
-
-  background-image: url("/src/assets/confirmation-background.png");
-  background-position: center;
-}
-
 @media (min-width: 1024px) {
   .FlexContainer {
     flex-direction: row;
