@@ -23,7 +23,7 @@ const About = () => {
 
   return (
     <section id="about" className={aboutStyles.aboutCont}>
-      <div className={aboutStyles.row_one}>
+      <div className={`${aboutStyles.row_one} flex items-center`}>
         <div className={aboutStyles.headerCont}>
           <motion.h2
             ref={h2Ref}
