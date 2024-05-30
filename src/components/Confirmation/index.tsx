@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Styles from "./confirmation.module.css";
+import { toPng } from "html-to-image";
 
 // https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types
 const fileTypes = [
@@ -43,6 +44,27 @@ export default function Confirmation() {
     reader.readAsDataURL(file);
   };
 
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!image) {
+      alert("Please select an image.");
+      return;
+    }
+
+    const confirmationFlyer = document.getElementById("confirmation-flyer")!;
+
+    toPng(confirmationFlyer)
+      .then((dataUrl) => {
+        const link = document.createElement("a");
+        link.download = "confirmation-flyer.png";
+        link.href = dataUrl;
+        link.click();
+      })
+      .catch((error) => {
+        console.error("Error generating image", error);
+      });
+  };
+
   return (
     <div className="bg-dark-purple min-h-screen w-full">
       <div className="w-[90%] xl:w-4/5 mx-auto py-32">
@@ -58,7 +80,11 @@ export default function Confirmation() {
                 Make a shareable image for yourself
               </p>
             </div>
-            <form className="flex flex-col gap-y-8">
+            <form
+              className="flex flex-col gap-y-8"
+              method="post"
+              onSubmit={handleFormSubmit}
+            >
               <label htmlFor="your-name" className="hidden">
                 Your Name
               </label>
@@ -67,9 +93,10 @@ export default function Confirmation() {
                 name="your-name"
                 id="your-name"
                 placeholder="Your Name"
-                className="outline-none border-none p-6 rounded-3xl placeholder:text-[#A6A6A6] placeholder:font-bold"
+                className="outline-none border-none p-6 font-extrabold rounded-3xl placeholder:text-[#A6A6A6] placeholder:font-extrabold"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                required
               />
               <label
                 htmlFor="your-picture"
@@ -98,15 +125,19 @@ export default function Confirmation() {
               </button>
             </form>
           </div>
-          <div className="">
-            <div className="bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px]">
+          <div>
+            <div
+              id="confirmation-flyer"
+              className="relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px]"
+            >
               <img
                 src={image}
                 alt=""
-                className="relative top-1/4 sm:top-1/3 lg:top-1/4 ml-8 md:ml-16 bg-white rounded-3xl w-1/2 md:w-52 aspect-square"
+                className="absolute top-1/4 sm:top-1/3 lg:top-1/4 ml-8 md:ml-20 bg-white rounded-3xl w-1/2 md:w-52 aspect-square"
               />
-
-              <p></p>
+              <p className="absolute md:left-20 max-w-[250px] bottom-28 text-white font-bold text-xl">
+                {name}
+              </p>
             </div>
           </div>
         </div>
