@@ -10,3 +10,31 @@
     justify-content: space-between;
   }
 }
+
+.YourPicture {
+  @apply inline-flex gap-x-4 justify-center items-center bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl;
+}
+
+.Redo {
+  @apply max-w-[120px] bg-[#4536DD] self-center text-white rounded-[320px] py-4 px-8 text-2xl font-bold;
+}
+
+.Generate {
+  @apply py-4 !bg-[#E1EF9A] md:py-12 px-8 md:px-32 text-dark font-bold text-base md:text-2xl rounded-[320px];
+}
+
+.ImagePreview {
+  @apply relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px];
+}
+
+.ImagePreviewImageContainer {
+  @apply ml-[calc(11.62%_+_0.5rem)] md:ml-[calc(11.62%_+_1rem)] mL:pl-1 md:pl-2 lg:pl-0 absolute flex flex-col gap-y-4 mL:gap-y-[calc(1rem_+_2vh)] md:gap-y-16 min-[1440px]:gap-y-10 top-[10%] md:top-0 min-h-[50%] mL:min-h-[75%] md:min-h-full justify-center;
+}
+
+.ImagePreviewName {
+  @apply max-w-[50%] md:max-w-[200px] mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-base md:text-xl;
+}
+
+.DownloadImageButton {
+  @apply mt-14 self-center !bg-[#E1EF9A] py-4 md:py-12 px-8 md:px-32 text-dark font-bold text-base md:text-2xl rounded-[320px];
+}

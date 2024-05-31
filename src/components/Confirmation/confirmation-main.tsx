@@ -156,10 +156,7 @@ function ConfirmationForm({
         onChange={(e) => setNameState(e.target.value)}
         required
       />
-      <label
-        htmlFor="your-picture"
-        className="inline-flex gap-x-4 justify-center items-center bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl"
-      >
+      <label htmlFor="your-picture" className={Styles.YourPicture}>
         <span className="text-[#2F20BF] font-extrabold">{pictureLabel}</span>
         <ImageIcon />
       </label>
@@ -173,19 +170,11 @@ function ConfirmationForm({
         onChange={fileUploadHandler}
       />
       {isButtonHidden ? (
-        <button
-          onClick={redoHandler}
-          title="Redo"
-          className="bg-[#4536DD] max-w-[120px] self-center text-white rounded-[320px] py-4 px-8 text-2xl font-bold"
-        >
+        <button onClick={redoHandler} title="Redo" className={Styles.Redo}>
           Redo
         </button>
       ) : (
-        <button
-          type="submit"
-          title="Generate"
-          className="bg-[#E1EF9A] py-4 md:py-12 px-8 md:px-32 text-dark font-bold text-base md:text-2xl rounded-[320px]"
-        >
+        <button type="submit" title="Generate" className={Styles.Generate}>
           Generate
         </button>
       )}
@@ -223,26 +212,21 @@ function ImagePreviewContainer({
 
   return (
     <div className="flex flex-col">
-      <div
-        ref={ref}
-        className="relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px]"
-      >
-        <div className="ml-[calc(11.62%_+_0.5rem)] md:ml-[calc(11.62%_+_1rem)] mL:pl-1 md:pl-2 lg:pl-0 absolute flex flex-col gap-y-4 mL:gap-y-[calc(1rem_+_2vh)] md:gap-y-16 min-[1440px]:gap-y-10 top-[10%] md:top-0 min-h-[50%] mL:min-h-[75%] md:min-h-full justify-center">
+      <div ref={ref} className={Styles.ImagePreview}>
+        <div className={Styles.ImagePreviewImageContainer}>
           <img
             src={imageSource}
             alt=""
             className="bg-white rounded-3xl mt-8 md:mt-0 w-1/2 md:w-[42.5%] lg:w-52 aspect-square"
           />
-          <p className="max-w-[50%] md:max-w-[200px] mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-base md:text-xl">
-            {nameState}
-          </p>
+          <p className={Styles.ImagePreviewName}>{nameState}</p>
         </div>
       </div>
       {isButtonHidden && (
         <button
           title="Download image"
           onClick={handleDownloadImage}
-          className="mt-14 self-center bg-[#E1EF9A] py-4 md:py-12 px-8 md:px-32 text-dark font-bold text-base md:text-2xl rounded-[320px]"
+          className={Styles.DownloadImageButton}
         >
           Download Image
         </button>
