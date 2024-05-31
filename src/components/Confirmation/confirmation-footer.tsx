@@ -1,5 +1,3 @@
-import Styles from "./confirmation.module.css";
-
 function SnapChatIcon() {
   return (
     <svg
@@ -19,14 +17,14 @@ function SnapChatIcon() {
 
 export default function ConfirmationFooter() {
   return (
-    <div className={Styles.FlexContainer}>
+    <div className="flex flex-col gap-y-8 items-center lg:flex-row lg:justify-between">
       <div className="rounded-[320px] py-4 px-8 inline-flex items-center gap-x-2 bg-[#4536DD]">
         <SnapChatIcon />
-        <span className="text-white font-bold">
+        <span className="text-white font-bold w-fit">
           Try out the Snapchat Filter!
         </span>
       </div>
-      <p className="text-[#F1F1F1] font-medium text-lg">
+      <p className="text-[#F1F1F1] font-medium text-lg text-center md:text-left">
         Credit by APIConf 2024 Tech Team <br />
         Something Something Soemthing
       </p>
