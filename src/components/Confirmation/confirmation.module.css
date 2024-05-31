@@ -1,7 +1,7 @@
 .FlexContainer {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  row-gap: 3rem;
 }
 
 @media (min-width: 1024px) {
