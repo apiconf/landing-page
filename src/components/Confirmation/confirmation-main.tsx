@@ -44,7 +44,6 @@ export default function ConfirmationMain() {
   const [name, setName] = useState("");
   const [selectAPicture, setSelectAPicture] = useState("Select a Picture...");
   const [isGenerateBtnHidden, setIsGenerateBtnHidden] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files! || []);
@@ -74,6 +73,137 @@ export default function ConfirmationMain() {
     setIsGenerateBtnHidden(true);
   };
 
+  const handleRedo = () => {
+    setName("");
+    setSelectAPicture("Select a Picture...");
+    setImage("/src/assets/confirmation-default-bg.svg");
+    setIsGenerateBtnHidden(false);
+  };
+
+  return (
+    <div
+      className={`${Styles.FlexContainer} mb-12 xl:mb-40 min-[1440px]:mb-56`}
+    >
+      <div className="flex flex-col gap-y-16">
+        <ConfirmationHeader />
+        <ConfirmationForm
+          formSubmitHandler={handleFormSubmit}
+          nameState={name}
+          setNameState={setName}
+          pictureLabel={selectAPicture}
+          fileUploadHandler={handleFileUpload}
+          isButtonHidden={isGenerateBtnHidden}
+          redoHandler={handleRedo}
+        />
+      </div>
+      <ImagePreviewContainer
+        imageSource={image}
+        isButtonHidden={isGenerateBtnHidden}
+        nameState={name}
+      />
+    </div>
+  );
+}
+
+function ConfirmationHeader() {
+  return (
+    <div className="text-[#F1F1F1]">
+      <h1 className="font-bold text-3xl md:text-5xl">
+        Tell your friends
+        <br />
+        you're attending!
+      </h1>
+      <p className="mt-4 font-medium text-sm md:text-lg">
+        Make a shareable image for yourself
+      </p>
+    </div>
+  );
+}
+
+function ConfirmationForm({
+  formSubmitHandler,
+  nameState,
+  setNameState,
+  pictureLabel,
+  fileUploadHandler,
+  isButtonHidden,
+  redoHandler,
+}: {
+  formSubmitHandler: (event: React.FormEvent<HTMLFormElement>) => void;
+  nameState: string;
+  setNameState: React.Dispatch<React.SetStateAction<string>>;
+  pictureLabel: string;
+  fileUploadHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  isButtonHidden: boolean;
+  redoHandler: () => void;
+}) {
+  return (
+    <form
+      className="flex flex-col gap-y-8"
+      method="post"
+      onSubmit={formSubmitHandler}
+    >
+      <label htmlFor="your-name" className="hidden">
+        Your Name
+      </label>
+      <input
+        type="text"
+        name="your-name"
+        id="your-name"
+        placeholder="Your Name"
+        className="outline-none border-none p-4 md:p-6 font-semibold md:font-extrabold rounded-2xl md:rounded-3xl placeholder:text-[#A6A6A6] placeholder:font-semibold md:placeholder:font-extrabold"
+        value={nameState}
+        onChange={(e) => setNameState(e.target.value)}
+        required
+      />
+      <label
+        htmlFor="your-picture"
+        className="inline-flex gap-x-4 justify-center items-center bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl"
+      >
+        <span className="text-[#2F20BF] font-extrabold">{pictureLabel}</span>
+        <ImageIcon />
+      </label>
+      <input
+        type="file"
+        name="your-picture"
+        id="your-picture"
+        className="opacity-0 w-0 h-0 sr-only cursor-pointer"
+        multiple={false}
+        accept="image/*"
+        onChange={fileUploadHandler}
+      />
+      {isButtonHidden ? (
+        <button
+          onClick={redoHandler}
+          title="Redo"
+          className="bg-[#4536DD] max-w-[120px] self-center text-white rounded-[320px] py-4 px-8 text-2xl font-bold"
+        >
+          Redo
+        </button>
+      ) : (
+        <button
+          type="submit"
+          title="Generate"
+          className="bg-[#E1EF9A] py-4 md:py-12 px-8 md:px-32 text-dark font-bold text-base md:text-2xl rounded-[320px]"
+        >
+          Generate
+        </button>
+      )}
+    </form>
+  );
+}
+
+function ImagePreviewContainer({
+  imageSource,
+  nameState,
+  isButtonHidden,
+}: {
+  imageSource: string;
+  nameState: string;
+  isButtonHidden: boolean;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+
   const handleDownloadImage = useCallback(() => {
     if (ref.current === null) {
       return;
@@ -91,104 +221,32 @@ export default function ConfirmationMain() {
       });
   }, [ref]);
 
-  const handleRedo = () => {
-    setName("");
-    setSelectAPicture("Select a Picture...");
-    setImage("/src/assets/confirmation-default-bg.svg");
-    setIsGenerateBtnHidden(false);
-  };
   return (
-    <div className={`${Styles.FlexContainer} xl:mb-40 min-[1440px]:mb-56`}>
-      <div className="flex flex-col gap-y-16">
-        <div className="text-[#F1F1F1]">
-          <h1 className="font-bold text-5xl">
-            Tell your friends
-            <br />
-            you're attending!
-          </h1>
-          <p className="mt-4 font-medium text-lg">
-            Make a shareable image for yourself
-          </p>
-        </div>
-        <form
-          className="flex flex-col gap-y-8"
-          method="post"
-          onSubmit={handleFormSubmit}
-        >
-          <label htmlFor="your-name" className="hidden">
-            Your Name
-          </label>
-          <input
-            type="text"
-            name="your-name"
-            id="your-name"
-            placeholder="Your Name"
-            className="outline-none border-none p-6 font-extrabold rounded-3xl placeholder:text-[#A6A6A6] placeholder:font-extrabold"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <label
-            htmlFor="your-picture"
-            className="inline-flex gap-x-4 justify-center items-center bg-white p-6 rounded-3xl"
-          >
-            <span className="text-[#2F20BF] font-extrabold">
-              {selectAPicture}
-            </span>
-            <ImageIcon />
-          </label>
-          <input
-            type="file"
-            name="your-picture"
-            id="your-picture"
-            className="opacity-0 w-0 h-0"
-            multiple={false}
-            accept="image/*"
-            onChange={handleFileUpload}
-          />
-          {!isGenerateBtnHidden ? (
-            <button
-              type="submit"
-              title="Generate"
-              className="bg-[#E1EF9A] py-12 px-32 text-dark font-bold text-2xl rounded-[320px]"
-            >
-              Generate
-            </button>
-          ) : (
-            <button
-              onClick={handleRedo}
-              title="Redo"
-              className="bg-[#4536DD] max-w-[120px] self-center text-white rounded-[320px] py-4 px-8 text-2xl font-bold"
-            >
-              Redo
-            </button>
-          )}
-        </form>
-      </div>
-      <div className="flex flex-col">
-        <div
-          ref={ref}
-          className="relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px]"
-        >
+    <div className="flex flex-col">
+      <div
+        ref={ref}
+        className="relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px]"
+      >
+        <div className="ml-[calc(11.62%_+_0.5rem)] md:ml-[calc(11.62%_+_1rem)] mL:pl-1 md:pl-2 lg:pl-0 absolute flex flex-col gap-y-4 mL:gap-y-[calc(1rem_+_2vh)] md:gap-y-16 min-[1440px]:gap-y-10 top-[10%] md:top-0 min-h-[50%] mL:min-h-[75%] md:min-h-full justify-center">
           <img
-            src={image}
+            src={imageSource}
             alt=""
-            className="absolute top-1/4 sm:top-1/3 lg:top-1/4 ml-8 md:ml-20 bg-white rounded-3xl w-1/2 md:w-52 aspect-square"
+            className="bg-white rounded-3xl mt-8 md:mt-0 w-1/2 md:w-[42.5%] lg:w-52 aspect-square"
           />
-          <p className="absolute md:left-20 max-w-[250px] bottom-28 text-white font-bold text-xl">
-            {name}
+          <p className="max-w-[50%] md:max-w-[200px] mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-base md:text-xl">
+            {nameState}
           </p>
         </div>
-        {isGenerateBtnHidden && (
-          <button
-            title="Download image"
-            onClick={handleDownloadImage}
-            className="mt-14 self-center bg-[#E1EF9A] py-12 px-32 text-dark font-bold text-2xl rounded-[320px]"
-          >
-            Download Image
-          </button>
-        )}
       </div>
+      {isButtonHidden && (
+        <button
+          title="Download image"
+          onClick={handleDownloadImage}
+          className="mt-14 self-center bg-[#E1EF9A] py-4 md:py-12 px-8 md:px-32 text-dark font-bold text-base md:text-2xl rounded-[320px]"
+        >
+          Download Image
+        </button>
+      )}
     </div>
   );
 }
