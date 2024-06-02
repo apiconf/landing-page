@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 3rem;
+  column-gap: 2rem;
 }
 
 @media (min-width: 1024px) {
@@ -24,17 +25,21 @@
 }
 
 .ImagePreview {
-  @apply relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px];
+  @apply relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px] border-[10px] md:border-[20px] border-solid border-[#fff] rounded-[20px];
 }
 
 .ImagePreviewImageContainer {
-  @apply ml-[calc(11.62%_+_0.5rem)] md:ml-[calc(11.62%_+_1rem)] mL:pl-1 md:pl-2 lg:pl-0 absolute flex flex-col gap-y-4 mL:gap-y-[calc(1rem_+_2vh)] md:gap-y-16 min-[1440px]:gap-y-10 top-[10%] md:top-0 min-h-[50%] mL:min-h-[75%] md:min-h-full justify-center;
+  @apply ml-[8%] md:ml-[8.33%] absolute flex flex-col mL:bottom-[35%] gap-y-3 justify-center;
 }
 
 .ImagePreviewName {
-  @apply max-w-[50%] md:max-w-[200px] mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-base md:text-xl;
+  @apply max-w-[50%] md:max-w-[200px] mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-sm sm:text-base md:text-xl;
 }
 
 .DownloadImageButton {
   @apply mt-14 self-center !bg-[#E1EF9A] py-4 md:py-12 px-8 md:px-32 text-dark font-bold text-base md:text-2xl rounded-[320px];
+}
+
+.YourName {
+  @apply outline-none border-none p-4 md:p-6 font-semibold md:font-extrabold rounded-2xl md:rounded-3xl placeholder:text-[#A6A6A6] placeholder:font-semibold md:placeholder:font-extrabold;
 }

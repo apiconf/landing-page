@@ -151,7 +151,7 @@ function ConfirmationForm({
         name="your-name"
         id="your-name"
         placeholder="Your Name"
-        className="outline-none border-none p-4 md:p-6 font-semibold md:font-extrabold rounded-2xl md:rounded-3xl placeholder:text-[#A6A6A6] placeholder:font-semibold md:placeholder:font-extrabold"
+        className={Styles.YourName}
         value={nameState}
         onChange={(e) => setNameState(e.target.value)}
         required
@@ -217,7 +217,7 @@ function ImagePreviewContainer({
           <img
             src={imageSource}
             alt=""
-            className="bg-white rounded-3xl mt-8 md:mt-0 w-1/2 md:w-[42.5%] lg:w-52 aspect-square"
+            className="bg-white rounded-3xl mt-9 md:mt-0 w-[45%] sm:w-1/2 md:w-[42.5%] lg:w-52 aspect-square"
           />
           <p className={Styles.ImagePreviewName}>{nameState}</p>
         </div>
