@@ -217,7 +217,7 @@ function ImagePreviewContainer({
           <img
             src={imageSource}
             alt=""
-            className="bg-white rounded-3xl md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center"
+            className="bg-white rounded-xl md:rounded-3xl md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center"
           />
           <p className={Styles.ImagePreviewName}>{nameState}</p>
         </div>
