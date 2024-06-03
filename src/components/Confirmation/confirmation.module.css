@@ -29,11 +29,11 @@
 }
 
 .ImagePreviewImageContainer {
-  @apply ml-[8%] md:ml-[8.33%] absolute flex flex-col mL:bottom-[35%] gap-y-3 justify-center;
+  @apply absolute w-full min-h-full flex flex-col justify-center items-center gap-y-1 mL:gap-y-3 md:gap-y-2 bottom-[7.5%] -rotate-2;
 }
 
 .ImagePreviewName {
-  @apply max-w-[50%] md:max-w-[200px] lg:max-w-lg break-words mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-sm sm:text-base md:text-xl;
+  @apply max-w-[50%] md:max-w-[200px] text-center lg:max-w-lg break-words mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-sm sm:text-base md:text-xl;
 }
 
 .DownloadImageButton {
