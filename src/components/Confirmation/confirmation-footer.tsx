@@ -18,12 +18,17 @@ function SnapChatIcon() {
 export default function ConfirmationFooter() {
   return (
     <div className="flex flex-col gap-y-8 items-center lg:flex-row lg:justify-between">
-      <div className="rounded-[320px] py-4 px-8 inline-flex items-center gap-x-2 bg-[#4536DD]">
+      <a
+        href="https://dub.sh/apiconf-snapdp-alpha"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-[320px] py-4 px-8 inline-flex items-center gap-x-2 bg-[#4536DD]"
+      >
         <SnapChatIcon />
         <span className="text-white font-bold w-fit">
           Try out the Snapchat Filter!
         </span>
-      </div>
+      </a>
       <p className="text-[#F1F1F1] font-medium text-lg text-center md:text-left">
         Credit by APIConf 2024 Tech Team <br />
         Something Something Soemthing
