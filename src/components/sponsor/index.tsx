@@ -2,7 +2,8 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
 import InquireContact from "./card";
-import PostmanImage from "../../assets/Postman.svg";
+// import PostmanImage from "../../assets/Postman.svg";
+import fincra from "../../assets/fincra-logo.png"
 import Marquee from "react-fast-marquee";
 
 const Sponsor = () => {
@@ -137,7 +138,7 @@ const Sponsor = () => {
         variants={bannerVariant}
         className="block sm:hidden lg:block object-cover w-full h-[451.78px] lg:w-[40.414%] md:h-auto rounded-t-[32px] sm:rounded-[32px] bg-white"
       >
-        <div className="grid grid-cols-1 mt-16 gap-y-16 blur-2xl">
+        <div className="grid grid-cols-1 mt-16 gap-y-16">
           <SponsorsMarquee delay={2} />
           <SponsorsMarquee />
           <SponsorsMarquee delay={2} />
@@ -151,10 +152,10 @@ export default Sponsor;
 function SponsorsMarquee({ delay = 0 }: { delay?: number }) {
   return (
     <Marquee delay={delay}>
-      <img src={PostmanImage} alt="Postman" className="mx-8 md:mx-4" />
-      <img src={PostmanImage} alt="Postman" className="mx-8 md:mx-4" />
-      <img src={PostmanImage} alt="Postman" className="mx-8 md:mx-4" />
-      <img src={PostmanImage} alt="Postman" className="mx-8 md:mx-4" />
+      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
+      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
+      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
+      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
     </Marquee>
   );
 }
