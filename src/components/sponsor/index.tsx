@@ -2,8 +2,6 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
 import InquireContact from "./card";
-// import PostmanImage from "../../assets/Postman.svg";
-import fincra from "../../assets/fincra-logo.png"
 import Marquee from "react-fast-marquee";
 
 const Sponsor = () => {
@@ -139,9 +137,9 @@ const Sponsor = () => {
         className="block sm:hidden lg:block object-cover w-full h-[451.78px] lg:w-[40.414%] md:h-auto rounded-t-[32px] sm:rounded-[32px] bg-white"
       >
         <div className="grid grid-cols-1 mt-16 gap-y-16">
-          <SponsorsMarquee delay={2} />
-          <SponsorsMarquee />
-          <SponsorsMarquee delay={2} />
+          <SponsorsMarquee imageWidth={200} imageSrc="src/assets/fincra-logo.png" delay={2} />
+          <SponsorsMarquee imageWidth={200} imageSrc="src/assets/postman-new.png" />
+          <SponsorsMarquee imageWidth={150} imageSrc="src/assets/Postman.svg" delay={2} />
         </div>
       </motion.div>
     </section>
@@ -149,13 +147,13 @@ const Sponsor = () => {
 };
 export default Sponsor;
 
-function SponsorsMarquee({ delay = 0 }: { delay?: number }) {
+function SponsorsMarquee({ delay = 0, imageSrc, imageWidth }: { delay?: number, imageSrc: string, imageWidth: number }) {
   return (
     <Marquee delay={delay}>
-      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
-      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
-      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
-      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
+      <img src={imageSrc} alt="Fincra Logo" width={imageWidth} className="mx-8 md:mx-4" />
+      <img src={imageSrc} alt="Fincra Logo" width={imageWidth} className="mx-8 md:mx-4" />
+      <img src={imageSrc} alt="Fincra Logo" width={imageWidth} className="mx-8 md:mx-4" />
+      <img src={imageSrc} alt="Fincra Logo" width={imageWidth} className="mx-8 md:mx-4" />
     </Marquee>
   );
 }
