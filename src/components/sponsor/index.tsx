@@ -139,7 +139,7 @@ const Sponsor = () => {
         <div className="grid grid-cols-1 mt-16 gap-y-16">
           <SponsorsMarquee imageWidth={200} imageSrc="src/assets/fincra-logo.png" delay={2} />
           <SponsorsMarquee imageWidth={200} imageSrc="src/assets/postman-new.png" />
-          <SponsorsMarquee imageWidth={150} imageSrc="src/assets/Postman.svg" delay={2} />
+          <SponsorsMarquee imageWidth={150} imageSrc="src/assets/APItoolkit-logo.png" delay={2} />
         </div>
       </motion.div>
     </section>
