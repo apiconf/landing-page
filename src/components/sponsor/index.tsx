@@ -2,9 +2,9 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
 import InquireContact from "./card";
-// import PostmanImage from "../../assets/Postman.svg";
-import fincra from "../../assets/fincra-logo.png"
-import Marquee from "react-fast-marquee";
+import PostmanLogo from "../../assets/Postman.svg";
+import FincraLogo from "../../assets/fincra-logo.svg";
+import APItoolkitLogo from "../../assets/APItoolkit-Logo.svg";
 
 const Sponsor = () => {
   const headerRef = useRef(null);
@@ -36,7 +36,7 @@ const Sponsor = () => {
       opacity: isContactVisible ? 1 : 0,
       transition: {
         ...childVariant.visible.transition,
-        delay: 0.1,
+        delay: 0.2,
       },
     },
     hidden: {
@@ -60,11 +60,11 @@ const Sponsor = () => {
   };
   const bannerVariant = {
     visible: {
+      y: isBannerVisible ? 0 : 32,
       opacity: isBannerVisible ? 1 : 0,
       transition: {
-        ease: [0.25, 0, 0.75, 1],
-        delay: 0.3,
-        duration: 1,
+        ...childVariant.visible.transition,
+        delay: 0.1,
       },
     },
     hidden: {
@@ -75,9 +75,9 @@ const Sponsor = () => {
   return (
     <section
       id="become-a-sponsor"
-      className="w-full bg-sponsor sm:px-[5%] 2xl:px-[7.4%] pt-16 sm:py-12 flex flex-col items-center sm:items-start lg:items-stretch lg:flex-row lg:justify-between gap-16"
+      className="w-full bg-[#fff] bg-sponsor sm:px-[5%] 2xl:px-[7.4%] pt-16 sm:py-12 flex flex-col items-center sm:items-start lg:items-stretch lg:flex-row lg:justify-between gap-16"
     >
-      <div className="lg:mb-[3.18%] px-[8%] sm:px-0 lg:flex flex-col justify-center space-y-8 sm:space-y-16">
+      <div className="lg:mb-[3.18%] px-[8%] sm:px-0 lg:flex flex-col justify-center space-y-8 sm:space-y-16 w-full pb-8">
         <motion.div
           ref={headerRef}
           initial="hidden"
@@ -85,13 +85,48 @@ const Sponsor = () => {
           variants={childVariant}
           className="space-y-2 w-full"
         >
-          <h2 className="w-full font-bold text-5xl lg:text-6xl 3xl:text-[64px] leading-[59.52px] lg:leading-[74.4px] 3xl:leading-[79.36px] text-black">
-            Sponsor API Conference
+          <h2 className="max-w-[720px] w-full font-bold text-5xl lg:text-6xl 3xl:text-[64px] leading-[59.52px] lg:leading-[74.4px] 3xl:leading-[79.36px] text-black">
+            API Conference Lagos 2024 Sponsors
           </h2>
           <p className="max-w-[330px] sm:max-w-[500px] md:max-w-[594px] text-left font-medium text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px] opacity-80">
-            Contribute to organising the biggest Convention of API Enthusiasts
-            and Builders in Lagos!
+            Sponsors of the biggest Convention of API Enthusiasts and Builders
+            in Lagos!
           </p>
+        </motion.div>
+
+        <motion.div
+          ref={bannerRef}
+          initial="hidden"
+          animate="visible"
+          variants={bannerVariant}
+          className="flex flex-col gap-y-16 items-center w-full !my-10 md:!my-32"
+        >
+          <div>
+            <p className="text-2xl font-medium leading-[29.76px] text-center w-full mb-8 text-[#1F1F1F]">
+              Platinum Sponsor
+            </p>
+            <img src={FincraLogo} alt="Fincra Logo" className="max-w-[256px]" />
+          </div>
+          <div>
+            <p className="text-2xl font-medium leading-[29.76px] text-center w-full mb-8 text-[#1F1F1F]">
+              Gold Sponsor
+            </p>
+            <img
+              src={PostmanLogo}
+              alt="Postman Logo"
+              className="max-w-[256px]"
+            />
+          </div>
+          <div>
+            <p className="text-2xl font-medium leading-[29.76px] text-center w-full mb-8 text-[#1F1F1F]">
+              Bronze Sponsor
+            </p>
+            <img
+              src={APItoolkitLogo}
+              alt="APItoolkit Logo"
+              className="max-w-[256px]"
+            />
+          </div>
         </motion.div>
 
         <motion.div
@@ -127,35 +162,8 @@ const Sponsor = () => {
             More Details in Deck
           </span>
         </motion.a>
-        <h2 className="w-full font-bold text-5xl text-center pt-32 pb-8 mb-16 md:hidden">
-          Our Sponsors
-        </h2>
       </div>
-      <motion.div
-        ref={bannerRef}
-        initial="hidden"
-        animate="visible"
-        variants={bannerVariant}
-        className="block sm:hidden lg:block object-cover w-full h-[451.78px] lg:w-[40.414%] md:h-auto rounded-t-[32px] sm:rounded-[32px] bg-white"
-      >
-        <div className="grid grid-cols-1 mt-16 gap-y-16">
-          <SponsorsMarquee delay={2} />
-          <SponsorsMarquee />
-          <SponsorsMarquee delay={2} />
-        </div>
-      </motion.div>
     </section>
   );
 };
 export default Sponsor;
-
-function SponsorsMarquee({ delay = 0 }: { delay?: number }) {
-  return (
-    <Marquee delay={delay}>
-      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
-      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
-      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
-      <img src={fincra} alt="Fincra Logo" width={200} className="mx-8 md:mx-4" />
-    </Marquee>
-  );
-}
