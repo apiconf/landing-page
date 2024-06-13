@@ -99,7 +99,7 @@ const Sponsor = () => {
           initial="hidden"
           animate="visible"
           variants={bannerVariant}
-          className="flex flex-col gap-y-16 items-center w-full !my-10 md:!my-32"
+          className="flex flex-col md:flex-wrap md:flex-row gap-16 items-center w-full !my-10 md:!my-32"
         >
           <div>
             <p className="text-2xl font-medium leading-[29.76px] text-center w-full mb-8 text-[#1F1F1F]">
