@@ -33,7 +33,7 @@
 }
 
 .ImagePreviewName {
-  @apply max-w-[50%] md:max-w-[200px] leading-3 text-center lg:max-w-lg break-words mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-sm sm:text-base md:text-xl;
+  @apply max-w-[60%] md:max-w-[200px] leading-3 text-center lg:max-w-lg break-words mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-sm sm:text-base md:text-xl;
 }
 
 .DownloadImageButton {
