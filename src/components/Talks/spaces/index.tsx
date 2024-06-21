@@ -99,7 +99,7 @@ const Spaces = () => {
   const isSpacesInnerContainer = useIsVisible(spacesInnerContainerRef);
 
   return (
-    <section className="w-full px-[8%] sm:px-[5%] 2xl:px-[7.4%] relative bg-dark-purple flex justify-center items-center">
+    <section className="w-full relative bg-dark-purple flex justify-center items-center">
       <motion.img
         initial={{ y: 32, opacity: 0 }}
         animate={{
