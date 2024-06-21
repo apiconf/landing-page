@@ -117,7 +117,7 @@ const Sponsor = () => {
               className="max-w-[256px]"
             />
           </div>
-          <div className="hidden">
+          <div>
             <p className="text-2xl font-medium leading-[29.76px] text-center w-full mb-8 text-[#1F1F1F]">
               Bronze Sponsor
             </p>
