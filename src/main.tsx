@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: "/confirmation",
+    path: "/dp",
     element: <Confirmation />,
     errorElement: <NotFound />,
   },

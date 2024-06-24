@@ -31,7 +31,7 @@ export default function ConfirmationFooter() {
       </a>
       <p className="text-[#F1F1F1] font-medium text-lg text-center md:text-left">
         Credit by APIConf 2024 Tech Team <br />
-        Something Something Soemthing
+        Your pictures are only used once and not saved on any servers
       </p>
     </div>
   );
