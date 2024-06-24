@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.tsx";
 import Speakers from "./pages/speakers";
+import Confirmation from "./components/Confirmation";
 import NotFound from "./NotFound.tsx";
 import "./index.css";
 import { AppContextProvider } from "./context";
@@ -16,6 +17,11 @@ const router = createBrowserRouter([
   {
     path: "/speakers",
     element: <Speakers />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/dp",
+    element: <Confirmation />,
     errorElement: <NotFound />,
   },
 ]);
