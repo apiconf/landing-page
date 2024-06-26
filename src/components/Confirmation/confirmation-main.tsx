@@ -223,7 +223,14 @@ function ImagePreviewContainer({
       return;
     }
 
-    toPng(ref.current, { cacheBust: true })
+    toPng(ref.current, {
+      cacheBust: true,
+      style: {
+        border: "none",
+        borderRadius: "0",
+        borderStyle: "none",
+      },
+    })
       .then((dataUrl) => {
         // if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
         //   window.open(dataUrl, "_blank", "noopener,noreferrer");
