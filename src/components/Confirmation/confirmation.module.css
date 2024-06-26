@@ -24,8 +24,12 @@
   @apply py-4 !bg-[#E1EF9A] md:py-12 px-8 md:px-32 text-dark font-bold text-base md:text-2xl rounded-[320px];
 }
 
+.ImagePreviewContainer {
+  @apply aspect-square w-full md:min-h-[530px] border-[10px] md:border-[20px] border-solid border-[#fff] rounded-[20px];
+}
+
 .ImagePreview {
-  @apply relative bg-confirmation bg-cover bg-center aspect-square w-full md:min-h-[530px] border-[10px] md:border-[20px] border-solid border-[#fff] rounded-[20px];
+  @apply relative bg-confirmation bg-cover bg-center w-full min-h-full;
 }
 
 .ImagePreviewImageContainer {
