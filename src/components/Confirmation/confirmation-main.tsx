@@ -248,18 +248,20 @@ function ImagePreviewContainer({
 
   return (
     <div className="flex flex-col">
-      <div ref={ref} className={Styles.ImagePreview}>
-        <div className={Styles.ImagePreviewImageContainer}>
-          {imageSource ? (
-            <img
-              src={imageSource}
-              alt="You!"
-              className="bg-white rounded-xl md:rounded-3xl md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center"
-            />
-          ) : (
-            <ConfirmationBackgroundDefault className="md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center" />
-          )}
-          <p className={Styles.ImagePreviewName}>{nameState}</p>
+      <div className={Styles.ImagePreviewContainer}>
+        <div ref={ref} className={Styles.ImagePreview}>
+          <div className={Styles.ImagePreviewImageContainer}>
+            {imageSource ? (
+              <img
+                src={imageSource}
+                alt="You!"
+                className="bg-white rounded-xl md:rounded-3xl md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center"
+              />
+            ) : (
+              <ConfirmationBackgroundDefault className="md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center" />
+            )}
+            <p className={Styles.ImagePreviewName}>{nameState}</p>
+          </div>
         </div>
       </div>
       {isButtonHidden && (
