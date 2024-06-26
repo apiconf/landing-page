@@ -225,10 +225,21 @@ function ImagePreviewContainer({
 
     toPng(ref.current, { cacheBust: true })
       .then((dataUrl) => {
+        // if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        //   window.open(dataUrl, "_blank", "noopener,noreferrer");
+        //   return;
+        // }
         const link = document.createElement("a");
         link.download = "api-conf-confirmation-flyer.png";
         link.href = dataUrl;
-        link.click();
+        // link.click();
+        link.dispatchEvent(
+          new MouseEvent("click", {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+          })
+        );
       })
       .catch((error) => {
         console.error("Error generating image", error);
