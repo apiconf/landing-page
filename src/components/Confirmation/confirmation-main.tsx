@@ -20,6 +20,33 @@ function validFileType(file: File) {
   return fileTypes.includes(file.type);
 }
 
+function ConfirmationBackgroundDefault(
+  props: Omit<
+    React.SVGProps<SVGSVGElement>,
+    "width" | "height" | "viewBox" | "fill" | "xmlns"
+  >
+) {
+  return (
+    <svg
+      width="214"
+      height="214"
+      viewBox="0 0 214 214"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <rect
+        x="0.111328"
+        y="0.333252"
+        width="213.333"
+        height="213.333"
+        rx="21.3333"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
 function ImageIcon() {
   return (
     <svg
@@ -38,9 +65,7 @@ function ImageIcon() {
 }
 
 export default function ConfirmationMain() {
-  const [image, setImage] = useState<string>(
-    "/src/assets/confirmation-default-bg.svg"
-  );
+  const [image, setImage] = useState<string | null>(null);
   const [name, setName] = useState("");
   const [selectAPicture, setSelectAPicture] = useState("Select a Picture...");
   const [isGenerateBtnHidden, setIsGenerateBtnHidden] = useState(false);
@@ -76,7 +101,7 @@ export default function ConfirmationMain() {
   const handleRedo = () => {
     setName("");
     setSelectAPicture("Select a Picture...");
-    setImage("/src/assets/confirmation-default-bg.svg");
+    setImage(null);
     setIsGenerateBtnHidden(false);
   };
 
@@ -187,7 +212,7 @@ function ImagePreviewContainer({
   nameState,
   isButtonHidden,
 }: {
-  imageSource: string;
+  imageSource: string | null;
   nameState: string;
   isButtonHidden: boolean;
 }) {
@@ -214,11 +239,15 @@ function ImagePreviewContainer({
     <div className="flex flex-col">
       <div ref={ref} className={Styles.ImagePreview}>
         <div className={Styles.ImagePreviewImageContainer}>
-          <img
-            src={imageSource}
-            alt=""
-            className="bg-white rounded-xl md:rounded-3xl md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center"
-          />
+          {imageSource ? (
+            <img
+              src={imageSource}
+              alt="You!"
+              className="bg-white rounded-xl md:rounded-3xl md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center"
+            />
+          ) : (
+            <ConfirmationBackgroundDefault className="md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center" />
+          )}
           <p className={Styles.ImagePreviewName}>{nameState}</p>
         </div>
       </div>
