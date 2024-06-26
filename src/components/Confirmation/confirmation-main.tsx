@@ -223,19 +223,44 @@ function ImagePreviewContainer({
       return;
     }
 
-    toPng(ref.current, {
-      cacheBust: true,
-      style: {
-        border: "none",
-        borderRadius: "0",
-        borderStyle: "none",
-      },
-    })
+    const buildPng = async () => {
+      const isSafari = /^((?!chrome|android).)*safari/i.test(
+        navigator.userAgent
+      );
+      let dataUrl = "";
+      let i = 0;
+      const maxAttempts = isSafari ? 5 : 1;
+      const cycle = [];
+      let repeat = true;
+
+      while (repeat && i < maxAttempts) {
+        dataUrl = await toPng(ref.current!, {
+          fetchRequestInit: {
+            cache: "no-cache",
+          },
+          skipAutoScale: true,
+          includeQueryParams: true,
+
+          pixelRatio: isSafari ? 1 : 3,
+          quality: 1,
+          cacheBust: true,
+          style: {
+            border: "none",
+            borderRadius: "0",
+            borderStyle: "none",
+          },
+        });
+        i += 1;
+        cycle[i] = dataUrl.length;
+
+        if (dataUrl.length > cycle[i - 1]) repeat = false;
+      }
+      //console.log('safari:' + isSafari + '_repeat_need_' + i);
+      return dataUrl;
+    };
+
+    buildPng()
       .then((dataUrl) => {
-        // if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        //   window.open(dataUrl, "_blank", "noopener,noreferrer");
-        //   return;
-        // }
         const link = document.createElement("a");
         link.download = "api-conf-confirmation-flyer.png";
         link.href = dataUrl;
@@ -251,6 +276,35 @@ function ImagePreviewContainer({
       .catch((error) => {
         console.error("Error generating image", error);
       });
+
+    // toPng(ref.current, {
+    //   cacheBust: true,
+    //   style: {
+    //     border: "none",
+    //     borderRadius: "0",
+    //     borderStyle: "none",
+    //   },
+    // })
+    //   .then((dataUrl) => {
+    //     // if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+    //     //   window.open(dataUrl, "_blank", "noopener,noreferrer");
+    //     //   return;
+    //     // }
+    //     const link = document.createElement("a");
+    //     link.download = "api-conf-confirmation-flyer.png";
+    //     link.href = dataUrl;
+    //     // link.click();
+    //     link.dispatchEvent(
+    //       new MouseEvent("click", {
+    //         bubbles: true,
+    //         cancelable: true,
+    //         view: window,
+    //       })
+    //     );
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error generating image", error);
+    //   });
   }, [ref]);
 
   return (
