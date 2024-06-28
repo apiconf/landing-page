@@ -22,6 +22,18 @@ type SpaceItem = {
 
 const spaceItems: SpaceItem[] = [
   {
+    key: "Building_API_based_products_that_scale",
+    title: "Building API based products that scale",
+    subTitle: "@goodnesskayode • 15th June 2024",
+    link: "https://x.com/i/spaces/1rmxPMkvyknKN",
+  },
+  {
+    key: "Leveraging_APIs_for_Microservices_Architecture",
+    title: "Leveraging APIs for Microservices Architecture",
+    subTitle: "@hybeecodes • 1st June 2024",
+    link: "https://x.com/i/spaces/1vAxRvwpWOvxl",
+  },
+  {
     key: "API_Versioning_and_Backward_Compatibility",
     title: "API Versioning and Backward Compatibility.",
     subTitle: "@horlaarsco • 25th May 2024",
