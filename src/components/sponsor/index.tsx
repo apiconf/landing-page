@@ -107,7 +107,7 @@ const Sponsor = () => {
             </p>
             <img src={FincraLogo} alt="Fincra Logo" className="max-w-[256px]" />
           </div>
-          <div className="hidden">
+          <div>
             <p className="text-2xl font-medium leading-[29.76px] md:text-center w-full mb-8 text-[#1F1F1F]">
               Gold Sponsor
             </p>
