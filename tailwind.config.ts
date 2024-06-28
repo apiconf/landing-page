@@ -47,7 +47,7 @@ export default {
         linear-gradient(180deg, rgba(144, 234, 242, 0) 0%, rgba(144, 234, 242, 0) 25%, rgba(144, 234, 242, 0) 50%, rgba(144, 234, 242, 0) 75%, #90EAF2 100%)
         `,
         highlight: `linear-gradient(0deg, #90EAF2, #90EAF2)`,
-        confirmation: "url('/src/assets/confirmation-background.svg')",
+        confirmation: "url('/src/assets/confirmation-background.png')",
       },
       borderRadius: {
         "6xl": "32px",
