@@ -1,6 +1,7 @@
 import { useState, useCallback, useRef } from "react";
 import { domToPng } from "modern-screenshot";
 import Styles from "./confirmation.module.css";
+import DefaultConfirmation from "../../assets/confirmation-default-bg.png";
 
 // https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types
 const fileTypes = [
@@ -18,33 +19,6 @@ const fileTypes = [
 
 function validFileType(file: File) {
   return fileTypes.includes(file.type);
-}
-
-function ConfirmationBackgroundDefault(
-  props: Omit<
-    React.SVGProps<SVGSVGElement>,
-    "width" | "height" | "viewBox" | "fill" | "xmlns"
-  >
-) {
-  return (
-    <svg
-      width="214"
-      height="214"
-      viewBox="0 0 214 214"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <rect
-        x="0.111328"
-        y="0.333252"
-        width="213.333"
-        height="213.333"
-        rx="21.3333"
-        fill="white"
-      />
-    </svg>
-  );
 }
 
 function ImageIcon() {
@@ -65,7 +39,7 @@ function ImageIcon() {
 }
 
 export default function ConfirmationMain() {
-  const [image, setImage] = useState<string | null>(null);
+  const [image, setImage] = useState<string>(DefaultConfirmation);
   const [name, setName] = useState("");
   const [selectAPicture, setSelectAPicture] = useState("Select a Picture...");
   const [isGenerateBtnHidden, setIsGenerateBtnHidden] = useState(false);
@@ -101,7 +75,7 @@ export default function ConfirmationMain() {
   const handleRedo = () => {
     setName("");
     setSelectAPicture("Select a Picture...");
-    setImage(null);
+    setImage(DefaultConfirmation);
     setIsGenerateBtnHidden(false);
   };
 
@@ -212,7 +186,7 @@ function ImagePreviewContainer({
   nameState,
   isButtonHidden,
 }: {
-  imageSource: string | null;
+  imageSource: string;
   nameState: string;
   isButtonHidden: boolean;
 }) {
@@ -224,12 +198,16 @@ function ImagePreviewContainer({
     }
 
     domToPng(ref.current!, {
+      onCloneNode: (node) => {
+        normalizeDomNodeForSvgScreenshot(node as HTMLElement);
+      },
       scale: 3,
       style: {
         border: "none",
         borderRadius: "0",
         borderStyle: "none",
       },
+      quality: 1,
     })
       .then((dataUrl) => {
         const link = document.createElement("a");
@@ -246,25 +224,51 @@ function ImagePreviewContainer({
       .catch((error) => {
         console.error("Error generating image", error);
       });
+
+    function splitCssValueAndUnit(cssValue: string) {
+      const regex = /^(-?\d*\.?\d+)([a-zA-Z%]*)$/;
+      const match = cssValue.match(regex);
+
+      if (match) {
+        const numericValue = parseFloat(match[1]);
+        const unit = match[2];
+        return { value: numericValue, unit: unit };
+      } else {
+        throw new Error("Invalid CSS value format");
+      }
+    }
+
+    const normalizeDomNodeForSvgScreenshot = (node: HTMLElement) => {
+      const fontSize = node.style.fontSize;
+      if (fontSize) {
+        try {
+          const { value, unit } = splitCssValueAndUnit(fontSize);
+          node.style.fontSize = `${value - 1}${unit}`; // Reducing font-size by 1px
+        } catch (err) {
+          // Ignore
+        }
+      }
+      for (const childNode of node.children) {
+        normalizeDomNodeForSvgScreenshot(childNode as HTMLElement);
+      }
+    };
   }, [ref]);
 
   return (
     <div className="flex flex-col">
       <div className={Styles.ImagePreviewContainer}>
+        {/* TODO: Start */}
         <div ref={ref} className={Styles.ImagePreview}>
           <div className={Styles.ImagePreviewImageContainer}>
-            {imageSource ? (
-              <img
-                src={imageSource}
-                alt="You!"
-                className="bg-white rounded-xl md:rounded-3xl md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center"
-              />
-            ) : (
-              <ConfirmationBackgroundDefault className="md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center" />
-            )}
+            <img
+              src={imageSource}
+              alt="You!"
+              className="bg-white rounded-xl md:rounded-3xl md:mt-0 w-[35%] md:w-[39.5%] aspect-square object-cover object-center"
+            />
             <p className={Styles.ImagePreviewName}>{nameState}</p>
           </div>
         </div>
+        {/* TODO: End */}
       </div>
       {isButtonHidden && (
         <button
