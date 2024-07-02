@@ -37,7 +37,7 @@
 }
 
 .ImagePreviewName {
-  @apply max-w-[60%] min-[896px]:max-w-[52.5%] leading-3 text-center lg:max-w-lg break-words my-1 sm:my-0 sm:mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-sm sm:text-base md:text-xl min-[896px]:text-2xl lg:text-xl;
+  @apply max-w-[60%] min-[896px]:max-w-[52.5%] leading-3 sm:leading-normal text-center lg:max-w-lg break-words my-1 sm:my-0 sm:mb-2 mL:mb-1 mL:bottom-32 text-white font-bold text-[14px] sm:text-[16px] md:text-[20px] min-[896px]:text-[24px] lg:text-[20px];
 }
 
 .DownloadImageButton {
