@@ -21,7 +21,7 @@ const Space = ({
 }: SpaceProps) => {
   return (
     <div
-      className={`${styles.emblaSlide} min-w-[80%] sm:min-w-0 md:mx-8 min-h-[14.7rem] transform`}
+      className={`${styles.emblaSlide} select-none min-w-[80%] sm:min-w-0 md:mx-8 min-h-[14.7rem] transform`}
     >
       <div className="w-[112px] flex gap-4">
         <img src={iconOne} alt="Mic icon" />

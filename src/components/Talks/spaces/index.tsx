@@ -22,6 +22,30 @@ type SpaceItem = {
 
 const spaceItems: SpaceItem[] = [
   {
+    key: "Integrating_Fintech_SDKs_using_Fincra_as_a_case_study",
+    title: "Integrating Fintech SDKs, using Fincra as a case study",
+    subTitle: "@xandychris • 6th July 2024",
+    link: "https://x.com/i/spaces/1LyGBnXpelMGN",
+  },
+  {
+    key: "Scalable_API_Testing_for_Optimal_Performance",
+    title: "Scalable API Testing for Optimal Performance",
+    subTitle: "@OmoladeEkpeni • 29th June 2024",
+    link: "https://x.com/i/spaces/1mrGmyPDZovGy",
+  },
+  {
+    key: "Building_API_based_products_that_scale",
+    title: "Building API based products that scale",
+    subTitle: "@goodnesskayode • 15th June 2024",
+    link: "https://x.com/i/spaces/1rmxPMkvyknKN",
+  },
+  {
+    key: "Leveraging_APIs_for_Microservices_Architecture",
+    title: "Leveraging APIs for Microservices Architecture",
+    subTitle: "@hybeecodes • 1st June 2024",
+    link: "https://x.com/i/spaces/1vAxRvwpWOvxl",
+  },
+  {
     key: "API_Versioning_and_Backward_Compatibility",
     title: "API Versioning and Backward Compatibility.",
     subTitle: "@horlaarsco • 25th May 2024",
