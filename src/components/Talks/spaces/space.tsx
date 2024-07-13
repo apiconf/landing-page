@@ -1,3 +1,5 @@
+import styles from "./spaces.module.css";
+
 interface SpaceProps {
   iconOne: string;
   iconTwo: string;
@@ -7,6 +9,7 @@ interface SpaceProps {
   btnText: string;
   link: string;
 }
+
 const Space = ({
   iconOne,
   iconTwo,
@@ -17,10 +20,12 @@ const Space = ({
   link,
 }: SpaceProps) => {
   return (
-    <div className="bg-white p-8 rounded-[30px] max-w-[469px] w-full flex flex-col gap-8">
+    <div
+      className={`${styles.emblaSlide} select-none min-w-[80%] sm:min-w-0 md:mx-8 min-h-[14.7rem] transform`}
+    >
       <div className="w-[112px] flex gap-4">
-        <img src={iconOne} />
-        <img className="hidden sm:block" src={iconTwo} />
+        <img src={iconOne} alt="Mic icon" />
+        <img className="hidden sm:block" src={iconTwo} alt="Soundwave" />
       </div>
       <div className="text-primary-black flex flex-col gap-3">
         <h3 className="text-2xl leading-none font-bold text-inherit">
@@ -40,7 +45,7 @@ const Space = ({
           {btnText}
         </span>
         <span className=" w-4 h-4  flex justify-center items-center rounded">
-          <img src={btnIcon} alt="" />
+          <img src={btnIcon} alt={`${btnText} button icon`} />
         </span>
       </a>
     </div>

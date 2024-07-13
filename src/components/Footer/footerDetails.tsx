@@ -57,10 +57,10 @@ const FooterDetails = () => {
       <div className={footerDetailStyle.content}>
         <motion.ul
           ref={footerNavRef}
-          initial={{ y: 32, opacity: 0 }}
+          initial={{ y: 32, opacity: 1 }}
           animate={{
             y: isFooterNavVisible ? 0 : 32,
-            opacity: isVisibleOnLaptop(isFooterNavVisible) ? 1 : 0,
+            opacity: isVisibleOnLaptop(isFooterNavVisible) ? 1 : 1,
           }}
           transition={{
             y: { duration: 0.5, ease: [0, 0, 0.75, 1], delay: 0.2 },
@@ -102,9 +102,9 @@ const FooterDetails = () => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <Link to="/speakers" className={footerDetailStyle.linkText}>
+            <a href="#" className={footerDetailStyle.linkText}>
               speakers
-            </Link>
+            </a>
             <img
               className={footerDetailStyle.linkIcon}
               src={arrow}
@@ -114,10 +114,10 @@ const FooterDetails = () => {
         </motion.ul>
         <motion.div
           ref={footerSaluteRef}
-          initial={{ y: 32, opacity: 0 }}
+          initial={{ y: 32, opacity: 1 }}
           animate={{
             y: isFooterSaluteVisible ? 0 : 32,
-            opacity: isVisibleOnLaptop(isFooterNavVisible) ? 1 : 0,
+            opacity: isVisibleOnLaptop(isFooterNavVisible) ? 1 : 1,
           }}
           transition={{
             duration: 0.5,
@@ -135,10 +135,10 @@ const FooterDetails = () => {
       <motion.img
         src={image3D}
         ref={image3DMbRef}
-        initial={{ y: 32, opacity: 0 }}
+        initial={{ y: 32, opacity: 1 }}
         animate={{
           y: isImage3DMbVisible ? 0 : 32,
-          opacity: isImage3DMbVisible ? 1 : 0,
+          opacity: isImage3DMbVisible ? 1 : 1,
         }}
         transition={{
           y: { duration: 0.5, ease: [0, 0, 0.75, 1], delay: 0.4 },
@@ -151,10 +151,10 @@ const FooterDetails = () => {
         id="elevate"
         src={image3D}
         ref={image3DRef}
-        initial={{ y: 32, opacity: 0 }}
+        initial={{ y: 32, opacity: 1 }}
         animate={{
           y: isImage3DVisible ? 0 : 32,
-          opacity: isVisibleOnLaptop(isFooterNavVisible) ? 1 : 0,
+          opacity: isVisibleOnLaptop(isFooterNavVisible) ? 1 : 1,
         }}
         transition={{
           y: { duration: 0.5, ease: [0, 0, 0.75, 1], delay: 0.4 },
