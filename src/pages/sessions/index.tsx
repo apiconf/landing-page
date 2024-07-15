@@ -132,7 +132,7 @@ const cardData: sessions[] = [
     employer: "TWEN",
     sessionType: "PANEL SESSION",
     talkTitle: "Browser APIs: Things You Need To Know",
-    image: "/Okunoye-David",
+    image: "/Okunoye-David.jpg",
   },
   {
     key: 13,
@@ -141,7 +141,7 @@ const cardData: sessions[] = [
     employer: "Sourcegraph",
     sessionType: "PANEL SESSION",
     talkTitle: "Rethinking API Security",
-    image: "/Bolaji-Olajide",
+    image: "/Bolaji-Olajide.jpg",
   },
   {
     key: 14,
@@ -151,7 +151,7 @@ const cardData: sessions[] = [
     sessionType: "PANEL SESSION",
     talkTitle:
       "Building Blockchain Applications using APIs:  A Practical Guide to Fuse Blockchain REST APIs",
-    image: "/Emmanuel-Odianosen",
+    image: "/Emmanuel-Odianosen.png",
   },
   {
     key: 15,
@@ -161,7 +161,7 @@ const cardData: sessions[] = [
     sessionType: "PANEL SESSION",
     talkTitle:
       "Navigating the Fog: Effective Product Discovery for API Products",
-    image: "/Kenechukwu-Nwankwo",
+    image: "/Kenechukwu-Nwankwo.jpg",
   },
 ];
 
