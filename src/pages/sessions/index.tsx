@@ -183,9 +183,9 @@ function Main() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <GridContainer>
-          <SubTitle title="Key" />
+          <SubTitle title="Speaker" />
           <div className="md:ml-10 xl:ml-16">
-            <SubTitle title="Value" />
+            <SubTitle title="Session" />
           </div>
         </GridContainer>
         {cardData.map((card) => (
@@ -208,11 +208,11 @@ function GridCard({
     <GridContainer>
       <div className="flex justify-center md:justify-between md:gap-x-10 xl:gap-x-16">
         <div className="w-full flex flex-col lg:flex-row items-center gap-8">
-          <div className="w-40 min-h-[12.5rem] shrink-0 rounded-2xl bg-[#4536DD]">
+          <div className="w-40 h-[12.5rem] shrink-0 rounded-2xl bg-[#4536DD]">
             <img
               src={image}
               alt={speaker}
-              className="w-full h-full object-fill rounded-2xl"
+              className="w-full h-full object-cover rounded-2xl"
             />
           </div>
           <div className="text-[#F1F1F1] w-full text-center lg:text-left font-sans">
