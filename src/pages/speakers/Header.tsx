@@ -32,10 +32,10 @@ export default function Header({
 
   return (
     <div className="flex items-center justify-between mb-8">
-      <h1 className="mb-8 text-[#F1F1F1] text-5xl font-sans font-bold">
+      <h1 className="mb-6 lg:mb-8 text-[#F1F1F1] text-2xl md:text-4xl lg:text-5xl font-sans font-bold">
         The Incredible Speakers
       </h1>
-      <div className="flex gap-x-4 items-center">
+      <div className="gap-x-4 items-center hidden lg:flex">
         <button
           type="button"
           disabled={prevBtnDisabled}
