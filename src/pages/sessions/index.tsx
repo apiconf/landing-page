@@ -9,7 +9,7 @@ type sessions = {
   speaker: string;
   job: string;
   employer: string;
-  sessionType: "WORKSHOP" | "PANEL SESSION" | "TALK";
+  sessionType: "WORKSHOP" | "SESSION" | "SESSION BREAKOUT" | "LIGHTNING TALK";
   talkTitle: string;
   image: string;
 };
@@ -20,7 +20,7 @@ const cardData: sessions[] = [
     speaker: "Cornelius Ashley-Osuzoka",
     job: "Engineering Manager, Developer Experience",
     employer: "Flutterwave Inc",
-    sessionType: "WORKSHOP",
+    sessionType: "SESSION BREAKOUT",
     talkTitle: "Plug in and play: How to design SDKs to extend your APIs",
     image: "/Cornelius-Ashley-Osuzoka.jpeg",
   },
@@ -29,7 +29,7 @@ const cardData: sessions[] = [
     speaker: "Adeyeye Adedoyinsolami",
     job: "Product Manager",
     employer: "Revent Technologies",
-    sessionType: "PANEL SESSION",
+    sessionType: "SESSION BREAKOUT",
     talkTitle: "How Product Management Principles Drive API Strategy",
     image: "/Adeyeye-Adedoyinsolami.jpg",
   },
@@ -38,7 +38,7 @@ const cardData: sessions[] = [
     speaker: "Funke Olasupo",
     job: "Technical Writer",
     employer: "",
-    sessionType: "TALK",
+    sessionType: "WORKSHOP",
     talkTitle:
       "From Design to Documentation: Building Interactive OpenAPI Specification",
     image: "/Funke-Olasupo.jpg",
@@ -48,7 +48,7 @@ const cardData: sessions[] = [
     speaker: "David Ijaola",
     job: "Product Manager",
     employer: "Norebase",
-    sessionType: "WORKSHOP",
+    sessionType: "SESSION",
     talkTitle: "Pivoting Internal APIs to Revenue-Generating Products",
     image: "/David-Ijaola.jpeg",
   },
@@ -57,7 +57,7 @@ const cardData: sessions[] = [
     speaker: "Ridwan Kasim",
     job: "Senior Backend Engineer",
     employer: "SeamlessHR",
-    sessionType: "PANEL SESSION",
+    sessionType: "SESSION",
     talkTitle: "Ensuring API Compliance: Best Practices and Strategies",
     image: "/Ridwan-Kasim.jpg",
   },
@@ -66,7 +66,7 @@ const cardData: sessions[] = [
     speaker: "Fawaz Haroun",
     job: "Software Engineer",
     employer: "Paystack",
-    sessionType: "PANEL SESSION",
+    sessionType: "WORKSHOP",
     talkTitle: "API Performance Monitoring with Prometheus and Grafana",
     image: "/Fawaz-Haroun.jpg",
   },
@@ -75,7 +75,7 @@ const cardData: sessions[] = [
     speaker: "Uchechukwu Azubuko",
     job: "Lead Frontend Engineer",
     employer: "OneLiquidity",
-    sessionType: "PANEL SESSION",
+    sessionType: "LIGHTNING TALK",
     talkTitle: "Patterns for a Clean Frontend Application With Valid Data",
     image: "/Uchechukwu-Azubuko.jpeg",
   },
@@ -84,7 +84,7 @@ const cardData: sessions[] = [
     speaker: "Motunrayo Koyejo",
     job: "Software Engineer",
     employer: "Brass",
-    sessionType: "PANEL SESSION",
+    sessionType: "SESSION BREAKOUT",
     talkTitle: "API Versioning: Building for Longevity and Adaptability",
     image: "/Motunrayo-Koyejo.jpg",
   },
@@ -93,7 +93,7 @@ const cardData: sessions[] = [
     speaker: "Esther Okafor",
     job: "Quality assurance engineer",
     employer: "Storyblok GMBH",
-    sessionType: "PANEL SESSION",
+    sessionType: "SESSION BREAKOUT",
     talkTitle: "Beyond the Code: A QA Tester's Perspective on API Design",
     image: "/Esther-Okafor.jpg",
   },
@@ -102,7 +102,7 @@ const cardData: sessions[] = [
     speaker: "Rufai Mustapha",
     job: "Technical Instructor",
     employer: "Pluralsight",
-    sessionType: "PANEL SESSION",
+    sessionType: "SESSION BREAKOUT",
     talkTitle: "Leveraging Open Banking APIs for Innovation",
     image: "/Rufai-Mustapha.jpg",
   },
@@ -111,7 +111,7 @@ const cardData: sessions[] = [
     speaker: "Tobiloba Adedeji",
     job: "DevRel Engineer",
     employer: "Fleek",
-    sessionType: "PANEL SESSION",
+    sessionType: "WORKSHOP",
     talkTitle: "Browser APIs: Things You Need To Know",
     image: "/Tobiloba-Adedeji.jpeg",
   },
@@ -120,7 +120,7 @@ const cardData: sessions[] = [
     speaker: "Terhile ikyo",
     job: "Senior Project Manager",
     employer: "FCMB Group",
-    sessionType: "PANEL SESSION",
+    sessionType: "SESSION",
     talkTitle:
       "Metrics that Matter: Measuring the Success of Your API Strategy",
     image: "/Terhile-ikyo.jpg",
@@ -130,7 +130,7 @@ const cardData: sessions[] = [
     speaker: "Okunoye David",
     job: "Software Engineer",
     employer: "TWEN",
-    sessionType: "PANEL SESSION",
+    sessionType: "WORKSHOP",
     talkTitle: "Browser APIs: Things You Need To Know",
     image: "/Okunoye-David.jpg",
   },
@@ -139,7 +139,7 @@ const cardData: sessions[] = [
     speaker: "Bolaji Olajide",
     job: "Software Engineer",
     employer: "Sourcegraph",
-    sessionType: "PANEL SESSION",
+    sessionType: "SESSION BREAKOUT",
     talkTitle: "Rethinking API Security",
     image: "/Bolaji-Olajide.jpg",
   },
@@ -148,9 +148,9 @@ const cardData: sessions[] = [
     speaker: "Emmanuel Odianosen",
     job: "Developer Support Engineer",
     employer: "Fuse Blockchain",
-    sessionType: "PANEL SESSION",
+    sessionType: "WORKSHOP",
     talkTitle:
-      "Building Blockchain Applications using APIs:  A Practical Guide to Fuse Blockchain REST APIs",
+      "Building Blockchain Applications using APIs: A Practical Guide to Fuse Blockchain REST APIs",
     image: "/Emmanuel-Odianosen.png",
   },
   {
@@ -158,7 +158,7 @@ const cardData: sessions[] = [
     speaker: "Kenechukwu Nwankwo",
     job: "Senior Product Manager",
     employer: "",
-    sessionType: "PANEL SESSION",
+    sessionType: "LIGHTNING TALK",
     talkTitle:
       "Navigating the Fog: Effective Product Discovery for API Products",
     image: "/Kenechukwu-Nwankwo.jpg",
@@ -183,9 +183,9 @@ function Main() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <GridContainer>
-          <SubTitle title="Speaker" />
+          <SubTitle title="Key" />
           <div className="md:ml-10 xl:ml-16">
-            <SubTitle title="Session" />
+            <SubTitle title="Value" />
           </div>
         </GridContainer>
         {cardData.map((card) => (
@@ -225,7 +225,7 @@ function GridCard({
         </div>
         <img
           src={ColonIcon}
-          className="hidden md:block"
+          className="hidden lg:block"
           alt="Colon Icon"
           width="11.805"
           height="43.847"
