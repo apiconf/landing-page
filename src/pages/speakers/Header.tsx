@@ -6,7 +6,7 @@ export default function Header({
   const onPrevButtonClick = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollTo({
-        left: carouselRef.current.scrollLeft - 100,
+        left: carouselRef.current.scrollLeft - 200,
         behavior: "smooth",
       });
     }
@@ -15,7 +15,7 @@ export default function Header({
   const onNextButtonClick = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollTo({
-        left: carouselRef.current.scrollLeft + 100,
+        left: carouselRef.current.scrollLeft + 200,
         behavior: "smooth",
       });
     }
