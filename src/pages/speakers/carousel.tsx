@@ -42,15 +42,21 @@ export default function Carousel({ slides }: { slides: speakers[] }) {
                 onMouseMove={() => setActiveItem(index)}
                 onTouchMove={() => setActiveItem(index)}
                 key={speaker.index}
-                className={`relative h-[25rem] rounded-2xl w-[10%] transition-all duration-[0.75s] ease-in-out flex-[10%_10_0] [&[aria-current='true']]:w-[50%] [&[aria-current='true']]:flex-[50%_50_0]`}
+                className={`
+                  relative h-[25rem] rounded-2xl w-[10%] transition-all duration-[0.75s] ease-in-out 
+                  flex-[10%_10_0] [&[aria-current='true']]:w-[50%] [&[aria-current='true']]:flex-[50%_50_0]
+                  before:absolute before:bottom-0 before:left-[-10px]  
+                `}
               >
-                <img
-                  src={speaker.image}
-                  alt={speaker.name}
-                  className={`hover:cursor-pointer w-[591.667px] h-[400px] rounded-2xl w-full h-full object-cover ${
-                    activeItem !== index ? "grayscale" : ""
-                  }`}
-                />
+                <div className="w-full h-full overflow-hidden rounded-2xl">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className={`hover:cursor-pointer w-[591.667px] h-[400px] rounded-2xl object-cover ${
+                      activeItem !== index ? "grayscale" : ""
+                    }`}
+                  />
+                </div>
                 <div>
                   <div
                     className={`${

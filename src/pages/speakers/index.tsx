@@ -175,7 +175,7 @@ function Main() {
   ];
 
   return (
-    <main className="bg-[#2F20BF] min-h-screen px-12 md:px-24 xl:px-32 pt-24 md:pt-40 xl:pt-64">
+    <main className="bg-[#2F20BF] min-h-screen px-8 sm:px-12 md:px-24 xl:px-32 pt-24 md:pt-40 xl:pt-64">
       <Carousel slides={speakers} />
     </main>
   );
