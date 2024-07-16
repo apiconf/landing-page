@@ -9,7 +9,12 @@ type sessions = {
   speaker: string;
   job: string;
   employer: string;
-  sessionType: "WORKSHOP" | "SESSION" | "SESSION BREAKOUT" | "LIGHTNING TALK";
+  sessionType:
+    | "WORKSHOP"
+    | "SESSION"
+    | "PANEL SESSION"
+    | "SESSION BREAKOUT"
+    | "LIGHTNING TALK";
   talkTitle: string;
   image: string;
 };
@@ -162,6 +167,56 @@ const cardData: sessions[] = [
     talkTitle:
       "Navigating the Fog: Effective Product Discovery for API Products",
     image: "/Kenechukwu-Nwankwo.jpg",
+  },
+  {
+    key: 16,
+    speaker: "Enoch Osarenren",
+    job: "Senior Software Engineer",
+    employer: "SeamlessHR",
+    sessionType: "PANEL SESSION",
+    talkTitle:
+      "Navigating the complexities of regulatory frameworks with APls to ensure compliance and protect consumer data",
+    image: "/Enoch-Osarenren.webp",
+  },
+  {
+    key: 17,
+    speaker: "Sule-balogun Olanrewaju",
+    job: "Software Engineer",
+    employer: "Tillo",
+    sessionType: "PANEL SESSION",
+    talkTitle:
+      "Navigating the complexities of regulatory frameworks with APls to ensure compliance and protect consumer data",
+    image: "/Sule-balogun-Olanrewaju.webp",
+  },
+  {
+    key: 18,
+    speaker: "Wale Adeniji",
+    job: "Head of Engineering",
+    employer: "Fincra",
+    sessionType: "PANEL SESSION",
+    talkTitle:
+      "Navigating the complexities of regulatory frameworks with APls to ensure compliance and protect consumer data",
+    image: "/Wale-Adeniji.jpg",
+  },
+  {
+    key: 19,
+    speaker: "Ernest Nnamdi",
+    job: "Software/Developer relations engineer",
+    employer: "Morph",
+    sessionType: "PANEL SESSION",
+    talkTitle:
+      "Navigating the complexities of regulatory frameworks with APls to ensure compliance and protect consumer data",
+    image: "/Ernest-Nnamdi.png",
+  },
+  {
+    key: 20,
+    speaker: "Amaka Ekeh",
+    job: "Software Developer",
+    employer: "Fincra",
+    sessionType: "PANEL SESSION",
+    talkTitle:
+      "Navigating the complexities of regulatory frameworks with APls to ensure compliance and protect consumer data",
+    image: "/Amaka-Ekeh.jpeg",
   },
 ];
 
