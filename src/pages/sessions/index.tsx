@@ -181,10 +181,10 @@ function Main() {
       <h1 className="text-[#F1F1F1] font-sans text-5xl font-bold mb-4">
         Sessions
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 min-[800px]:grid-cols-2">
         <GridContainer>
           <SubTitle title="Key" />
-          <div className="md:ml-10 xl:ml-16">
+          <div className="min-[800px]:ml-10 xl:ml-16">
             <SubTitle title="Value" />
           </div>
         </GridContainer>
@@ -206,7 +206,7 @@ function GridCard({
 }: sessions) {
   return (
     <GridContainer>
-      <div className="flex justify-center md:justify-between md:gap-x-10 xl:gap-x-16">
+      <div className="flex justify-center min-[800px]:justify-between min-[800px]:gap-x-10 xl:gap-x-16">
         <div className="w-full flex flex-col lg:flex-row items-center gap-8">
           <div className="w-40 h-[12.5rem] shrink-0 rounded-2xl bg-[#4536DD]">
             <img
@@ -231,13 +231,13 @@ function GridCard({
           height="43.847"
         />
       </div>
-      <div className="flex flex-col items-center md:items-start md:ml-10 xl:ml-16">
+      <div className="flex flex-col items-center min-[800px]:items-start min-[800px]:ml-10 xl:ml-16">
         <div className="my-4 rounded-[2rem] px-4 py-1 w-max bg-[#E1EF9A]">
           <span className="text-[#0A0A0A] font-sans text-lg font-bold">
             {sessionType}
           </span>
         </div>
-        <p className="text-[#F1F1F1] text-center md:text-left break-words font-sans text-4xl xl:text-5xl font-bold">
+        <p className="text-[#F1F1F1] text-center min-[800px]:text-left break-words font-sans text-4xl xl:text-5xl font-bold">
           {talkTitle}
         </p>
       </div>
