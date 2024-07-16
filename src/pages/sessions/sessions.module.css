@@ -1,0 +1,32 @@
+.Main {
+  @apply bg-[#2F20BF] min-h-screen px-12 md:px-24 xl:px-32 pt-10 md:pt-12 xl:pt-16 pb-16 md:pb-28 xl:pb-36;
+}
+
+.GridContainer {
+  display: grid;
+  border-bottom: 2px solid #4536dd;
+  padding-bottom: 2rem;
+  grid-column: span 2 / span 2;
+  margin-bottom: 2rem;
+}
+
+@media (width > 768px) {
+  .GridContainer {
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.Subtitle {
+  color: #f1f1f1;
+  font-family: "Cabinet-Grotesk";
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .Subtitle {
+    display: block;
+  }
+}
