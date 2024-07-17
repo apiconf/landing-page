@@ -1,11 +1,12 @@
-import { useRef } from "react";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { useIsVisible, useScreenWidth } from "../../hooks";
-import image3D from "../../assets/3D-Image.png";
-import conf2024 from "../../assets/conf-2024.png";
+
+import { Link } from "react-router-dom";
 import arrow from "../../assets/arrow-icon.svg";
+import conf2024 from "../../assets/conf-2024.png";
 import footerDetailStyle from "./css/footer-details.module.css";
+import image3D from "../../assets/3D-Image.png";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const FooterDetails = () => {
   const headerTextRef = useRef(null);
@@ -102,7 +103,7 @@ const FooterDetails = () => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <a href="#" className={footerDetailStyle.linkText}>
+            <a href="/speakers" className={footerDetailStyle.linkText}>
               speakers
             </a>
             <img
