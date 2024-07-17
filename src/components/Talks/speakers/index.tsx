@@ -1,6 +1,6 @@
-import { useRef } from "react";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../../hooks";
+import { useRef } from "react";
 
 const Speaker = () => {
   const speakTextRef = useRef(null);
@@ -45,13 +45,13 @@ const Speaker = () => {
             delay: 0.2,
           }}
           ref={applyBtnRef}
-          href="https://sessionize.com/api-conf-lagos-2024/"
+          href="/sessions"
           rel="noopener noreferrer"
           target="_blank"
           className="w-full sm:max-w-[329px] md:max-w-full md:w-4/5 lg:w-[70.01%] cursor-pointer p-6 sm:px-4 sm:py-8 md:px-8 md:py-[7.21%] flex gap-2 justify-center items-center bg-peach rounded-[320px]"
         >
           <span className="text-dark font-extrabold text-2xl leading-[29.76px]">
-            Apply to Speak
+            View Session Details
           </span>
         </motion.a>
       </motion.div>
