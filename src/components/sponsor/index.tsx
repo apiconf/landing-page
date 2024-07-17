@@ -156,7 +156,7 @@ const Sponsor = () => {
           initial="hidden"
           animate="visible"
           variants={buttonVariant}
-          className="w-full max-w-[330px] lg:max-w-[467px] lg:w-[70.01%] p-6 sm:px-4 sm:py-8 md:px-8 lg:py-[7.21%] cursor-pointer bg-white flex gap-2 justify-center items-center rounded-[320px]"
+          className="w-full max-w-[330px] lg:max-w-[467px] lg:w-[70.01%] p-6 sm:px-4 sm:py-8 md:px-8 lg:py-12 cursor-pointer bg-white flex gap-2 justify-center items-center rounded-[320px]"
         >
           <span className="text-black font-extrabold text-2xl leading-[29.76px]">
             More Details in Deck
