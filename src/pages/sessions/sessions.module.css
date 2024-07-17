@@ -10,6 +10,10 @@
   margin-bottom: 2rem;
 }
 
+.noborder {
+  border-bottom: none;
+}
+
 @media (width > 768px) {
   .GridContainer {
     grid-template-rows: minmax(0, 1fr);
