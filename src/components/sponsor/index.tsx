@@ -142,7 +142,7 @@ const Sponsor = () => {
             <p className="text-2xl font-medium leading-[29.76px] md:text-center w-full mb-8 text-[#1F1F1F]">
               Community Partners
             </p>
-            <div className="flex flex-wrap justify-center xl:justify-between items-center gap-12 md:gap-12 xl:gap-8">
+            <div className="flex flex-wrap md:justify-center xl:justify-between items-center gap-12 md:gap-12 xl:gap-8">
               <img
                 src="/sponsor-component/github-student.png"
                 alt="Github Student Logo"
