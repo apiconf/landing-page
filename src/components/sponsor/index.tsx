@@ -182,7 +182,7 @@ const Sponsor = () => {
           </div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           ref={contactRef}
           initial="hidden"
           animate="visible"
@@ -214,7 +214,7 @@ const Sponsor = () => {
           <span className="text-black font-extrabold text-2xl leading-[29.76px]">
             More Details in Deck
           </span>
-        </motion.a>
+        </motion.a> */}
       </div>
     </section>
   );
