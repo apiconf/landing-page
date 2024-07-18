@@ -25,8 +25,8 @@ function Main() {
     {
       index: 0,
       name: "Gbadebo Bello",
-      jobTitle: "President General",
-      employer: "among the nation",
+      jobTitle: "Developer Advocate",
+      employer: "Postman",
       image: "/Gbadebo-Bello.png",
     },
     {
