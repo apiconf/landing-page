@@ -124,7 +124,7 @@ const Sponsor = () => {
             <p className="text-2xl font-medium leading-[29.76px] md:text-center w-full mb-8 text-[#1F1F1F]">
               Bronze Sponsors
             </p>
-            <div className="flex wrap items-center gap-8">
+            <div className="flex flex-wrap md:flex-nowrap items-center gap-8">
               <img
                 src={APItoolkitLogo}
                 alt="APItoolkit Logo"
