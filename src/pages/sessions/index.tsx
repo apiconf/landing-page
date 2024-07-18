@@ -368,7 +368,6 @@ function GridContainer({
   no?: number | null;
   id?: number | null;
 }) {
-  console.log("pepw: ", no, id);
   return (
     <div
       className={`${styles.GridContainer} ${
