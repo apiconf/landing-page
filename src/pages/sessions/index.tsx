@@ -243,7 +243,14 @@ function Main() {
 function Grids({ no = null }: { no?: number | null }) {
   const [cardDataList, setCardDataList] = useState(cardData);
   useEffect(() => {
-    if (no) setCardDataList(cardData.slice(0, no));
+    if (no)
+      setCardDataList(
+        cardData
+          .filter((data) => {
+            return data.sessionType === "PANEL SESSION";
+          })
+          .slice(0, no)
+      );
   }, []);
   return (
     <>
@@ -257,8 +264,8 @@ function Grids({ no = null }: { no?: number | null }) {
             <SubTitle title="Value" />
           </div>
         </GridContainer>
-        {cardDataList.map((card) => (
-          <GridCard {...card} key={card.id} no={no} />
+        {cardDataList.map((card, index) => (
+          <GridCard {...card} key={card.id} no={no} id={index} />
         ))}
       </div>
     </>
