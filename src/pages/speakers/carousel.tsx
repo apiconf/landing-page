@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import type { speakers } from ".";
 import Header from "./Header";
 import styles from "./style.module.css";
 
-export default function Carousel({ slides }: { slides: speakers[] }) {
+export default function Carousel({
+  slides,
+  no = null,
+}: {
+  slides: speakers[];
+  no?: number | null;
+}) {
   const [activeItem, setActiveItem] = React.useState(2);
   const CarouselRef = React.useRef<HTMLDivElement>(null);
+  const [slideList, setSlideList] = React.useState(slides);
+  useEffect(() => {
+    if (no) setSlideList(slideList.slice(0, no));
+  }, []);
 
   return (
     <>
       <Header carouselRef={CarouselRef} />
       <div className="w-full lg:hidden">
         <ul className="grid gap-12 sm:grid-cols-2 w-full">
-          {slides.map((speaker) => (
+          {slideList.map((speaker) => (
             <li key={speaker.index} className="text-[#F1F1F1] rounded-2xl">
               <img
                 src={speaker.image}
