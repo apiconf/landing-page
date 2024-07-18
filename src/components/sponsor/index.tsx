@@ -1,10 +1,10 @@
-import { useRef } from "react";
-import { motion } from "framer-motion";
-import { useIsVisible } from "../../hooks";
+import APItoolkitLogo from "../../assets/APItoolkit-Logo.svg";
+import FincraLogo from "../../assets/fincra-logo.svg";
 import InquireContact from "./card";
 import PostmanLogo from "../../assets/Postman.svg";
-import FincraLogo from "../../assets/fincra-logo.svg";
-import APItoolkitLogo from "../../assets/APItoolkit-Logo.svg";
+import { motion } from "framer-motion";
+import { useIsVisible } from "../../hooks";
+import { useRef } from "react";
 
 const Sponsor = () => {
   const headerRef = useRef(null);
@@ -123,7 +123,7 @@ const Sponsor = () => {
           </div>
           <div>
             <p className="text-2xl font-medium leading-[29.76px] md:text-center w-full mb-8 text-[#1F1F1F]">
-              Bronze Sponsor
+              Bronze Sponsors
             </p>
             <div className="flex wrap items-center gap-8">
               <img
