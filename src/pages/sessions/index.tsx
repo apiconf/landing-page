@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import ColonIcon from "../../assets/colon.svg";
+import Footer from "../../components/Footer";
 // import { motion } from "framer-motion";
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import ColonIcon from "../../assets/colon.svg";
+import { motion } from "framer-motion";
 import styles from "./sessions.module.css";
+import { useIsVisible } from "../../hooks";
 
 type sessions = {
   no?: number | null;
@@ -233,9 +236,42 @@ export default function Sessions() {
 }
 
 function Main() {
+  const buttonRef = useRef(null);
+  const isButtonVisible = useIsVisible(buttonRef, 0.75);
+  const buttonVariant = {
+    visible: {
+      y: isButtonVisible ? 0 : 32,
+      opacity: isButtonVisible ? 1 : 0,
+      transition: {
+        ease: [0, 0, 0.58, 1],
+        delay: 0.3,
+        y: { duration: 0.75 },
+        opacity: { duration: 1 },
+      },
+    },
+    hidden: {
+      y: 32,
+      opacity: 0,
+    },
+  };
+
   return (
     <main className={styles.Main}>
       <Grids />
+      <motion.a
+        href="https://drive.google.com/file/d/1YhVJDJywO4spLbkva326k5440hLDKOBD/view"
+        rel="noopener noreferrer"
+        target="_blank"
+        ref={buttonRef}
+        initial="hidden"
+        animate="visible"
+        variants={buttonVariant}
+        className="w-full max-w-[330px] lg:max-w-[466px] lg:w-[70.01%] max-h-[126px] h-full mt-6 mx-auto py-8 px-8 lg:py-12 cursor-pointer bg-[#E1EF9A] flex justify-center items-center rounded-[320px]"
+      >
+        <span className="text-black font-bold text-2xl leading-[29.76px]">
+          SEE FULL SCHEDULE
+        </span>
+      </motion.a>
     </main>
   );
 }

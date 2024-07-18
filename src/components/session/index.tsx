@@ -1,7 +1,7 @@
-import { useRef } from "react";
+import { SessionGridForOutdoorUse } from "../../pages/sessions";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
-import { SessionGridForOutdoorUse } from "../../pages/sessions";
+import { useRef } from "react";
 
 export default function SessionsInHome() {
   const buttonRef = useRef(null);
@@ -36,7 +36,7 @@ export default function SessionsInHome() {
         className="w-full max-w-[330px] lg:max-w-[466px] lg:w-[70.01%] max-h-[126px] h-full mt-6 mx-auto py-8 px-8 lg:py-12 cursor-pointer bg-[#E1EF9A] flex justify-center items-center rounded-[320px]"
       >
         <span className="text-black font-bold text-2xl leading-[29.76px]">
-          SEE FULL SCHEDULE
+          SEE ALL SESSIONS
         </span>
       </motion.a>
     </section>
