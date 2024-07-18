@@ -1,19 +1,18 @@
-import { useRef } from "react";
+import APItoolkitLogo from "../../assets/APItoolkit-Logo.svg";
+import FincraLogo from "../../assets/fincra-logo.svg";
+import PostmanLogo from "../../assets/Postman.svg";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
-import InquireContact from "./card";
-import PostmanLogo from "../../assets/Postman.svg";
-import FincraLogo from "../../assets/fincra-logo.svg";
-import APItoolkitLogo from "../../assets/APItoolkit-Logo.svg";
+import { useRef } from "react";
 
 const Sponsor = () => {
   const headerRef = useRef(null);
-  const contactRef = useRef(null);
-  const buttonRef = useRef(null);
+  // const contactRef = useRef(null);
+  // const buttonRef = useRef(null);
   const bannerRef = useRef(null);
   const isHeaderVisible = useIsVisible(headerRef, 0.75);
-  const isContactVisible = useIsVisible(contactRef, 0.75);
-  const isButtonVisible = useIsVisible(buttonRef, 0.75);
+  // const isContactVisible = useIsVisible(contactRef, 0.75);
+  // const isButtonVisible = useIsVisible(buttonRef, 0.75);
   const isBannerVisible = useIsVisible(bannerRef, 0.75);
 
   const childVariant = {
@@ -30,34 +29,34 @@ const Sponsor = () => {
       opacity: 0,
     },
   };
-  const contactVariant = {
-    visible: {
-      y: isContactVisible ? 0 : 32,
-      opacity: isContactVisible ? 1 : 0,
-      transition: {
-        ...childVariant.visible.transition,
-        delay: 0.2,
-      },
-    },
-    hidden: {
-      ...childVariant.hidden,
-    },
-  };
-  const buttonVariant = {
-    visible: {
-      y: isButtonVisible ? 0 : 32,
-      opacity: isButtonVisible ? 1 : 0,
-      transition: {
-        ease: [0, 0, 0.58, 1],
-        delay: 0.3,
-        y: { duration: 0.75 },
-        opacity: { duration: 1 },
-      },
-    },
-    hidden: {
-      ...childVariant.hidden,
-    },
-  };
+  // const contactVariant = {
+  //   visible: {
+  //     y: isContactVisible ? 0 : 32,
+  //     opacity: isContactVisible ? 1 : 0,
+  //     transition: {
+  //       ...childVariant.visible.transition,
+  //       delay: 0.2,
+  //     },
+  //   },
+  //   hidden: {
+  //     ...childVariant.hidden,
+  //   },
+  // };
+  // const buttonVariant = {
+  //   visible: {
+  //     y: isButtonVisible ? 0 : 32,
+  //     opacity: isButtonVisible ? 1 : 0,
+  //     transition: {
+  //       ease: [0, 0, 0.58, 1],
+  //       delay: 0.3,
+  //       y: { duration: 0.75 },
+  //       opacity: { duration: 1 },
+  //     },
+  //   },
+  //   hidden: {
+  //     ...childVariant.hidden,
+  //   },
+  // };
   const bannerVariant = {
     visible: {
       y: isBannerVisible ? 0 : 32,
@@ -123,7 +122,7 @@ const Sponsor = () => {
           </div>
           <div>
             <p className="text-2xl font-medium leading-[29.76px] md:text-center w-full mb-8 text-[#1F1F1F]">
-              Bronze Sponsor
+              Bronze Sponsors
             </p>
             <div className="flex wrap items-center gap-8">
               <img
@@ -182,7 +181,7 @@ const Sponsor = () => {
           </div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           ref={contactRef}
           initial="hidden"
           animate="visible"
@@ -214,7 +213,7 @@ const Sponsor = () => {
           <span className="text-black font-extrabold text-2xl leading-[29.76px]">
             More Details in Deck
           </span>
-        </motion.a>
+        </motion.a> */}
       </div>
     </section>
   );
