@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 // import { motion } from "framer-motion";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -5,7 +6,8 @@ import ColonIcon from "../../assets/colon.svg";
 import styles from "./sessions.module.css";
 
 type sessions = {
-  key?: number;
+  no?: number | null;
+  id?: number;
   speaker: string;
   job: string;
   employer: string;
@@ -21,7 +23,7 @@ type sessions = {
 
 const cardData: sessions[] = [
   {
-    key: 0,
+    id: 0,
     speaker: "Cornelius Ashley-Osuzoka",
     job: "Engineering Manager, Developer Experience",
     employer: "Flutterwave Inc",
@@ -30,7 +32,7 @@ const cardData: sessions[] = [
     image: "/Cornelius-Ashley-Osuzoka.jpeg",
   },
   {
-    key: 1,
+    id: 1,
     speaker: "Adeyeye Adedoyinsolami",
     job: "Product Manager",
     employer: "Revent Technologies",
@@ -39,7 +41,7 @@ const cardData: sessions[] = [
     image: "/Adeyeye-Adedoyinsolami.jpg",
   },
   {
-    key: 2,
+    id: 2,
     speaker: "Funke Olasupo",
     job: "Technical Writer",
     employer: "",
@@ -49,7 +51,7 @@ const cardData: sessions[] = [
     image: "/Funke-Olasupo.jpg",
   },
   {
-    key: 3,
+    id: 3,
     speaker: "David Ijaola",
     job: "Product Manager",
     employer: "Norebase",
@@ -58,7 +60,7 @@ const cardData: sessions[] = [
     image: "/David-Ijaola.jpeg",
   },
   {
-    key: 4,
+    id: 4,
     speaker: "Ridwan Kasim",
     job: "Senior Backend Engineer",
     employer: "SeamlessHR",
@@ -67,7 +69,7 @@ const cardData: sessions[] = [
     image: "/Ridwan-Kasim.jpg",
   },
   {
-    key: 5,
+    id: 5,
     speaker: "Fawaz Haroun",
     job: "Software Engineer",
     employer: "Paystack",
@@ -76,7 +78,7 @@ const cardData: sessions[] = [
     image: "/Fawaz-Haroun.jpg",
   },
   {
-    key: 6,
+    id: 6,
     speaker: "Uchechukwu Azubuko",
     job: "Lead Frontend Engineer",
     employer: "OneLiquidity",
@@ -85,7 +87,7 @@ const cardData: sessions[] = [
     image: "/Uchechukwu-Azubuko.jpeg",
   },
   {
-    key: 7,
+    id: 7,
     speaker: "Motunrayo Koyejo",
     job: "Software Engineer",
     employer: "Brass",
@@ -94,7 +96,7 @@ const cardData: sessions[] = [
     image: "/Motunrayo-Koyejo.jpg",
   },
   {
-    key: 8,
+    id: 8,
     speaker: "Esther Okafor",
     job: "Quality assurance engineer",
     employer: "Storyblok GMBH",
@@ -103,7 +105,7 @@ const cardData: sessions[] = [
     image: "/Esther-Okafor.jpg",
   },
   {
-    key: 9,
+    id: 9,
     speaker: "Rufai Mustapha",
     job: "Technical Instructor",
     employer: "Pluralsight",
@@ -112,7 +114,7 @@ const cardData: sessions[] = [
     image: "/Rufai-Mustapha.jpg",
   },
   {
-    key: 10,
+    id: 10,
     speaker: "Tobiloba Adedeji",
     job: "DevRel Engineer",
     employer: "Fleek",
@@ -121,7 +123,7 @@ const cardData: sessions[] = [
     image: "/Tobiloba-Adedeji.jpeg",
   },
   {
-    key: 11,
+    id: 11,
     speaker: "Terhile ikyo",
     job: "Senior Project Manager",
     employer: "FCMB Group",
@@ -131,7 +133,7 @@ const cardData: sessions[] = [
     image: "/Terhile-ikyo.jpg",
   },
   {
-    key: 12,
+    id: 12,
     speaker: "Okunoye David",
     job: "Software Engineer",
     employer: "TWEN",
@@ -140,7 +142,7 @@ const cardData: sessions[] = [
     image: "/Okunoye-David.jpg",
   },
   {
-    key: 13,
+    id: 13,
     speaker: "Bolaji Olajide",
     job: "Software Engineer",
     employer: "Sourcegraph",
@@ -149,7 +151,7 @@ const cardData: sessions[] = [
     image: "/Bolaji-Olajide.jpg",
   },
   {
-    key: 14,
+    id: 14,
     speaker: "Emmanuel Odianosen",
     job: "Developer Support Engineer",
     employer: "Fuse Blockchain",
@@ -159,7 +161,7 @@ const cardData: sessions[] = [
     image: "/Emmanuel-Odianosen.png",
   },
   {
-    key: 15,
+    id: 15,
     speaker: "Kenechukwu Nwankwo",
     job: "Senior Product Manager",
     employer: "",
@@ -169,7 +171,7 @@ const cardData: sessions[] = [
     image: "/Kenechukwu-Nwankwo.jpg",
   },
   {
-    key: 16,
+    id: 16,
     speaker: "Enoch Osarenren",
     job: "Senior Software Engineer",
     employer: "SeamlessHR",
@@ -179,7 +181,7 @@ const cardData: sessions[] = [
     image: "/Enoch-Osarenren.webp",
   },
   {
-    key: 17,
+    id: 17,
     speaker: "Sule-balogun Olanrewaju",
     job: "Software Engineer",
     employer: "Tillo",
@@ -189,7 +191,7 @@ const cardData: sessions[] = [
     image: "/Sule-balogun-Olanrewaju.webp",
   },
   {
-    key: 18,
+    id: 18,
     speaker: "Wale Adeniji",
     job: "Head of Engineering",
     employer: "Fincra",
@@ -199,7 +201,7 @@ const cardData: sessions[] = [
     image: "/Wale-Adeniji.jpg",
   },
   {
-    key: 19,
+    id: 19,
     speaker: "Ernest Nnamdi",
     job: "Software/Developer relations engineer",
     employer: "Morph",
@@ -209,7 +211,7 @@ const cardData: sessions[] = [
     image: "/Ernest-Nnamdi.png",
   },
   {
-    key: 20,
+    id: 20,
     speaker: "Amaka Ekeh",
     job: "Software Developer",
     employer: "Fincra",
@@ -233,6 +235,25 @@ export default function Sessions() {
 function Main() {
   return (
     <main className={styles.Main}>
+      <Grids />
+    </main>
+  );
+}
+
+function Grids({ no = null }: { no?: number | null }) {
+  const [cardDataList, setCardDataList] = useState(cardData);
+  useEffect(() => {
+    if (no)
+      setCardDataList(
+        cardData
+          .filter((data) => {
+            return data.sessionType === "PANEL SESSION";
+          })
+          .slice(0, no)
+      );
+  }, []);
+  return (
+    <>
       <h1 className="text-[#F1F1F1] font-sans text-5xl font-bold mb-4">
         Sessions
       </h1>
@@ -243,15 +264,17 @@ function Main() {
             <SubTitle title="Value" />
           </div>
         </GridContainer>
-        {cardData.map((card) => (
-          <GridCard {...card} key={card.key} />
+        {cardDataList.map((card, index) => (
+          <GridCard {...card} key={card.id} no={no} id={index} />
         ))}
       </div>
-    </main>
+    </>
   );
 }
 
 function GridCard({
+  no,
+  id,
   speaker,
   job,
   employer,
@@ -260,7 +283,7 @@ function GridCard({
   image,
 }: sessions) {
   return (
-    <GridContainer>
+    <GridContainer id={id! + 1} no={no}>
       <div className="flex justify-center min-[800px]:justify-between min-[800px]:gap-x-10 xl:gap-x-16">
         <div className="w-full flex flex-col lg:flex-row items-center gap-8">
           <div className="w-40 h-[12.5rem] shrink-0 rounded-2xl bg-[#4536DD]">
@@ -300,10 +323,29 @@ function GridCard({
   );
 }
 
-function GridContainer({ children }: { children: React.ReactNode }) {
-  return <div className={styles.GridContainer}>{children}</div>;
+function GridContainer({
+  children,
+  no = null,
+  id = null,
+}: {
+  children: React.ReactNode;
+  no?: number | null;
+  id?: number | null;
+}) {
+  console.log("pepw: ", no, id);
+  return (
+    <div
+      className={`${styles.GridContainer} ${
+        no && id && id === no ? styles.noborder : null
+      }`}
+    >
+      {children}
+    </div>
+  );
 }
 
 function SubTitle({ title }: { title: string }) {
   return <p className={styles.Subtitle}>{title}</p>;
 }
+
+export const SessionGridForOutdoorUse = Grids;

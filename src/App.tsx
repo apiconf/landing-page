@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import Higlight from "./components/Highlight";
 import Sponsor from "./components/sponsor";
 import ScrollToAnchor from "./components/ScrollToAnchor";
+import SpeakersInHome from "./components/speaker";
+import SessionsInHome from "./components/session";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <FloatingBtn />
       <main>
         <About />
+        <SpeakersInHome />
+        <SessionsInHome />
         <Talks />
         <Higlight />
         <Sponsor />
