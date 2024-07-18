@@ -99,13 +99,17 @@ const Sponsor = () => {
           initial="hidden"
           animate="visible"
           variants={bannerVariant}
-          className="flex flex-col md:flex-wrap md:flex-row gap-16 md:items-center w-full !my-10 md:!my-32"
+          className="flex flex-col md:flex-wrap md:flex-row gap-16 md:justify-center w-full !my-10 md:!my-32"
         >
           <div>
             <p className="text-2xl font-medium leading-[29.76px] md:text-center w-full mb-8 text-[#1F1F1F]">
               Platinum Sponsor
             </p>
-            <img src={FincraLogo} alt="Fincra Logo" className="max-w-[256px]" />
+            <img
+              src={FincraLogo}
+              alt="Fincra Logo"
+              className="max-w-[256px] w-full"
+            />
           </div>
           <div>
             <p className="text-2xl font-medium leading-[29.76px] md:text-center w-full mb-8 text-[#1F1F1F]">
@@ -114,18 +118,67 @@ const Sponsor = () => {
             <img
               src={PostmanLogo}
               alt="Postman Logo"
-              className="max-w-[256px]"
+              className="max-w-[256px] w-full"
             />
           </div>
           <div>
             <p className="text-2xl font-medium leading-[29.76px] md:text-center w-full mb-8 text-[#1F1F1F]">
               Bronze Sponsor
             </p>
-            <img
-              src={APItoolkitLogo}
-              alt="APItoolkit Logo"
-              className="max-w-[256px]"
-            />
+            <div className="flex wrap items-center gap-8">
+              <img
+                src={APItoolkitLogo}
+                alt="APItoolkit Logo"
+                className="max-w-[251px] w-full"
+              />
+              <img
+                src="/sponsor-component/globarman.png"
+                alt="Globarman Logo"
+                className="max-w-[218.57px] w-full"
+              />
+            </div>
+          </div>
+          <div className="w-full">
+            <p className="text-2xl font-medium leading-[29.76px] md:text-center w-full mb-8 text-[#1F1F1F]">
+              Community Partners
+            </p>
+            <div className="flex wrap justify-between items-center gap-8">
+              <img
+                src="/sponsor-component/github-student.png"
+                alt="Github Student Logo"
+                className="max-w-[83.14px] w-full"
+              />
+              <img
+                src="/sponsor-component/cloudplexo.png"
+                alt="CloudPlexo Logo"
+                className="max-w-[141.22px] w-full"
+              />
+              <img
+                src="/sponsor-component/nexascale.png"
+                alt="NexaScale Logo"
+                className="max-w-[188.52px] w-full"
+              />
+              <img
+                src="/sponsor-component/sca.png"
+                alt="She Codes Africa Logo"
+                className="max-w-[56.55px] w-full"
+              />
+              <img
+                src="/sponsor-component/gdsc.png"
+                alt="Google Developer Students Club Logo"
+                className="max-w-[104.08px] w-full"
+              />
+              <img
+                src="/sponsor-component/async-api.png"
+                alt="AsyncAPI Logo"
+                className="max-w-[115.09px] w-full"
+              />
+              <img
+                src="/sponsor-component/postman.png"
+                alt="Postman Logo"
+                className="max-w-[52.55px] w-full"
+              />
+            </div>
           </div>
         </motion.div>
 
