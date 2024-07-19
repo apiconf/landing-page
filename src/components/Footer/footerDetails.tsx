@@ -112,6 +112,16 @@ const FooterDetails = () => {
               alt="arrow-icon"
             />
           </li>
+          <li className={footerDetailStyle.link}>
+            <a href="/dp" className={footerDetailStyle.linkText}>
+              DP Generator
+            </a>
+            <img
+              className={footerDetailStyle.linkIcon}
+              src={arrow}
+              alt="arrow-icon"
+            />
+          </li>
         </motion.ul>
         <motion.div
           ref={footerSaluteRef}
