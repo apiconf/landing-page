@@ -223,6 +223,16 @@ const cardData: sessions[] = [
       "Navigating the complexities of regulatory frameworks with APls to ensure compliance and protect consumer data",
     image: "/Amaka-Ekeh.jpeg",
   },
+  {
+    id: 21,
+    speaker: "Oluwabamikemi Kayode",
+    job: "Community Marketing Specialist",
+    employer: "AsyncAPI Initiative",
+    sessionType: "LIGHTNING TALK",
+    talkTitle:
+      "Get to know AsyncAPI Initiative",
+    image: "/Oluwabamikemi-Kayode.jpg",
+  },
 ];
 
 export default function Sessions() {
