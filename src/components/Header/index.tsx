@@ -1,8 +1,8 @@
-import { useRef } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/logo.svg";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
-import logo from "../../assets/logo.svg";
+import { useRef } from "react";
 
 const Header = () => {
   const headerRef = useRef(null);
@@ -63,7 +63,7 @@ const Header = () => {
               to="/#become-a-sponsor"
               className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl"
             >
-              <span className="hidden lg:inline">Become A</span> Sponsor
+              <span className="hidden lg:inline">Our</span> Sponsors
             </Link>
           </li>
         </ul>
