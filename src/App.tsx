@@ -13,11 +13,11 @@ export default function App() {
   const isDivTwoVisible = useIsVisible(divTwoRef, 0.75);
 
   const linkButtonStyles =
-    "rounded-[320px] cursor-pointer py-4 px-8 font-bold text-2xl font-sans flex-1";
+    "rounded-[320px] cursor-pointer py-2 xl:py-4 px-4 xl:px-8 font-bold text-center whitespace-nowrap text-xl xl:text-2xl font-sans flex-1 flex items-center justify-center";
 
   const divOneVariant = {
     visible: {
-      y: isDivOneVisible ? 0 : 32,
+      y: isDivOneVisible ? 0 : 20,
       opacity: isDivOneVisible ? 1 : 0,
       transition: {
         ease: [0, 0, 0.75, 1],
@@ -25,7 +25,7 @@ export default function App() {
       },
     },
     hidden: {
-      y: 32,
+      y: 20,
       opacity: 0,
     },
   };
@@ -49,10 +49,10 @@ export default function App() {
           className="px-[8%] sm:px-[5%] 2xl:px-[7.4%] pt-16 flex flex-col gap-12 lg:gap-0 lg:flex-row justify-between w-full"
         >
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-12 lg:gap-8 pb-8 text-white">
-            <h1 className="max-w-[640px] font-sans leading-[64px] text-[4rem] font-bold tracking-[-1.28px]">
+            <h1 className="max-w-[480px] xl:max-w-[640px] font-sans leading-[64px] text-[4rem] font-bold tracking-[-1.28px]">
               API Conference 2024 at a Glance.
             </h1>
-            <p className="max-w-[640px] text-lg leading-[normal]">
+            <p className="max-w-[480px] xl:max-w-[640px] text-lg leading-[normal]">
               The goal of API Conf is to promote API literacy amongst the
               different developer ecosystems that exist within Lagos, and in the
               future, Nigeria/Africa regardless of your expertise or skill
