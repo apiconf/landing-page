@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./App.css";
 import Header from "./components/2025/Header";
-import Sponsor from "./components/2025/Sponsor";
+import Sponsor from "./components/sponsor";
 import Footer from "./components/Footer";
 import { motion } from "framer-motion";
 import { useIsVisible } from "./hooks";
@@ -13,7 +13,7 @@ export default function App() {
   const isDivTwoVisible = useIsVisible(divTwoRef, 0.75);
 
   const linkButtonStyles =
-    "rounded-[320px] cursor-pointer py-4 px-8 font-bold text-2xl font-sans";
+    "rounded-[320px] cursor-pointer py-4 px-8 font-bold text-2xl font-sans flex-1";
 
   const divOneVariant = {
     visible: {
@@ -46,9 +46,9 @@ export default function App() {
           initial="hidden"
           animate="visible"
           variants={divOneVariant}
-          className="px-[8%] sm:px-[5%] 2xl:px-[7.4%] pt-16 flex justify-between w-full"
+          className="px-[8%] sm:px-[5%] 2xl:px-[7.4%] pt-16 flex flex-col gap-12 lg:gap-0 lg:flex-row justify-between w-full"
         >
-          <div className="flex flex-col gap-8 pb-8 text-white">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-12 lg:gap-8 pb-8 text-white">
             <h1 className="max-w-[640px] font-sans leading-[64px] text-[4rem] font-bold tracking-[-1.28px]">
               API Conference 2024 at a Glance.
             </h1>
@@ -58,11 +58,11 @@ export default function App() {
               future, Nigeria/Africa regardless of your expertise or skill
               level.
             </p>
-            <div className="text-[#000]">
-              <a href="" className={`${linkButtonStyles} bg-[#E1EF9A] mr-4`}>
+            <div className="text-[#000] flex-col sm:flex-row flex flex-wrap gap-4">
+              <a href="" className={`${linkButtonStyles} bg-[#E1EF9A]`}>
                 Register
               </a>
-              <a href="" className={`${linkButtonStyles} bg-[#ECC89D] mr-4`}>
+              <a href="" className={`${linkButtonStyles} bg-[#ECC89D]`}>
                 Apply to Speak
               </a>
               <a
@@ -79,6 +79,7 @@ export default function App() {
               alt="A 3D image with the text: APICONF 2024"
               width={365.532}
               height={128}
+              className="mx-auto lg:mx-0"
             />
           </div>
         </motion.div>
@@ -99,6 +100,7 @@ export default function App() {
           </button>
         </motion.div>
       </main>
+      <div className="mt-[7.75rem] 2xl:mt-[calc(7.75rem_+_2vh)]"></div>
       <Sponsor />
       <Footer newYear />
     </div>
