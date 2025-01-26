@@ -1,10 +1,10 @@
 import Copyright from "./Copyright";
 import FooterDetails from "./footerDetails";
 
-const Footer = () => {
+const Footer = ({ newYear = false }: { newYear?: boolean }) => {
   return (
     <footer>
-      <FooterDetails />
+      <FooterDetails newYear={newYear} />
       <Copyright />
     </footer>
   );
