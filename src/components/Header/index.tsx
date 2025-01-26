@@ -25,7 +25,7 @@ const Header = () => {
         </Link>
         <ul className="max-w-[133px] sm:max-w-[400px] lg:max-w-[520px] xl:max-w-[775px] 2xl:max-w-[894px] w-full flex justify-between xl:gap-x-6 2xl:gap-x-8 items-center">
           <li>
-            <Link to="/#spaces">
+            <Link to="/2024/#spaces">
               <dl className="flex flex-col gap-1">
                 <dt className="font-bold text-lg sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
                   Spaces
@@ -37,7 +37,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/#FAQ">
+            <Link to="/2024/#FAQ">
               <dl className="flex flex-col gap-1">
                 <dt className="font-bold text-lg sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
                   FAQs
@@ -60,7 +60,7 @@ const Header = () => {
           </li>
           <li className="hidden sm:inline">
             <Link
-              to="/#become-a-sponsor"
+              to="/2024/#become-a-sponsor"
               className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl"
             >
               <span className="hidden lg:inline">Our</span> Sponsors
