@@ -92,7 +92,7 @@ function Main() {
       </section>
 
       <motion.a
-        href="/speakers"
+        href="/2024/speakers"
         rel="noopener noreferrer"
         target="_blank"
         ref={buttonRef}

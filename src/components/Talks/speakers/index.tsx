@@ -29,9 +29,10 @@ const Speaker = () => {
           Speak at APIConf Lagos 2024
         </h2>
         <p className="text-inherit opacity-90 pt-8 pb-8 font-medium w-full sm:w-[73%] lg:text-left text-2xl leading-[29.76px]">
-          Our speakers are pioneers and innovators, drawn from a variety of industries, all united by their
-          expertise in APIs. Stay tuned as we reveal our lineup of
-          thought leaders and industry veterans who will provide valuable perspectives and inspiring stories.
+          Our speakers are pioneers and innovators, drawn from a variety of
+          industries, all united by their expertise in APIs. Stay tuned as we
+          reveal our lineup of thought leaders and industry veterans who will
+          provide valuable perspectives and inspiring stories.
         </p>
         <motion.a
           initial={{ y: 32, opacity: 0 }}
@@ -45,7 +46,7 @@ const Speaker = () => {
             delay: 0.2,
           }}
           ref={applyBtnRef}
-          href="/sessions"
+          href="/2024/sessions"
           rel="noopener noreferrer"
           target="_blank"
           className="w-full sm:max-w-[329px] md:max-w-full md:w-4/5 lg:w-[70.01%] cursor-pointer p-6 sm:px-4 sm:py-8 md:px-8 md:py-[7.21%] flex gap-2 justify-center items-center bg-peach rounded-[320px]"
