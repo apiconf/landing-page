@@ -26,7 +26,7 @@ export default function SessionsInHome() {
     <section className="bg-[#2F20BF] min-h-screen px-12 xl:px-32 pt-10 xl:pt-16 pb-16 xl:pb-[108px]">
       <SessionGridForOutdoorUse no={3} />
       <motion.a
-        href="/sessions"
+        href="/2024/sessions"
         rel="noopener noreferrer"
         target="_blank"
         ref={buttonRef}

@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.svg";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
 import { useRef } from "react";
 
-const Header = () => {
+export default function Header() {
   const headerRef = useRef(null);
   const isHeaderVisible = useIsVisible(headerRef, -1);
 
@@ -18,21 +17,21 @@ const Header = () => {
           ease: [0, 0, 0.25, 1],
           delay: 0.5,
         }}
-        className="w-full flex items-center gap-x-16 sm:gap-x-20 justify-between py-4 px-[8%] sm:px-[5%] 2xl:px-[7.4%]"
+        className="bg-dark-purple w-full flex items-center gap-x-16 sm:gap-x-20 justify-between py-4 px-[8%] sm:px-[5%] 2xl:px-[7.4%]"
       >
         <Link to="/" rel="noopener noreferrer">
-          <img className="w-[155px] w-full" src={logo} alt="apiconf logo" />
+          <img className="w-[155px]" src="/logo2025.svg" alt="apiconf logo" />
         </Link>
-        <ul className="max-w-[133px] sm:max-w-[400px] lg:max-w-[520px] xl:max-w-[775px] 2xl:max-w-[894px] w-full flex justify-between xl:gap-x-6 2xl:gap-x-8 items-center">
+        <ul className="max-w-[133px] text-white sm:max-w-[400px] lg:max-w-[463px] w-full flex justify-between xl:gap-x-6 2xl:gap-x-8 items-center">
           <li>
             <Link to="/2024/#spaces">
               <dl className="flex flex-col gap-1">
                 <dt className="font-bold text-lg sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
                   Spaces
                 </dt>
-                <dd className="hidden xl:inline font-normal text-base 2xl:text-lg">
+                {/* <dd className="hidden xl:inline font-normal text-base 2xl:text-lg">
                   Catch up on Twitter Spaces
-                </dd>
+                </dd> */}
               </dl>
             </Link>
           </li>
@@ -42,33 +41,22 @@ const Header = () => {
                 <dt className="font-bold text-lg sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
                   FAQs
                 </dt>
-                <dd className="hidden xl:inline font-normal text-base 2xl:text-lg">
+                {/* <dd className="hidden xl:inline font-normal text-base 2xl:text-lg">
                   Questions, Questions
-                </dd>
+                </dd> */}
               </dl>
             </Link>
           </li>
           <li className="hidden sm:inline">
-            <a
-              href="https://lu.ma/apiconflagos24"
-              rel="noopener noreferrer"
-              target="_blank"
-              className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl"
-            >
-              Register
-            </a>
-          </li>
-          <li className="hidden sm:inline">
             <Link
               to="/2024/#become-a-sponsor"
-              className="bg-[#E1EF9A] py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl"
+              className="bg-[#E1EF9A] text-primary-black py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl"
             >
-              <span className="hidden lg:inline">Our</span> Sponsors
+              Become a Sponsor
             </Link>
           </li>
         </ul>
       </motion.nav>
     </header>
   );
-};
-export default Header;
+}

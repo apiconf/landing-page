@@ -8,7 +8,7 @@ import image3D from "../../assets/3D-Image.png";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-const FooterDetails = () => {
+const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
   const headerTextRef = useRef(null);
   const footerNavRef = useRef(null);
   const footerSaluteRef = useRef(null);
@@ -25,6 +25,8 @@ const FooterDetails = () => {
 
   const isVisibleOnLaptop = (falseVal: boolean) =>
     isLaptop ? isHeaderTextVisible : falseVal;
+
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className={footerDetailStyle.container}>
@@ -70,7 +72,7 @@ const FooterDetails = () => {
           className={footerDetailStyle.footerNav}
         >
           <li className={footerDetailStyle.link}>
-            <Link to="/#about" className={footerDetailStyle.linkText}>
+            <Link to="/2024/#about" className={footerDetailStyle.linkText}>
               about API conference
             </Link>
             <img
@@ -81,7 +83,7 @@ const FooterDetails = () => {
           </li>
           <li className={footerDetailStyle.link}>
             <Link
-              to="/#become-a-sponsor"
+              to="/2024/#become-a-sponsor"
               className={footerDetailStyle.linkText}
             >
               Our Sponsors
@@ -93,7 +95,7 @@ const FooterDetails = () => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <Link to="/sessions" className={footerDetailStyle.linkText}>
+            <Link to="/2024/sessions" className={footerDetailStyle.linkText}>
               Sessions
             </Link>
             <img
@@ -103,7 +105,7 @@ const FooterDetails = () => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <a href="/speakers" className={footerDetailStyle.linkText}>
+            <a href="/2024/speakers" className={footerDetailStyle.linkText}>
               speakers
             </a>
             <img
@@ -113,7 +115,7 @@ const FooterDetails = () => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <a href="/dp" className={footerDetailStyle.linkText}>
+            <a href="/2024/dp" className={footerDetailStyle.linkText}>
               DP Generator
             </a>
             <img
@@ -136,10 +138,13 @@ const FooterDetails = () => {
           }}
           className={footerDetailStyle.footerSalute}
         >
-          <img src={conf2024} alt="api_conference_logo" />
+          <img
+            src={newYear ? "/logo2025.svg" : conf2024}
+            alt="api_conference_logo"
+          />
           <div className={footerDetailStyle.salutation}>
             <p>made with love,</p>
-            <p>2024 API conference team</p>
+            <p>{newYear ? currentYear : "2024"} API conference team</p>
           </div>
         </motion.div>
       </div>

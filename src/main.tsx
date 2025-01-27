@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App2024 from "./App2024.tsx";
 import App from "./App.tsx";
 import Speakers from "./pages/speakers";
 import Sessions from "./pages/sessions";
@@ -16,17 +17,22 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: "/speakers",
+    path: "2024",
+    element: <App2024 />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "2024/speakers",
     element: <Speakers />,
     errorElement: <NotFound />,
   },
   {
-    path: "/sessions",
+    path: "2024/sessions",
     element: <Sessions />,
     errorElement: <NotFound />,
   },
   {
-    path: "/dp",
+    path: "2024/dp",
     element: <Confirmation />,
     errorElement: <NotFound />,
   },
