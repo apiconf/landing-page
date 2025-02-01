@@ -8,51 +8,41 @@ export default function Header() {
   const isHeaderVisible = useIsVisible(headerRef, -1);
 
   return (
-    <header ref={headerRef} className="w-full">
+    <header
+      ref={headerRef}
+      className="bg-dark-purple w-full py-8 mx-auto max-w-7xl"
+    >
       <motion.nav
         initial={{ y: "-100%" }}
         animate={{ y: isHeaderVisible ? "-100%" : 0 }}
         transition={{
           duration: 1,
           ease: [0, 0, 0.25, 1],
-          delay: 0.5,
         }}
-        className="bg-dark-purple w-full flex items-center gap-x-16 sm:gap-x-20 justify-between py-4 px-[8%] sm:px-[5%] 2xl:px-[7.4%]"
+        className="w-full flex items-center sm:gap-x-20 justify-between py-4 px-[8%] sm:px-[5%] 2xl:px-[7.4%]"
       >
         <Link to="/" rel="noopener noreferrer">
-          <img className="w-[155px]" src="/logo2025.svg" alt="apiconf logo" />
+          <img
+            className="w-[100px] md:w-[155px]"
+            src="/logo2025.svg"
+            alt="apiconf logo"
+          />
         </Link>
-        <ul className="max-w-[133px] text-white sm:max-w-[400px] lg:max-w-[463px] w-full flex justify-between xl:gap-x-6 2xl:gap-x-8 items-center">
-          <li>
-            <Link to="/2024/#spaces">
-              <dl className="flex flex-col gap-1">
-                <dt className="font-bold text-lg sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
-                  Spaces
-                </dt>
-                {/* <dd className="hidden xl:inline font-normal text-base 2xl:text-lg">
-                  Catch up on Twitter Spaces
-                </dd> */}
-              </dl>
-            </Link>
-          </li>
-          <li>
-            <Link to="/2024/#FAQ">
-              <dl className="flex flex-col gap-1">
-                <dt className="font-bold text-lg sm:text-base lg:text-lg xl:text-xl 2xl:text-2xl">
-                  FAQs
-                </dt>
-                {/* <dd className="hidden xl:inline font-normal text-base 2xl:text-lg">
-                  Questions, Questions
-                </dd> */}
-              </dl>
-            </Link>
-          </li>
-          <li className="hidden sm:inline">
+        <ul className="text-white flex justify-between gap-x-4 md:gap-x-8 items-center">
+          <li className="">
             <Link
-              to="/2024/#become-a-sponsor"
-              className="bg-[#E1EF9A] text-primary-black py-4 px-8 rounded-[320px] font-bold lg:text-lg xl:text-xl 2xl:text-2xl"
+              to=""
+              className="md:bg-[#E1EF9A] whitespace-nowrap text-white md:text-primary-black py-0 md:py-4 px-0 md:px-8 rounded-[320px] font-bold text-base lg:text-lg xl:text-xl 2xl:text-2xl"
             >
-              Become a Sponsor
+              Register
+            </Link>
+          </li>
+          <li className="">
+            <Link
+              to="/2024"
+              className="md:bg-[#E1EF9A] whitespace-nowrap text-white md:text-primary-black py-0 md:py-4 px-0 md:px-8 rounded-[320px] font-bold text-base lg:text-lg xl:text-xl 2xl:text-2xl"
+            >
+              Past Events
             </Link>
           </li>
         </ul>
