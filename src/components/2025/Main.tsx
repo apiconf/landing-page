@@ -43,7 +43,7 @@ export default function Main() {
         <a href="https://sessionize.com/api-conf-lagos-2025/" target="_blank" className={`${linkButtonStyles} bg-[#ECC89D]`}>
           Apply to Speak
         </a>
-        <a href="" className={`${linkButtonStyles} bg-[#4223D5] text-white`}>
+        <a href="https://tinyurl.com/sponsor-apiconf-form"  target="_blank" className={`${linkButtonStyles} bg-[#4223D5] text-white`}>
           Become A Sponsor
         </a>
       </div>
