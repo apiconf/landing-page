@@ -1,20 +1,28 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App2024 from "./App2024.tsx";
+import "./index.css";
+
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
 import App from "./App.tsx";
-import Speakers from "./pages/speakers";
-import Sessions from "./pages/sessions";
+import App2024 from "./App2024.tsx";
+import { AppContextProvider } from "./context";
 import Confirmation from "./components/Confirmation";
 import NotFound from "./NotFound.tsx";
-import "./index.css";
-import { AppContextProvider } from "./context";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Sessions from "./pages/sessions";
+import Speakers from "./pages/speakers";
+import SponsorRedirect from "./SponsorRedirect.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <NotFound />,
+  },
+  {
+    path:"/sponsor",
+    element: <SponsorRedirect />,
+    errorElement: <NotFound />
   },
   {
     path: "2024",
