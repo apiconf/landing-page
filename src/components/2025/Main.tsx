@@ -47,7 +47,6 @@ export default function Main() {
           Become A Sponsor
         </a>
       </div>
-
     </motion.main>
   );
 }
