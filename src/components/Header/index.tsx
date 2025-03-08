@@ -21,7 +21,7 @@ const Header = () => {
         className="w-full flex items-center gap-x-16 sm:gap-x-20 justify-between py-4 px-[8%] sm:px-[5%] 2xl:px-[7.4%]"
       >
         <Link to="/" rel="noopener noreferrer">
-          <img className="w-[155px] w-full" src={logo} alt="apiconf logo" />
+          <img className="w-[155px] " src={logo} alt="apiconf logo" />
         </Link>
         <ul className="max-w-[133px] sm:max-w-[400px] lg:max-w-[520px] xl:max-w-[775px] 2xl:max-w-[894px] w-full flex justify-between xl:gap-x-6 2xl:gap-x-8 items-center">
           <li>
