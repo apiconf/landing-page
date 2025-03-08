@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function Sponsor() {
   return (
-    <section className="bg-white w-full justify-center flex py-20">
+    <section className="bg-white w-full mx-auto max-w-7xl justify-center flex py-20">
       <motion.div
         className="flex flex-col md:flex-row px-8 justify-center gap-[8rem]"
         initial={{ opacity: 0, y: 50 }}
