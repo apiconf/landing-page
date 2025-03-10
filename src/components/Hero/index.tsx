@@ -2,42 +2,34 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { useIsVisible } from "../../hooks";
-import heroImg from "../../assets/hero/hero-irregular-polygon.png";
 import scrollImg from "../../assets/hero/scroll-icon.png";
-import heroStyles from "./hero.module.css";
 
 const Hero = () => {
-  const elevateRef = useRef(null);
+  const apiConfRef = useRef(null);
   const theGoalRef = useRef(null);
-  const lagosRef = useRef(null);
-  const detailsRef = useRef(null);
   const dateRef = useRef(null);
-  const figureRef = useRef(null);
-  // const marqueeRef = useRef(null);
-  const isElevateVisible = useIsVisible(elevateRef, -0.8);
+  const isAPIConfVisible = useIsVisible(apiConfRef, -0.8);
   const isTheGoalVisible = useIsVisible(theGoalRef, -0.6);
-  const isLagosVisible = useIsVisible(lagosRef, -0.8);
-  const isDetailsVisible = useIsVisible(detailsRef, -0.8);
   const isDateVisible = useIsVisible(dateRef, -0.8);
-  const isFigureVisible = useIsVisible(figureRef, -0.8);
-  // const isMarqueeVisible = useIsVisible(marqueeRef, 1);
 
   return (
-    <section className="w-full">
-      <div className="w-full pt-[149px] pb-16 px-[8%] sm:px-[5%] 2xl:px-[7.4%]">
-        <div className="max-w-[621px] w-full flex flex-col gap-8 text-[#1F1F1F]">
+    <section
+      className={`bg-[url(/hero/hero-bg.svg)] bg-cover bg-center bg-no-repeat`}
+    >
+      <div className="flex justify-between pl-8 pt-16 sm:pl-20 2xl:pl-32 text-white 2xl:mt-40">
+        <div className="w-full lg:w-3/6 2xl:w-4/6 space-y-8 mb-10 lg:mb-10 md:mt-36 2xl:mb-28 pr-5">
           <motion.h1
             initial={{ y: 32 }}
-            animate={{ y: isElevateVisible ? 32 : 0 }}
+            animate={{ y: isAPIConfVisible ? 32 : 0 }}
             transition={{
               duration: 1,
               ease: [0, 0, 0.25, 1],
               delay: 0.2,
             }}
-            ref={elevateRef}
+            ref={apiConfRef}
             className="mb-[-5px] font-bold text-5xl lg:text-6xl 3xl:text-[64px] leading-none align-middle"
           >
-            Elevating API Literacy.
+            API Conference 2025.
           </motion.h1>
           <motion.p
             initial={{ y: 32, opacity: 0 }}
@@ -51,48 +43,47 @@ const Hero = () => {
               delay: 0.2,
             }}
             ref={theGoalRef}
-            className="font-normal text-lg leading-[22px]"
+            className="font-normal text-lg leading-[22px] max-w-[640px]"
           >
             The goal of API Conf is to promote API literacy amongst the
             different developer ecosystems that exist within Lagos, and in the
             future, Nigeria/Africa regardless of your expertise or skill level.
           </motion.p>
+
+          <div className="flex sm:flex-row flex-col flex-wrap gap-2 2xl:gap-4 !mt-14">
+            <a href="#register">
+              <button
+                type="button"
+                className="w-full cursor-pointer bg-[#E1EF9A] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full"
+              >
+                Register To Attend
+              </button>
+            </a>
+
+            <a href="#speakers">
+              <button
+                type="button"
+                className="w-full cursor-pointer bg-[#ECC89D] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full"
+              >
+                Apply To Speak
+              </button>
+            </a>
+
+            <a href="#sponsors">
+              <button
+                type="button"
+                className="w-full cursor-pointer bg-[#FFFFFF] text-[#2F20BF] font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full"
+              >
+                Become A Sponsor
+              </button>
+            </a>
+          </div>
         </div>
-      </div>
-      <div className="w-full py-[72.5px] px-[8%] sm:px-[5%] 2xl:px-[7.4%] flex justify-between bg-[#2F20BF] shadow-[0_-40px_96px_-24px_#2F20BF33]">
-        <div className="max-w-[870px] w-full flex flex-col gap-y-8">
-          <div className="flex flex-col gap-4 text-white">
-            <div className="flex flex-col gap-4">
-              <motion.h3
-                initial={{ y: 32 }}
-                animate={{ y: isLagosVisible ? 32 : 0 }}
-                transition={{
-                  duration: 1,
-                  ease: [0, 0, 0.25, 1],
-                  delay: 0.4,
-                }}
-                ref={lagosRef}
-                className="mb-[-12px] font-bold text-5xl lg:text-6xl 3xl:text-[64px] leading-none align-middle"
-              >
-                Lagos.
-              </motion.h3>
-              <motion.h4
-                initial={{ y: 32, opacity: 0 }}
-                animate={{
-                  y: isDetailsVisible ? 32 : 0,
-                  opacity: isDetailsVisible ? 0 : 1,
-                }}
-                transition={{
-                  duration: 1,
-                  ease: [0, 0, 0.25, 1],
-                  delay: 0.4,
-                }}
-                ref={detailsRef}
-                className="font-normal text-lg leading-[22.32px]"
-              >
-              </motion.h4>
-            </div>
-            <motion.h3
+
+        <div className="hidden lg:flex lg:w-3/6 2xl:w-2/6 bg-[url(/hero/api-icon.svg)] bg-right-bottom bg-contain bg-no-repeat justify-center items-end -mb-12">
+          <div className="mb-40">
+            <p>Date</p>
+            <motion.p
               initial={{ y: 32 }}
               animate={{ y: isDateVisible ? 32 : 0 }}
               transition={{
@@ -101,54 +92,20 @@ const Hero = () => {
                 delay: 0.2,
               }}
               ref={dateRef}
-              className={heroStyles.date}
+              className="mb-[-5px] font-bold text-5xl lg:text-6xl 3xl:text-[64px] leading-none align-middle"
             >
-              20th July 2024
-            </motion.h3>
+              XX July 2025
+            </motion.p>
           </div>
-          <a
-            className={heroStyles.register}
-            href="https://lu.ma/apiconflagos24"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Register to Attend
-          </a>
         </div>
-        <figure className="hidden lg:block relative max-w-[24vw] xl:max-w-[27vw] 3xl:max-w-[469px] w-full">
-          <motion.img
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isFigureVisible ? 0 : 1 }}
-            transition={{
-              duration: 1,
-              ease: [0, 0, 0.25, 1],
-              delay: 0.4,
-            }}
-            ref={figureRef}
-            className="absolute w-full bottom-[50%] 3xl:bottom-[150px] right-0"
-            src={heroImg}
-            alt=""
-          />
-        </figure>
       </div>
-      {/* <motion.div
-        initial={{ y: 32 }}
-        animate={{ y: isMarqueeVisible ? 0 : 32 }}
-        transition={{
-          duration: 1,
-          ease: [0, 0, 0.25, 1],
-          delay: 0.4,
-        }}
-        ref={marqueeRef}
-      >   
-      </motion.div> */}
       <Marquee
         autoFill={true}
-        className="w-full py-3 bg-[#E1EF9A] flex overflow-hidden"
+        className="w-full py-3 bg-white flex overflow-hidden"
       >
-        <h4 className=" flex justify-between items-center">
-          <span className="w-[786px] font-bold text-[64px] leading-[52.52px] mx-8">
-            API Conference Lagos 2024
+        <h4 className="flex justify-between items-center">
+          <span className="font-bold text-4xl lg:text-[64px] lg:leading-[52.52px] mx-8">
+            API Conference Lagos 2025
           </span>
           <img src={scrollImg} alt="" className="w-[56.6px]" />
         </h4>
