@@ -6,9 +6,11 @@ import { motion } from "framer-motion";
 const WhyAttend = () => {
   const eventDetailsRef = useRef(null);
   const whyAttendRef = useRef(null);
+  const whyAttendDescRef = useRef(null);
   const imgRef = useRef(null);
   const isEventDetailsVisible = useIsVisible(eventDetailsRef);
   const isWhyAttendVisible = useIsVisible(whyAttendRef);
+  const isWhyAttendDescVisible = useIsVisible(whyAttendDescRef);
   const isImgVisible = useIsVisible(imgRef);
 
   return (
@@ -39,9 +41,9 @@ const WhyAttend = () => {
           Why Attend?
         </motion.h3>
         <motion.p
-          ref={eventDetailsRef}
+          ref={whyAttendDescRef}
           initial={{ y: 32 }}
-          animate={{ y: isEventDetailsVisible ? 0 : 32 }}
+          animate={{ y: isWhyAttendDescVisible ? 0 : 32 }}
           transition={{
             duration: 1,
             ease: [0, 0, 0.25, 1],
