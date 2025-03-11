@@ -1,4 +1,4 @@
-import footer from "../2025/Footer/index";
+import footer from "../Footer/index";
 
 export default function Footer() {
   return footer({ newYear: true });
