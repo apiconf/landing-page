@@ -5,7 +5,7 @@ import FloatingBtn from "./components/floatingBtn";
 import About from "./components/About";
 import Talks from "./components/Talks";
 import FAQs from "./components/FAQs";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import Higlight from "./components/Highlight";
 import Sponsor from "./components/sponsor";
 import ScrollToAnchor from "./components/ScrollToAnchor";

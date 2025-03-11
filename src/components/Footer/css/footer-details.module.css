@@ -15,7 +15,7 @@
   @apply flex items-center gap-1 whitespace-nowrap;
 }
 .linkText {
-  @apply font-medium text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px];
+  @apply font-medium text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px] text-white opacity-80;
 }
 .linkIcon {
   @apply w-4 h-4 rotate-[-45deg] opacity-80;
@@ -30,7 +30,7 @@
   @apply flex flex-col gap-2;
 }
 .salutation > p {
-  @apply font-medium text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px] whitespace-nowrap;
+  @apply font-medium text-lg sm:text-xl md:text-2xl leading-[22.32px] sm:leading-[24.8px] md:leading-[29.76px] whitespace-nowrap text-white opacity-80;
 }
 .image3D {
   @apply absolute z-30 w-[240px] inset-[auto_-45px_-30px_auto] lg:inset-[auto_5%_0px_auto] 2xl:right-[7.4%] lg:max-w-[34vw] xl:max-w-[31vw] 2xl:max-w-[28vw] 3xl:max-w-[469px] lg:w-full;

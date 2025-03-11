@@ -1,9 +1,9 @@
 import "./App.css";
 
-import Footer from "./components/2025/Footer";
+import Footer from "./components/Footer";
 import Header from "./components/2025/Header";
 import Main from "./components/2025/Main";
-import Sponsor from "./components/2025/sponsor_cfp/index"
+import Sponsor from "./components/sponsor_cfp/index"
 
 export default function App() {
   return (
