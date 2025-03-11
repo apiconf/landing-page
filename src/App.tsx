@@ -1,8 +1,8 @@
 import "./App.css";
-import Header from "./components/2025/Header";
-import Main from "./components/2025/Main";
-import Footer from "./components/2025/Footer";
-import Events from "./components/2025/Events";
+import NewHeader from "./components/Header";
+import NewMain from "./components/Main";
+import NewFooter from "./components/Footer";
+import Events from "./components/Events";
 import Spaces from "./components/Talks/spaces";
 import { SpaceItem } from "./types";
 
@@ -38,11 +38,11 @@ const spaceItems: SpaceItem[] = [
 export default function App() {
   return (
     <div className="bg-dark-purple w-full min-h-[100svh] flex flex-col">
-      <Header />
-      <Main />
+      <NewHeader />
+      <NewMain />
       <Spaces spaces={spaceItems} />
       <Events />
-      <Footer />
+      <NewFooter />
     </div>
   );
 }

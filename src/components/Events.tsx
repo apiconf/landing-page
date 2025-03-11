@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { useIsVisible } from "../../hooks";
-import APIConnect from "../../assets/APIConnect.png";
-import SpacesCarousel from "../Talks/spaces/spaces-carousel";
+import { useIsVisible } from "../hooks";
+import APIConnect from "../assets/APIConnect.png";
+import SpacesCarousel from "./Talks/spaces/spaces-carousel";
 
 export default function Events() {
   const bgEventsMobileRef = useRef(null);
