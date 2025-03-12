@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function NewFooter() {
   return (
     <footer className="w-full bg-[#1F1F1F]">
       <div className="w-full max-w-7xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center text-white px-[8%] sm:px-[5%] 2xl:px-[7.4%] py-8 md:py-0">
