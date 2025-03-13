@@ -2,8 +2,9 @@ import "./App.css";
 import NewHeader from "./components/Header";
 import NewMain from "./components/Main";
 import NewFooter from "./components/Footer";
-import Events from "./components/Events";
+import Recap from "./components/recap";
 import Spaces from "./components/Talks/spaces";
+import Events from "./components/Events";
 import { SpaceItem } from "./types";
 
 const spaceItems: SpaceItem[] = [
@@ -40,6 +41,7 @@ export default function App() {
     <div className="bg-dark-purple w-full min-h-[100svh] flex flex-col">
       <NewHeader />
       <NewMain />
+      <Recap />
       <Spaces spaces={spaceItems} />
       <Events />
       <NewFooter />
