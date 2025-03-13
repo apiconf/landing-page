@@ -1,5 +1,5 @@
 import Marquee from "react-fast-marquee";
-import bannerImg from "../../../src/assets/recap.png";
+import bannerImg from "../assets/recap.png";
 
 export default function Recap() {
     return (
@@ -25,7 +25,7 @@ export default function Recap() {
                         <span className="block  mb-[16px] mx-9">→</span>
                         <span>Security</span>
                         <span className="block  mb-[16px] mx-9">→</span>
-                        <span>Governace</span>
+                        <span>Governance</span>
                         <span className="block  mb-[16px] mx-9">→</span>
                     </p>
                 </Marquee>
@@ -36,7 +36,7 @@ export default function Recap() {
                     <p className="ml-[-6%] w-full flex justify-center items-center overflow-x-hidden text-[5.50rem] glowing-text">
                         <span>Security</span>
                         <span className="block  mb-[16px] mx-9">→</span>
-                        <span>Governace</span>
+                        <span>Governance</span>
                         <span className="block  mb-[16px] mx-9">→</span>
                         <span className="">Artificial Intelligence</span>
                         <span className="block  mb-[16px] mx-9">→</span>
