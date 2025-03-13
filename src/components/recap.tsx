@@ -7,14 +7,19 @@ export default function Recap() {
             <div className="w-full py-16 px-[5.9701%] md:px-[7.4074%] flex flex-col items-center gap-y-8">
                 <h2 className="font-bold recap-fluid-heading">2024 Recap</h2>
                 <div className="relative w-full vid-h-fluid overflow-hidden border-2 border-solid border-custom-blue rounded-[3rem]">
-                <img src={bannerImg} alt="" className="w-full h-full object-cover bg-[radial-gradient(circle,_transparent_0%,_#90EAF2_100%)]" />
-                <a className="w-[133px] h-[62px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] no-underline bg-[#E1EF9A] rounded-[2rem] cursor-pointer flex justify-center items-center text-2xl font-bold text-[#000000]" href="">Watch</a>
+                <img src={bannerImg} alt="2024 API Conference Recap" className="w-full h-full object-cover bg-[radial-gradient(circle,_transparent_0%,_#90EAF2_100%)]" />
+                <a 
+                    className="w-[133px] h-[62px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] no-underline bg-[#E1EF9A] rounded-[2rem] cursor-pointer flex justify-center items-center text-2xl font-bold text-[#000000]" 
+                    href="#" aria-label="Watch 2024 recap video" role="button"
+                >
+                    Watch
+                </a>
                 </div>
             </div>
             <div className="w-full py-16 flex flex-col gap-y-8">
                 <div className="px-[5.9701%] md:px-[8.7963%] flex flex-col gap-y-8">
-                <h4 className="w-[93px] h-[28px] bg-[#FFF] border border-solid border-[#ECC89D] shadow-[inset_0_0_12px_0_#E1EF9A] rounded-2xl flex justify-center items-center text-lg text-[#000000] font-bold">THEMES</h4>
-                <h3 className="font-bold recap-fluid-heading">2025 Topics in Focus</h3>
+                <h3 className="w-[93px] h-[28px] bg-[#FFF] border border-solid border-[#ECC89D] shadow-[inset_0_0_12px_0_#E1EF9A] rounded-2xl flex justify-center items-center text-lg text-[#000000] font-bold">THEMES</h3>
+                <h4 className="font-bold recap-fluid-heading">2025 Topics in Focus</h4>
                 </div>
                 <Marquee
                     autoFill={true}
