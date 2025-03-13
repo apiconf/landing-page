@@ -47,9 +47,7 @@ export default function App() {
       <Recap />
       <Spaces spaces={spaceItems} />
       <Events />
-      <div className="hidden">
-        <NewFooter />
-      </div>
+      <NewFooter />
     </div>
   );
 }
