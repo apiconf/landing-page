@@ -3,16 +3,19 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Cabinet-Grotesk";
+  font-family: 'Cabinet-Grotesk';
   src: url(./fonts/Cabinet-Grotesk/CabinetGrotesk-Variable.ttf);
 }
 
 @font-face {
-  font-family: "MonumentExtended-extrabold";
+  font-family: 'MonumentExtended-extrabold';
   src: url(./fonts/MonumentExtended/extrabold.otf);
 }
 
 @layer utilities {
+  .hero-fluid-heading {
+    font-size: clamp(36px, calc(36px + 24 * ((100vw - 300px) / 102)), 60px);
+  }
   .recap-fluid-heading {
     font-size: clamp(32px, calc(32px + 16 * ((100vw - 400px) / 1040)), 48px);
   }
@@ -20,9 +23,8 @@
     height: clamp(400px, calc(400px + (240 * ((100vw - 402px) / (1440 - 402)))), 640px);
   }
   .glowing-text {
-    color: #ECC89D;
-    text-shadow:  
-    0 0 20px rgba(255, 255, 255, 0.4);
+    color: #ecc89d;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     font-size: clamp(48px, calc(48px + 40 * ((100vw - 400px) / 1040)), 88px);
   }
 }
