@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import { useIsVisible } from "../hooks";
+import { useIsVisible } from "../../hooks";
 import { useRef } from "react";
 
-export default function NewMain() {
+export default function ComingSoonBody() {
   const divOneRef = useRef(null);
   const isDivOneVisible = useIsVisible(divOneRef, 0.75);
   const linkButtonStyles =

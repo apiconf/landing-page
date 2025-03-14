@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useIsVisible } from "../hooks";
+import { useIsVisible } from "../../hooks";
 import { useRef } from "react";
 
-export default function NewHeader() {
+export default function ComingSoonHeader() {
   const headerRef = useRef(null);
   const isHeaderVisible = useIsVisible(headerRef, -1);
 
