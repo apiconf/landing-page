@@ -5,8 +5,9 @@ import WhyAttend from './components/WhyAttend';
 import Recap from './components/recap';
 import Spaces from './components/Talks/spaces';
 import Events from './components/Events';
-import NewFooter from './components/Footer';
+import Footer from "./components/Footer/index";
 import { SpaceItem } from './types';
+import Sponsor from "./components/sponsor_cfp/index"
 
 const spaceItems: SpaceItem[] = [
   {
@@ -47,7 +48,8 @@ export default function App() {
       <Recap />
       <Spaces spaces={spaceItems} />
       <Events />
-      <NewFooter />
+      <Sponsor />
+      <Footer />
     </div>
   );
 }

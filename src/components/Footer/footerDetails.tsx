@@ -114,16 +114,6 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
               alt="arrow-icon"
             />
           </li>
-          <li className={footerDetailStyle.link}>
-            <a href="/2024/dp" className={footerDetailStyle.linkText}>
-              DP Generator
-            </a>
-            <img
-              className={footerDetailStyle.linkIcon}
-              src={arrow}
-              alt="arrow-icon"
-            />
-          </li>
         </motion.ul>
         <motion.div
           ref={footerSaluteRef}
