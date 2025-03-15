@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import type { speakers } from ".";
+
 import Header from "./Header";
+import type { speakers } from ".";
 import styles from "./style.module.css";
 
 export default function Carousel({
@@ -11,7 +12,7 @@ export default function Carousel({
   no?: number | null;
 }) {
   const [activeItem, setActiveItem] = React.useState(2);
-  const CarouselRef = React.useRef<HTMLDivElement>(null);
+  const CarouselRef = React.useRef<HTMLDivElement>(null as any);
   const [slideList, setSlideList] = React.useState(slides);
   useEffect(() => {
     if (no) setSlideList(slideList.slice(0, no));

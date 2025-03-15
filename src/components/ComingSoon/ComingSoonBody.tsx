@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
 import { useRef } from "react";
 
-export default function Main() {
+export default function ComingSoonBody() {
   const divOneRef = useRef(null);
   const isDivOneVisible = useIsVisible(divOneRef, 0.75);
   const linkButtonStyles =
@@ -40,14 +40,21 @@ export default function Main() {
         <time dateTime="2025-07-19">19, 2025</time>
       </span>
       <div className="text-[#000] flex-col sm:flex-row flex flex-wrap gap-4">
-        <a href="https://sessionize.com/api-conf-lagos-2025/" target="_blank" className={`${linkButtonStyles} bg-[#ECC89D]`}>
+        <a
+          href="https://sessionize.com/api-conf-lagos-2025/"
+          target="_blank"
+          className={`${linkButtonStyles} bg-[#ECC89D]`}
+        >
           Apply to Speak
         </a>
-        <a href="https://tinyurl.com/sponsor-apiconf-form"  target="_blank" className={`${linkButtonStyles} bg-[#4223D5] text-white`}>
+        <a
+          href="https://tinyurl.com/sponsor-apiconf-form"
+          target="_blank"
+          className={`${linkButtonStyles} bg-[#4223D5] text-white`}
+        >
           Become A Sponsor
         </a>
       </div>
-
     </motion.main>
   );
 }
