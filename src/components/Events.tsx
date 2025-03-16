@@ -1,8 +1,8 @@
-import { useRef } from "react";
-import { motion } from "framer-motion";
-import { useIsVisible } from "../hooks";
-import APIConnect from "../assets/APIConnect.png";
-import SpacesCarousel from "./Talks/spaces/spaces-carousel";
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import { useIsVisible } from '../hooks';
+import APIConnect from '../assets/APIConnect.png';
+import SpacesCarousel from './Talks/spaces/spaces-carousel';
 
 export default function Events() {
   const bgEventsMobileRef = useRef(null);
@@ -14,7 +14,7 @@ export default function Events() {
 
   const slides = Array.from({ length: 4 }, (_, index) => ({
     id: index + 1,
-    image: "/heroImage2025.png",
+    image: '/heroImage2025.png',
     alt: `Slide #${index + 1}`,
   }));
 
@@ -45,7 +45,7 @@ export default function Events() {
         ref={bgEventsRef}
         src={APIConnect}
         alt=""
-        className="absolute md:block hidden bottom-0 pb-2 z-0 w-full sm:px-[5%] 2xl:px-[7.4%]"
+        className="absolute md:block hidden bottom-0 z-0 w-full"
       />
       <motion.div
         initial={{ y: 32, opacity: 0 }}
@@ -59,34 +59,32 @@ export default function Events() {
           delay: 0.1,
         }}
         ref={EventsInnerContainerRef}
-        className="w-full flex-col gap-4 text-[#1f1f1f] font-sans pt-16 flex sm:py-32 sm:px-[5%] 2xl:px-[7.4%]"
+        className="w-full flex flex-col gap-16 text-[#1f1f1f] font-sans py-[87px] md:py-32"
       >
-        <h2 className="max-w-[843px] font-bold text-5xl leading-[100%] tracking-normal">
-          API TESTING: Build, Validate & Ship with Confidence
-        </h2>
-        <div className="font-medium text-2xl">
-          <span>Lagos</span>
-          <span> • </span>
-          <time dateTime="2025-03-01">March 1st, 2025</time>
+        <div className="w-full px-[5.9701%] md:px-[7.4074%] flex flex-col gap-8">
+          <h2 className="max-w-[843px] fluid-h2-48-32">
+            API TESTING: Build, Validate & Ship with Confidence
+          </h2>
+          <div className="fluid-h3-24-18">
+            <span>Lagos</span>
+            <span> • </span>
+            <time dateTime="2025-03-01">March 1st, 2025</time>
+          </div>
+          <a
+            href=""
+            className="bg-[#2F20BF] px-8 py-4 rounded-[320px] text-white max-w-fit font-bold text-2xl"
+          >
+            Register
+          </a>
         </div>
-        <a
-          href=""
-          className="bg-[#2F20BF] px-8 py-4 rounded-[320px] text-white max-w-fit font-bold text-2xl"
-        >
-          Register
-        </a>
-        <div className="mt-16">
+        <div className="w-full">
           <SpacesCarousel>
             {slides.map((slide) => (
               <div
                 key={slide.id}
-                className="w-full transform flex-[0_0_50%] mr-16"
+                className="w-full transform flex-[0_0_100%] max-w-[428px] h-[400px] lg:max-w-[784px] lg:h-[500px] mr-[5.9701%] md:mr-[7.4074%] first:mx-[5.9701%] first:md:mx-[7.4074%] rounded-6xl overflow-hidden"
               >
-                <img
-                  src={slide.image}
-                  alt={slide.alt}
-                  className="min-h-[500px] w-full rounded-6xl"
-                />
+                <img src={slide.image} alt={slide.alt} className="w-full h-full object-cover" />
               </div>
             ))}
           </SpacesCarousel>
