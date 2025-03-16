@@ -16,8 +16,13 @@
   .hero-fluid-heading {
     font-size: clamp(36px, calc(36px + 24 * ((100vw - 300px) / 102)), 60px);
   }
-  .recap-fluid-heading {
+  .fluid-h2-48-32 {
     font-size: clamp(32px, calc(32px + 16 * ((100vw - 400px) / 1040)), 48px);
+    @apply font-bold leading-none tracking-normal;
+  }
+  .fluid-h3-24-18 {
+    font-size: clamp(18px, calc(18px + 6 * ((100vw - 400px) / 1040)), 24px);
+    @apply font-medium leading-none tracking-normal;
   }
   .vid-h-fluid {
     height: clamp(400px, calc(400px + (240 * ((100vw - 402px) / (1440 - 402)))), 640px);
