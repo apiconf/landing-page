@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import rightImage from '../assets/why-attend/why-attend-img.svg';
+import WhyAttendBannerImage from '../assets/why-attend/why-attend-banner.jpg';
 import { useIsVisible } from '../hooks';
 import { motion } from 'framer-motion';
 
@@ -66,8 +66,8 @@ const WhyAttend = () => {
             ease: [0, 0, 0.25, 1],
             delay: 0.2,
           }}
-          src={rightImage}
-          alt="Conference attendees engaged in networking and learning opportunities"
+          src={WhyAttendBannerImage}
+          alt="Conference attendees pose for a drone picture at APIConf 2024"
           className="rounded-[40px]"
         />
       </div>
