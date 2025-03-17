@@ -1,5 +1,5 @@
 import Marquee from 'react-fast-marquee';
-import bannerImg from '../assets/recap.png';
+// import bannerImg from '../assets/recap.png';
 
 export default function Recap() {
   return (
@@ -7,19 +7,27 @@ export default function Recap() {
       <div className="w-full py-16 px-[5.9701%] md:px-[7.4074%] flex flex-col items-center gap-y-8">
         <h2 className="fluid-h2-48-32">2024 Recap</h2>
         <div className="relative w-full vid-h-fluid overflow-hidden border-2 border-solid border-custom-blue rounded-[3rem]">
-          <img
+          {/* <img
             src={bannerImg}
             alt="2024 API Conference Recap"
             className="w-full h-full object-cover bg-[radial-gradient(circle,_transparent_0%,_#90EAF2_100%)]"
-          />
-          <a
+          /> */}
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/bP8TQ9_xjR8?si=BFmjYpSytIvNzdij"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+          {/* <a
             className="w-[133px] h-[62px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] no-underline bg-[#E1EF9A] rounded-[2rem] cursor-pointer flex justify-center items-center text-2xl font-bold text-[#000000]"
             href="#"
             aria-label="Watch 2024 recap video"
             role="button"
           >
             Watch
-          </a>
+          </a> */}
         </div>
       </div>
       <div className="w-full py-16 flex flex-col gap-y-8">

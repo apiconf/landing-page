@@ -12,11 +12,58 @@ export default function Events() {
   const isBgEvents = useIsVisible(bgEventsRef, 1);
   const isEventsInnerContainer = useIsVisible(EventsInnerContainerRef);
 
-  const slides = Array.from({ length: 4 }, (_, index) => ({
-    id: index + 1,
-    image: '/heroImage2025.png',
-    alt: `Slide #${index + 1}`,
-  }));
+  const slides = [
+    {
+      id: 1,
+      image: '/events/event-1.jpg',
+      alt: `Slide 1`,
+    },
+    {
+      id: 2,
+      image: '/events/event-2.jpg',
+      alt: `Slide 2`,
+    },
+    {
+      id: 3,
+      image: '/events/event-3.jpg',
+      alt: `Slide 3`,
+    },
+    {
+      id: 4,
+      image: '/events/event-4.jpg',
+      alt: `Slide 4`,
+    },
+    {
+      id: 5,
+      image: '/events/event-5.jpg',
+      alt: `Slide 5`,
+    },
+    {
+      id: 6,
+      image: '/events/event-6.jpg',
+      alt: `Slide 6`,
+    },
+    {
+      id: 7,
+      image: '/events/event-7.jpg',
+      alt: `Slide 7`,
+    },
+    {
+      id: 8,
+      image: '/events/event-8.jpg',
+      alt: `Slide 8`,
+    },
+    {
+      id: 9,
+      image: '/events/event-9.jpg',
+      alt: `Slide 9`,
+    },
+    {
+      id: 10,
+      image: '/events/event-10.jpg',
+      alt: `Slide 10`,
+    },
+  ];
 
   return (
     <section className="w-full relative bg-[#e1ef9a]">
