@@ -1,8 +1,8 @@
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
-import { useIsVisible } from '../hooks';
+import { motion } from 'framer-motion';
 import scrollImg from '../assets/hero/scroll-icon.png';
+import { useIsVisible } from '../hooks';
+import { useRef } from 'react';
 
 export default function Hero() {
   const apiConfRef = useRef(null);
@@ -43,9 +43,7 @@ export default function Hero() {
             ref={theGoalRef}
             className="font-normal text-lg leading-[22px] max-w-[640px]"
           >
-            The goal of API Conf is to promote API literacy amongst the different developer
-            ecosystems that exist within Lagos, and in the future, Nigeria/Africa regardless of your
-            expertise or skill level.
+ Elevating API LIteracy for Mass Innovation.
           </motion.p>
 
           <div className="flex sm:flex-row flex-col flex-wrap gap-2 2xl:gap-4 !mt-14">
