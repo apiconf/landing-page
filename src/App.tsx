@@ -5,9 +5,10 @@ import WhyAttend from './components/WhyAttend';
 import Recap from './components/recap';
 import Spaces from './components/Talks/spaces';
 import Events from './components/Events';
-import Footer from './components/Footer/index';
+import Footer from "./components/Footer/index";
 import { SpaceItem } from './types';
-import Sponsor from './components/sponsor_cfp/index';
+import Sponsor from "./components/sponsor_cfp/index"
+
 
 const spaceItems: SpaceItem[] = [
   {
@@ -43,13 +44,12 @@ export default function App() {
         <NavBar />
         <Hero />
       </header>
-      <main>
-        <WhyAttend />
-        <Recap />
-        <Spaces spaces={spaceItems} />
-        <Events />
-        <Sponsor />
-      </main>
+      <main></main>
+      <WhyAttend />
+      <Recap />
+      <Spaces spaces={spaceItems} />
+      <Events />
+      <Sponsor />
       <Footer />
     </div>
   );
