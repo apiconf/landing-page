@@ -1,17 +1,16 @@
-
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 import scrollImg from '../assets/hero/scroll-icon.png';
-import { useIsVisible } from '../hooks';
 
 export default function Hero() {
   const apiConfRef = useRef(null);
-  const theGoalRef = useRef(null);
   const dateRef = useRef(null);
-  const isAPIConfVisible = useInView(apiConfRef, { margin: "0px 0px -50px 0px", triggerOnce: false });
-  const isTheGoalVisible = useInView(theGoalRef, { margin: "0px 0px -50px 0px", triggerOnce: false });
-  const isDateVisible = useInView(dateRef, { margin: "0px 0px -50px 0px", triggerOnce: false });
+  const buttonsRef = useRef(null);
+
+  const isAPIConfVisible = useInView(apiConfRef, { margin: "0px 0px -50px 0px" });
+  const isButtonsVisible = useInView(buttonsRef, { margin: "0px 0px -50px 0px", once: false }); 
+
 
   const buttonContainerVariants = {
     visible: {
@@ -25,7 +24,7 @@ export default function Hero() {
   };
 
   return (
-    <section className={`bg-[url(/hero/hero-bg.svg)] bg-cover bg-center bg-no-repeat`}>
+    <section className="bg-[url(/hero/hero-bg.svg)] bg-cover bg-center bg-no-repeat">
       <div className="flex justify-between px-[5.9701%] md:px-[7.4074%] pt-[155px] md:pt-36 text-white 2xl:mt-40">
         <div className="w-full lg:w-3/6 2xl:w-4/6 space-y-8 mb-10 lg:mb-10 2xl:mb-28 pr-5">
           <motion.h1
@@ -43,18 +42,17 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            ref={theGoalRef}
             className="font-normal text-lg leading-[22px] max-w-[640px]"
           >
-            Elevating API LIteracy for Mass Innovation.
+            Elevating API Literacy for Mass Innovation.
           </motion.p>
 
           <motion.div
             initial="hidden"
-            animate="visible"
+            ref={buttonsRef}
+            animate={isButtonsVisible ? "visible" : "hidden"}
             variants={buttonContainerVariants}
-            key={isAPIConfVisible} 
-            className="flex sm:flex-row flex-col flex-wrap  gap-2 2xl:gap-4 !mt-14"
+            className="flex sm:flex-row flex-col flex-wrap gap-2 2xl:gap-4 !mt-14"
           >
             <motion.a href="#register" variants={buttonVariants}>
               <button className="w-full cursor-pointer bg-[#E1EF9A] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full">
@@ -106,3 +104,5 @@ export default function Hero() {
     </section>
   );
 }
+
+
