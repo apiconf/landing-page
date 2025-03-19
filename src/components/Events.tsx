@@ -62,18 +62,16 @@ export default function Events() {
         className="w-full flex-col gap-4 text-[#1f1f1f] font-sans pt-16 flex sm:py-32 sm:px-[5%] 2xl:px-[7.4%]"
       >
         <h2 className="max-w-[843px] font-bold text-5xl leading-[100%] tracking-normal">
-          API TESTING: Build, Validate & Ship with Confidence
+          API Connect
         </h2>
         <div className="font-medium text-2xl">
-          <span>Lagos</span>
-          <span> • </span>
-          <time dateTime="2025-03-01">March 1st, 2025</time>
+          <span> A quarterly event that brings together mid-level to senior professionals in the API industry. Subscribe to our calender to get notified about the next one.</span>
         </div>
         <a
-          href=""
+          href="https://lu.ma/apiconflagos"
           className="bg-[#2F20BF] px-8 py-4 rounded-[320px] text-white max-w-fit font-bold text-2xl"
         >
-          Register
+          Subscribe
         </a>
         <div className="mt-16">
           <SpacesCarousel>
