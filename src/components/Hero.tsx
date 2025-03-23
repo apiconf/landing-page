@@ -1,7 +1,8 @@
-import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+
 import Marquee from 'react-fast-marquee';
 import scrollImg from '../assets/hero/scroll-icon.png';
+import { useRef } from 'react';
 
 export default function Hero() {
   const apiConfRef = useRef(null);
@@ -36,9 +37,9 @@ export default function Hero() {
               ease: "easeOut",
               delay: 0.2,
             }}
-            className="mb-[-5px] font-bold hero-fluid-heading 3xl:text-[64px] leading-none align-middle xl:whitespace-nowrap"
+            className="mb-[-5px] text-xl font-bold hero-fluid-heading 3xl:text-[64px] leading-none align-middle xl:whitespace-nowrap"
           >
-            API Conference 2025.
+            API Conference Lagos.
           </motion.h1>
 
           <motion.p
@@ -86,9 +87,9 @@ export default function Hero() {
                 ease: "easeOut",
                 delay: 0.2,
               }}
-              className="mb-[-5px] font-bold text-5xl lg:text-6xl 3xl:text-[64px] leading-none align-middle"
+              className="mb-[-5px] font-bold text-[1.75rem] lg:text-[2.125rem] 3xl:text-[2.25rem] leading-none align-middle"
             >
-              XX July 2025
+              18th - 19th July 2025
             </motion.p>
           </div>
         </div>

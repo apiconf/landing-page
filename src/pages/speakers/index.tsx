@@ -1,18 +1,18 @@
 import Carousel from './carousel';
-import Footer from '../../components/Footer';
+import Footer from '../../components/Footer/index';
 import NavBar from '../../components/NavBar';
 import ScrollToAnchor from '../../components/ScrollToAnchor';
 
 export default function Speakers() {
   return (
-    <>
+    <div className="bg-dark-purple w-full min-h-[100svh] flex flex-col">
       <header role="banner">
         <NavBar />
       </header>
       <Main />
       <Footer />
       <ScrollToAnchor />
-    </>
+    </div>
   );
 }
 
@@ -29,199 +29,52 @@ function Main() {
   const speakers: speakers[] = [
     {
       index: 0,
-      name: 'Gbadebo Bello',
-      jobTitle: 'Developer Advocate',
-      employer: 'Postman',
-      image: '/Gbadebo-Bello.png',
+      name: "Mehdi Medjaoui​",
+      jobTitle: "Founder & Chairman",
+      employer: "Apidays",
+      image: "/Mehdi-Medjaoui.webp",
     },
     {
       index: 1,
-      name: 'Celestine Omin',
-      jobTitle: 'Co-Founder, CEO & CTO',
-      employer: 'Klump',
-      image: '/Celestine-Omin.png',
+      name: 'Echezona Agubata',
+      jobTitle: 'CTO',
+      employer: 'Coronation Merchant Bank of Nigeria.',
+      image: '/echezona-agubata.jpg',
     },
     {
       index: 2,
-      name: 'Femi Taiwo',
-      jobTitle: 'Chief Technology Officer',
-      employer: 'INITS Limited',
-      image: '/Femi-Taiwo.png',
+      name: "Pratham Kumar",
+      jobTitle: "Developer Relations Manager",
+      employer: "APILayer",
+      image: "/pratham-kumar.jpg",
     },
     {
       index: 3,
-      name: 'Teniola Makinde',
-      jobTitle: 'CTO',
-      employer: 'Fincra',
-      image: '/Teniola-Makinde.png',
+      name: "Abimbola Bajomo",
+      jobTitle: "Lead Product Manager",
+      employer: "Remita",
+      image: "/abimbola-bajomo.jpg",
     },
     {
       index: 4,
-      name: 'Abibat Ajibola Sanni',
-      jobTitle: 'Key Account Manager',
-      employer: 'Interswitch Nigeria',
-      image: '/Abibat-Ajibola.png',
+      name: "Michael Owolabi",
+      jobTitle: "CTO",
+      employer: "Spleet",
+      image: "/michael-owolabi.png",
     },
     {
       index: 5,
-      name: 'Bolaji Ayodeji',
-      jobTitle: 'Head of Content and Developer Relations',
-      employer: 'APItoolkit',
-      image: '/Bolaji-Ayodeji.png',
+      name: "Favour Onuoha",
+      jobTitle: "Senior Developer Relations Engineer",
+      employer: "Swing Finance",
+      image: "/tony.jpeg",
     },
     {
       index: 6,
-      name: 'Uchechukwu Azubuko',
-      jobTitle: 'Lead Frontend Engineer',
-      employer: 'OneLiquidity',
-      image: '/Uchechukwu-Azubuko.jpeg',
-    },
-    {
-      index: 7,
-      name: 'Oluwabamikemi Kayode',
-      jobTitle: 'Community Marketing Specialist',
-      employer: 'AsyncAPI Initiative',
-      image: '/Oluwabamikemi-Kayode.jpg',
-    },
-    {
-      index: 8,
-      name: 'Motunrayo Koyejo',
-      jobTitle: 'Software Engineer',
-      employer: 'Brass',
-      image: '/Motunrayo-Koyejo.jpg',
-    },
-    {
-      index: 9,
-      name: 'Esther Okafor',
-      jobTitle: 'Quality assurance engineer',
-      employer: 'Storyblok GMBH',
-      image: '/Esther-Okafor.jpg',
-    },
-    {
-      index: 10,
-      name: 'Rufai Mustapha',
-      jobTitle: 'Technical Instructor',
-      employer: 'Pluralsight',
-      image: '/Rufai-Mustapha.jpg',
-    },
-    {
-      index: 11,
-      name: 'Tobiloba Adedeji',
-      jobTitle: 'DevRel Engineer',
-      employer: 'Fleek',
-      image: '/Tobiloba-Adedeji.jpeg',
-    },
-    {
-      index: 12,
-      name: 'Terhile ikyo',
-      jobTitle: 'Senior Project Manager',
-      employer: 'FCMB Group',
-      image: '/Terhile-ikyo.jpg',
-    },
-    {
-      index: 13,
-      name: 'Okunoye David',
-      jobTitle: 'Software Engineer',
-      employer: 'TWEN',
-      image: '/Okunoye-David.jpg',
-    },
-    {
-      index: 14,
-      name: 'Bolaji Olajide',
-      jobTitle: 'Software Engineer',
-      employer: 'Sourcegraph',
-      image: '/Bolaji-Olajide.jpg',
-    },
-    {
-      index: 15,
-      name: 'Emmanuel Odianosen',
-      jobTitle: 'Developer Support Engineer',
-      employer: 'Fuse Blockchain',
-      image: '/Emmanuel-Odianosen.png',
-    },
-    {
-      index: 16,
-      name: 'Kenechukwu Nwankwo',
-      jobTitle: 'Senior Product Manager',
-      employer: '',
-      image: '/Kenechukwu-Nwankwo.jpg',
-    },
-    {
-      index: 17,
-      name: 'Enoch Osarenren',
-      jobTitle: 'Senior Software Engineer',
-      employer: 'SeamlessHR',
-      image: '/Enoch-Osarenren.webp',
-    },
-    {
-      index: 18,
-      name: 'Sule-balogun Olanrewaju',
-      jobTitle: 'Software Engineer',
-      employer: 'Tillo',
-      image: '/Sule-balogun-Olanrewaju.webp',
-    },
-    {
-      index: 19,
-      name: 'Wale Adeniji',
-      jobTitle: 'Head of Engineering',
-      employer: 'Fincra',
-      image: '/Wale-Adeniji.jpg',
-    },
-    {
-      index: 20,
-      name: 'Ernest Nnamdi',
-      jobTitle: 'Software/Developer relations engineer',
-      employer: 'Morph',
-      image: '/Ernest-Nnamdi.png',
-    },
-    {
-      index: 21,
-      name: 'Amaka Ekeh',
-      jobTitle: 'Software Developer',
-      employer: 'Fincra',
-      image: '/Amaka-Ekeh.jpeg',
-    },
-    {
-      index: 22,
-      name: 'Adeyeye Adedoyinsolami',
-      jobTitle: 'Product Manager',
-      employer: 'Revent Technologies',
-      image: '/Adeyeye-Adedoyinsolami.jpg',
-    },
-    {
-      index: 23,
-      name: 'Funke Olasupo',
-      jobTitle: 'Technical Writer',
-      employer: '',
-      image: '/Funke-Olasupo.jpg',
-    },
-    {
-      index: 24,
-      name: 'David Ijaola',
-      jobTitle: 'Product Manager',
-      employer: 'Norebase',
-      image: '/David-Ijaola.jpeg',
-    },
-    {
-      index: 25,
-      name: 'Ridwan Kasim',
-      jobTitle: 'Senior Backend Engineer',
-      employer: 'SeamlessHR',
-      image: '/Ridwan-Kasim.jpg',
-    },
-    {
-      index: 26,
-      name: 'Fawaz Haroun',
-      jobTitle: 'Software Engineer',
-      employer: 'Paystack',
-      image: '/Fawaz-Haroun.jpg',
-    },
-    {
-      index: 27,
-      name: 'Cornelius Ashley-Osuzoka',
-      jobTitle: 'Engineering Manager, Developer Experience',
-      employer: 'Flutterwave Inc',
-      image: '/Cornelius-Ashley-Osuzoka.jpeg',
+      name: "Anthony Alaribe",
+      jobTitle: "Co Founder",
+      employer: "APItoolkit",
+      image: "/tony.jpeg",
     },
   ];
 
