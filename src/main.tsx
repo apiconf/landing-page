@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: "2024/speakers",
+    path: "speakers",
     element: <Speakers />,
     errorElement: <NotFound />,
   },

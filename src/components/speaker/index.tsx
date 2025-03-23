@@ -22,47 +22,55 @@ export type speakers = {
 
 function Main() {
   const speakers: speakers[] = [
+
     {
       index: 0,
-      name: "Gbadebo Bello",
-      jobTitle: "Developer Advocate",
-      employer: "Postman",
-      image: "/Gbadebo-Bello.png",
+      name: "Mehdi Medjaoui​",
+      jobTitle: "Founder & Chairman",
+      employer: "Apidays",
+      image: "/Mehdi-Medjaoui.webp",
     },
     {
       index: 1,
-      name: "Celestine Omin",
-      jobTitle: "Co-Founder, CEO & CTO",
-      employer: "Klump",
-      image: "/Celestine-Omin.png",
+      name: 'Echezona Agubata',
+      jobTitle: 'CTO',
+      employer: 'Coronation Merchant Bank of Nigeria.',
+      image: '/echezona-agubata.jpg',
     },
     {
       index: 2,
-      name: "Femi Taiwo",
-      jobTitle: "Chief Technology Officer",
-      employer: "INITS Limited",
-      image: "/Femi-Taiwo.png",
+      name: "Pratham Kumar",
+      jobTitle: "Developer Relations Manager",
+      employer: "APILayer",
+      image: "/pratham-kumar.jpg",
     },
     {
       index: 3,
-      name: "Teniola Makinde",
-      jobTitle: "CTO",
-      employer: "Fincra",
-      image: "/Teniola-Makinde.png",
+      name: "Abimbola Bajomo",
+      jobTitle: "Lead Product Manager",
+      employer: "Remita",
+      image: "/abimbola-bajomo.jpg",
     },
     {
       index: 4,
-      name: "Abibat Ajibola Sanni",
-      jobTitle: "Key Account Manager",
-      employer: "Interswitch Nigeria",
-      image: "/Abibat-Ajibola.png",
+      name: "Michael Owolabi",
+      jobTitle: "CTO",
+      employer: "Spleet",
+      image: "/michael-owolabi.png",
     },
     {
       index: 5,
-      name: "Bolaji Ayodeji",
-      jobTitle: "Head of Content and Developer Relations",
+      name: "Favour Onuoha",
+      jobTitle: "Co Founder",
       employer: "APItoolkit",
-      image: "/Bolaji-Ayodeji.png",
+      image: "/favour-onuoha.png",
+    },
+    {
+      index: 6,
+      name: "Anthony Alaribe",
+      jobTitle: "Co Founder",
+      employer: "APItoolkit",
+      image: "/tony.jpeg",
     },
   ];
 
@@ -87,12 +95,12 @@ function Main() {
 
   return (
     <main className="relative z-20 bg-[#2F20BF] lg:min-h-screen px-8 sm:px-12 xl:px-32 pt-24 pb-24 xl:pt-64 xl:pb-32">
-      <section className="max-w-7xl mx-auto w-full">
+      <section className="max-w-7xl  mx-auto w-full">
         <Carousel slides={speakers} />
       </section>
 
       <motion.a
-        href="/2024/speakers"
+        href="/speakers"
         rel="noopener noreferrer"
         target="_blank"
         ref={buttonRef}

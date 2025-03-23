@@ -1,14 +1,15 @@
 import './App.css';
-import NavBar from './components/NavBar';
-import Hero from './components/Hero';
-import WhyAttend from './components/WhyAttend';
-import Recap from './components/recap';
-import Spaces from './components/Talks/spaces';
+
 import Events from './components/Events';
 import Footer from "./components/Footer/index";
+import Hero from './components/Hero';
+import NavBar from './components/NavBar';
+import Recap from './components/recap';
 import { SpaceItem } from './types';
+import Spaces from './components/Talks/spaces';
+import SpeakersInHome from './components/speaker';
 import Sponsor from "./components/sponsor_cfp/index"
-
+import WhyAttend from './components/WhyAttend';
 
 const spaceItems: SpaceItem[] = [
   {
@@ -49,6 +50,7 @@ export default function App() {
       <Recap />
       <Spaces spaces={spaceItems} />
       <Events />
+      <SpeakersInHome />
       <Sponsor />
       <Footer />
     </div>
