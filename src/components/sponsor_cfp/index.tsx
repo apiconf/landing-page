@@ -17,7 +17,7 @@ export default function Sponsor() {
           buttonText: "View Sponsorship Deck",
           buttonTextsm: "Sponsor",
           additionalButtonClassName: "bg-[#2F20BF] text-white",
-          link: "https://tinyurl.com/sponsor-apiconf-form",
+          link: "/sponsor",
         },
         {
           title: "Speak at the 2025 Edition",
@@ -25,7 +25,7 @@ export default function Sponsor() {
           buttonText: "Apply to Speak",
           buttonTextsm: "Speak",
           additionalButtonClassName: "bg-[#ECC89D]",
-          link: "https://sessionize.com/api-conf-lagos-2025/",
+          link: "/cfp",
         },
       ].map((item, index) => (
         <motion.div

@@ -67,7 +67,7 @@ function Main() {
       name: "Favour Onuoha",
       jobTitle: "Senior Developer Relations Engineer",
       employer: "Swing Finance",
-      image: "/tony.jpeg",
+      image: "/favour-onuoha.png",
     },
     {
       index: 6,

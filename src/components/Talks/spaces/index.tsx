@@ -1,14 +1,14 @@
-import Space from "./space";
-import Mic from "../../../assets/mic.svg";
-import MicFrequency from "../../../assets/mic-frequency.svg";
 import ArrowUp from "../../../assets/arrow-up.svg";
 import BGSpaces from "../../../assets/Spaces.png";
 import BGSpacesMobile from "../../../assets/Spaces-mobile.png";
-import { useRef } from "react";
+import Mic from "../../../assets/mic.svg";
+import MicFrequency from "../../../assets/mic-frequency.svg";
+import Space from "./space";
+import { SpaceItem } from "../../../types";
+import SpacesCarousel from "./spaces-carousel";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../../hooks";
-import SpacesCarousel from "./spaces-carousel";
-import { SpaceItem } from "../../../types";
+import { useRef } from "react";
 
 const Spaces = ({ spaces }: { spaces: SpaceItem[] }) => {
   const bgSpacesMobileRef = useRef(null);
@@ -19,7 +19,7 @@ const Spaces = ({ spaces }: { spaces: SpaceItem[] }) => {
   const isSpacesInnerContainer = useIsVisible(spacesInnerContainerRef);
 
   return (
-    <section className="w-full relative bg-dark-purple flex justify-center items-center">
+    <section className="w-full relative bg-dark-purple flex justify-center items-center" id="spaces">
       <motion.img
         initial={{ y: 32, opacity: 0 }}
         animate={{

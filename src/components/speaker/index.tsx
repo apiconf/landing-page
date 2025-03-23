@@ -61,8 +61,8 @@ function Main() {
     {
       index: 5,
       name: "Favour Onuoha",
-      jobTitle: "Co Founder",
-      employer: "APItoolkit",
+      jobTitle: "Senior Developer Relations Engineer",
+      employer: "Swing Finance",
       image: "/favour-onuoha.png",
     },
     {
@@ -94,7 +94,7 @@ function Main() {
   };
 
   return (
-    <main className="relative z-20 bg-[#2F20BF] lg:min-h-screen px-8 sm:px-12 xl:px-32 pt-24 pb-24 xl:pt-64 xl:pb-32">
+    <main className="relative z-20 bg-[#2F20BF] lg:min-h-screen px-8 sm:px-12 xl:px-32 pt-24 pb-24 xl:pt-32 xl:pb-32">
       <section className="max-w-7xl  mx-auto w-full">
         <Carousel slides={speakers} />
       </section>

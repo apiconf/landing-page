@@ -26,13 +26,13 @@ export default function NavBar() {
         <ul className="flex gap-x-4 sm:gap-x-8 items-center text-white font-bold text-lg lg:text-2xl leading-none">
           <li>
             {' '}
-            <a href="#spaces" rel="noopener noreferrer" target="_blank" className="">
+            <a href="/#spaces" rel="noopener noreferrer" className="">
               Spaces
             </a>
           </li>
           <li>
             {' '}
-            <a href="#faqs" rel="noopener noreferrer" target="_blank" className="">
+            <a href="#faqs" rel="noopener noreferrer" className="">
               FAQs
             </a>
           </li>
