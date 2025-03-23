@@ -3,7 +3,6 @@ import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import App from './App.tsx';
-import App2024 from './App2024.tsx';
 import { AppContextProvider } from './context';
 import Confirmation from './components/Confirmation';
 import NotFound from './NotFound.tsx';
@@ -43,7 +42,7 @@ const router = createBrowserRouter([
   },
   {
     path: '2024',
-    element: <App2024 />,
+    element:  <NotFound />,
     errorElement: <NotFound />,
   },
   {
