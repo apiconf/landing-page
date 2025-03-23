@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 
-
 interface SponsorProps {
   title: string;
   description: string;
@@ -30,7 +29,7 @@ export default function Card({
       aria-label={`${title} card`}
     >
       <div className="flex flex-col gap-4">
-        <motion.h2 className="fluid-h2-48-32 text-[#1F1F1F]" transition={{ duration: 0.3 }}>
+        <motion.h2 className="fluid-h2-48-32 text-2xl text-[#1F1F1F]" transition={{ duration: 0.3 }}>
           {title}
         </motion.h2>
         <motion.p
