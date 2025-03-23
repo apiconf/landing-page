@@ -72,7 +72,7 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
           className={footerDetailStyle.footerNav}
         >
           <li className={footerDetailStyle.link}>
-            <Link to="/2024/#about" className={footerDetailStyle.linkText}>
+            <Link to="#about" className={footerDetailStyle.linkText}>
               about API conference
             </Link>
             <img
@@ -83,7 +83,7 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
           </li>
           <li className={footerDetailStyle.link}>
             <Link
-              to="/2024/#become-a-sponsor"
+              to="#"
               className={footerDetailStyle.linkText}
             >
               Our Sponsors
@@ -95,7 +95,7 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <Link to="/2024/sessions" className={footerDetailStyle.linkText}>
+            <Link to="#" className={footerDetailStyle.linkText}>
               Sessions
             </Link>
             <img
@@ -105,7 +105,7 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
             />
           </li>
           <li className={footerDetailStyle.link}>
-            <a href="/2024/speakers" className={footerDetailStyle.linkText}>
+            <a href="/speakers" className={footerDetailStyle.linkText}>
               speakers
             </a>
             <img

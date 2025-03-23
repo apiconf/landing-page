@@ -14,7 +14,7 @@
 
 @layer utilities {
   .hero-fluid-heading {
-    font-size: clamp(36px, calc(36px + 24 * ((100vw - 300px) / 102)), 60px);
+    font-size: clamp(24px, calc(24px + 16 * ((100vw - 300px) / 102)), 60px);
   }
   .fluid-h2-48-32 {
     /* font-size: clamp(32px, calc(32px + 16 * ((100vw - 400px) / 1040)), 48px);
