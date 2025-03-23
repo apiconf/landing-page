@@ -64,19 +64,19 @@ export default function Hero() {
             variants={buttonContainerVariants}
             className="flex sm:flex-row flex-col flex-wrap gap-2 2xl:gap-4 !mt-14"
           >
-            <motion.a href="https://lu.ma/ltp8u2bb" variants={buttonVariants}>
+            <motion.a href="/register" target='_blank' variants={buttonVariants}>
               <button className="w-full cursor-pointer bg-[#E1EF9A] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full">
                 Register To Attend
               </button>
             </motion.a>
 
-            <motion.a href="https://sessionize.com/api-conf-lagos-2025/" variants={buttonVariants}>
+            <motion.a href="/cfp" target='_blank'  variants={buttonVariants}>
               <button className="w-full cursor-pointer bg-[#ECC89D] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full">
                 Apply To Speak
               </button>
             </motion.a>
 
-            <motion.a href="https://drive.google.com/file/d/1TYEN5HVH8_7ofGNpq2FoVniPskh6wXXe/view" variants={buttonVariants}>
+            <motion.a href="/sponsors/form" variants={buttonVariants} target='_blank'>
               <button className="w-full cursor-pointer bg-[#FFFFFF] text-[#2F20BF] font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full">
                 Become A Sponsor
               </button>

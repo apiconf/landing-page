@@ -14,7 +14,7 @@ const WhyAttend = () => {
   const isImgVisible = useIsVisible(imgRef);
 
   return (
-    <div className="bg-white px-[5.9701%] md:px-[7.4074%] py-[82px] md:py-16 flex flex-col md:flex-row items-center gap-16 sm:gap-x-20">
+    <div className="bg-white px-[5.9701%] md:px-[7.4074%] py-[82px] md:py-16 flex flex-col md:flex-row items-center gap-16 sm:gap-x-20" id="about">
       <div className="flex-1 space-y-8">
         <motion.span
           ref={eventDetailsRef}

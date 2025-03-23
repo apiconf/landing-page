@@ -1,52 +1,69 @@
-import "./index.css";
+import './index.css';
 
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import App from "./App.tsx";
-import App2024 from "./App2024.tsx";
-import { AppContextProvider } from "./context";
-import Confirmation from "./components/Confirmation";
-import NotFound from "./NotFound.tsx";
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Sessions from "./pages/sessions";
-import Speakers from "./pages/speakers";
-import SponsorRedirect from "./SponsorRedirect.tsx";
+import App from './App.tsx';
+import App2024 from './App2024.tsx';
+import { AppContextProvider } from './context';
+import Confirmation from './components/Confirmation';
+import NotFound from './NotFound.tsx';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Redirect from './Redirect.tsx';
+import Sessions from './pages/sessions';
+import Speakers from './pages/speakers';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     errorElement: <NotFound />,
   },
   {
-    path:"/sponsor",
-    element: <SponsorRedirect />,
-    errorElement: <NotFound />
+    path: '/sponsors/form',
+    element: <Redirect to="https://tinyurl.com/sponsor-apiconf-form" />,
+    errorElement: <NotFound />,
   },
   {
-    path: "2024",
+    path: '/sponsor',
+    element: (
+      <Redirect to="https://drive.google.com/file/d/1TYEN5HVH8_7ofGNpq2FoVniPskh6wXXe/view" />
+    ),
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/register',
+    element: <Redirect to="https://lu.ma/ltp8u2bb" />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/cfp',
+    element: <Redirect to="https://sessionize.com/api-conf-lagos-2025/" />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '2024',
     element: <App2024 />,
     errorElement: <NotFound />,
   },
   {
-    path: "speakers",
+    path: 'speakers',
     element: <Speakers />,
     errorElement: <NotFound />,
   },
   {
-    path: "2024/sessions",
+    path: '2024/sessions',
     element: <Sessions />,
     errorElement: <NotFound />,
   },
   {
-    path: "2024/dp",
+    path: '2024/dp',
     element: <Confirmation />,
     errorElement: <NotFound />,
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <AppContextProvider>
       <RouterProvider router={router} />
