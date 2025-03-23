@@ -6,10 +6,13 @@ import type { speakers } from ".";
 
 export default function Carousel({ slides }: { slides: speakers[] }) {
   const [activeItem, setActiveItem] = useState<number | null>(null);
+  const CarouselRef = React.useRef<HTMLDivElement>(null!);
+
+
 
   return (
     <>
-      <Header carouselRef={React.useRef<HTMLDivElement>(null)} />
+      <Header carouselRef={CarouselRef} />
 
       <div className="w-full px-6">
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
@@ -56,3 +59,4 @@ export default function Carousel({ slides }: { slides: speakers[] }) {
     </>
   );
 }
+
