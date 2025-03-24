@@ -29,3 +29,6 @@ dist-ssr
 .dockerignore
 Dockerfile
 .qodo
+
+
+*.tsbuildinfo
