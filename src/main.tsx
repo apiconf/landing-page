@@ -11,11 +11,17 @@ import ReactDOM from 'react-dom/client';
 import Redirect from './Redirect.tsx';
 import Sessions from './pages/sessions';
 import Speakers from './pages/speakers';
+import Sponsors from './pages/sponsors/index.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/sponsors',
+    element: <Sponsors />,
     errorElement: <NotFound />,
   },
   {
@@ -42,7 +48,7 @@ const router = createBrowserRouter([
   },
   {
     path: '2024',
-    element:  <NotFound />,
+    element: <NotFound />,
     errorElement: <NotFound />,
   },
   {
