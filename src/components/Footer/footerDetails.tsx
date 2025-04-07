@@ -1,12 +1,12 @@
-import { useIsVisible, useScreenWidth } from "../../hooks";
+import { useIsVisible, useScreenWidth } from '../../hooks';
 
-import { Link } from "react-router-dom";
-import arrow from "../../assets/arrow-icon.svg";
-import conf2024 from "../../assets/conf-2024.png";
-import footerDetailStyle from "./css/footer-details.module.css";
-import image3D from "../../assets/3D-Image.png";
-import { motion } from "framer-motion";
-import { useRef } from "react";
+import { Link } from 'react-router-dom';
+import arrow from '../../assets/arrow-icon.svg';
+import conf2024 from '../../assets/conf-2024.png';
+import footerDetailStyle from './css/footer-details.module.css';
+import image3D from '../../assets/3D-Image.png';
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
 
 const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
   const headerTextRef = useRef(null);
@@ -23,8 +23,7 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
 
   const { isLaptop } = useScreenWidth();
 
-  const isVisibleOnLaptop = (falseVal: boolean) =>
-    isLaptop ? isHeaderTextVisible : falseVal;
+  const isVisibleOnLaptop = (falseVal: boolean) => (isLaptop ? isHeaderTextVisible : falseVal);
 
   const currentYear = new Date().getFullYear();
 
@@ -32,27 +31,27 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
     <div className={footerDetailStyle.container}>
       <h2 ref={headerTextRef} className={footerDetailStyle.headerText}>
         <motion.span
-          initial={{ y: "116%" }}
-          animate={{ y: isHeaderTextVisible ? "0%" : "116%" }}
+          initial={{ y: '116%' }}
+          animate={{ y: isHeaderTextVisible ? '0%' : '116%' }}
           transition={{
             duration: 1,
             ease: [0.35, 0, 0.25, 1],
           }}
-          className="hidden sm:block relative sm:absolute bottom-0"
+          className="relative bottom-0 hidden sm:absolute sm:block"
         >
           API Conference
         </motion.span>
         <motion.span
-          initial={{ x: "-100%", y: 0 }}
+          initial={{ x: '-100%', y: 0 }}
           animate={{
-            x: isHeaderTextVisible ? "0%" : "-100%",
-            y: "100%",
+            x: isHeaderTextVisible ? '0%' : '-100%',
+            y: '100%',
           }}
           transition={{
             duration: 1,
             ease: [0.35, 0, 0.25, 1],
           }}
-          className="block sm:hidden !rotate-90 relative bottom-0 right-0"
+          className="relative bottom-0 right-0 block !rotate-90 sm:hidden"
         >
           API Conference
         </motion.span>
@@ -75,44 +74,25 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
             <Link to="#about" className={footerDetailStyle.linkText}>
               about API conference
             </Link>
-            <img
-              className={footerDetailStyle.linkIcon}
-              src={arrow}
-              alt="arrow-icon"
-            />
+            <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
           </li>
           <li className={footerDetailStyle.link}>
-            <Link
-              to="#"
-              className={footerDetailStyle.linkText}
-            >
+            <Link to="/sponsors" className={footerDetailStyle.linkText}>
               Our Sponsors
             </Link>
-            <img
-              className={footerDetailStyle.linkIcon}
-              src={arrow}
-              alt="arrow-icon"
-            />
+            <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
           </li>
           <li className={footerDetailStyle.link}>
             <Link to="#" className={footerDetailStyle.linkText}>
               Sessions
             </Link>
-            <img
-              className={footerDetailStyle.linkIcon}
-              src={arrow}
-              alt="arrow-icon"
-            />
+            <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
           </li>
           <li className={footerDetailStyle.link}>
             <a href="/speakers" className={footerDetailStyle.linkText}>
               speakers
             </a>
-            <img
-              className={footerDetailStyle.linkIcon}
-              src={arrow}
-              alt="arrow-icon"
-            />
+            <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
           </li>
         </motion.ul>
         <motion.div
@@ -128,13 +108,10 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
           }}
           className={footerDetailStyle.footerSalute}
         >
-          <img
-            src={newYear ? "/logo2025.svg" : conf2024}
-            alt="api_conference_logo"
-          />
+          <img src={newYear ? '/logo2025.svg' : conf2024} alt="api_conference_logo" />
           <div className={footerDetailStyle.salutation}>
             <p>made with love,</p>
-            <p>{newYear ? currentYear : "2024"} API conference team</p>
+            <p>{newYear ? currentYear : '2024'} API conference team</p>
           </div>
         </motion.div>
       </div>
