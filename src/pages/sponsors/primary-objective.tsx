@@ -57,8 +57,8 @@ function SponsorshipObjectives() {
   return (
     <>
       <div className="sponsor-radial-bg mb-8 w-full lg:aspect-[736/239]">
-        <div className="mad:my-24 flex h-full flex-col items-center gap-x-[clamp(2rem,10%,8rem)] gap-y-16 py-16 md:mx-auto md:w-2/3 md:flex-row md:py-0">
-          <div className="flex flex-col items-center gap-x-[clamp(1rem,4%,4rem)] md:flex-row md:items-start">
+        <div className="flex h-full flex-col items-center gap-x-[clamp(2rem,10%,8rem)] gap-y-16 py-16 md:mx-auto md:my-24 md:w-2/3 md:flex-row md:py-0">
+          <div className="flex flex-col items-center gap-x-[clamp(1rem,4%,4rem)] gap-y-12 md:flex-row md:items-start">
             <div className="flex flex-col items-center">
               <div className="flex aspect-square size-[5.625rem] items-center justify-center rounded-full border-none bg-[#90EAF2]">
                 <span className="text-center text-base font-bold text-[#1F1F1F]">100%</span>
@@ -120,11 +120,71 @@ function SponsorshipObjectives() {
 }
 
 function FutureSponsorshipIntent() {
-  return <div className="w-full text-3xl text-white">ABCDEFGHIJKL</div>;
+  return (
+    <>
+      <div className="sponsor-radial-bg mb-8 w-full text-3xl text-white">
+        <div className="flex w-full flex-col items-center justify-between gap-16 py-20 md:mx-auto md:w-fit md:flex-row md:px-[5.5rem]">
+          <div className="flex aspect-square size-60 items-center justify-center rounded-full border-none bg-[#4536DD] md:size-[19.75rem]">
+            <span className="text-center text-base font-bold text-white">100%</span>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#E1EF9A]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">Yes</span>
+            </p>
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#2F20BF]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">Maybe</span>
+            </p>
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#ECC89D]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">No</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p className="w-full text-center text-[2rem] font-medium text-[#A6A6A6]">
+        Future Sponsorship Intent
+      </p>
+    </>
+  );
 }
 
 function SponsorshipParticipationLevel() {
-  return <div className="w-full text-3xl text-white">ABCDEFGHIJKL</div>;
+  return (
+    <>
+      <div className="sponsor-radial-bg mb-8 w-full text-3xl text-white">
+        <div className="flex w-full flex-col items-center justify-between gap-16 py-20 md:mx-auto md:w-fit md:flex-row md:px-[5.5rem]">
+          <div className="flex aspect-square size-60 items-center justify-center rounded-full border-none bg-[#E1EF9A] md:size-[19.75rem]">
+            <span className="text-center text-base font-bold text-dark">100%</span>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#E1EF9A]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">
+                Participate at same level
+              </span>
+            </p>
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#2F20BF]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">
+                Consider higher level
+              </span>
+            </p>
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#ECC89D]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">
+                Lower level
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p className="w-full text-center text-[2rem] font-medium text-[#A6A6A6]">
+        Sponsorship Participation Level
+      </p>
+    </>
+  );
 }
 
 export default function PrimaryObjective() {
