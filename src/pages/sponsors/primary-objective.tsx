@@ -1,4 +1,131 @@
+import { useEffect, useMemo } from 'react';
 import Tabs from './tabs';
+
+function ChartCreator({ activeTab }: { activeTab: string }) {
+  const allImages = useMemo(
+    () => ({
+      awareness: {
+        path: '/sponsors/brand-awareness.png',
+        caption: 'Brand Awareness',
+      },
+      conversations: {
+        path: '/sponsors/in-person-conversations.png',
+        caption: 'In-Person Conversations',
+      },
+      demos: {
+        path: '/sponsors/product-demos-and-showcase.png',
+        caption: 'Product Demos and Showcase',
+      },
+      leads: {
+        path: '/sponsors/lead-generation.png',
+        caption: 'Lead Generation',
+      },
+      keynotes: {
+        path: '/sponsors/keynote-and-speaking-sessions.png',
+        caption: 'Keynote and Speaking Sessions',
+      },
+      default: {
+        path: '/sponsors/default-chart.png',
+        caption: 'Default Text',
+      },
+    }),
+    []
+  );
+
+  // Preload all images when component mounts
+  useEffect(() => {
+    Object.values(allImages).forEach((img) => {
+      const preloadImage = new Image();
+      preloadImage.src = img.path;
+    });
+  }, [allImages]);
+
+  // Get current image data
+  const imageData = allImages[activeTab as keyof typeof allImages] || allImages.default;
+
+  return (
+    <div className="mt-[4.5rem] w-full md:mt-32">
+      <img src={imageData.path} alt={imageData.caption} className="w-full md:mx-auto md:w-fit" />
+      <figcaption className="mt-2 text-center text-base font-medium text-[#A6A6A6] md:mt-8 md:text-[2rem]">
+        {imageData.caption}
+      </figcaption>
+    </div>
+  );
+}
+
+function SponsorshipObjectives() {
+  return (
+    <>
+      <div className="sponsor-radial-bg mb-8 w-full lg:aspect-[736/239]">
+        <div className="mad:my-24 flex h-full flex-col items-center gap-x-[clamp(2rem,10%,8rem)] gap-y-16 py-16 md:mx-auto md:w-2/3 md:flex-row md:py-0">
+          <div className="flex flex-col items-center gap-x-[clamp(1rem,4%,4rem)] md:flex-row md:items-start">
+            <div className="flex flex-col items-center">
+              <div className="flex aspect-square size-[5.625rem] items-center justify-center rounded-full border-none bg-[#90EAF2]">
+                <span className="text-center text-base font-bold text-[#1F1F1F]">100%</span>
+              </div>
+              <p className="max-w-40 text-center text-base font-bold text-[#1F1F1F]">
+                Did we meet your sponsorship objectives?
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="flex aspect-square size-[5.625rem] items-center justify-center rounded-full border-none bg-[#90EAF2]">
+                <span className="text-center text-base font-bold text-[#1F1F1F]">100%</span>
+              </div>
+              <p className="max-w-40 text-center text-base font-bold text-[#1F1F1F]">
+                How satisfied were you with the attendee engagement?
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="flex aspect-square size-[5.625rem] items-center justify-center rounded-full border-none bg-[#90EAF2]">
+                <span className="text-center text-base font-bold text-[#1F1F1F]">100%</span>
+              </div>
+              <p className="max-w-40 text-center text-base font-bold text-[#1F1F1F]">
+                How satisfied were you with the Exhibition space?
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#E1EF9A]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">
+                Strongly Agree
+              </span>
+            </p>
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#90EAF2]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">Agree</span>
+            </p>
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#2F20BF]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">Neutral</span>
+            </p>
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#ECC89D]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">Disagree</span>
+            </p>
+            <p className="inline-flex gap-x-2">
+              <span className="size-6 rounded-full border-none bg-[#C97F27]"></span>
+              <span className="whitespace-nowrap text-base font-bold text-[#1F1F1F]">
+                Strongly Disagree
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p className="w-full text-center text-[2rem] font-medium text-[#A6A6A6]">
+        Sponsorship Objectives
+      </p>
+    </>
+  );
+}
+
+function FutureSponsorshipIntent() {
+  return <div className="w-full text-3xl text-white">ABCDEFGHIJKL</div>;
+}
+
+function SponsorshipParticipationLevel() {
+  return <div className="w-full text-3xl text-white">ABCDEFGHIJKL</div>;
+}
 
 export default function PrimaryObjective() {
   return (
@@ -19,22 +146,7 @@ export default function PrimaryObjective() {
           ]}
           defaultTab="awareness"
         >
-          {(activeTab) => {
-            switch (activeTab) {
-              case 'awareness':
-                return <>AwarenessChart</>;
-              case 'conversations':
-                return <>ConversationsChart</>;
-              case 'demos':
-                return <>DEMOS</>;
-              case 'leads':
-                return <>LEADS</>;
-              case 'keynotes':
-                return <>KEYNOTES</>;
-              default:
-                return null;
-            }
-          }}
+          {(activeTab) => <ChartCreator activeTab={activeTab} />}
         </Tabs>
       </div>
       <h2 className="mb-6 mt-16 max-w-[37.1875rem] text-[2rem] font-bold text-white md:mt-32 md:text-[4rem]">
@@ -49,15 +161,16 @@ export default function PrimaryObjective() {
             { id: 'sponsorship-participation-level', label: 'Sponsorship Participation Level' },
           ]}
           defaultTab="sponsorship-objectives"
+          className="my-[4.5rem] md:my-32"
         >
           {(activeTab) => {
             switch (activeTab) {
               case 'sponsorship-objectives':
-                return <>AwarenessChart</>;
+                return <SponsorshipObjectives />;
               case 'future-sponsorship-intent':
-                return <>ConversationsChart</>;
+                return <FutureSponsorshipIntent />;
               case 'sponsorship-participation-level':
-                return <>DEMOS</>;
+                return <SponsorshipParticipationLevel />;
               default:
                 return null;
             }
