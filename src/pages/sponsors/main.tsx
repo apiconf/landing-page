@@ -2,7 +2,7 @@ export default function Main() {
   return (
     <main className="flex w-full flex-1">
       <div className="min-h-full w-full flex-1">
-        <div className="relative top-1/3 mx-auto flex w-full flex-col justify-between gap-12 px-4 md:top-1/2 md:w-[85%] md:flex-row md:gap-0 md:px-0">
+        <div className="relative mx-auto flex w-full flex-col justify-between gap-12 px-4 pt-52 md:top-[2%] md:w-[85%] md:flex-row md:gap-0 md:px-0">
           <div className="flex-1 md:max-w-[640px]">
             <h1 className="font-sans text-4xl font-bold leading-[100%] tracking-[-0.045rem] text-primary-black md:text-[4rem] md:tracking-[-0.08rem]">
               API Conference 2025 Sponsorship.
