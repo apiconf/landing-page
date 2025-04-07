@@ -56,7 +56,7 @@ function ChartCreator({ activeTab }: { activeTab: string }) {
 function SponsorshipObjectives() {
   return (
     <>
-      <div className="sponsor-radial-bg mb-8 w-full lg:aspect-[736/239]">
+      <div className="sponsor-radial-bg mb-8 w-full md:py-4 lg:aspect-[736/239] xl:py-0">
         <div className="flex h-full flex-col items-center gap-x-[clamp(2rem,10%,8rem)] gap-y-16 py-16 md:mx-auto md:my-24 md:w-2/3 md:flex-row md:py-0">
           <div className="flex flex-col items-center gap-x-[clamp(1rem,4%,4rem)] gap-y-12 md:flex-row md:items-start">
             <div className="flex flex-col items-center">
