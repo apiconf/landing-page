@@ -16,7 +16,7 @@ import Footer from '@/components/Footer/index';
 export default function Sponsors() {
   return (
     <>
-      <div className="flex min-h-fit flex-col bg-[url(/sponsors/sponsor-hero-mobile.jpg)] bg-top bg-no-repeat md:min-h-screen md:bg-[url(/sponsors/sponsor-hero.jpg)] md:bg-cover">
+      <div className="flex min-h-fit flex-col bg-[url(/sponsors/sponsor-hero-mobile.jpg)] bg-top bg-no-repeat sm:bg-[url(/sponsors/sponsor-hero.jpg)] md:min-h-screen md:bg-cover">
         <Header />
         <Main />
       </div>
