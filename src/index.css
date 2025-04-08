@@ -19,7 +19,7 @@
   .fluid-h2-48-32 {
     /* font-size: clamp(32px, calc(32px + 16 * ((100vw - 400px) / 1040)), 48px);
      */
-     font-size: clamp(24px, calc(24px + 16 * ((100vw - 320px) / 704)), 40px);
+    font-size: clamp(24px, calc(24px + 16 * ((100vw - 320px) / 704)), 40px);
     @apply font-bold leading-none tracking-normal;
   }
   .fluid-h3-24-18 {
@@ -29,10 +29,31 @@
   .vid-h-fluid {
     height: clamp(400px, calc(400px + (240 * ((100vw - 402px) / (1440 - 402)))), 640px);
   }
+  .vid-h-fluid-sponsors {
+    height: clamp(226.453px, 50vh, 478px);
+  }
   .glowing-text {
     color: #ecc89d;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
     font-size: clamp(48px, calc(48px + 40 * ((100vw - 400px) / 1040)), 88px);
+  }
+  .glowing-text-sponsors {
+    color: #e1ef9a;
+    text-shadow: 0px 0px 52px rgba(255, 255, 255, 0.55);
+    font-size: clamp(2.25rem, 2.25rem + ((1vw - 4px) * 3.125), 5.5rem);
+    font-weight: 400;
+    line-height: normal;
+  }
+  .sponsor-radial-bg {
+    border-radius: 3rem;
+    background:
+      radial-gradient(
+        69.97% 69.97% at 50% 50%,
+        rgba(144, 234, 242, 0) 0%,
+        rgba(144, 234, 242, 0) 50%,
+        rgba(144, 234, 242, 0.6) 100%
+      ),
+      #fff;
   }
 }
 
