@@ -1,17 +1,29 @@
 import './App.css';
 
 import Events from './components/Events';
-import Footer from "./components/Footer/index";
+import Footer from './components/Footer/index';
 import Hero from './components/Hero';
 import NavBar from './components/NavBar';
 import Recap from './components/recap';
 import { SpaceItem } from './types';
 import Spaces from './components/Talks/spaces';
 import SpeakersInHome from './components/speaker';
-import Sponsor from "./components/sponsor_cfp/index"
+import Sponsor from './components/sponsor_cfp/index';
 import WhyAttend from './components/WhyAttend';
 
 const spaceItems: SpaceItem[] = [
+  {
+    key: 'Building_Resilient_API_Contracts',
+    title: 'Building Resilient API Contracts',
+    subTitle: '@Olatunji_Immam • 5th April 2025',
+    link: 'https://x.com/i/spaces/1yNGaLwyvDDKj',
+  },
+  {
+    key: 'API_SECURITY_WITH_GITHUB_CODEQL',
+    title: 'API Security with GitHub CodeQL',
+    subTitle: '@pentester__ • 22nd March 2025',
+    link: 'https://x.com/i/spaces/1nAJEgjyPDyKL',
+  },
   {
     key: 'SERVERLESS_APIS_CLOUD_FUNCTIONS',
     title: 'Serverless APIs: Leveraging cloud functions for efficient API development',
