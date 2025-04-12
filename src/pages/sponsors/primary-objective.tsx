@@ -248,15 +248,15 @@ export default function PrimaryObjective() {
             target="_blank"
             className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-[20rem] bg-[#2F20BF] p-6 sm:px-4 sm:py-8 md:w-fit md:px-16 lg:py-8"
           >
-            <span className="text-2xl font-bold text-white">View Sponsorship Deck</span>
+            <span className="text-center text-2xl font-bold text-white">View Sponsorship Deck</span>
           </a>
           <a
-            href="https://drive.google.com/file/d/1TYEN5HVH8_7ofGNpq2FoVniPskh6wXXe/view"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeX_vB-R7Dw5wlmnz0jgpD8b14bsB0f6cbLhoHRYnFMxaNmLA/viewform"
             rel="noopener noreferrer"
             target="_blank"
             className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-[20rem] bg-[#90EAF2] p-6 sm:px-4 sm:py-8 md:w-fit md:px-16 lg:py-8"
           >
-            <span className="text-2xl font-bold text-[#000]">Contact Us</span>
+            <span className="text-center text-2xl font-bold text-[#000]">Contact Us</span>
           </a>
         </div>
       </div>
