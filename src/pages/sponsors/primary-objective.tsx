@@ -2,23 +2,13 @@ import { motion, useSpring, useMotionValue, useTransform } from 'framer-motion';
 import { useEffect } from 'react';
 import Tabs from './tabs';
 
-function TabChildCreator({ activeTab }: { activeTab: string }) {
-  switch (activeTab) {
-    case 'primary-objectives-charts':
-      return <PrimaryObjectiveCharts />;
-    case 'objectives-met':
-      return <ObjectivesMet />;
-    case 'attendee-engagement':
-      return <AttendeeEngagement />;
-    case 'demo-space':
-      return <DemoSpace />;
-    case 'future-sponsorship':
-      return <FutureSponsorship />;
-    case 'plans-for-2024':
-      return <Plansfor2024 />;
-    default:
-      return null;
-  }
+// Types
+interface ChartTabConfig {
+  id: string;
+  label: string;
+  chartType: 'circular' | 'bar';
+  data: { label: string; value: number }[] | { percentage: number; caption: string }[];
+  title: string;
 }
 
 interface CircularProgressProps {
@@ -28,6 +18,88 @@ interface CircularProgressProps {
   size?: number;
 }
 
+interface BarChartProps {
+  data: { label: string; value: number }[];
+}
+
+// Configuration
+const TAB_CONFIGS: ChartTabConfig[] = [
+  {
+    id: 'primary-objectives-charts',
+    label: 'Primary Objectives',
+    chartType: 'circular',
+    data: [
+      { percentage: 20, caption: 'Brand awareness' },
+      { percentage: 40, caption: 'In-Person Conversations' },
+      { percentage: 60, caption: 'Product Demos and Showcase' },
+      { percentage: 80, caption: 'Lead Generation' },
+      { percentage: 100, caption: 'Keynote and Speaking Sessions' },
+    ],
+    title: 'Primary Objectives',
+  },
+  {
+    id: 'objectives-met',
+    label: 'Objectives Met',
+    chartType: 'bar',
+    data: [
+      { label: 'Strongly agree', value: 40 },
+      { label: 'Agree', value: 60 },
+      { label: 'Neutral', value: 0 },
+      { label: 'Disagree', value: 0 },
+      { label: 'Strongly disagree', value: 0 },
+    ],
+    title: 'Sponsorship met objectives',
+  },
+  {
+    id: 'attendee-engagement',
+    label: 'Attendee Engagement',
+    chartType: 'bar',
+    data: [
+      { label: 'Strongly agree', value: 70 },
+      { label: 'Agree', value: 30 },
+      { label: 'Neutral', value: 0 },
+      { label: 'Disagree', value: 0 },
+      { label: 'Strongly disagree', value: 0 },
+    ],
+    title: 'Satisfied with attendee engagement',
+  },
+  {
+    id: 'demo-space',
+    label: 'Demo Space',
+    chartType: 'bar',
+    data: [
+      { label: 'Strongly agree', value: 70 },
+      { label: 'Agree', value: 30 },
+      { label: 'Neutral', value: 0 },
+      { label: 'Disagree', value: 0 },
+      { label: 'Strongly disagree', value: 0 },
+    ],
+    title: 'Satisfied with demo space appearance',
+  },
+  {
+    id: 'future-sponsorship',
+    label: 'Future Sponsorship',
+    chartType: 'bar',
+    data: [
+      { label: 'True', value: 100 },
+      { label: 'False', value: 0 },
+    ],
+    title: 'Plans to sponsor in 2025',
+  },
+  {
+    id: 'plans-for-2025',
+    label: 'Plans for 2025',
+    chartType: 'bar',
+    data: [
+      { label: 'Participate at same level', value: 70 },
+      { label: 'Consider higher level', value: 30 },
+      { label: 'Lower level', value: 0 },
+    ],
+    title: 'Plans for 2025 sponsorship',
+  },
+];
+
+// Components
 function CircularProgress({
   percentage = 0,
   caption = '',
@@ -87,10 +159,6 @@ function CircularProgress({
   );
 }
 
-interface BarChartProps {
-  data: { label: string; value: number }[];
-}
-
 function BarChart({ data }: BarChartProps) {
   return (
     <div className="w-full max-w-[80%] md:max-w-lg">
@@ -119,135 +187,39 @@ function BarChart({ data }: BarChartProps) {
   );
 }
 
-function PrimaryObjectiveCharts() {
-  return (
-    <>
-      <div className="sponsor-radial-bg mb-8 mt-[4.5rem] w-full">
-        <div className="flex w-full flex-col flex-wrap justify-center gap-x-12 gap-y-12 py-20 text-3xl md:mx-auto md:w-fit md:flex-row md:px-[5.5rem] lg:gap-x-4">
-          <CircularProgress percentage={20} caption="Brand awareness" />
-          <CircularProgress percentage={40} caption="In-Person Conversations" />
-          <CircularProgress percentage={60} caption="Product Demos and Showcase" />
-          <CircularProgress percentage={80} caption="Lead Generation" />
-          <CircularProgress percentage={100} caption="Keynote and Speaking Sessions" />
-        </div>
-      </div>
-      <p className="w-full text-center text-[2rem] font-medium text-[#A6A6A6]">
-        Primary Objectives
-      </p>
-    </>
-  );
-}
-
-function ObjectivesMet() {
-  const chartData = [
-    { label: 'Strongly agree', value: 40 },
-    { label: 'Agree', value: 60 },
-    { label: 'Neutral', value: 0 },
-    { label: 'Disagree', value: 0 },
-    { label: 'Strongly disagree', value: 0 },
-  ];
-
+function ChartContainer({ children, title }: { children: React.ReactNode; title: string }) {
   return (
     <>
       <div className="sponsor-radial-bg mb-8 mt-[4.5rem] w-full">
         <div className="flex w-full justify-center py-20 text-3xl md:mx-auto md:px-[5.5rem]">
-          <BarChart data={chartData} />
+          {children}
         </div>
       </div>
-      <p className="w-full text-center text-[2rem] font-medium text-[#A6A6A6]">
-        Sponsorship met objectives
-      </p>
+      <p className="w-full text-center text-[2rem] font-medium text-[#A6A6A6]">{title}</p>
     </>
   );
 }
 
-function AttendeeEngagement() {
-  const chartData = [
-    { label: 'Strongly agree', value: 70 },
-    { label: 'Agree', value: 30 },
-    { label: 'Neutral', value: 0 },
-    { label: 'Disagree', value: 0 },
-    { label: 'Strongly disagree', value: 0 },
-  ];
+function TabChildCreator({ activeTab }: { activeTab: string }) {
+  const config = TAB_CONFIGS.find((tab) => tab.id === activeTab);
+  if (!config) return null;
 
   return (
-    <>
-      <div className="sponsor-radial-bg mb-8 mt-[4.5rem] w-full">
-        <div className="flex w-full justify-center py-20 text-3xl md:mx-auto md:px-[5.5rem]">
-          <BarChart data={chartData} />
+    <ChartContainer title={config.title}>
+      {config.chartType === 'circular' ? (
+        <div className="flex flex-col flex-wrap justify-center gap-x-12 gap-y-12 md:w-fit md:flex-row lg:gap-x-4">
+          {(config.data as { percentage: number; caption: string }[]).map((item, index) => (
+            <CircularProgress key={index} percentage={item.percentage} caption={item.caption} />
+          ))}
         </div>
-      </div>
-      <p className="w-full text-center text-[2rem] font-medium text-[#A6A6A6]">
-        Satisfied with attendee engagement
-      </p>
-    </>
+      ) : (
+        <BarChart data={config.data as { label: string; value: number }[]} />
+      )}
+    </ChartContainer>
   );
 }
 
-function DemoSpace() {
-  const chartData = [
-    { label: 'Strongly agree', value: 70 },
-    { label: 'Agree', value: 30 },
-    { label: 'Neutral', value: 0 },
-    { label: 'Disagree', value: 0 },
-    { label: 'Strongly disagree', value: 0 },
-  ];
-
-  return (
-    <>
-      <div className="sponsor-radial-bg mb-8 mt-[4.5rem] w-full">
-        <div className="flex w-full justify-center py-20 text-3xl md:mx-auto md:px-[5.5rem]">
-          <BarChart data={chartData} />
-        </div>
-      </div>
-      <p className="w-full text-center text-[2rem] font-medium text-[#A6A6A6]">
-        Satisfied with demo space appearance
-      </p>
-    </>
-  );
-}
-
-function FutureSponsorship() {
-  const chartData = [
-    { label: 'True', value: 100 },
-    { label: 'False', value: 0 },
-  ];
-
-  return (
-    <>
-      <div className="sponsor-radial-bg mb-8 mt-[4.5rem] w-full">
-        <div className="flex w-full justify-center py-20 text-3xl md:mx-auto md:px-[5.5rem]">
-          <BarChart data={chartData} />
-        </div>
-      </div>
-      <p className="w-full text-center text-[2rem] font-medium text-[#A6A6A6]">
-        Plans to sponsor in 2025
-      </p>
-    </>
-  );
-}
-
-function Plansfor2024() {
-  const chartData = [
-    { label: 'Participate at same level', value: 70 },
-    { label: 'Consider higher level', value: 30 },
-    { label: 'Lower level', value: 0 },
-  ];
-
-  return (
-    <>
-      <div className="sponsor-radial-bg mb-8 mt-[4.5rem] w-full">
-        <div className="flex w-full justify-center py-20 text-3xl md:mx-auto md:px-[5.5rem]">
-          <BarChart data={chartData} />
-        </div>
-      </div>
-      <p className="w-full text-center text-[2rem] font-medium text-[#A6A6A6]">
-        Plans for 2024 sponsorship
-      </p>
-    </>
-  );
-}
-
+// Main Component
 export default function PrimaryObjective() {
   return (
     <section className="w-full bg-[#000] px-6 py-16 md:px-24 md:py-32 lg:px-32">
@@ -257,15 +229,8 @@ export default function PrimaryObjective() {
       <small className="text-lg text-[#F1F1F1]">Lorem ipsum test</small>
       <div className="mb-16 mt-12 md:mb-32 md:mt-16">
         <Tabs
-          tabs={[
-            { id: 'primary-objectives-charts', label: 'Primary Objectives' },
-            { id: 'objectives-met', label: 'Objectives Met' },
-            { id: 'attendee-engagement', label: 'Attendee Engagement' },
-            { id: 'demo-space', label: 'Demo Space' },
-            { id: 'future-sponsorship', label: 'Future Sponsorship' },
-            { id: 'plans-for-2024', label: 'Plans for 2024' },
-          ]}
-          defaultTab="primary-objectives-charts"
+          tabs={TAB_CONFIGS.map(({ id, label }) => ({ id, label }))}
+          defaultTab={TAB_CONFIGS[0].id}
         >
           {(activeTab) => <TabChildCreator activeTab={activeTab} />}
         </Tabs>
