@@ -13,6 +13,12 @@ import WhyAttend from './components/WhyAttend';
 
 const spaceItems: SpaceItem[] = [
   {
+    key: 'Caching_Strategies_for_High_Traffic_APIs',
+    title: 'Caching Strategies for High Traffic APIs',
+    subTitle: 'TBA • 12th April 2025',
+    link: 'https://x.com/i/spaces/1mnxegneNBRGX',
+  },
+  {
     key: 'Building_Resilient_API_Contracts',
     title: 'Building Resilient API Contracts',
     subTitle: '@Olatunji_Immam • 5th April 2025',
