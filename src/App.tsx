@@ -15,7 +15,7 @@ const spaceItems: SpaceItem[] = [
   {
     key: 'Caching_Strategies_for_High_Traffic_APIs',
     title: 'Caching Strategies for High Traffic APIs',
-    subTitle: 'TBA • 12th April 2025',
+    subTitle: '@nelson_isioma • 12th April 2025',
     link: 'https://x.com/i/spaces/1mnxegneNBRGX',
   },
   {
