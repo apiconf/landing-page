@@ -239,8 +239,9 @@ export default function PrimaryObjective() {
       </div>
       <div className="text-white">
         <span className="text-4xl font-bold md:text-5xl">Sponsor APIConf Lagos 2025</span>
-        <p className="mb-12 mt-4 max-w-[29.3125rem] text-2xl font-medium">
-          Learn more details to sponsor API Conference
+        <p className="mb-12 mt-4 max-w-[32rem] text-2xl font-medium">
+          Connect with over 1,000 API professionals and let your brand be at the center of the
+          action.
         </p>
         <div className="flex flex-col gap-x-8 gap-y-12 md:flex-row">
           <a
