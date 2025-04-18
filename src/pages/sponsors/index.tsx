@@ -5,7 +5,7 @@ import SponsorCarousel from './sponsor-carousel';
 import About from './about';
 import Stats from './stats';
 import TargetAudience from './target-audience';
-import Chart from './chart';
+// import Chart from './chart';
 import SponsorSection from './sponsor-section';
 import PrimaryObjective from './primary-objective';
 import SponsorExperience from './sponsor-experience';
@@ -24,7 +24,7 @@ export default function Sponsors() {
       <About />
       <Stats />
       <TargetAudience />
-      <Chart />
+      {/* <Chart /> */}
       <ScrollingShowcase
         title="Companies"
         rows={[

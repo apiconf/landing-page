@@ -101,16 +101,13 @@ export default function SponsorOpportunities() {
 
       <div className="w-full bg-[#000] px-6 py-16 md:py-32">
         <div className="w-full md:mx-auto md:max-w-[60%]">
-          <p className="mb-4 text-center text-4xl font-bold text-[#F1F1F1] md:text-5xl">
+          <p className="mb-12 text-center text-4xl font-bold text-[#F1F1F1] md:text-5xl">
             Together, we can shape the future of APIs in Africa, foster collaboration, and support
             the growth of a thriving API ecosystem.
           </p>
-          <p className="mx-auto mb-12 max-w-[29.3125rem] text-center text-2xl font-medium text-[#F1F1F1]">
-            Learn more details to sponsor API Conference
-          </p>
           <div className="flex w-full flex-col gap-x-8 gap-y-12 md:mx-auto md:w-fit md:flex-row">
             <a
-              href="https://drive.google.com/file/d/1TYEN5HVH8_7ofGNpq2FoVniPskh6wXXe/view"
+              href="https://docs.google.com/presentation/d/1DtU1WKhuVRtVoCCc0FD7l3PYzHHEZ6alI_a1HboUdyo/edit"
               rel="noopener noreferrer"
               target="_blank"
               className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-[20rem] bg-[#E1EF9A] p-6 sm:px-4 sm:py-8 md:w-fit md:px-16 lg:py-8"

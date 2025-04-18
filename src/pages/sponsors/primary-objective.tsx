@@ -223,10 +223,12 @@ function TabChildCreator({ activeTab }: { activeTab: string }) {
 export default function PrimaryObjective() {
   return (
     <section className="w-full bg-[#000] px-6 py-16 md:px-24 md:py-32 lg:px-32">
-      <h2 className="mb-6 text-[2rem] font-bold text-white md:text-[4rem]">
+      <h2 className="mb-4 text-[2rem] font-bold text-white md:text-[4rem]">
         Brand Engagement and Interaction
       </h2>
-      <small className="text-lg text-[#F1F1F1]">Lorem ipsum test</small>
+      <p className="text-xl text-[#F1F1F1]">
+        Curious how last year’s sponsors felt about us? Here’s what they had to say.
+      </p>
       <div className="mb-16 mt-12 md:mb-32 md:mt-16">
         <Tabs
           tabs={TAB_CONFIGS.map(({ id, label }) => ({ id, label }))}
@@ -243,7 +245,7 @@ export default function PrimaryObjective() {
         </p>
         <div className="flex flex-col gap-x-8 gap-y-12 md:flex-row">
           <a
-            href="https://drive.google.com/file/d/1TYEN5HVH8_7ofGNpq2FoVniPskh6wXXe/view"
+            href="https://docs.google.com/presentation/d/1DtU1WKhuVRtVoCCc0FD7l3PYzHHEZ6alI_a1HboUdyo/edit"
             rel="noopener noreferrer"
             target="_blank"
             className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-[20rem] bg-[#2F20BF] p-6 sm:px-4 sm:py-8 md:w-fit md:px-16 lg:py-8"

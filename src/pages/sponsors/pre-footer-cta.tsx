@@ -1,7 +1,7 @@
 export default function PreFooterCta() {
   return (
-    <section className="px-6 py-20 md:p-32">
-      <div className="flex flex-col gap-x-16 gap-y-8 md:flex-row">
+    <section className="px-6 pb-20 md:px-32 md:pb-32">
+      {/* <div className="pt-20 md:pt-32 flex flex-col gap-x-16 gap-y-8 md:flex-row">
         <div className="flex-1 md:flex-[49_49_0%]">
           <div className="mb-8 h-[31rem] w-full rounded-[2rem] bg-[#D9D9D9]"></div>
           <figcaption>
@@ -14,15 +14,16 @@ export default function PreFooterCta() {
           <div className="mb-8 h-[31rem] w-full rounded-[2rem] bg-[#D9D9D9]"></div>
           <figcaption>Some body of text to accompany visually solid idea per section.</figcaption>
         </div>
-      </div>
+      </div> */}
       <div className="mt-20 text-[#1F1F1F] md:mt-32">
         <span className="text-4xl font-bold md:text-5xl">Sponsor APIConf Lagos 2025</span>
-        <p className="mb-12 mt-4 max-w-[29.3125rem] text-2xl font-medium">
-          Learn more details to sponsor API Conference
+        <p className="mb-12 mt-4 max-w-[37.5rem] text-pretty text-2xl font-medium">
+          Get access to an engaged audience and give your brand visibility! Partner with the leading
+          API Conference in Africa
         </p>
         <div className="flex flex-col gap-x-8 gap-y-12 md:flex-row">
           <a
-            href="https://drive.google.com/file/d/1TYEN5HVH8_7ofGNpq2FoVniPskh6wXXe/view"
+            href="https://docs.google.com/presentation/d/1DtU1WKhuVRtVoCCc0FD7l3PYzHHEZ6alI_a1HboUdyo/edit"
             rel="noopener noreferrer"
             target="_blank"
             className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-[20rem] bg-[#2F20BF] p-6 sm:px-4 sm:py-8 md:w-fit md:px-16 lg:py-8"

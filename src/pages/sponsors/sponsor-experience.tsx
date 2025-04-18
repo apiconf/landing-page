@@ -4,52 +4,52 @@ export default function SponsorExperience() {
   const slides = [
     {
       id: 1,
-      image: '/events/event-1.jpg',
+      image: '/sponsors/experience/slide_1.jpg',
       alt: `Slide 1`,
     },
     {
       id: 2,
-      image: '/events/event-2.jpg',
+      image: '/sponsors/experience/slide_2.jpg',
       alt: `Slide 2`,
     },
     {
       id: 3,
-      image: '/events/event-3.jpg',
+      image: '/sponsors/experience/slide_3.jpg',
       alt: `Slide 3`,
     },
     {
       id: 4,
-      image: '/events/event-4.jpg',
+      image: '/sponsors/experience/slide_4.jpg',
       alt: `Slide 4`,
     },
     {
       id: 5,
-      image: '/events/event-5.jpg',
+      image: '/sponsors/experience/slide_5.jpg',
       alt: `Slide 5`,
     },
     {
       id: 6,
-      image: '/events/event-6.jpg',
+      image: '/sponsors/experience/slide_6.jpg',
       alt: `Slide 6`,
     },
     {
       id: 7,
-      image: '/events/event-7.jpg',
+      image: '/sponsors/experience/slide_7.jpg',
       alt: `Slide 7`,
     },
     {
       id: 8,
-      image: '/events/event-8.jpg',
+      image: '/sponsors/experience/slide_8.jpg',
       alt: `Slide 8`,
     },
     {
       id: 9,
-      image: '/events/event-9.jpg',
+      image: '/sponsors/experience/slide_9.jpg',
       alt: `Slide 9`,
     },
     {
       id: 10,
-      image: '/events/event-10.jpg',
+      image: '/sponsors/experience/slide_10.jpg',
       alt: `Slide 10`,
     },
   ];

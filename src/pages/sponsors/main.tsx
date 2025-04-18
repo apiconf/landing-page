@@ -10,8 +10,7 @@ export default function Main() {
               2025 Sponsorship.
             </h1>
             <div className="mt-4 flex max-w-fit flex-1 flex-col items-end justify-end md:mt-8">
-              <span className="mb-4 w-full text-base">Date</span>
-              <p className="font-sans text-4xl font-bold leading-[100%] tracking-[-0.045rem] text-primary-black md:text-5xl md:tracking-[-0.08rem] lg:text-[4rem]">
+              <p className="font-base font-sans text-3xl text-primary-black md:text-4xl lg:text-5xl">
                 July
                 <time dateTime="2025-07-18"> 18th</time> - <time dateTime="2025-07-19">19th</time>,
                 2025
