@@ -21,7 +21,10 @@ const Companies: Company[] = [
 
 export default function SponsorCarousel() {
   return (
-    <Marquee autoFill={true} className="flex w-full items-center overflow-x-hidden">
+    <Marquee
+      autoFill={true}
+      className="flex w-full items-center overflow-x-hidden md:mt-8 lg:mt-4 xl:mt-0"
+    >
       <div className="ml-[-6%] flex w-full items-center justify-center overflow-x-hidden py-8 text-[5.5rem]">
         {Companies.map((company) => (
           <div key={company.name} className="mx-4 md:mx-8">
