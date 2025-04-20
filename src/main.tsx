@@ -32,7 +32,7 @@ const router = createBrowserRouter([
   {
     path: '/sponsor',
     element: (
-      <Redirect to="https://drive.google.com/file/d/1TYEN5HVH8_7ofGNpq2FoVniPskh6wXXe/view" />
+      <Redirect to="https://docs.google.com/presentation/d/1DtU1WKhuVRtVoCCc0FD7l3PYzHHEZ6alI_a1HboUdyo/edit" />
     ),
     errorElement: <NotFound />,
   },
