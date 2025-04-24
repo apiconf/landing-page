@@ -78,7 +78,7 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
           </li>
           <li className={footerDetailStyle.link}>
             <Link to="/sponsors" className={footerDetailStyle.linkText}>
-              Our Sponsors
+              Work With Us
             </Link>
             <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
           </li>
