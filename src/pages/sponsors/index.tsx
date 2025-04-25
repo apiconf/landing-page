@@ -1,19 +1,25 @@
-import { ScrollingShowcase } from '@/components/ScrollingShowcase';
+import About from './about';
+import Footer from '@/components/Footer/index';
 import Header from './header';
 import Main from './main';
-import SponsorCarousel from './sponsor-carousel';
-import About from './about';
-import Stats from './stats';
-import TargetAudience from './target-audience';
-// import Chart from './chart';
-import SponsorSection from './sponsor-section';
+import PreFooterCta from './pre-footer-cta';
 import PrimaryObjective from './primary-objective';
+import { ScrollingShowcase } from '@/components/ScrollingShowcase';
+import SponsorCarousel from './sponsor-carousel';
 import SponsorExperience from './sponsor-experience';
 import SponsorOpportunities from './sponsor-opportunities';
-import PreFooterCta from './pre-footer-cta';
-import Footer from '@/components/Footer/index';
+import SponsorSection from './sponsor-section';
+import Stats from './stats';
+import TargetAudience from './target-audience';
+import { useEffect } from 'react';
+
+// import Chart from './chart';
 
 export default function Sponsors() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
   return (
     <>
       <div className="flex min-h-fit flex-col bg-[url(/sponsors/sponsor-hero-mobile.jpg)] bg-top bg-no-repeat sm:bg-[url(/sponsors/sponsor-hero.jpg)] md:min-h-screen md:bg-cover">
