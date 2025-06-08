@@ -70,9 +70,9 @@ export default function Hero() {
               </button>
             </motion.a>
 
-            <motion.a href="/cfp" target='_blank'  variants={buttonVariants}>
+            <motion.a href="/speakers" target='_blank'  variants={buttonVariants}>
               <button className="w-full cursor-pointer bg-[#ECC89D] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full">
-                Apply To Speak
+                See All Speakers
               </button>
             </motion.a>
 
