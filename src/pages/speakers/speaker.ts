@@ -334,7 +334,7 @@ export const speakers: speakers[] = [
   {
     index: 40,
     name: 'Ijeoma Eti',
-    jobTitle: 'Building Secure APIs',
+    jobTitle: 'Backend Engineer',
     employer: '',
     image: 'https://sessionize.com/image/977d-400o400o1-WE7pdDNDHqGxr9VSA75Weq.jpg',
     bio: 'Ijeoma is a backend engineer focused on building APIs and solving complex challenges. She contributes to open-source projects like Layer5 Meshery and enjoys learning new skills like German.',

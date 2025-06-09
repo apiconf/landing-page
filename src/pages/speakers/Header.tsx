@@ -23,8 +23,8 @@ export default function Header({
 
   return (
     <div className="mb-8 flex items-center justify-between">
-      <h1 className="ml-24 mb-6 font-sans text-2xl font-bold capitalize text-[#F1F1F1] md:text-4xl lg:mb-8 lg:text-5xl">
-        A Lineup of Amazing Speakers
+      <h1 className="mb-6 ml-5 font-sans text-4xl font-bold capitalize text-[#F1F1F1] lg:mb-8 lg:ml-24 lg:text-5xl">
+        Speaker Lineup
       </h1>
       <div className="hidden items-center gap-x-4">
         <button
