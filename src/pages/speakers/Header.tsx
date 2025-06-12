@@ -22,22 +22,22 @@ export default function Header({
   };
 
   return (
-    <div className="flex items-center justify-between mb-8">
-      <h1 className="mb-6 lg:mb-8 uppercase text-[#F1F1F1] text-2xl md:text-4xl lg:text-5xl font-sans font-bold">
-        2025 Speakers Lineup
+    <div className="mb-8 flex items-center justify-between">
+      <h1 className="mb-6 ml-5 font-sans text-4xl font-bold capitalize text-[#F1F1F1] lg:mb-8 lg:ml-24 lg:text-5xl">
+        Speaker Lineup
       </h1>
-      <div className="gap-x-4 items-center hidden ">
+      <div className="hidden items-center gap-x-4">
         <button
           type="button"
           onClick={onPrevButtonClick}
-          className="bg-[#E1EF9A] rounded-[320px] py-4 px-8 text-black font-bold text-2xl font-sans"
+          className="text-black rounded-[320px] bg-[#E1EF9A] px-8 py-4 font-sans text-2xl font-bold"
         >
           Prev
         </button>
         <button
           type="button"
           onClick={onNextButtonClick}
-          className="bg-[#E1EF9A] rounded-[320px] py-4 px-8 text-black font-bold text-2xl font-sans"
+          className="text-black rounded-[320px] bg-[#E1EF9A] px-8 py-4 font-sans text-2xl font-bold"
         >
           Next
         </button>
