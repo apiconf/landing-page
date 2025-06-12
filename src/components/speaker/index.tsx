@@ -2,6 +2,7 @@ import Carousel from "../../pages/speakers/carousel";
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
 import { useRef } from "react";
+import { speakers } from "@/pages/speakers/speaker";
 
 export default function SpeakersInHome() {
   return (
@@ -11,69 +12,7 @@ export default function SpeakersInHome() {
   );
 }
 
-export type speakers = {
-  index: number;
-  name: string;
-  jobTitle: string;
-  employer: string;
-  image: string;
-  checked?: boolean;
-};
-
 function Main() {
-  const speakers: speakers[] = [
-
-    {
-      index: 0,
-      name: "Mehdi Medjaoui​",
-      jobTitle: "Founder & Chairman",
-      employer: "Apidays",
-      image: "/Mehdi-Medjaoui.webp",
-    },
-    {
-      index: 1,
-      name: 'Echezona Agubata',
-      jobTitle: 'CTO',
-      employer: 'Coronation Merchant Bank of Nigeria.',
-      image: '/echezona-agubata.jpg',
-    },
-    {
-      index: 2,
-      name: "Pratham Kumar",
-      jobTitle: "Developer Relations Manager",
-      employer: "APILayer",
-      image: "/pratham-kumar.jpg",
-    },
-    {
-      index: 3,
-      name: "Abimbola Bajomo",
-      jobTitle: "Lead Product Manager",
-      employer: "Remita",
-      image: "/abimbola-bajomo.jpg",
-    },
-    {
-      index: 4,
-      name: "Michael Owolabi",
-      jobTitle: "CTO",
-      employer: "Spleet",
-      image: "/michael-owolabi.png",
-    },
-    {
-      index: 5,
-      name: "Favour Onuoha",
-      jobTitle: "Senior Developer Relations Engineer",
-      employer: "Swing Finance",
-      image: "/favour-onuoha.png",
-    },
-    {
-      index: 6,
-      name: "Anthony Alaribe",
-      jobTitle: "Co Founder",
-      employer: "APItoolkit",
-      image: "/tony.jpeg",
-    },
-  ];
-
   const buttonRef = useRef(null);
   const isButtonVisible = useIsVisible(buttonRef, 0.75);
   const buttonVariant = {

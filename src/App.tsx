@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import Recap from './components/recap';
 import { SpaceItem } from './types';
 import Spaces from './components/Talks/spaces';
-import SpeakersInHome from './components/speaker';
+// import SpeakersInHome from './components/speaker';
 import Sponsor from './components/sponsor_cfp/index';
 import WhyAttend from './components/WhyAttend';
 
@@ -58,7 +58,7 @@ const spaceItems: SpaceItem[] = [
 
 export default function App() {
   return (
-    <div className="bg-dark-purple w-full min-h-[100svh] flex flex-col">
+    <div className="flex min-h-[100svh] w-full flex-col bg-dark-purple">
       <header role="banner">
         <NavBar />
         <Hero />
@@ -68,7 +68,7 @@ export default function App() {
       <Recap />
       <Spaces spaces={spaceItems} />
       <Events />
-      <SpeakersInHome />
+      {/* <SpeakersInHome /> */}
       <Sponsor />
       <Footer />
     </div>
