@@ -11,6 +11,14 @@ export type speakers = {
 export const speakers: speakers[] = [
   {
     index: 0,
+    name: 'Mehdi Medjaoui',
+    jobTitle: 'Author of Continuous API Management',
+    employer: 'Founder and Chairman of Apidays Conferences',
+    bio: 'keynote',
+    image: '/Mehdi-Medjaoui.webp',
+  },
+  {
+    index: 1,
     name: 'Michael Owolabi',
     jobTitle: 'CTO',
     employer: 'Spleet',
@@ -18,7 +26,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/aef2-400o400o1-XwrGwNyHhV8C15Ve9hjp9A.png',
   },
   {
-    index: 1,
+    index: 2,
     name: 'Echezona Agubata',
     jobTitle: 'CTO',
     employer: 'Coronation Merchant Bank',
@@ -26,7 +34,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/fea9-400o400o1-VrYfj95QGvT8vAhjpM84wa.jpg',
   },
   {
-    index: 2,
+    index: 3,
     name: 'Daniel Benjamin',
     jobTitle: 'Software Engineer',
     employer: '',
@@ -34,7 +42,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/55b2-400o400o1-wvvfEb4WrrCEKismRvVLJG.jpg',
   },
   {
-    index: 3,
+    index: 4,
     name: 'Daniel Adeboye',
     jobTitle: 'Developer Relations Engineer & Software Engineer',
     employer: '',
@@ -42,7 +50,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/b965-400o400o1-7fGxH9EFFp3QBg4qzMC26g.jpg',
   },
   {
-    index: 4,
+    index: 5,
     name: 'Olakunle Dosunmu',
     jobTitle: 'Senior Backend Engineer',
     employer: 'ETranzact Global',
@@ -50,7 +58,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/33cf-400o400o1-HGGzsyjUH6KBnQzYvYu88D.jpg',
   },
   {
-    index: 5,
+    index: 6,
     name: 'Betty Alagwu',
     jobTitle: 'Full stack Software Engineer',
     employer: 'Mono',
@@ -58,7 +66,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/e3fb-400o400o1-JcvDcEKDz7RUuFfHGRwSj8.jpg',
   },
   {
-    index: 6,
+    index: 7,
     name: 'Favour Onuoha',
     jobTitle: 'Senior Developer Relations Engineer',
     employer: 'Swing Finance',
@@ -66,7 +74,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/a051-400o400o1-XbkZrXFQt34fN7tToqmD14.png',
   },
   {
-    index: 7,
+    index: 8,
     name: 'Oluwatimilehin Samuel Alapakristi',
     jobTitle: 'Senior Software Engineer',
     employer: 'OnePipe.io',
@@ -74,7 +82,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/ddda-400o400o1-H9njas5S5sVpQm2d55gdvW.jpg',
   },
   {
-    index: 8,
+    index: 9,
     name: 'Funke Olasupo',
     jobTitle: 'Technical Writer',
     employer: 'Rocket.Chat',
@@ -82,7 +90,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/40bf-400o400o1-SF1tsYnBuGx46FjM2Pbwc.jpg',
   },
   {
-    index: 9,
+    index: 10,
     name: 'Daniel Anomfueme',
     jobTitle: 'Founder, DeSci Africa; Community Builder, VitaDAO',
     employer: 'DeSci Africa / VitaDAO',
@@ -90,7 +98,7 @@ export const speakers: speakers[] = [
     image: '/speakers/daniel.jpeg',
   },
   {
-    index: 10,
+    index: 11,
     name: 'Abimbola Bajomo',
     jobTitle: 'Lead Product Manager',
     employer: 'Remita Payment Services Limited',
@@ -98,7 +106,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/2696-400o400o1-J6cQ1tdFe5jPwYwvfEmAbv.jpg',
   },
   {
-    index: 11,
+    index: 12,
     name: 'Justice Anaba',
     jobTitle: 'Brand Product Designer',
     employer: 'SeamlessHR',
@@ -106,7 +114,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/7878-400o400o1-fQsG4SKtJumMo1ZnWboBEm.jpg',
   },
   {
-    index: 12,
+    index: 13,
     name: 'Michael Mekuleyi',
     jobTitle: 'Senior DevOps Engineer',
     employer: 'Yassir',
@@ -114,7 +122,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/33da-400o400o1-PC73Vaadgkjuqf67k1oBzr.jpeg',
   },
   {
-    index: 13,
+    index: 14,
     name: 'Samuel Abada',
     jobTitle: 'Google Developer Expert, Flutter & Dart',
     employer: 'Shuttlers Mobility',
@@ -122,7 +130,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/2e65-400o400o1-aUVsgQJAGE1aarDyjt5fk8.png',
   },
   {
-    index: 14,
+    index: 15,
     name: 'Pratham Kumar',
     jobTitle: 'Developer Relations Manager',
     employer: 'APILayer',
@@ -130,7 +138,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/3c06-400o400o1-HptYvC813pJbHCGw8TF2Fh.jpg',
   },
   {
-    index: 15,
+    index: 16,
     name: 'Joshua Onyeuche',
     jobTitle: 'Software Engineer',
     employer: 'Emergency Response Africa',
@@ -138,7 +146,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/957d-400o400o1-9nV38VcaX6UwPYXyKaGRfB.png',
   },
   {
-    index: 16,
+    index: 17,
     name: 'Nwaamaka Iduwe',
     jobTitle: 'Business Intelligence Analyst',
     employer: 'Freelance',
@@ -146,7 +154,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/cecc-400o400o1-N1z7UVmC79BSz8W46bMhFD.jpg',
   },
   {
-    index: 17,
+    index: 18,
     name: 'Mustapha Rufai',
     jobTitle: 'Software Engineer',
     employer: '',
@@ -154,7 +162,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/3586-400o400o1-7FwyWgdVtgzRukfdLpRRvQ.jpg',
   },
   {
-    index: 18,
+    index: 19,
     name: 'Chisom Uma',
     jobTitle: 'Technical Writer and Marketing Manager',
     employer: 'Hamari Labs',
@@ -162,7 +170,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/1421-400o400o1-VyGD8PvnDmdHDsvHxh5cyw.jpg',
   },
   {
-    index: 19,
+    index: 20,
     name: 'Ademola Adelekan',
     jobTitle: 'Head of DevOps Engineering',
     employer: 'Interswitch (INDECO)',
@@ -170,7 +178,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/7818-400o400o1-GfBbFWH9C6gKowtVDyb5WC.jpg',
   },
   {
-    index: 20,
+    index: 21,
     name: 'Nelson Isioma',
     jobTitle: 'Technical Writer',
     employer: 'PHPArch / Organizer, PHPxLagos',
@@ -178,7 +186,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/39af-400o400o1-Q7NeUGogC3hnYrph6End3C.jpg',
   },
   {
-    index: 21,
+    index: 22,
     name: 'Kimberly Samugana',
     jobTitle: 'API Partnership Manager',
     employer: 'MyCover.ai',
@@ -186,7 +194,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/112f-400o400o1-pnQcWkpTkTjkr7Acp58e28.jpg',
   },
   {
-    index: 22,
+    index: 23,
     name: 'Ibiniyi Obikoya',
     jobTitle: 'Tech Lead',
     employer: 'Korapay',
@@ -194,7 +202,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/f891-400o400o1-Qc8tA3B2PfU1Fh19Ndptu9.jpg',
   },
   {
-    index: 23,
+    index: 24,
     name: 'Onome Owah',
     jobTitle: 'Software Developer',
     employer: 'Allstate Northern Ireland',
@@ -202,7 +210,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/5373-400o400o1-46LSQi4Rnj4fvqVZUwAjeq.jpg',
   },
   {
-    index: 24,
+    index: 25,
     name: 'Simi Oluwatomi',
     jobTitle: 'Tech Lead | Software Developer | Cloud Developer | Community Builder',
     employer: '',
@@ -210,7 +218,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/0332-400o400o1-pxWjThhGgQpJGt4uM7cXW8.jpg',
   },
   {
-    index: 25,
+    index: 26,
     name: 'Atuoha Anthony',
     jobTitle: 'Mobile Software Engineer',
     employer: '',
@@ -218,7 +226,7 @@ export const speakers: speakers[] = [
     image: '/speakers/atuoha.jpeg',
   },
   {
-    index: 26,
+    index: 27,
     name: 'Alexander Garuba',
     jobTitle: 'CTO',
     employer: 'Money Africa',
@@ -226,7 +234,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/050a-400o400o1-3eX3BsEgEZVjeYjgdSE4Dy.jpg',
   },
   {
-    index: 27,
+    index: 28,
     name: 'Anthony Alaribe',
     jobTitle: 'Cofounder',
     employer: 'APItoolkit',
@@ -234,7 +242,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/9770-400o400o1-WfTyAJfTM7wuszUkyDrNdU.jpg',
   },
   {
-    index: 28,
+    index: 29,
     name: 'Fehintoluwa Dahunsi',
     jobTitle: 'Senior Software Engineer, Professional Cloud Architect',
     employer: 'Andela',
@@ -242,7 +250,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/64dc-400o400o1-hKEA62cv9jA7KxZDdb1btZ.jpg',
   },
   {
-    index: 29,
+    index: 30,
     name: 'Emmanuel Odianosen',
     jobTitle: 'Developer Relations',
     employer: 'Somnia Blockchain',
@@ -250,7 +258,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/7182-400o400o1-EPn5dRMaQUGB2KTZZTm4q.jpg',
   },
   {
-    index: 30,
+    index: 31,
     name: 'Solomon Olalemi',
     jobTitle: 'Product Manager',
     employer: 'Polaris Bank',
@@ -258,7 +266,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/fe8f-400o400o1-BW55yQhDwpjPCPquyHFcmk.jpg',
   },
   {
-    index: 31,
+    index: 32,
     name: 'Paul Adams',
     jobTitle: 'Senior Integrations Engineer',
     employer: 'involve.me',
@@ -266,7 +274,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/04bf-400o400o1-RP1vR6oHWKEKGvEQN6u4x4.jpg',
   },
   {
-    index: 32,
+    index: 33,
     name: 'Auwal MS',
     jobTitle: 'Software Engineering & Developer Relations',
     employer: '',
@@ -275,7 +283,7 @@ export const speakers: speakers[] = [
       'https://sessionize.com/image/0e7e-400o400o1-61-7959-4bf2-975a-380e1d0ea411.b022f2c0-ddf9-4eaf-b594-04697046f112.JPG',
   },
   {
-    index: 33,
+    index: 34,
     name: 'Oluwaseun Dabiri',
     jobTitle: 'Product Architect | Product Manager',
     employer: 'MyCover.ai',
@@ -283,7 +291,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/581a-400o400o1-3SmhRuFoG1ALc4zoc4cCU7.jpg',
   },
   {
-    index: 34,
+    index: 35,
     name: 'Favour Oriabure',
     jobTitle: 'Technical Architect',
     employer: 'SeamlessHR',
@@ -291,7 +299,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/083b-400o400o1-Ey92rTxsg5YWAW4YWn65m2.jpg',
   },
   {
-    index: 35,
+    index: 36,
     name: 'Glory Olamigoke',
     jobTitle:
       'Product Manager, Core Banking Platform, Kuda. (Also Founder, TekNexus Africa and Co-Founder Tech Revolution Africa)',
@@ -300,7 +308,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/05bd-400o400o1-waXdiAZSvaNoBToDjbfqwn.png',
   },
   {
-    index: 36,
+    index: 37,
     name: 'Kenneth Ezukwoke',
     jobTitle: 'Datategy, Lead Data Scientist-GenAI R&D',
     employer: 'Datategy',
@@ -308,7 +316,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/d459-400o400o1-nAN3gaWXA6C14MFiNvsJB5.jpg',
   },
   {
-    index: 37,
+    index: 38,
     name: 'Mfonobong Umondia',
     jobTitle: 'Community Manager & Technical Writer',
     employer: '',
@@ -316,7 +324,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/0b51-400o400o1-a7jLJrwoSTi8qfU9PZNPgV.png',
   },
   {
-    index: 38,
+    index: 39,
     name: 'Aminat Fowoke Balogun',
     jobTitle: 'Technical Product Manager, Milsat Technologies',
     employer: 'Milsat Technologies',
@@ -324,7 +332,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/3893-400o400o1-Q5gS8UN9gTHWLgPMs36PCv.jpg',
   },
   {
-    index: 39,
+    index: 40,
     name: 'Chukwuemeka Chukwurah',
     jobTitle: 'Senior Software Engineer, Rocksteady Technologies',
     employer: 'Rocksteady Technologies',
@@ -332,7 +340,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/404a-400o400o1-pTSSquNwXhsZry5mRAtBUs.jpg',
   },
   {
-    index: 40,
+    index: 41,
     name: 'Ijeoma Eti',
     jobTitle: 'Backend Engineer',
     employer: '',
@@ -340,7 +348,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/977d-400o400o1-WE7pdDNDHqGxr9VSA75Weq.jpg',
   },
   {
-    index: 41,
+    index: 42,
     name: 'Olamide Ilori',
     jobTitle: 'Lead Frontend Engineer - Prospa YC (W21)',
     employer: 'Prospa',
@@ -348,7 +356,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/0342-400o400o1-h8j9isbEvjeMFVi73rc2th.png',
   },
   {
-    index: 42,
+    index: 43,
     name: 'Jamiu Okanlawon',
     jobTitle: 'Mobile Engineer at OneRoof | Organizer of the FlutterBytes Conference',
     employer: 'OneRoof',
@@ -356,7 +364,7 @@ export const speakers: speakers[] = [
     image: 'https://sessionize.com/image/fe6b-400o400o1-PNWJMi6rDGe9JvdqHJZ6yC.jpg',
   },
   {
-    index: 43,
+    index: 44,
     name: 'Kenechukwu Ozordi',
     jobTitle: 'Software Engineer, GTBank',
     employer: 'GTBank',
