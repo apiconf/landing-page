@@ -32,14 +32,14 @@ export default function Sponsor() {
       additionalButtonClassName: "bg-[#2F20BF] text-white",
       link: "/sponsor",
     },
-    {
-      title: "Speak at the 2025 Edition",
-      description: "Speak at the 2025 edition of API conference Lagos!",
-      buttonText: "Apply to Speak",
-      buttonTextsm: "Speak",
-      additionalButtonClassName: "bg-[#ECC89D]",
-      link: "/cfp",
-    },
+    // {
+    //   title: "Speak at the 2025 Edition",
+    //   description: "Speak at the 2025 edition of API conference Lagos!",
+    //   buttonText: "Apply to Speak",
+    //   buttonTextsm: "Speak",
+    //   additionalButtonClassName: "bg-[#ECC89D]",
+    //   link: "/cfp",
+    // },
   ];
 
   return (
