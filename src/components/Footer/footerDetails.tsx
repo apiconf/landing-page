@@ -83,7 +83,7 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
             <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
           </li>
           <li className={footerDetailStyle.link}>
-            <Link to="#" className={footerDetailStyle.linkText}>
+            <Link to="/sessions" className={footerDetailStyle.linkText}>
               Sessions
             </Link>
             <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
