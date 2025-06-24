@@ -1,5 +1,5 @@
 export const scheduleData = {
-  title: "The Incredible Sessions",
+  title: "Your Day at a Glance",
   days: [
     {
       dayNumber: 1,

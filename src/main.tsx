@@ -57,7 +57,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: '/sessions',
+    path: '/schedule',
     element: <Sessions />,
     errorElement: <NotFound />,
   },
