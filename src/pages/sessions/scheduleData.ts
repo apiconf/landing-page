@@ -22,8 +22,8 @@ export const scheduleData = {
         room: "Main stage",
         duration: "30m",
         timeFrame: "9am",
-        type: "session",
-        color: "#90EAF2"
+        type: "Welcome",
+        color: "#D9D9D9"
       },
       {
         id: "building-to-last-fri",
@@ -45,7 +45,7 @@ export const scheduleData = {
         timeFrame: "10am",
         type: "Keynote",
         speaker: "Chisom Uma",
-        color: "#E1EF9A"
+        color: "#ECC89D"
       },
       {
         id: "host-announcement-fri",
@@ -77,7 +77,7 @@ export const scheduleData = {
         timeFrame: "10am",
         type: "Lightning",
         speaker: "Daniel Benjamin",
-        color: "#ECC89D"
+        color: "#90EAF2"
       },
       {
         id: "morning-coffee/break-fri",
@@ -172,6 +172,7 @@ export const scheduleData = {
         room: "Hall 1",
         duration: "4hr ",
         timeFrame: "12pm",
+        isFullSpan: true, 
         type: "Async API slot",
         color: "#D9D9D9"
       },
@@ -184,7 +185,7 @@ export const scheduleData = {
         timeFrame: "1pm",
         type: "Lightning",
         speaker: "Daniel Anomfueme",
-        color: "#E1EF9A"
+        color: "#90EAF2"
       },
       {
         id: "next-gen-api-as-a-service-ai-driven-delivery,-adaptive-documentation,-and-seamless-integration-fri",
@@ -331,7 +332,7 @@ export const scheduleData = {
         timeFrame: "9am",
         type: "Keynote",
         speaker: "Ademola Adelekan",
-        color: "#E1EF9A"
+        color: "#ECC89D"
       },
       {
         id: "host-announcement-sat",
@@ -363,7 +364,7 @@ export const scheduleData = {
         timeFrame: "10am",
         type: "Lightning",
         speaker: "Kimberly Samugana",
-        color: "#ECC89D"
+        color: "#90EAF2"
       },
       {
         id: "redis-in-action-from-simple-cache-to-advanced-queues-and-streams-sat",
@@ -482,7 +483,7 @@ export const scheduleData = {
         timeFrame: "1pm",
         type: "Lightning",
         speaker: "Paul Adams",
-        color: "#ECC89D"
+        color: "#90EAF2"
       },
       {
         id: "scaling-payroll-across-africa-sat",

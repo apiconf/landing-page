@@ -8,6 +8,8 @@ export type SessionDetails = {
   room: string;
   speaker?: string;
   color?: string;
+  isFullSpan?: boolean,
+  className?: string;
 }
 
 export type ScheduleData = {
