@@ -216,9 +216,9 @@ export const scheduleData = {
         room: "Main stage",
         duration: "45m",
         timeFrame: "2pm",
-        type: "session",
+        type: "workshop",
         speaker: "Michael Mekuleyi",
-        color: "#E1EF9A"
+        color: "#E1EF8B"
       },
       {
         id: "server-side-rendering-with-dart-building-dynamic-web-applications-fri",
