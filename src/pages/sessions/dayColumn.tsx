@@ -168,33 +168,7 @@ export const DayColumn = ({ day }: DayColumnProps) => {
     );
   };
 
-  const renderVerticalSpanSession = () => {
-    if (!verticalSpanSession) return null;
 
-    return (
-      <div className="flex flex-col gap-2 mb-4">
-        <div className="flex gap-4 sm:gap-8 items-center">
-          <h2 className="font-bold text-sm sm:text-base whitespace-nowrap">
-            {verticalSpanSession.timeFrame}
-          </h2>
-          <hr className="flex-1 border-t border-[#D9D9D9]" />
-        </div>
-        <div className="sm:ml-8 md:ml-16">
-          <SessionCard
-            session={normalizeSession(verticalSpanSession)}
-            hideMeta={isAsyncSlot}
-            extraTopPadding={isAsyncSlot}
-          />
-          <div className="mt-2 text-xs text-gray-500 text-center lg:text-left">
-            <p>Runs parallel to afternoon sessions</p>
-            <p className="text-xs mt-1">
-              ({verticalSpanTimeFrames.join(', ')})
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   if (isMobile) {
     return (
