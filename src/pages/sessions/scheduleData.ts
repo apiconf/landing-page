@@ -129,7 +129,7 @@ export const scheduleData = {
         room: "Main stage",
         duration: "45m",
         timeFrame: "11am",
-        type: "session",
+        type: "workshop",
         speaker: "Favour Onuoha",
         color: "#E1EF9A"
       },
@@ -151,7 +151,7 @@ export const scheduleData = {
         room: "Hall 2",
         duration: "45m",
         timeFrame: "11am",
-        type: "session",
+        type: "workshop",
         speaker: "Funke Olasupo",
         color: "#ECC89D"
       },
@@ -227,7 +227,7 @@ export const scheduleData = {
         room: "Hall 2",
         duration: "45m",
         timeFrame: "2pm",
-        type: "session",
+        type: "workshop",
         speaker: "Samuel Abada",
         color: "#90EAF2"
       },
@@ -260,7 +260,7 @@ export const scheduleData = {
         room: "Main stage",
         duration: "45m",
         timeFrame: "3pm",
-        type: "session",
+        type: "workshop",
         speaker: "Solomon Olalemi",
         color: "#90EAF2"
       },
@@ -271,7 +271,7 @@ export const scheduleData = {
         room: "Hall 2",
         duration: "45m",
         timeFrame: "3pm",
-        type: "session",
+        type: "workshop",
         speaker: "Fehintoluwa Dahunsi",
         color: "#ECC89D"
       },
@@ -449,7 +449,7 @@ export const scheduleData = {
         room: "Main stage",
         duration: "45m",
         timeFrame: "11am",
-        type: "session",
+        type: "workshop",
         speaker: "To be annouced (TBA)",
         color: "#E1EF9A"
       },
@@ -460,7 +460,7 @@ export const scheduleData = {
         room: "Hall 2",
         duration: "45m",
         timeFrame: "11am",
-        type: "session",
+        type: "workshop",
         speaker: "Emmanuel Odianosen",
         color: "#90EAF2"
       },
