@@ -1,5 +1,5 @@
 export const ContactBox = () => (
-  <div className="bg-purple-900/30 border border-purple-500/30 rounded-lg p-8 backdrop-blur-sm">
+  <div className="bg-purple-900/30 ">
     <h3 className="text-xl font-semibold text-white mb-4">Contact Information</h3>
     <p className="text-gray-200 mb-6">For questions about this Code of Conduct or to report violations:</p>
     <div className="space-y-3 mb-6">

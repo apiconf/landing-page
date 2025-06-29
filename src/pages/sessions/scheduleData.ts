@@ -359,12 +359,13 @@ export const scheduleData = {
         },
         {
           id: "mehdi's-keynote-session-sat",
-          title: "Mehdi's Keynote Session",
+          title: "The API Mindset for Mass Innovation",
           timeSlot: '09:30am - 09:45am',
           room: 'Ruby Hall',
           duration: '15m',
           timeFrame: '9am',
           type: 'Keynote',
+          speaker: 'Mehdi Medjaoui',
           color: '#ECC89D',
         },
         {

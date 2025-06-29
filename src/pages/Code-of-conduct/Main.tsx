@@ -18,15 +18,11 @@ export default function Main() {
   return (
     <main className="flex-1 bg-dark-purple text-white" role="main">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <header className="text-center mb-12 pb-8 border-b-2 border-gray-600">
+        <header className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Code of Conduct
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 font-medium">
-            API Conference Lagos 2025
-          </p>
         </header>
-
         <Section id="commitment" title="Our Commitment">
           <div className="space-y-4 text-gray-200 leading-relaxed">
             <p className="text-lg">
@@ -115,7 +111,7 @@ export default function Main() {
           <p className="text-sm leading-relaxed mb-4 italic">
             This Code of Conduct is adapted from the Contributor Covenant and other open source community guidelines. We reserve the right to revise this Code of Conduct at any time.
           </p>
-          <p className="text-sm">
+          <p className="text-[.65rem]">
             <strong className="text-gray-300">Last Updated</strong>: June 2025
           </p>
         </footer>
