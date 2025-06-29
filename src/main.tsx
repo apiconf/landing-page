@@ -11,6 +11,7 @@ import ReactDOM from 'react-dom/client';
 import Redirect from './Redirect.tsx';
 import Sessions from './pages/sessions';
 import Speakers from './pages/speakers';
+import Teams from './pages/team';
 import Sponsors from './pages/sponsors/index.tsx';
 
 const router = createBrowserRouter([
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
   {
     path: 'speakers',
     element: <Speakers />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: 'teams',
+    element: <Teams />,
     errorElement: <NotFound />,
   },
   {

@@ -1,15 +1,15 @@
-export type speakers = {
+export type person = {
   index: number;
   name: string;
   jobTitle: string;
   employer: string;
   image: string;
-  bio: string;
+  bio?: string;
   checked?: boolean;
-  sessionFormat: string;
+  sessionFormat?: string;
 };
 
-export const speakers: speakers[] = [
+export const speakers: person[] = [
   {
     index: 0,
     name: 'Mehdi Medjaoui',
