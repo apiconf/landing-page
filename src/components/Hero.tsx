@@ -72,7 +72,7 @@ export default function Hero() {
               </button>
             </motion.a>
             
-            <motion.a href="/schedule" target='_blank' variants={buttonVariants}>
+            <motion.a href="/schedule" variants={buttonVariants}>
               <button className="relative z-50 w-full cursor-pointer whitespace-nowrap bg-[#90EAF2] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full hover:shadow-lg transition-shadow">
                 See Event Schedule
               </button>
