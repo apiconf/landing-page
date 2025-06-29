@@ -20,9 +20,7 @@ export default function Speakers() {
 function Main() {
   return (
     <main className="min-h-screen bg-[#2F20BF] bg-[url(/speakers/speaker-bg.png)] bg-contain bg-top bg-no-repeat pt-16 md:pt-24 xl:pt-32">
-      <section className="bg-[url(/speakers/speakers.png)] bg-contain bg-right bg-no-repeat">
-        <Carousel slides={teams} heading="Team Members" />
-      </section>
+      <Carousel slides={teams} heading="Team Members" />
     </main>
   );
 }
