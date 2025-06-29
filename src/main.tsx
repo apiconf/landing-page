@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import App from './App.tsx';
 import { AppContextProvider } from './context';
+import CodeOfConduct from './pages/Code-of-conduct/index.tsx'
 import Confirmation from './components/Confirmation';
 import NotFound from './NotFound.tsx';
 import React from 'react';
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
   {
     path: '/schedule',
     element: <Sessions />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/code-of-conduct',
+    element: <CodeOfConduct />,
     errorElement: <NotFound />,
   },
   {
