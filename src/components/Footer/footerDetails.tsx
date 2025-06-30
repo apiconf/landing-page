@@ -71,8 +71,8 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
           className={footerDetailStyle.footerNav}
         >
           <li className={footerDetailStyle.link}>
-            <Link to="#about" className={footerDetailStyle.linkText}>
-              about API conference
+            <Link to="/code-of-conduct" className={footerDetailStyle.linkText}>
+              Code of Conduct
             </Link>
             <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
           </li>
@@ -83,8 +83,8 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
             <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
           </li>
           <li className={footerDetailStyle.link}>
-            <Link to="#" className={footerDetailStyle.linkText}>
-              Sessions
+            <Link to="/schedule" className={footerDetailStyle.linkText}>
+              Event Schedule
             </Link>
             <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
           </li>
