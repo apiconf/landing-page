@@ -63,7 +63,6 @@ export default function App() {
         <NavBar />
         <Hero />
       </header>
-      <main></main>
       <WhyAttend />
       <Recap />
       <Spaces spaces={spaceItems} />
