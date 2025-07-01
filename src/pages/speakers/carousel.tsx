@@ -72,9 +72,11 @@ export default function Carousel({ slides, heading }: { slides: person[]; headin
                 </p>
                 <p className="font-sans text-lg font-medium opacity-80 md:text-xl">
                   {speaker.jobTitle}
-                  {speaker.employer.trim() === ''
-                    ? ` • ${speaker.sessionFormat}`
-                    : ` • ${speaker.employer} • ${speaker.sessionFormat}`}
+                  {pathname === '/teams'
+                    ? speaker.employer && ` • ${speaker.employer}`
+                    : speaker.employer.trim() === ''
+                      ? ` • ${speaker.sessionFormat}`
+                      : ` • ${speaker.employer} • ${speaker.sessionFormat}`}
                 </p>
               </motion.div>
             </motion.li>
