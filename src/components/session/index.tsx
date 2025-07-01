@@ -1,4 +1,5 @@
-import { SessionGridForOutdoorUse } from "../../pages/sessions";
+// import { SessionGridForOutdoorUse } from "../../pages/sessions";
+
 import { motion } from "framer-motion";
 import { useIsVisible } from "../../hooks";
 import { useRef } from "react";
@@ -24,7 +25,7 @@ export default function SessionsInHome() {
   };
   return (
     <section className="bg-[#2F20BF] min-h-screen px-12 xl:px-32 pt-10 xl:pt-16 pb-16 xl:pb-[108px]">
-      <SessionGridForOutdoorUse no={3} />
+      {/* <SessionGridForOutdoorUse no={3} /> */}
       <motion.a
         href="/2024/sessions"
         rel="noopener noreferrer"

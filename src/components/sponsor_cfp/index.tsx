@@ -97,10 +97,10 @@ export default function Sponsor() {
         >
           {[{
             name: "Gbadebo Bello",
-            email: "gbahdeybohbello@gmail.com"
+            email: "gbahdeybohbello@apiconf.net"
           }, {
             name: "Sodiq Akinjobi",
-            email: "sodiq.akinjobi@gmail.com"
+            email: "sodiq.akinjobi@apiconf.net"
           }].map(({ name, email }, index) => (
             <motion.div key={index} className="flex flex-col gap-2" variants={fadeUp}>
               <h3 className="font-bold text-2xl lg:text-4xl text-[#1F1F1F]">{name}</h3>

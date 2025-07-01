@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* *{
+  outline: 1px solid red;
+} */
+
 @font-face {
   font-family: 'Cabinet-Grotesk';
   src: url(./fonts/Cabinet-Grotesk/CabinetGrotesk-Variable.ttf);

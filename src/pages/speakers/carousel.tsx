@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import Header from "./Header";
+import Header from './Header';
 import { AnimatePresence, motion } from 'framer-motion';
 import { speakers } from './speaker';
 
@@ -70,7 +70,7 @@ export default function Carousel({ slides }: { slides: speakers[] }) {
                 </p>
                 <p className="font-sans text-lg font-medium opacity-80 md:text-xl">
                   {speaker.jobTitle}
-                  {speaker.employer.trim() === '' ? '' : ` • ${speaker.employer}`}
+                  {speaker.employer.trim() === "" ? "" : ` • ${speaker.employer}`}
                 </p>
               </motion.div>
             </motion.li>
@@ -80,4 +80,3 @@ export default function Carousel({ slides }: { slides: speakers[] }) {
     </>
   );
 }
-
