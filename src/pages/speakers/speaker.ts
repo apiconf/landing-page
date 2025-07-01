@@ -193,14 +193,14 @@ export const speakers: speakers[] = [
     bio: 'Building Resilient Microservice APIs: Engineering for High-Stakes Environments',
     image: 'https://sessionize.com/image/f891-400o400o1-Qc8tA3B2PfU1Fh19Ndptu9.jpg',
   },
-  {
-    index: 23,
-    name: 'Onome Owah',
-    jobTitle: 'Software Developer',
-    employer: 'Allstate Northern Ireland',
-    bio: 'From Sluggish to Seamless: Optimizing API Performance',
-    image: 'https://sessionize.com/image/5373-400o400o1-46LSQi4Rnj4fvqVZUwAjeq.jpg',
-  },
+  // {
+  //   index: 23,
+  //   name: 'Onome Owah',
+  //   jobTitle: 'Software Developer',
+  //   employer: 'Allstate Northern Ireland',
+  //   bio: 'From Sluggish to Seamless: Optimizing API Performance',
+  //   image: 'https://sessionize.com/image/5373-400o400o1-46LSQi4Rnj4fvqVZUwAjeq.jpg',
+  // },
   {
     index: 24,
     name: 'Simi Oluwatomi',
