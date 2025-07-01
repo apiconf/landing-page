@@ -70,9 +70,7 @@ export default function Carousel({ slides }: { slides: speakers[] }) {
                 </p>
                 <p className="font-sans text-lg font-medium opacity-80 md:text-xl">
                   {speaker.jobTitle}
-                  {speaker.employer.trim() === ''
-                    ? ` • ${speaker.sessionFormat}`
-                    : ` • ${speaker.employer} • ${speaker.sessionFormat}`}
+                  {speaker.employer.trim() === "" ? "" : ` • ${speaker.employer}`}
                 </p>
               </motion.div>
             </motion.li>
