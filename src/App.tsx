@@ -10,6 +10,7 @@ import Spaces from './components/Talks/spaces';
 // import SpeakersInHome from './components/speaker';
 import Sponsor from './components/sponsor_cfp/index';
 import WhyAttend from './components/WhyAttend';
+import SponsorList from './components/SponsorList';
 
 const spaceItems: SpaceItem[] = [
   {
@@ -66,6 +67,7 @@ export default function App() {
       <WhyAttend />
       <Recap />
       <Spaces spaces={spaceItems} />
+      <SponsorList />
       <Events />
       {/* <SpeakersInHome /> */}
       <Sponsor />
