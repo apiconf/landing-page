@@ -1,3 +1,7 @@
+import { motion } from 'framer-motion';
+import { useIsVisible } from '@/hooks';
+import { useRef } from 'react';
+
 type sponsorTier = 'Platinum' | 'Gold' | 'Silver' | 'Bronze';
 
 type Sponsors = {
@@ -7,13 +11,13 @@ type Sponsors = {
 }[];
 
 const sponsors: Sponsors = [
-  // { name: 'ALATPay', logo: '/sponsors/', tier: 'Gold' },
-  // { name: 'Google for Developers', logo: '/sponsors/', tier: 'Silver' },
-  // { name: 'MyCover AI', logo: '/sponsors/', tier: 'Silver' },
-  // { name: 'Interswitch', logo: '/sponsors/', tier: 'Bronze' },
+  // { name: 'ALATPay', logo: '/sponsors/alat-pay.png', tier: 'Gold' },
+  // { name: 'Google for Developers', logo: '/sponsors/Google-for-Developers.svg', tier: 'Silver' },
+  // { name: 'MyCover AI', logo: '/sponsors/mycover-ai.png', tier: 'Silver' },
+  // { name: 'Interswitch', logo: '/sponsors/Interswitch.png', tier: 'Bronze' },
   { name: 'APItoolkit', logo: '/sponsors/APItoolkit-Logo.png', tier: 'Bronze' },
-  // { name: 'Yamify', logo: '/sponsors/', tier: 'Bronze' },
-  // { name: 'APIlayer', logo: '/sponsors/', tier: 'TBD' },
+  // { name: 'Yamify', logo: '/sponsors/yamify-black.png', tier: 'Bronze' },
+  // { name: 'APIlayer', logo: '/sponsors/APILayer.svg', tier: 'TBD' },
 ];
 
 const order: sponsorTier[] = ['Platinum', 'Gold', 'Silver', 'Bronze'];
@@ -30,9 +34,26 @@ const sponsorPillStyles: Record<sponsorTier, string> = {
 };
 
 export default function SponsorList() {
+  const sponsorListRef = useRef(null);
+  const sponsorRef = useRef(null);
+  const isSponsorList = useIsVisible(sponsorListRef);
+  const isSponsorRef = useIsVisible(sponsorRef);
+
   return (
     <section className="relative flex w-full flex-col gap-16 bg-white px-[5.9701%] py-[123px] md:px-[7.4074%] md:py-[174px]">
-      <div className="mb-16 w-full text-center">
+      <motion.div
+        initial={{ y: 32, opacity: 0 }}
+        animate={{
+          y: isSponsorList ? 0 : 32,
+          opacity: isSponsorList ? 1 : 0,
+        }}
+        transition={{
+          duration: 1,
+          ease: [0, 0, 0.58, 1],
+        }}
+        ref={sponsorListRef}
+        className="mb-16 w-full text-center"
+      >
         <h2 className="mb-2 text-4xl font-bold md:text-[64px] md:leading-[100%]">
           API Conference Lagos 2025 Sponsors
         </h2>
@@ -41,28 +62,62 @@ export default function SponsorList() {
             Sponsors of the biggest Convention of API Enthusiasts and Builders in Lagos!
           </span>
         </p>
-      </div>
-      <div className="grid grid-cols-3 gap-6">
+      </motion.div>
+      <motion.div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {sortedSponsors.map((sponsor) => (
           <div
             key={sponsor.name}
-            className={`flex size-full justify-center rounded-3xl border-2 border-solid border-[#A6A6A6] px-10 py-12 last-of-type:[&[data-tier='Bronze']]:col-span-3 first-of-type:[&[data-tier='Platinum']]:col-span-3`}
+            className="sponsor-item flex size-full justify-center rounded-3xl border-2 border-solid border-[#A6A6A6] px-10 py-12"
             data-tier={sponsor.tier}
           >
-            <div
-              data-tier={sponsor.tier}
-              className="flex flex-col gap-4 last-of-type:[&[data-tier='Bronze']]:flex-row-reverse last-of-type:[&[data-tier='Bronze']]:items-center first-of-type:[&[data-tier='Platinum']]:flex-row-reverse first-of-type:[&[data-tier='Platinum']]:items-center"
-            >
+            <div data-tier={sponsor.tier} className="flex flex-col gap-4">
               <span
                 className={`h-min w-min rounded-3xl px-3 py-0.5 text-sm font-bold ${sponsorPillStyles[sponsor.tier]}`}
               >
                 {sponsor.tier}
               </span>
-              <img src={sponsor.logo} alt={sponsor.name} className="size-full max-h-14" />
+              <img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="size-full max-h-14 max-w-48 md:max-w-52"
+              />
             </div>
           </div>
         ))}
-      </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ y: 8, opacity: 0 }}
+        animate={{
+          y: isSponsorRef ? 0 : 8,
+          opacity: isSponsorRef ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.75,
+          ease: [0, 0, 0.58, 1],
+          delay: 0.1,
+        }}
+        ref={sponsorRef}
+        className="my-16"
+      >
+        <h3 className="mb-16 text-center text-3xl font-bold md:text-5xl">Community Sponsors</h3>
+        <div className="flex w-full flex-col gap-6 md:flex-row">
+          <div className="flex size-full justify-center rounded-3xl border-2 border-solid border-[#A6A6A6] px-10 py-12">
+            <img
+              src="/sponsors/asyncapi-logo--primary-dark.svg"
+              alt="AsyncAPI"
+              className="size-full h-14 max-w-64 md:max-w-52"
+            />
+          </div>
+          <div className="flex size-full justify-center rounded-3xl border-2 border-solid border-[#A6A6A6] px-10 py-12">
+            <img
+              src="/sponsors/apidays-2025_Logo-min.png"
+              alt="APIdays"
+              className="size-full h-14 max-w-64 md:max-w-52"
+            />
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
