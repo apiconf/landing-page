@@ -18,9 +18,11 @@ export default function Speakers() {
 }
 
 function Main() {
+  const sortedTeams = [...teams].sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <main className="min-h-screen bg-[#2F20BF] bg-[url(/speakers/speaker-bg.png)] bg-contain bg-top bg-no-repeat pt-16 md:pt-24 xl:pt-32">
-      <Carousel slides={teams} heading="Team Members" />
+      <Carousel slides={sortedTeams} heading="Team Members" />
     </main>
   );
 }
