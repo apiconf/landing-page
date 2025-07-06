@@ -4,12 +4,13 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import App from './App.tsx';
 import { AppContextProvider } from './context';
+import CodeOfConduct from './pages/Code-of-conduct/index.tsx'
 import Confirmation from './components/Confirmation';
 import NotFound from './NotFound.tsx';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Redirect from './Redirect.tsx';
-import Sessions from './pages/sessions';
+import Sessions from './pages/sessions/index.tsx';
 import Speakers from './pages/speakers';
 import Teams from './pages/team';
 import Sponsors from './pages/sponsors/index.tsx';
@@ -63,8 +64,18 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: '2024/sessions',
+    path: 'teams',
+    element: <Teams />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/schedule',
     element: <Sessions />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/code-of-conduct',
+    element: <CodeOfConduct />,
     errorElement: <NotFound />,
   },
   {

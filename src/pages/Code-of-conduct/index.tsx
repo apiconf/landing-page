@@ -1,28 +1,10 @@
 import Footer from '../../components/Footer/index';
+import Main from './Main';
 import NavBar from '../../components/NavBar';
-import { Schedule } from './schedule';
 import ScrollToAnchor from '../../components/ScrollToAnchor';
 import { useEffect } from 'react';
-import { useSchedule } from '../../hooks/useSchedule';
 
-const Main = () => {
-  const {
-    scheduleData,
-  } = useSchedule();
-
-
-  return (
-    <main className="">
-      <div className="">
-        <Schedule
-          data={scheduleData}
-        />
-      </div>
-    </main>
-  );
-};
-
-export default function Sessions() {
+export default function CodeOfConduct() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -35,5 +17,5 @@ export default function Sessions() {
       <Footer />
       <ScrollToAnchor />
     </div>
-  );
+  )
 }
