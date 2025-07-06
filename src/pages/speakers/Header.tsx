@@ -1,13 +1,15 @@
 export default function Header({
   carouselRef,
+  text = 'Speaker Lineup',
 }: {
   carouselRef: React.RefObject<HTMLDivElement>;
+  text?: string;
 }) {
   const onPrevButtonClick = () => {
     if (carouselRef.current) {
       carouselRef.current.scrollTo({
         left: carouselRef.current.scrollLeft - 200,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
   };
@@ -16,7 +18,7 @@ export default function Header({
     if (carouselRef.current) {
       carouselRef.current.scrollTo({
         left: carouselRef.current.scrollLeft + 200,
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     }
   };
@@ -24,7 +26,7 @@ export default function Header({
   return (
     <div className="mb-8 flex items-center justify-between">
       <h1 className="mb-6 ml-5 font-sans text-4xl font-bold capitalize text-[#F1F1F1] lg:mb-8 lg:ml-24 lg:text-5xl">
-        Speaker Lineup
+        {text}
       </h1>
       <div className="hidden items-center gap-x-4">
         <button

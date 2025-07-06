@@ -1,15 +1,15 @@
-export type speakers = {
+export type person = {
   index: number;
   name: string;
   jobTitle: string;
   employer: string;
   image: string;
-  bio: string;
+  bio?: string;
   checked?: boolean;
-  sessionFormat: string;
+  sessionFormat?: string;
 };
 
-export const speakers: speakers[] = [
+export const speakers: person[] = [
   {
     index: 0,
     name: 'Mehdi Medjaoui',
@@ -416,5 +416,50 @@ export const speakers: speakers[] = [
     bio: 'From Vision to Execution: Building APIs as Scalable Products in Fintech',
     image: 'https://sessionize.com/image/fe8f-400o400o1-BW55yQhDwpjPCPquyHFcmk.jpg',
     sessionFormat: 'Workshop',
+  },
+  {
+    index: 45,
+    name: 'Sikiru Abidemi Tiamiyu',
+    jobTitle: 'Software Engineer',
+    employer: '',
+    bio: 'Going Multimodal with Agent Development Kit: Personal Expense Assistant with Gemini 2.5, Firestore',
+    image: 'https://sessionize.com/image/7c4c-400o400o1-1fda4f02-06c6-4a6c-a300-3c5c48262ecd.jpg',
+    sessionFormat: 'Workshop',
+  },
+  {
+    index: 46,
+    name: 'Omonigho Jimmy',
+    jobTitle: 'Senior Software Engineer and Head of Developer Relations',
+    employer: '',
+    bio: 'Mycover.ai : API innovation in action',
+    image: 'https://sessionize.com/image/c9ad-400o400o1-hoYzAa88ph2qv6Y4Ryj7BT.jpg',
+    sessionFormat: 'Lightning talk',
+  },
+  {
+    index: 47,
+    name: 'Adejoke Haastrup',
+    jobTitle: 'Developer Relations Lead, ALATPay',
+    employer: '',
+    bio: 'Powering Payments with ALATPay: Tools, APIs, and SDKs for Engineers',
+    image: 'https://sessionize.com/image/d8ce-400o400o1-E1hrnEcaadKRrtxzfqcioe.jpg',
+    sessionFormat: 'Workshop',
+  },
+  {
+    index: 48,
+    name: 'Buchi Michelle Okonicha',
+    jobTitle: 'Software Engineer',
+    employer: '',
+    bio: 'How Machines See: Build a product image search backend with Vision API Product Search',
+    image: 'https://sessionize.com/image/d00b-400o400o1-n76v1Djn3KguQYU1hUsa9H.jpg',
+    sessionFormat: 'Workshop',
+  },
+  {
+    index: 49,
+    name: 'Olayinka Atobiloye',
+    jobTitle: 'Software Engineer & GitHub Campus Expert',
+    employer: '',
+    bio: "Don't Ask Me for Coffee — I'm a Teapot!",
+    image: 'https://sessionize.com/image/e1f1-400o400o1-83118dda-d1dd-4b7a-8bf3-467902a0dc55.jpg',
+    sessionFormat: 'Session',
   },
 ];
