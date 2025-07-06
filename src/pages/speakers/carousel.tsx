@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 
 import Header from './Header';
 import { AnimatePresence, motion } from 'framer-motion';
-import { speakers } from './speaker';
+import { person } from './speaker';
+import { useLocation } from 'react-router-dom';
 
-export default function Carousel({ slides }: { slides: speakers[] }) {
+export default function Carousel({ slides, heading }: { slides: person[]; heading?: string }) {
   const [activeItem, setActiveItem] = useState<number | null>(null);
   const [activeBio, setActiveBio] = useState<number | null>(null);
   const CarouselRef = React.useRef<HTMLDivElement>(null!);
+  const { pathname } = useLocation();
 
   return (
     <>
-      <Header carouselRef={CarouselRef} />
+      <Header carouselRef={CarouselRef} text={heading && heading} />
 
       <div>
         <ul className="grid grid-cols-1 gap-y-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
@@ -47,7 +49,7 @@ export default function Carousel({ slides }: { slides: speakers[] }) {
                 <AnimatePresence>
                   {activeBio === index && (
                     <motion.div
-                      className="absolute inset-0 z-10 flex aspect-[300/350] overflow-y-auto bg-[#E1EF9A] p-4 md:aspect-[345/400]"
+                      className={`${pathname === '/teams' ? 'hidden' : ''} absolute inset-0 z-10 flex aspect-[300/350] overflow-y-auto bg-[#E1EF9A] p-4 md:aspect-[345/400]`}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 20 }}
@@ -70,7 +72,11 @@ export default function Carousel({ slides }: { slides: speakers[] }) {
                 </p>
                 <p className="font-sans text-lg font-medium opacity-80 md:text-xl">
                   {speaker.jobTitle}
-                  {speaker.employer.trim() === "" ? "" : ` • ${speaker.employer}`}
+                  {pathname === '/teams'
+                    ? speaker.employer && ` • ${speaker.employer}`
+                    : speaker.employer.trim() === ''
+                      ? ` • ${speaker.sessionFormat}`
+                      : ` • ${speaker.employer} • ${speaker.sessionFormat}`}
                 </p>
               </motion.div>
             </motion.li>
