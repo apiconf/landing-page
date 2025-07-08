@@ -185,6 +185,7 @@ export const scheduleData = {
           duration: '30mins',
           timeFrame: '1pm',
           type: 'AsyncAPI session',
+          speaker: 'Azeez Elegbede & Thulisile Sibanda',
           color: '#00BFA5',
         },
         {
@@ -230,6 +231,7 @@ export const scheduleData = {
           duration: '30mins',
           timeFrame: '2pm',
           type: 'AsyncAPI session',
+          speaker: 'Thulisile Sibanda',
           color: '#00BFA5',
         },
         {
@@ -262,6 +264,7 @@ export const scheduleData = {
           duration: '30mins',
           timeFrame: '2pm',
           type: 'AsyncAPI session',
+          speaker: 'Aishat Muibudeen',
           color: '#00BFA5',
         },
         {
@@ -294,6 +297,7 @@ export const scheduleData = {
           duration: '30mins',
           timeFrame: '3pm',
           type: 'AsyncAPI session',
+          speaker: 'Azeez Elegbede',
           color: '#00BFA5',
         },
         {
@@ -326,6 +330,7 @@ export const scheduleData = {
           duration: '30mins',
           timeFrame: '3pm',
           type: 'AsyncAPI session',
+          speaker: 'Prince Onyeanuna & Ezinne Anne Emilia',
           color: '#00BFA5',
         },
         {
