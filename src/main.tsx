@@ -54,17 +54,12 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
   {
-    path: 'speakers',
+    path: '/speakers',
     element: <Speakers />,
     errorElement: <NotFound />,
   },
   {
-    path: 'teams',
-    element: <Teams />,
-    errorElement: <NotFound />,
-  },
-  {
-    path: 'teams',
+    path: '/teams',
     element: <Teams />,
     errorElement: <NotFound />,
   },
