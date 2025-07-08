@@ -10,8 +10,27 @@ import Spaces from './components/Talks/spaces';
 // import SpeakersInHome from './components/speaker';
 import Sponsor from './components/sponsor_cfp/index';
 import WhyAttend from './components/WhyAttend';
+import SponsorList from './components/SponsorList';
 
 const spaceItems: SpaceItem[] = [
+  {
+    key: 'Ask_Us_Anything_Speakers_Schedule_Whats_Coming_at_API_Conf_2025',
+    title: 'Ask Us Anything: Speakers, Schedule & What’s Coming at API Conf 2025',
+    subTitle: '@apiconflagos • 28th June 2025',
+    link: 'https://x.com/i/spaces/1vAxRDBEAAXGl',
+  },
+  {
+    key: 'Going_Beyond_MCP_Introducing_A2A',
+    title: 'Going Beyond MCP: Introducing A2A',
+    subTitle: '@vicradon • 24th May 2025',
+    link: 'https://x.com/i/spaces/1kvJpykNaBLxE',
+  },
+  {
+    key: 'Securing_Mobile_APIs_in_Flutter_Common_Vulnerabilities_&_Best_Practices',
+    title: 'Securing Mobile APIs in Flutter: Common Vulnerabilities & Best Practices',
+    subTitle: '@AtuohaA • 3rd May 2025',
+    link: 'https://x.com/i/spaces/1dRKZYXRpjrxB',
+  },
   {
     key: 'Caching_Strategies_for_High_Traffic_APIs',
     title: 'Caching Strategies for High Traffic APIs',
@@ -63,10 +82,10 @@ export default function App() {
         <NavBar />
         <Hero />
       </header>
-      <main></main>
       <WhyAttend />
       <Recap />
       <Spaces spaces={spaceItems} />
+      <SponsorList />
       <Events />
       {/* <SpeakersInHome /> */}
       <Sponsor />
