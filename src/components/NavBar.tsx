@@ -36,6 +36,12 @@ export default function NavBar() {
               FAQs
             </a>
           </li>
+          <li>
+            {' '}
+            <a href="/teams" rel="noopener noreferrer" className="">
+              Meet the team
+            </a>
+          </li>
         </ul>
       </motion.nav>
     </div>
