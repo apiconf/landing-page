@@ -3,135 +3,139 @@ import { useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
+type Message = {
+  text: string;
+  sender: 'user' | 'bot';
+  timestamp: string;
+};
+
 const ChatWidget = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [inputMessage, setInputMessage] = useState('');
-    const [messages, setMessages] = useState([]);
-    const [isTyping, setIsTyping] = useState(false);
-    const [error, setError] = useState(null);
-    const [showChat, setShowChat] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [inputMessage, setInputMessage] = useState('');
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isTyping, setIsTyping] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [showChat, setShowChat] = useState(false);
 
-    const messagesEndRef = useRef(null);
-    const CHATBOT_URL = 'https://chat.apiconf.net/';
-    const API_URL = 'https://chat.apiconf.net/api/v1/agents/chat';
+  const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const CHATBOT_URL = 'https://chat.apiconf.net/';
+  const API_URL = 'https://chat.apiconf.net/api/v1/agents/chat';
+//   const API_URL = 'http://localhost:2025/api/v1/agents/chat';
 
-    const predefinedQuestions = [
-        "Who are the keynote speakers ?",
-        "What is the conference schedule?",
-        "How do I get to the venue?",
-    ];
+  const predefinedQuestions: string[] = [
+    'Who are the keynote speakers ?',
+    'What is the conference schedule?',
+    'How do I get to the venue?',
+  ];
 
-    const getOrCreateId = (key) => {
-        if (typeof window === 'undefined') return null;
-        let id = localStorage.getItem(key);
-        if (!id) {
-            id = Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
-            localStorage.setItem(key, id);
-        }
-        return id;
+  const getOrCreateId = (key: string): string | null => {
+    if (typeof window === 'undefined') return null;
+    let id = localStorage.getItem(key);
+    if (!id) {
+      id = Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
+      localStorage.setItem(key, id);
+    }
+    return id;
+  };
+
+  const userId = getOrCreateId('apiconf_user_id');
+  const sessionId = getOrCreateId('apiconf_session_id');
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isTyping]);
+
+  const handleDirectChat = async (messageToSend: string): Promise<void> => {
+    if (!messageToSend.trim()) return;
+
+    const userMessage: Message = {
+      text: messageToSend,
+      sender: 'user',
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     };
 
-    const userId = getOrCreateId('apiconf_user_id');
-    const sessionId = getOrCreateId('apiconf_session_id');
+    setMessages((prev) => [...prev, userMessage]);
+    setIsTyping(true);
+    setError(null);
+    setShowChat(true);
 
-    const scrollToBottom = () => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    };
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: messageToSend,
+          user_id: userId,
+          session_id: sessionId,
+        }),
+      });
 
-    useEffect(() => {
-        scrollToBottom();
-    }, [messages, isTyping]);
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.status}`);
+      }
 
-    const handleDirectChat = async (messageToSend) => {
-        if (!messageToSend.trim()) return;
+      const result = await response.json();
 
-        const userMessage = {
-            text: messageToSend,
-            sender: 'user',
-            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        };
+      const botMessage: Message = {
+        text: result.data.response,
+        sender: 'bot',
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      };
 
-        setMessages(prev => [...prev, userMessage]);
-        setIsTyping(true);
-        setError(null);
-        setShowChat(true);
+      setMessages((prev) => [...prev, botMessage]);
+    } catch (error) {
+      console.error('Error fetching chat response:', error);
+      setError('Sorry, I seem to be having trouble connecting. Please try again later.');
 
-        try {
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    message: messageToSend,
-                    user_id: userId,
-                    session_id: sessionId,
-                }),
-            });
+      const errorMessage: Message = {
+        text: 'Sorry, I seem to be having trouble connecting. Please try again later.',
+        sender: 'bot',
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      };
 
-            if (!response.ok) {
-                throw new Error(`Network response was not ok: ${response.status}`);
-            }
+      setMessages((prev) => [...prev, errorMessage]);
+    } finally {
+      setIsTyping(false);
+    }
+  };
 
-            const result = await response.json();
+  const handleQuestionClick = (question: string): void => {
+    handleDirectChat(question);
+  };
 
-            const botMessage = {
-                text: result.data.response,
-                sender: 'bot',
-                timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-            };
+  const handleInputSubmit = (e: React.FormEvent): void => {
+    e.preventDefault();
+    if (inputMessage.trim()) {
+      handleDirectChat(inputMessage);
+      setInputMessage('');
+    }
+  };
 
-            setMessages(prev => [...prev, botMessage]);
+  const handleOpenFullChat = (question: string): void => {
+    const encodedQuestion = encodeURIComponent(question);
+    window.open(`${CHATBOT_URL}?message=${encodedQuestion}`, '_blank');
+  };
 
-        } catch (error) {
-            console.error('Error fetching chat response:', error);
-            setError('Sorry, I seem to be having trouble connecting. Please try again later.');
+  const toggleModal = (): void => {
+    setIsModalOpen(!isModalOpen);
+  };
 
-            const errorMessage = {
-                text: 'Sorry, I seem to be having trouble connecting. Please try again later.',
-                sender: 'bot',
-                timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-            };
-
-            setMessages(prev => [...prev, errorMessage]);
-        } finally {
-            setIsTyping(false);
-        }
-    };
-
-    const handleQuestionClick = (question) => {
-        handleDirectChat(question);
-    };
-
-    const handleInputSubmit = (e) => {
-        e.preventDefault();
-        if (inputMessage.trim()) {
-            handleDirectChat(inputMessage);
-            setInputMessage('');
-        }
-    };
-
-    const handleOpenFullChat = (question) => {
-        const encodedQuestion = encodeURIComponent(question);
-        window.open(`${CHATBOT_URL}?message=${encodedQuestion}`, '_blank');
-    };
-
-    const toggleModal = () => {
-        setIsModalOpen(!isModalOpen);
-    };
-
-    const clearChat = () => {
-        setMessages([]);
-        setError(null);
-        setShowChat(false);
-        // Generate new session ID for fresh start
-        if (typeof window !== 'undefined') {
-            const newSessionId = Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
-            localStorage.setItem('apiconf_session_id', newSessionId);
-        }
-    };
-
-    return (
+  const clearChat = (): void => {
+    setMessages([]);
+    setError(null);
+    setShowChat(false);
+    if (typeof window !== 'undefined') {
+      const newSessionId = Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
+      localStorage.setItem('apiconf_session_id', newSessionId);
+    }
+  };
+  return (
         <>
             <div className="fixed bottom-6 right-6 z-50">
                 <button

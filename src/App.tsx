@@ -1,6 +1,5 @@
 import './App.css';
 
-import ChatWidget from './components/ChatWidget';
 import Events from './components/Events';
 import Footer from './components/Footer/index';
 import Hero from './components/Hero';
