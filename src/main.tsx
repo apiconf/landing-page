@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import App from './App.tsx';
 import { AppContextProvider } from './context';
+import ChatWidget from './components/ChatWidget.tsx';
 import CodeOfConduct from './pages/Code-of-conduct/index.tsx'
 import Confirmation from './components/Confirmation';
 import NotFound from './NotFound.tsx';
@@ -83,6 +84,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <AppContextProvider>
+      <ChatWidget />
       <RouterProvider router={router} />
     </AppContextProvider>
   </React.StrictMode>
