@@ -36,7 +36,7 @@ export default function Hero() {
               ease: 'easeOut',
               delay: 0.2,
             }}
-            className="hero-fluid-heading mb-[-5px] align-middle text-xl font-bold leading-none xl:whitespace-nowrap 3xl:text-[64px]"
+            className="mb-[-5px] text-xl font-bold hero-fluid-heading 3xl:text-[64px] leading-none align-middle xl:"
           >
             API Conference Lagos
           </motion.h1>
@@ -58,28 +58,28 @@ export default function Hero() {
             ref={buttonsRef}
             animate={isButtonsVisible ? 'visible' : 'hidden'}
             variants={buttonContainerVariants}
-            className="relative z-40 !mt-14 flex flex-col gap-2 sm:flex-row 2xl:gap-4"
+            className="relative z-40 flex sm:flex-row flex-wrap flex-col gap-2 2xl:gap-4 !mt-14"
           >
-            <motion.a href="/register" target="_blank" variants={buttonVariants}>
-              <button className="text-md relative z-50 w-full cursor-pointer whitespace-nowrap rounded-full bg-[#E1EF9A] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
+            <motion.a href="/register" target='_blank' variants={buttonVariants}>
+              <button className="relative z-50 w-full cursor-pointer  bg-[#E1EF9A] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full hover:shadow-lg transition-shadow">
                 Register To Attend
               </button>
             </motion.a>
 
-            <motion.a href="/speakers" target="_blank" variants={buttonVariants}>
-              <button className="text-md relative z-50 w-full cursor-pointer whitespace-nowrap rounded-full bg-[#ECC89D] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
+            <motion.a href="/speakers" variants={buttonVariants}>
+              <button className="relative z-50 w-full cursor-pointer  bg-[#ECC89D] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full hover:shadow-lg transition-shadow">
                 See All Speakers
               </button>
             </motion.a>
 
             <motion.a href="/schedule" variants={buttonVariants}>
-              <button className="text-md relative z-50 w-full cursor-pointer whitespace-nowrap rounded-full bg-[#90EAF2] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
+              <button className="text-md relative z-50 w-full cursor-pointer  rounded-full bg-[#90EAF2] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 See Event Schedule
               </button>
             </motion.a>
 
-            <motion.a href="/sponsors/form" variants={buttonVariants} target="_blank">
-              <button className="text-md relative z-50 w-full cursor-pointer whitespace-nowrap rounded-full bg-[#FFFFFF] px-4 py-2 font-bold text-[#2F20BF] transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
+            <motion.a href="/sponsors/form" variants={buttonVariants} target='_blank'>
+              <button className="relative z-50 w-full cursor-pointer  bg-[#FFFFFF] text-[#2F20BF] font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full hover:shadow-lg transition-shadow">
                 Become A Sponsor
               </button>
             </motion.a>

@@ -16,7 +16,7 @@ const sponsors: Sponsors = [
   { name: 'MyCover AI', logo: '/sponsors/mycover-ai.png', tier: 'Silver' },
   // { name: 'Interswitch', logo: '/sponsors/Interswitch.png', tier: 'Bronze' },
   { name: 'APItoolkit', logo: '/sponsors/APItoolkit-Logo.png', tier: 'Bronze' },
-  // { name: 'Yamify', logo: '/sponsors/yamify-black.png', tier: 'Bronze' },
+  { name: 'Yamify', logo: '/sponsors/yamify-black.png', tier: 'Bronze' },
   // { name: 'APIlayer', logo: '/sponsors/APILayer.svg', tier: 'TBD' },
 ];
 
