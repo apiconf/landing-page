@@ -141,13 +141,13 @@ export const teams: person[] = [
     employer: 'Lotus bank',
     image: 'https://i.ibb.co/WNKPZTMB/passport2.jpg',
   },
-  {
-    index: 20,
-    name: 'Ugochukwu Egeonu',
-    jobTitle: 'Software Engineer',
-    employer: 'Jointly',
-    image: 'https://i.ibb.co/JFtLt9Rw/IMG-3933.jpg',
-  },
+  // {
+  //   index: 20,
+  //   name: 'Ugochukwu Egeonu',
+  //   jobTitle: 'Software Engineer',
+  //   employer: 'Jointly',
+  //   image: 'https://i.ibb.co/JFtLt9Rw/IMG-3933.jpg',
+  // },
   {
     index: 21,
     name: 'Michael Ibikunle',
