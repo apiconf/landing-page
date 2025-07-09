@@ -32,7 +32,7 @@ EOF
 
 deploy() {
   echo "deploying to netlify..."
-  netlify deploy -p -d dist    
+  netlify deploy -p -d dist --no-build  
 }
 
 
