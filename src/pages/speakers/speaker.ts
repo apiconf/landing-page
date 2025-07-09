@@ -432,7 +432,7 @@ export const speakers: person[] = [
     jobTitle: 'Senior Software Engineer and Head of Developer Relations',
     employer: '',
     bio: 'Mycover.ai : API innovation in action',
-    image: 'https://sessionize.com/image/c9ad-400o400o1-hoYzAa88ph2qv6Y4Ryj7BT.jpg',
+    image: 'https://sessionize.com/image/90a3-400o400o1-NnxvCjcRXEsYVyN8BKfqAv.jpg',
     sessionFormat: 'Lightning talk',
   },
   {
@@ -441,7 +441,7 @@ export const speakers: person[] = [
     jobTitle: 'Developer Relations Lead, ALATPay',
     employer: '',
     bio: 'Powering Payments with ALATPay: Tools, APIs, and SDKs for Engineers',
-    image: 'https://sessionize.com/image/d8ce-400o400o1-E1hrnEcaadKRrtxzfqcioe.jpg',
+    image: 'https://sessionize.com/image/8488-400o400o1-GJEoxg3csB3jMhcFMDnrgk.jpg',
     sessionFormat: 'Workshop',
   },
   {
