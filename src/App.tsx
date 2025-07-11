@@ -7,10 +7,15 @@ import NavBar from './components/NavBar';
 import Recap from './components/recap';
 import { SpaceItem } from './types';
 import Spaces from './components/Talks/spaces';
-// import SpeakersInHome from './components/speaker';
 import Sponsor from './components/sponsor_cfp/index';
-import WhyAttend from './components/WhyAttend';
 import SponsorList from './components/SponsorList';
+import WhyAttend from './components/WhyAttend';
+
+// import SpeakersInHome from './components/speaker';
+
+
+
+
 
 const spaceItems: SpaceItem[] = [
   {
