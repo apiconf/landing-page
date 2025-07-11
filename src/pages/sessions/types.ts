@@ -7,6 +7,8 @@ export type SessionDetails = {
   type: string;
   room: string;
   speaker?: string;
+  host?: string;
+  panelist?: string;
   color?: string;
   isFullSpan?: boolean,
   className?: string;

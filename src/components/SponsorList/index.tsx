@@ -11,10 +11,10 @@ type Sponsors = {
 }[];
 
 const sponsors: Sponsors = [
-  // { name: 'ALATPay', logo: '/sponsors/alat-pay.png', tier: 'Gold' },
-  // { name: 'Google for Developers', logo: '/sponsors/Google-for-Developers.svg', tier: 'Silver' },
+  { name: 'ALATPay', logo: '/sponsors/alat-pay.png', tier: 'Gold' },
+  { name: 'Google for Developers', logo: '/sponsors/Google-for-Developers.svg', tier: 'Silver' },
   { name: 'MyCover AI', logo: '/sponsors/mycover-ai.png', tier: 'Silver' },
-  // { name: 'Interswitch', logo: '/sponsors/Interswitch.png', tier: 'Bronze' },
+  { name: 'Interswitch', logo: '/sponsors/Interswitch.png', tier: 'Bronze' },
   { name: 'APItoolkit', logo: '/sponsors/APItoolkit-Logo.png', tier: 'Bronze' },
   { name: 'Yamify', logo: '/sponsors/yamify-black.png', tier: 'Bronze' },
   // { name: 'APIlayer', logo: '/sponsors/APILayer.svg', tier: 'TBD' },
