@@ -13,7 +13,7 @@ init() {
 
 install () {
   echo "Installing dependencies"
-  npm install
+  npm ci
 }
 
 build () {
