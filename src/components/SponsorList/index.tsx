@@ -8,16 +8,27 @@ type Sponsors = {
   name: string;
   logo: string;
   tier: sponsorTier;
-}[];
+};
 
-const sponsors: Sponsors = [
+const sponsors: Sponsors[] = [
   { name: 'ALATPay', logo: '/sponsors/alat-pay.png', tier: 'Gold' },
   { name: 'Google for Developers', logo: '/sponsors/Google-for-Developers.svg', tier: 'Silver' },
   { name: 'MyCover AI', logo: '/sponsors/mycover-ai.png', tier: 'Silver' },
   { name: 'Interswitch', logo: '/sponsors/Interswitch.png', tier: 'Bronze' },
   { name: 'APItoolkit', logo: '/sponsors/APItoolkit-Logo.png', tier: 'Bronze' },
   { name: 'Yamify', logo: '/sponsors/yamify-black.png', tier: 'Bronze' },
-  // { name: 'APIlayer', logo: '/sponsors/APILayer.svg', tier: 'TBD' },
+  // { name: 'GithubCampusExpert', logo: '/sponsors/GitHubCampusExperts-Logo.png', tier: 'Bronze' },
+];
+
+const communitySponsors: Array<Omit<Sponsors, 'tier'>> = [
+  { name: 'APIlayer', logo: '/sponsors/APILayer.svg' },
+  { name: 'NexaScale', logo: '/sponsors/Nexascale-Logo.png' },
+  { name: 'CloudPlexo', logo: '/sponsors/Cloudplexo-Logo.png' },
+  { name: 'SheCodeAfrica', logo: '/sponsors/SheCodeAfrica-Logo.png' },
+  { name: 'AsyncAPI', logo: '/sponsors/asyncapi-logo--primary-dark.svg' },
+  { name: 'APIdays', logo: '/sponsors/apidays-2025_Logo-min.png' },
+  { name: 'Bump.sh', logo: '/sponsors/bumpsh.jpg' },
+  { name: 'Postman', logo: '/sponsors/Postman-Logo.png' },
 ];
 
 const order: sponsorTier[] = ['Platinum', 'Gold', 'Silver', 'Bronze'];
@@ -101,21 +112,19 @@ export default function SponsorList() {
         className="my-16"
       >
         <h3 className="mb-16 text-center text-3xl font-bold md:text-5xl">Community Sponsors</h3>
-        <div className="flex w-full flex-col gap-6 md:flex-row">
-          <div className="flex size-full justify-center rounded-3xl border-2 border-solid border-[#A6A6A6] px-10 py-12">
-            <img
-              src="/sponsors/asyncapi-logo--primary-dark.svg"
-              alt="AsyncAPI"
-              className="size-full h-14 max-w-64 md:max-w-52"
-            />
-          </div>
-          <div className="flex size-full justify-center rounded-3xl border-2 border-solid border-[#A6A6A6] px-10 py-12">
-            <img
-              src="/sponsors/apidays-2025_Logo-min.png"
-              alt="APIdays"
-              className="size-full h-14 max-w-64 md:max-w-52"
-            />
-          </div>
+        <div className="flex w-full flex-col gap-6 md:flex-row md:flex-wrap md:items-center md:gap-10 md:px-10 xl:justify-between">
+          {communitySponsors.map((communitySponsor) => (
+            <div
+              key={communitySponsor.name}
+              className="flex size-full flex-1 justify-center rounded-3xl border-2 border-solid border-[#A6A6A6] px-10 py-12 md:border-none md:p-0"
+            >
+              <img
+                src={communitySponsor.logo}
+                alt={communitySponsor.name}
+                className="aspect-auto h-full max-h-14 min-h-8 max-w-64 md:max-w-36"
+              />
+            </div>
+          ))}
         </div>
       </motion.div>
     </section>
