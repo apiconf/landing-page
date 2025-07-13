@@ -8,27 +8,69 @@ type Sponsors = {
   name: string;
   logo: string;
   tier: sponsorTier;
+  link: string;
 };
 
 const sponsors: Sponsors[] = [
-  { name: 'ALATPay', logo: '/sponsors/alat-pay.png', tier: 'Gold' },
-  { name: 'Google for Developers', logo: '/sponsors/Google-for-Developers.svg', tier: 'Silver' },
-  { name: 'MyCover AI', logo: '/sponsors/mycover-ai.png', tier: 'Silver' },
-  { name: 'Interswitch', logo: '/sponsors/Interswitch.png', tier: 'Bronze' },
-  { name: 'APItoolkit', logo: '/sponsors/APItoolkit-Logo.png', tier: 'Bronze' },
-  { name: 'Yamify', logo: '/sponsors/yamify-black.png', tier: 'Bronze' },
-  // { name: 'GithubCampusExpert', logo: '/sponsors/GitHubCampusExperts-Logo.png', tier: 'Bronze' },
+  { name: 'ALATPay', logo: '/sponsors/alat-pay.png', tier: 'Gold', link: 'https://alatpay.ng/' },
+  {
+    name: 'Google for Developers',
+    logo: '/sponsors/Google-for-Developers.svg',
+    tier: 'Silver',
+    link: 'https://developers.google.com/',
+  },
+  {
+    name: 'MyCover AI',
+    logo: '/sponsors/mycover-ai.png',
+    tier: 'Silver',
+    link: 'https://mycover.ai/',
+  },
+  {
+    name: 'Interswitch',
+    logo: '/sponsors/Interswitch.png',
+    tier: 'Bronze',
+    link: 'https://docs.interswitchgroup.com/docs/home',
+  },
+  {
+    name: 'APItoolkit',
+    logo: '/sponsors/APItoolkit-Logo.png',
+    tier: 'Bronze',
+    link: 'https://apitoolkit.io/',
+  },
+  {
+    name: 'Yamify',
+    logo: '/sponsors/yamify-black.png',
+    tier: 'Bronze',
+    link: 'https://www.yamify.co/',
+  },
 ];
 
-const communitySponsors: Array<Omit<Sponsors, 'tier'>> = [
-  { name: 'APIlayer', logo: '/sponsors/APILayer.svg' },
-  { name: 'NexaScale', logo: '/sponsors/Nexascale-Logo.png' },
-  { name: 'CloudPlexo', logo: '/sponsors/Cloudplexo-Logo.png' },
-  { name: 'SheCodeAfrica', logo: '/sponsors/SheCodeAfrica-Logo.png' },
-  { name: 'AsyncAPI', logo: '/sponsors/asyncapi-logo--primary-dark.svg' },
-  { name: 'APIdays', logo: '/sponsors/apidays-2025_Logo-min.png' },
-  { name: 'Bump.sh', logo: '/sponsors/bumpsh.jpg' },
-  { name: 'Postman', logo: '/sponsors/Postman-Logo.png' },
+const communityPartners: Array<Omit<Sponsors, 'tier'>> = [
+  { name: 'APIlayer', logo: '/sponsors/APILayer.svg', link: 'https://apilayer.com/' },
+  { name: 'NexaScale', logo: '/sponsors/Nexascale-Logo.png', link: 'https://nexascale.org/' },
+  { name: 'CloudPlexo', logo: '/sponsors/Cloudplexo-Logo.png', link: 'https://cloudplexo.com/' },
+  {
+    name: 'SheCodeAfrica',
+    logo: '/sponsors/SheCodeAfrica-Logo.png',
+    link: 'https://shecodeafrica.org/',
+  },
+  {
+    name: 'AsyncAPI',
+    logo: '/sponsors/asyncapi-logo--primary-dark.svg',
+    link: 'https://www.asyncapi.com/',
+  },
+  {
+    name: 'APIdays',
+    logo: '/sponsors/apidays-2025_Logo-min.png',
+    link: 'https://www.apidays.global/',
+  },
+  { name: 'Bump.sh', logo: '/sponsors/bumpsh.jpg', link: 'https://bump.sh/' },
+  { name: 'Postman', logo: '/sponsors/Postman-Logo.png', link: 'https://www.postman.com/' },
+  {
+    name: 'GithubCampusExpert',
+    logo: '/sponsors/GitHubCampusExperts-Logo.png',
+    link: 'https://github.com/campus-experts',
+  },
 ];
 
 const order: sponsorTier[] = ['Platinum', 'Gold', 'Silver', 'Bronze'];
@@ -74,7 +116,7 @@ export default function SponsorList() {
           </span>
         </p>
       </motion.div>
-      <motion.div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-6">
         {sortedSponsors.map((sponsor) => (
           <div
             key={sponsor.name}
@@ -87,15 +129,17 @@ export default function SponsorList() {
               >
                 {sponsor.tier}
               </span>
-              <img
-                src={sponsor.logo}
-                alt={sponsor.name}
-                className="size-full max-h-14 max-w-48 md:max-w-52"
-              />
+              <a href={sponsor.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="size-full max-h-14 max-w-48 md:max-w-52"
+                />
+              </a>
             </div>
           </div>
         ))}
-      </motion.div>
+      </div>
 
       <motion.div
         initial={{ y: 8, opacity: 0 }}
@@ -111,18 +155,20 @@ export default function SponsorList() {
         ref={sponsorRef}
         className="my-16"
       >
-        <h3 className="mb-16 text-center text-3xl font-bold md:text-5xl">Community Sponsors</h3>
-        <div className="flex w-full flex-col gap-6 md:flex-row md:flex-wrap md:items-center md:gap-10 md:px-10 xl:justify-between">
-          {communitySponsors.map((communitySponsor) => (
+        <h3 className="mb-16 text-center text-3xl font-bold md:text-5xl">Community Partners</h3>
+        <div className="flex w-full flex-col gap-6 md:flex-row md:flex-wrap md:items-center md:gap-10 md:px-10 xl:justify-between xl:gap-x-16">
+          {communityPartners.map((partner) => (
             <div
-              key={communitySponsor.name}
+              key={partner.name}
               className="flex size-full flex-1 justify-center rounded-3xl border-2 border-solid border-[#A6A6A6] px-10 py-12 md:border-none md:p-0"
             >
-              <img
-                src={communitySponsor.logo}
-                alt={communitySponsor.name}
-                className="aspect-auto h-full max-h-14 min-h-8 max-w-64 md:max-w-36"
-              />
+              <a href={partner.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="aspect-auto h-full max-h-14 min-h-8 max-w-64 md:max-w-36"
+                />
+              </a>
             </div>
           ))}
         </div>
