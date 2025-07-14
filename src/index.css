@@ -60,7 +60,7 @@
       #fff;
   }
   .sponsor-item {
-    @apply col-span-3;
+    @apply col-span-1;
   }
 
   .sponsor-item > div {
@@ -69,23 +69,23 @@
 
   /* Tablet/Desktop: default to 1 column */
   @media (min-width: 768px) {
-    .sponsor-item {
-      @apply col-span-1;
+    /* Gold sponsor (1 sponsor) - full width */
+    .sponsor-item[data-tier='Gold'] {
+      @apply col-span-6;
     }
 
-    .sponsor-item[data-tier='Gold']:first-of-type,
-    .sponsor-item[data-tier='Bronze']:last-of-type {
+    /* Silver sponsors (2 sponsors) - half width each */
+    .sponsor-item[data-tier='Silver'] {
       @apply col-span-3;
+    }
+
+    /* Bronze sponsors (3 sponsors) - one-third width each */
+    .sponsor-item[data-tier='Bronze'] {
+      @apply col-span-2;
     }
 
     .sponsor-item > div {
       @apply flex-col;
-    }
-
-    /* Flex direction for special sponsors */
-    .sponsor-item[data-tier='Gold']:first-of-type > div,
-    .sponsor-item[data-tier='Bronze']:last-of-type > div {
-      @apply flex-row-reverse items-center;
     }
   }
 }
