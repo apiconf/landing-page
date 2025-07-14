@@ -9,8 +9,8 @@ export default function Hero() {
   const dateRef = useRef(null);
   const buttonsRef = useRef(null);
 
-  const isAPIConfVisible = useInView(apiConfRef, { margin: "0px 0px -50px 0px" });
-  const isButtonsVisible = useInView(buttonsRef, { margin: "0px 0px -50px 0px", once: false });
+  const isAPIConfVisible = useInView(apiConfRef, { margin: '0px 0px -50px 0px' });
+  const isButtonsVisible = useInView(buttonsRef, { margin: '0px 0px -50px 0px', once: false });
 
   const buttonContainerVariants = {
     visible: {
@@ -20,20 +20,20 @@ export default function Hero() {
 
   const buttonVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
   };
 
   return (
     <section className="relative bg-[url(/hero/hero-bg.svg)] bg-cover bg-center bg-no-repeat">
-      <div className="relative z-20 flex justify-between px-[5.9701%]  md:px-[7.4074%] pt-[155px] md:pt-36 text-white 2xl:mt-40">
-        <div className="relative z-30 w-full lg:w-3/6 2xl:w-4/6 space-y-5 mb-10 lg:mb-10 2xl:mb-28 pr-5">
+      <div className="relative z-20 flex justify-between px-[5.9701%] pt-[155px] text-white md:px-[7.4074%] md:pt-36 2xl:mt-40">
+        <div className="relative z-30 mb-10 w-full space-y-5 pr-5 lg:mb-10 lg:w-3/6 2xl:mb-28 2xl:w-4/6">
           <motion.h1
             ref={apiConfRef}
             initial={{ y: 30, opacity: 0 }}
             animate={isAPIConfVisible ? { y: 0, opacity: 1 } : {}}
             transition={{
               duration: 1.2,
-              ease: "easeOut",
+              ease: 'easeOut',
               delay: 0.2,
             }}
             className="mb-[-5px] text-xl font-bold hero-fluid-heading 3xl:text-[64px] leading-none align-middle xl:"
@@ -44,19 +44,19 @@ export default function Hero() {
             ref={dateRef}
             initial={{ y: 30, opacity: 0 }}
             animate={isAPIConfVisible ? { y: 0, opacity: 1 } : {}}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-            className="lg:hidden text-lg md:text-2xl font-bold text-white inline-block"
+            transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
+            className="inline-block text-lg font-bold text-white md:text-2xl lg:hidden"
           >
             18th - 19th July 2025
           </motion.p>
-          <motion.p className="font-normal text-lg leading-[22px] max-w-[640px]">
+          <motion.p className="max-w-[640px] text-lg font-normal leading-[22px]">
             Elevating API Literacy for Mass Innovation.
           </motion.p>
 
           <motion.div
             initial="hidden"
             ref={buttonsRef}
-            animate={isButtonsVisible ? "visible" : "hidden"}
+            animate={isButtonsVisible ? 'visible' : 'hidden'}
             variants={buttonContainerVariants}
             className="relative z-40 flex sm:flex-row flex-wrap flex-col gap-2 2xl:gap-4 !mt-14"
           >
@@ -71,9 +71,9 @@ export default function Hero() {
                 See All Speakers
               </button>
             </motion.a>
-            
+
             <motion.a href="/schedule" variants={buttonVariants}>
-              <button className="relative z-50 w-full cursor-pointer  bg-[#90EAF2] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full hover:shadow-lg transition-shadow">
+              <button className="text-md relative z-50 w-full cursor-pointer  rounded-full bg-[#90EAF2] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 See Event Schedule
               </button>
             </motion.a>
@@ -83,10 +83,21 @@ export default function Hero() {
                 Become A Sponsor
               </button>
             </motion.a>
+
+            <motion.a
+              href="/teams"
+              variants={buttonVariants}
+              target="_blank"
+              className="block sm:hidden"
+            >
+              <button className="text-md relative z-50 w-full cursor-pointer whitespace-nowrap rounded-full bg-[#ECC89D] px-4 py-2 font-bold text-[#2F20BF] transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
+                Meet the Team
+              </button>
+            </motion.a>
           </motion.div>
         </div>
 
-        <div className="relative z-10 hidden lg:flex lg:w-3/6 2xl:w-2/6 bg-[url(/hero/api-icon.svg)] bg-right-bottom bg-cover bg-no-repeat justify-end items-end -mb-12 overflow-visible">
+        <div className="relative z-10 -mb-12 hidden items-end justify-end overflow-visible bg-[url(/hero/api-icon.svg)] bg-cover bg-right-bottom bg-no-repeat lg:flex lg:w-3/6 2xl:w-2/6">
           <div className="mb-40">
             <p>Date</p>
             <motion.p
@@ -95,19 +106,19 @@ export default function Hero() {
               animate={isAPIConfVisible ? { y: 0, opacity: 1 } : {}}
               transition={{
                 duration: 1.2,
-                ease: "easeOut",
+                ease: 'easeOut',
                 delay: 0.2,
               }}
-              className="mb-[-5px] font-bold text-[1.75rem] lg:text-[2.125rem] 3xl:text-[2.25rem] leading-none align-middle"
+              className="mb-[-5px] align-middle text-[1.75rem] font-bold leading-none lg:text-[2.125rem] 3xl:text-[2.25rem]"
             >
               18th - 19th July 2025
             </motion.p>
           </div>
         </div>
       </div>
-      <Marquee autoFill={true} className="relative z-30 w-full py-3 bg-white flex overflow-hidden">
-        <h4 className="flex justify-between items-center">
-          <span className="font-bold text-4xl lg:text-[64px] lg:leading-[52.52px] mx-8">
+      <Marquee autoFill={true} className="relative z-30 flex w-full overflow-hidden bg-white py-3">
+        <h4 className="flex items-center justify-between">
+          <span className="mx-8 text-4xl font-bold lg:text-[64px] lg:leading-[52.52px]">
             API Conference Lagos 2025
           </span>
           <img src={scrollImg} alt="" className="w-[56.6px]" />

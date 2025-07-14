@@ -141,13 +141,13 @@ export const teams: person[] = [
     employer: 'Lotus bank',
     image: 'https://i.ibb.co/WNKPZTMB/passport2.jpg',
   },
-  {
-    index: 20,
-    name: 'Ugochukwu Egeonu',
-    jobTitle: 'Software Engineer',
-    employer: 'Jointly',
-    image: 'https://i.ibb.co/JFtLt9Rw/IMG-3933.jpg',
-  },
+  // {
+  //   index: 20,
+  //   name: 'Ugochukwu Egeonu',
+  //   jobTitle: 'Software Engineer',
+  //   employer: 'Jointly',
+  //   image: 'https://i.ibb.co/JFtLt9Rw/IMG-3933.jpg',
+  // },
   {
     index: 21,
     name: 'Michael Ibikunle',
@@ -157,6 +157,35 @@ export const teams: person[] = [
   },
   {
     index: 22,
+    name: 'Ehimwenman Edemakhiota',
+    jobTitle: 'Software Engineer',
+    employer: 'Interswitch',
+    image:
+      'https://i.ibb.co/kVXSKmGb/AP1-Gcz-Mc-EVMLYHQMbj8-Dptr9ovuv-Rivi-BIf88-Eva-Zk-U4-Jqgtj4-KYb-R8-PIg-Sx-OYw-HWBr-DXimsjeo-d-D6-BQ.jpg',
+  },
+  {
+    index: 23,
+    name: 'Micah Timileyin',
+    jobTitle: 'Program Manager',
+    employer: '',
+    image: 'https://i.ibb.co/ycmznrQ3/hh.jpg',
+  },
+  {
+    index: 24,
+    name: 'Emmanuel Olubiyi',
+    jobTitle: 'Software Engineer | IT (intern)',
+    employer: 'Meristem',
+    image: 'https://res.cloudinary.com/dmhqnusvw/image/upload/v1751812098/pfp_vdbwcs.jpg',
+  },
+  {
+    index: 25,
+    name: 'Gbadebo Bello',
+    jobTitle: 'Developer Advocate',
+    employer: 'Postman',
+    image: 'https://i.ibb.co/7JNfBCwh/Dev-Fest-23-30-2.jpg',
+  },
+  {
+    index: 26,
     name: 'Sodiq Akinjobi',
     jobTitle: 'Program Manager',
     employer: '',

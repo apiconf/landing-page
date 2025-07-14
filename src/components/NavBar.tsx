@@ -36,7 +36,7 @@ export default function NavBar() {
               FAQs
             </a>
           </li>
-          <li>
+          <li className='hidden sm:block'>
             {' '}
             <a href="/teams" rel="noopener noreferrer" className="whitespace-nowrap">
               Meet the team
