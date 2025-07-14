@@ -665,7 +665,7 @@ export const scheduleData = {
           duration: '30m',
           timeFrame: '2pm',
           type: 'Panel session',
-          panelist: 'Robert (Thas) John, Luc Okalobe, Mehdi Medjaoui,',
+          panelist: 'Robert (Thas) John, Luc Okalobe, Awonuga Sherif, Stella Agbadu',
           host: 'Claret Ibeawuchi',
           color: '#E1EF9A',
         },
