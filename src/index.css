@@ -74,14 +74,14 @@
       @apply col-span-6;
     }
 
-    /* Silver sponsors (2 sponsors) - half width each */
+    /* Silver sponsors (3 sponsors) - half width each */
     .sponsor-item[data-tier='Silver'] {
-      @apply col-span-3;
+      @apply col-span-2;
     }
 
-    /* Bronze sponsors (3 sponsors) - one-third width each */
+    /* Bronze sponsors (2 sponsors) - one-third width each */
     .sponsor-item[data-tier='Bronze'] {
-      @apply col-span-2;
+      @apply col-span-3;
     }
 
     .sponsor-item > div {
