@@ -28,7 +28,7 @@ const sponsors: Sponsors[] = [
   {
     name: 'Interswitch',
     logo: '/sponsors/Interswitch.png',
-    tier: 'Bronze',
+    tier: 'Silver',
     link: 'https://docs.interswitchgroup.com/docs/home',
   },
   {
@@ -64,12 +64,17 @@ const communityPartners: Array<Omit<Sponsors, 'tier'>> = [
     logo: '/sponsors/apidays-2025_Logo-min.png',
     link: 'https://www.apidays.global/',
   },
-  { name: 'Bump.sh', logo: '/sponsors/bumpsh.jpg', link: 'https://bump.sh/' },
+  { name: 'Bump.sh', logo: '/sponsors/bumpsh.svg', link: 'https://bump.sh/' },
   { name: 'Postman', logo: '/sponsors/Postman-Logo.png', link: 'https://www.postman.com/' },
   {
     name: 'GithubCampusExpert',
     logo: '/sponsors/GitHubCampusExperts-Logo.png',
     link: 'https://github.com/campus-experts',
+  },
+  {
+    name: 'WriteTheDocs NG',
+    logo: '/sponsors/WTD-LOGO.png',
+    link: 'https://www.meetup.com/Write-the-Docs-Nigeria/',
   },
 ];
 
