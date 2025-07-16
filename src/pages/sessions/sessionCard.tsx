@@ -44,7 +44,7 @@ export const SessionCard = ({
           )}
           {session.host && (
             <p className="font-bold text-[.625rem] md:text-base text-gray-700">
-              Host: {session.host}
+              Moderator: {session.host}
             </p>
           )}
           {session.panelist && (
