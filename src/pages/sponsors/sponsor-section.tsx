@@ -83,7 +83,7 @@ export default function SponsorSection() {
             <div className="flex flex-wrap items-center justify-center gap-8 md:flex-nowrap md:justify-normal">
               <img src={APItoolkitLogo} alt="APItoolkit Logo" className="w-full max-w-[251px]" />
               <img
-                src="/sponsor-component/globarman.png"
+                src="/sponsors/globarman-logo-new.png"
                 alt="Globarman Logo"
                 className="w-full max-w-[218.57px]"
               />
