@@ -43,6 +43,12 @@ const sponsors: Sponsors[] = [
     tier: 'Bronze',
     link: 'https://www.yamify.co/',
   },
+  {
+    name: 'Globarman',
+    logo: '/sponsors/globarman-logo-new.png',
+    tier: 'Bronze',
+    link: 'https://www.globarman.com/',
+  },
 ];
 
 const communityPartners: Array<Omit<Sponsors, 'tier'>> = [
