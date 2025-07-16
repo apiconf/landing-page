@@ -131,7 +131,7 @@ const Sponsor = () => {
                 className="max-w-[251px] w-full"
               />
               <img
-                src="/sponsor-component/globarman.png"
+                src="/sponsors/globarman-logo-new.png"
                 alt="Globarman Logo"
                 className="max-w-[218.57px] w-full"
               />

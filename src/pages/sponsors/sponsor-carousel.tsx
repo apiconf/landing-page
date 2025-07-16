@@ -9,7 +9,7 @@ const Companies: Company[] = [
   { name: 'Fincra', logo: '/sponsors/Fincra-Logo.png' },
   { name: 'Postman', logo: '/sponsors/Postman-Logo.png' },
   { name: 'APIToolkit', logo: '/sponsors/APItoolkit-Logo.png' },
-  { name: 'Globarman', logo: '/sponsors/Globarman-Logo.png' },
+  { name: 'Globarman', logo: '/sponsors/globarman-logo-new.png' },
   { name: 'GitHub Campus Experts', logo: '/sponsors/GitHubCampusExperts-Logo.png' },
   { name: 'CloudPlexo', logo: '/sponsors/Cloudplexo-Logo.png' },
   { name: 'Nexascale', logo: '/sponsors/Nexascale-Logo.png' },
