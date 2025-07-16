@@ -186,7 +186,7 @@ export const scheduleData = {
           timeFrame: '1pm',
           type: 'Async API',
           speaker: 'Azeez Elegbede & Thulisile Sibanda',
-          color: '#00BFA5',
+          color: '#99DED5',
         },
         {
           id: 'api-security-in-web3-protecting-decentralized-applications-from-common-threats-fri',
@@ -232,7 +232,7 @@ export const scheduleData = {
           timeFrame: '2pm',
           type: 'Async API',
           speaker: 'Thulisile Sibanda',
-          color: '#00BFA5',
+          color: '#99DED5',
         },
         {
           id: 'monitoring-your-apis-like-a-superhero-with-the-kubernetes-prometheus-stack-fri',
@@ -265,7 +265,7 @@ export const scheduleData = {
           timeFrame: '2pm',
           type: 'Async API',
           speaker: 'Aishat Muibudeen',
-          color: '#00BFA5',
+          color: '#99DED5',
         },
         {
           id: 'ai-driven-hateoas-fri',
@@ -298,7 +298,7 @@ export const scheduleData = {
           timeFrame: '3pm',
           type: 'Async API',
           speaker: 'Azeez Elegbede',
-          color: '#00BFA5',
+          color: '#99DED5',
         },
         {
           id: 'from-vision-to-execution-building-apis-as-scalable-products-in-fintech-fri',
@@ -331,7 +331,7 @@ export const scheduleData = {
           timeFrame: '3pm',
           type: 'Async API',
           speaker: 'Prince Onyeanuna & Ezinne Anne Emilia',
-          color: '#00BFA5',
+          color: '#99DED5',
         },
         {
           id: 'banking-without-banks-building-resilient-wallet-infrastructure-in-unstable-times-fri',
