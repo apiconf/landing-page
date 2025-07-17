@@ -1,25 +1,24 @@
 import { useEffect, useState } from 'react';
 
-export default function Main() {
-  const [currentDay, setCurrentDay] = useState(null);
+interface MainProps {
+  testDate?: string; 
+}
+
+export default function Main({ testDate }: MainProps) {
+  const [currentDay, setCurrentDay] = useState<number | null>(null);
   const [currentDate, setCurrentDate] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [animateCard, setAnimateCard] = useState(false);
   const [isEventEnded, setIsEventEnded] = useState(false);
 
-  const questions = {
+  const questions: { [key: number]: string } = {
     1: "Meaning of APIs (wrong answers only)?",
     2: "What's one highlight, quote, or vibe from this conference you'll never forget?"
   };
 
-  const conferenceInfo = {
-    1: { date: 'Friday, July 18th', year: 2025 },
-    2: { date: 'Saturday, July 19th', year: 2025 }
-  };
-
   useEffect(() => {
     const timer = setTimeout(() => {
-      const today = new Date();
+      const today = testDate ? new Date(testDate) : new Date();
       const currentYear = today.getFullYear();
       const currentMonth = today.getMonth() + 1;
       const currentDate = today.getDate();
@@ -47,16 +46,14 @@ export default function Main() {
       setTimeout(() => setAnimateCard(true), 300);
     }, 800);
 
-    return () => clearTimeout(timer); 
-  }, []);
-
-
+    return () => clearTimeout(timer);
+  }, [testDate]);
 
   if (isLoading) {
     return (
       <main className="flex w-full flex-1 min-h-screen bg-white">
         <div className="min-h-full w-full flex-1">
-          <div className="relative mx-auto flex w-full flex-col justify-center items-center gap-12 px-4 pb-8 pt-48 md:top-[2%] md:w-[85%] md:flex-row md:gap-0 md:gap-x-[clamp(1rem,7%,3rem)] md:px-0 lg:top-[6%] lg:pt-52 xl:top-[10%]">
+          <div className="relative mx-auto flex w-full flex-col justify-center items-center gap-12 px-4 pb-8 pt-48 md:top-[2%] md:w-[85%] md:gap-x-[clamp(1rem,7%,3rem)] md:px-0 lg:top-[6%] lg:pt-52 xl:top-[10%]">
             <div className="flex-1 md:max-w-[640px] text-center">
               <div className="relative">
                 <div className="w-20 h-20 border-4 border-gray-300 border-t-primary-black rounded-full animate-spin mx-auto mb-4"></div>
@@ -79,7 +76,7 @@ export default function Main() {
     return (
       <main className="flex w-full flex-1 min-h-screen bg-white">
         <div className="min-h-full w-full flex-1">
-          <div className="relative mx-auto flex w-full flex-col justify-center items-center gap-12 px-4 pb-8 pt-48 md:top-[2%] md:w-[85%] md:flex-row md:gap-0 md:gap-x-[clamp(1rem,7%,3rem)] md:px-0 lg:top-[6%] lg:pt-52 xl:top-[10%]">
+          <div className="relative mx-auto flex w-full flex-col justify-center items-center gap-12 px-4 pb-8 pt-48 md:top-[2%] md:w-[85%] md:gap-x-[clamp(1rem,7%,3rem)] md:px-0 lg:top-[6%] lg:pt-52 xl:top-[10%]">
             <div className="flex-1 md:max-w-[640px] text-center">
               <h1 className="text-balance font-sans text-4xl font-bold leading-[100%] tracking-[-0.045rem] text-primary-black sm:text-5xl md:text-[3.5rem] md:tracking-[-0.08rem] lg:text-[4rem]">
                 APICONF
@@ -90,8 +87,8 @@ export default function Main() {
                 <p className="font-base font-sans text-3xl text-primary-black md:text-4xl lg:text-5xl">
                   {currentDate}
                 </p>
-                <p className="font-sans text-lg text-primary-black/x70 mt-4">
-                  APICONF Lagos  2025 has concluded. Thank you for joining us for two days of incredible API discussions, insights, and networking! Stay tuned for updates on future events.
+                <p className="font-sans text-lg text-primary-black/70 mt-4">
+                  APICONF Lagos 2025 has concluded. Thank you for joining us for two days of incredible API discussions, insights, and networking! Stay tuned for updates on future events.
                 </p>
               </div>
             </div>
@@ -105,7 +102,7 @@ export default function Main() {
     return (
       <main className="flex w-full flex-1 min-h-screen bg-white">
         <div className="min-h-full w-full flex-1">
-          <div className="relative mx-auto flex w-full flex-col justify-center items-center gap-12 px-4 pb-8 pt-48 md:top-[2%] md:w-[85%] md:flex-row md:gap-0 md:gap-x-[clamp(1rem,7%,3rem)] md:px-0 lg:top-[6%] lg:pt-52 xl:top-[10%]">
+          <div className="relative mx-auto flex w-full flex-col justify-center items-center gap-12 px-4 pb-8 pt-48 md:top-[2%] md:w-[85%] md:gap-x-[clamp(1rem,7%,3rem)] md:px-0 lg:top-[6%] lg:pt-52 xl:top-[10%]">
             <div className="flex-1 md:max-w-[640px] text-center">
               <h1 className="text-balance font-sans text-4xl font-bold leading-[100%] tracking-[-0.045rem] text-primary-black sm:text-5xl md:text-[3.5rem] md:tracking-[-0.08rem] lg:text-[4rem]">
                 APICONF
@@ -148,11 +145,11 @@ export default function Main() {
                   Today's Question
                 </h2>
                 <div className="w-24 h-1 bg-primary-black rounded-full mx-auto mb-6"></div>
-                <p className=" text-sm md:text-2xl text-primary-black leading-relaxed text-center font-medium">
+                <p className="text-sm md:text-2xl text-primary-black leading-relaxed text-center font-medium">
                   {questions[currentDay]}
                 </p>
               </div>
-              <div className="mt-6">
+              <div className="mt-6 bg-gray-100 rounded-2xl p-6 shadow-md">
                 <div className="flex items-center justify-center">
                   <div className="flex-shrink-0 mr-4">
                     <div className="h-16 bg-primary-black rounded-full flex items-center justify-center">
@@ -160,17 +157,20 @@ export default function Main() {
                     </div>
                   </div>
                   <div className="flex-grow text-center">
-                    <p className="md:text-xl font-bold text-primary-black mb-2">
+                    <p className="text-sm md:text-xl font-bold text-primary-black mb-2">
                       Please write your answer on the whiteboard!
+                    </p>
+                    <p className="text-primary-black/80 text-sm md:text-lg">
+                      Your response will be shared with all conference attendees and displayed on our community board.
                     </p>
                   </div>
                 </div>
               </div>
               <div className="mt-6 text-center">
-                <p className="md:text-lg text-primary-black/70">
+                <p className="text-sm md:text-lg text-primary-black/70">
                   Thank you for participating in APICONF! 🚀
                 </p>
-                <p className="text-primary-black/60">
+                <p className="text-primary-black/60 text-sm md:text-base">
                   Let's build the future of APIs together
                 </p>
               </div>
