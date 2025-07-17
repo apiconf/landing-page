@@ -102,12 +102,12 @@ export const speakers: person[] = [
   },
     {
     index: 50,
-    name: 'Oluwatayo Farotimi',
-    jobTitle: 'Portfolio Product Manager',
-    employer: 'Interswitch',
-    bio: "Interswitch API Demo",
+    name: 'Timilehin Ayantunji',
+    jobTitle: 'Senior Frontend Engineer',
+    employer: 'eTranzact',
+    bio: "API Design from a Frontend Perspective: What We Wish Backend Engineers Knew",
     image: 'oluwatayo-farotimi.jpg',
-    sessionFormat: 'Lightning',
+    sessionFormat: 'session',
   },
   {
     index: 10,

@@ -696,7 +696,7 @@ export const scheduleData = {
         },
         {
           id: 'interswitch-15mins-session-sat',
-          title: 'Globarman API Demo By David',
+          title: 'Globarman API Demo By Alaba',
           timeSlot: '03:05pm - 03:10pm',
           room: 'Ruby Hall',
           duration: '5m',
