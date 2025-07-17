@@ -40,15 +40,23 @@ export default function Hero() {
           >
             API Conference Lagos
           </motion.h1>
-          <motion.p
+          <motion.div
             ref={dateRef}
             initial={{ y: 30, opacity: 0 }}
             animate={isAPIConfVisible ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
-            className="inline-block text-lg font-bold text-white md:text-2xl lg:hidden"
+            className="flex flex-col space-y-3 lg:hidden"
           >
-            18th - 19th July 2025
-          </motion.p>
+            <p className="text-lg font-bold text-white md:text-2xl">
+              18th - 19th July 2025
+            </p>
+            <div>
+              <p className="text-base font-bold text-white md:text-lg">The Zone</p>
+              <p className="text-sm text-gray-200 leading-tight">
+                Gbagada Industrial Scheme, Lagos
+              </p>
+            </div>
+          </motion.div>
           <motion.p className="max-w-[640px] text-lg font-normal leading-[22px]">
             Elevating API Literacy for Mass Innovation.
           </motion.p>
@@ -98,21 +106,44 @@ export default function Hero() {
         </div>
 
         <div className="relative z-10 -mb-12 hidden items-end justify-end overflow-visible bg-[url(/hero/api-icon.svg)] bg-cover bg-right-bottom bg-no-repeat lg:flex lg:w-3/6 2xl:w-2/6">
-          <div className="mb-40">
-            <p>Date</p>
-            <motion.p
-              ref={dateRef}
-              initial={{ y: 30, opacity: 0 }}
-              animate={isAPIConfVisible ? { y: 0, opacity: 1 } : {}}
-              transition={{
-                duration: 1.2,
-                ease: 'easeOut',
-                delay: 0.2,
-              }}
-              className="mb-[-5px] align-middle text-[1.75rem] font-bold leading-none lg:text-[2.125rem] 3xl:text-[2.25rem]"
-            >
-              18th - 19th July 2025
-            </motion.p>
+          <div className="mb-40 flex flex-col space-y-6">
+            <div>
+              <p>Date</p>
+              <motion.p
+                ref={dateRef}
+                initial={{ y: 30, opacity: 0 }}
+                animate={isAPIConfVisible ? { y: 0, opacity: 1 } : {}}
+                transition={{
+                  duration: 1.2,
+                  ease: 'easeOut',
+                  delay: 0.2,
+                }}
+                className="mb-[-5px] align-middle text-[1.75rem] font-bold leading-none lg:text-[2.125rem] 3xl:text-[2.25rem]"
+              >
+                18th - 19th July 2025
+              </motion.p>
+            </div>
+            
+            <div>
+              <p>Venue</p>
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={isAPIConfVisible ? { y: 0, opacity: 1 } : {}}
+                transition={{
+                  duration: 1.2,
+                  ease: 'easeOut',
+                  delay: 0.4,
+                }}
+                className="max-w-[300px]"
+              >
+                <p className="text-[1.25rem] font-bold leading-tight lg:text-[1.5rem] 3xl:text-[1.75rem]">
+                  The Zone
+                </p>
+                <p className="text-sm font-normal leading-[1.4] text-gray-200 lg:text-base 3xl:text-lg">
+                  Gbagada Industrial Scheme, Lagos
+                </p>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>

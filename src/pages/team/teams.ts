@@ -123,17 +123,17 @@ export const teams: person[] = [
   {
     index: 17,
     name: 'Irene Dyboh',
-    jobTitle: 'Young Professional (YP)',
-    employer: 'NNPC Limited',
+    jobTitle: 'Product Manager ',
+    employer: '',
     image: 'https://i.ibb.co/Xxypr7Pf/IMG-5127.jpg',
   },
-  {
-    index: 18,
-    name: 'Victor Okoye',
-    jobTitle: 'Software Engineer',
-    employer: '',
-    image: 'https://i.ibb.co/79dCh1p/IMG-2244.jpg',
-  },
+  // {
+  //   index: 18,
+  //   name: 'Victor Okoye',
+  //   jobTitle: 'Software Engineer',
+  //   employer: '',
+  //   image: 'https://i.ibb.co/79dCh1p/IMG-2244.jpg',
+  // },
   {
     index: 19,
     name: 'Grace Effiong',
