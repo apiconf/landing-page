@@ -53,13 +53,7 @@ const sponsors: Sponsors[] = [
 
 const communityPartners: Array<Omit<Sponsors, 'tier'>> = [
   { name: 'APIlayer', logo: '/sponsors/APILayer.svg', link: 'https://apilayer.com/' },
-  { name: 'NexaScale', logo: '/sponsors/Nexascale-Logo.png', link: 'https://nexascale.org/' },
   { name: 'CloudPlexo', logo: '/sponsors/Cloudplexo-Logo.png', link: 'https://cloudplexo.com/' },
-  {
-    name: 'SheCodeAfrica',
-    logo: '/sponsors/SheCodeAfrica-Logo.png',
-    link: 'https://shecodeafrica.org/',
-  },
   {
     name: 'AsyncAPI',
     logo: '/sponsors/asyncapi-logo--primary-dark.svg',
@@ -167,7 +161,7 @@ export default function SponsorList() {
         className="my-16"
       >
         <h3 className="mb-16 text-center text-3xl font-bold md:text-5xl">Community Partners</h3>
-        <div className="flex w-full flex-col gap-6 md:flex-row md:flex-wrap md:items-center md:gap-10 md:px-10 xl:justify-between xl:gap-x-16">
+        <div className="flex w-full flex-col gap-6 md:flex-row md:flex-wrap md:items-center md:gap-11 md:px-10 xl:justify-between xl:gap-x-16">
           {communityPartners.map((partner) => (
             <div
               key={partner.name}
