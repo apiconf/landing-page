@@ -8,6 +8,7 @@ import ChatWidget from './components/ChatWidget.tsx';
 import CodeOfConduct from './pages/Code-of-conduct/index.tsx'
 import Confirmation from './components/Confirmation';
 import NotFound from './NotFound.tsx';
+import QR from './pages/Qr/index.tsx'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Redirect from './Redirect.tsx';
@@ -72,6 +73,11 @@ const router = createBrowserRouter([
   {
     path: '/code-of-conduct',
     element: <CodeOfConduct />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/2025qr',
+    element: <QR />,
     errorElement: <NotFound />,
   },
   {
