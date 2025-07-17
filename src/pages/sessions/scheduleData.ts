@@ -679,7 +679,7 @@ export const scheduleData = {
           duration: '30m',
           timeFrame: '2pm',
           type: 'Panel session',
-          panelist: 'Robert (Thas) John, Luc Okalobe, Awonuga Sherif, Stella Agbadu',
+          panelist: 'Robert (Thas) John, Luc Okalobe, Awonuga Sherif, Taiwo Coker',
           host: 'Claret Ibeawuchi',
           color: '#E1EF9A',
         },
@@ -696,7 +696,7 @@ export const scheduleData = {
         },
         {
           id: 'interswitch-15mins-session-sat',
-          title: 'Globarman API Demo',
+          title: 'Globarman API Demo By David',
           timeSlot: '03:05pm - 03:10pm',
           room: 'Ruby Hall',
           duration: '5m',
@@ -762,13 +762,13 @@ export const scheduleData = {
         },
         {
           id: 'microservices-architecture-101-principles-and-best-practices-sat',
-          title: 'Microservices Architecture 101: Principles and Best Practices',
+          title: 'API-first DevOps: Automating API deployments for speed and scale',
           timeSlot: '03:40pm - 04:05pm',
           room: 'Emerald Hall',
           duration: '25m',
           timeFrame: '3pm',
           type: 'session',
-          speaker: 'Glory Olamigoke',
+          speaker: 'Daniel Adeboye',
           color: '#E1EF9A',
         },
         {
