@@ -33,13 +33,13 @@ const sponsors: Sponsors[] = [
   },
   {
     name: 'APItoolkit',
-    logo: '/sponsors/APItoolkit-Logo.png',
+    logo: '/sponsors/monoscope.svg',
     tier: 'Bronze',
     link: 'https://apitoolkit.io/',
   },
   {
     name: 'Yamify',
-    logo: '/sponsors/yamify-black.png',
+    logo: '/sponsors/yamify.svg',
     tier: 'Bronze',
     link: 'https://www.yamify.co/',
   },
