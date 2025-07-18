@@ -191,4 +191,18 @@ export const teams: person[] = [
     employer: '',
     image: '/teams/sodiq.png',
   },
+  {
+    index: 26,
+    name: 'Osuji Prince Victory',
+    jobTitle: 'FrontEnd Developer | Videography and Creative Intern ',
+    employer: '',
+    image: 'https://i.ibb.co/DPXSR171/img-2-1733419695512.webp',
+  },
+  {
+    index: 26,
+    name: 'Kruse',
+    jobTitle: 'Senior Software Engineer',
+    employer: '',
+    image: '/teams/kruse.jpg',
+  },
 ];
