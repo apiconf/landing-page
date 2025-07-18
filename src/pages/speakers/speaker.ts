@@ -506,5 +506,14 @@ export const speakers: person[] = [
     bio: "The Future of APIs in an AI-First World - Will LLMs change how we design, expose, and secure APIs?",
     image: '/Luc-okalobe.jpg',
     sessionFormat: 'Panelist',
-  }
+  },
+  {
+    index: 49,
+    name: 'Claret Ibeawuchi',
+    jobTitle: 'AI Native Fullstack Engineer',
+    employer: 'Dockie AI',
+    bio: "The Future of APIs in an AI-First World - Will LLMs change how we design, expose, and secure APIs?",
+    image: '/claret.jpg',
+    sessionFormat: 'Moderator',
+  },
 ];
