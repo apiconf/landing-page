@@ -635,7 +635,7 @@ export const scheduleData = {
           duration: '5m',
           timeFrame: '2pm',
           type: 'Lightning',
-          speaker: 'David Ekefre',
+          speaker: 'David Ewele',
           color: '#90EAF2',
         },
         {
