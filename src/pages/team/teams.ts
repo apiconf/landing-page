@@ -127,13 +127,13 @@ export const teams: person[] = [
     employer: '',
     image: 'https://i.ibb.co/Xxypr7Pf/IMG-5127.jpg',
   },
-  // {
-  //   index: 18,
-  //   name: 'Victor Okoye',
-  //   jobTitle: 'Software Engineer',
-  //   employer: '',
-  //   image: 'https://i.ibb.co/79dCh1p/IMG-2244.jpg',
-  // },
+  {
+    index: 18,
+    name: 'Victor Okoye',
+    jobTitle: 'Software Engineer',
+    employer: '',
+    image: 'https://i.ibb.co/79dCh1p/IMG-2244.jpg',
+  },
   {
     index: 19,
     name: 'Grace Effiong',
