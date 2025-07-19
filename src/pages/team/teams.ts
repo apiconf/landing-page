@@ -20,7 +20,7 @@ export const teams: person[] = [
     name: 'Bello Kareem',
     jobTitle: 'Data annotator',
     employer: 'hugoinc',
-    image: 'https://i.ibb.co/dJwLB1Nd/93ad1f70-3d9c-4aa5-b762-6a49f9ff62d1.jpg',
+    image: '/teams/kareem.jpg',
   },
   {
     index: 3,

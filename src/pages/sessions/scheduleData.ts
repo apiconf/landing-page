@@ -59,7 +59,8 @@ export const scheduleData = {
         },
         {
           id: 'google-codelab-sat',
-          title: 'Going Multimodal with Agent Development Kit: Personal Expense Assistant with Gemini 2.5',
+          title:
+            'Going Multimodal with Agent Development Kit: Personal Expense Assistant with Gemini 2.5',
           timeSlot: '10:35am - 11:30pm',
           room: 'Emerald Hall',
           duration: '45m',
@@ -223,7 +224,7 @@ export const scheduleData = {
           speaker: 'Justice Anaba',
           color: '#ECC89D',
         },
-          {
+        {
           id: 'async-api-slot-fri',
           title: 'From Ingredients to Output: The AsyncAPI Generator 101',
           timeSlot: '02:00pm - 02:30pm',
@@ -322,7 +323,7 @@ export const scheduleData = {
           speaker: 'Fehintoluwa Dahunsi',
           color: '#ECC89D',
         },
-          {
+        {
           id: 'async-api-slot-fri',
           title: "Contributing to AsyncAPI from a Technical Writer's POV",
           timeSlot: '03:45pm - 4:30pm',
@@ -366,18 +367,18 @@ export const scheduleData = {
           id: 'check-in-sat',
           title: 'Not Just in the Room, At the Table: Inspiring women to lead',
           timeSlot: '08:00am - 08:05am',
-          room: 'Ruby Hall',
+          room: 'Emerald Hall',
           duration: '5m',
           timeFrame: '8am',
           type: 'Women In API',
-          speaker:'Atinuke Oluwabamikemi Kayode',
+          speaker: 'Atinuke Oluwabamikemi Kayode',
           color: '#D8CCFE',
         },
         {
           id: 'check-in-sat',
           title: 'Empowering Women in API: Navigating the Tech Ladder from Developers to Leaders',
           timeSlot: '08:05am - 08:50am',
-          room: 'Ruby Hall',
+          room: 'Emerald Hall',
           duration: '45m',
           timeFrame: '8am',
           panelist: 'Motunrayo Koyejo, Mfonobong Umondia, Olasupo Funke',
@@ -389,7 +390,7 @@ export const scheduleData = {
           id: 'check-in-sat',
           title: 'Women In API - Q & A Session',
           timeSlot: '08:50am - 09:00am',
-          room: 'Ruby Hall',
+          room: 'Emerald Hall',
           duration: '10m',
           timeFrame: '8am',
           type: 'Women In API',
@@ -399,7 +400,7 @@ export const scheduleData = {
           id: 'check-in-sat',
           title: 'Women In API - Group Pictures, Closing remarks',
           timeSlot: '09:00am - 09:10am',
-          room: 'Ruby Hall',
+          room: 'Emerald Hall',
           duration: '10m',
           timeFrame: '9am',
           type: 'Women In API',
@@ -417,7 +418,7 @@ export const scheduleData = {
         },
         {
           id: "mehdi's-keynote-session-sat",
-          title: "The API Mindset for Mass Innovation",
+          title: 'The API Mindset for Mass Innovation',
           timeSlot: '09:30am - 09:45am',
           room: 'Ruby Hall',
           duration: '15m',
@@ -635,7 +636,7 @@ export const scheduleData = {
           duration: '5m',
           timeFrame: '2pm',
           type: 'Lightning',
-          speaker: 'David Ekefre',
+          speaker: 'David Ewele',
           color: '#90EAF2',
         },
         {
@@ -659,8 +660,8 @@ export const scheduleData = {
           type: 'Lightning',
           speaker: 'Paul Adams',
           color: '#90EAF2',
-        },       
-         {
+        },
+        {
           id: 'interswitch-15mins-session-sat',
           title: 'Interswitch API Demo',
           timeSlot: '02:15pm - 02:25pm',
@@ -672,8 +673,9 @@ export const scheduleData = {
           color: '#90EAF2',
         },
         {
-          id: 'panel-sessionnnnnnnn-!!!!-sat', 
-          title: 'The Future of APIs in an AI-First World - Will LLMs change how we design, expose, and secure APIs?',
+          id: 'panel-sessionnnnnnnn-!!!!-sat',
+          title:
+            'The Future of APIs in an AI-First World - Will LLMs change how we design, expose, and secure APIs?',
           timeSlot: '02:25pm - 02:55pm',
           room: 'Ruby Hall',
           duration: '30m',
@@ -815,7 +817,7 @@ export const scheduleData = {
           speaker: 'Ayantunji Timilehin',
           color: '#90EAF2',
         },
-          {
+        {
           id: 'interswitch-15mins-session-sat',
           title: 'Closing By APIConf',
           timeSlot: '04:30pm - 05:00pm',
