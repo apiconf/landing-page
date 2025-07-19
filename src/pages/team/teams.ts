@@ -205,4 +205,11 @@ export const teams: person[] = [
     employer: '',
     image: '/teams/kruse.jpg',
   },
+  {
+    index: 26,
+    name: 'Ajiboye Toluwanimi Elijah',
+    jobTitle: 'Social Media Manager',
+    employer: 'Web3 Global Conference LLC',
+    image: '/teams/tolu.jpg',
+  },
 ];
