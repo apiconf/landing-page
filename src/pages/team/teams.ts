@@ -20,7 +20,7 @@ export const teams: person[] = [
     name: 'Bello Kareem',
     jobTitle: 'Data annotator',
     employer: 'hugoinc',
-    image: 'https://i.ibb.co/dJwLB1Nd/93ad1f70-3d9c-4aa5-b762-6a49f9ff62d1.jpg',
+    image: '/teams/kareem.jpg',
   },
   {
     index: 3,
@@ -204,5 +204,12 @@ export const teams: person[] = [
     jobTitle: 'Senior Software Engineer',
     employer: '',
     image: '/teams/kruse.jpg',
+  },
+  {
+    index: 26,
+    name: 'Ajiboye Toluwanimi Elijah',
+    jobTitle: 'Social Media Manager',
+    employer: 'Web3 Global Conference LLC',
+    image: '/teams/tolu.jpg',
   },
 ];
