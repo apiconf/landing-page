@@ -3,12 +3,13 @@ import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import App from './App.tsx';
+
 import { AppContextProvider } from './context';
 import ChatWidget from './components/ChatWidget.tsx';
-import CodeOfConduct from './pages/Code-of-conduct/index.tsx'
+import CodeOfConduct from './pages/Code-of-conduct/index.tsx';
 import Confirmation from './components/Confirmation';
 import NotFound from './NotFound.tsx';
-import QR from './pages/Qr/index.tsx'
+import QR from './pages/Qr/index.tsx';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Redirect from './Redirect.tsx';
@@ -16,12 +17,18 @@ import Sessions from './pages/sessions/index.tsx';
 import Speakers from './pages/speakers';
 import Sponsors from './pages/sponsors/index.tsx';
 import Teams from './pages/team';
+import App2025 from './pages/2025/index.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     errorElement: <NotFound />,
+  },
+  {
+    path: '/2025',
+    errorElement: <NotFound />,
+    children: App2025,
   },
   {
     path: '/sponsors',
