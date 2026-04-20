@@ -1,0 +1,20 @@
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hideScrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.embla__viewport {
+  @apply md:pb-36 xl:pb-44;
+}
+
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+  padding-inline: calc(var(--slide-spacing) * 1);
+  gap: var(--slide-spacing);
+}

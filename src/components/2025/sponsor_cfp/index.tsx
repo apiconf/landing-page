@@ -30,7 +30,7 @@ export default function Sponsor() {
       buttonText: 'View Sponsorship Deck',
       buttonTextsm: 'Sponsor',
       additionalButtonClassName: 'bg-[#2F20BF] text-white',
-      link: '/sponsor',
+      link: '/2025/sponsor',
     },
     // {
     //   title: "Speak at the 2025 Edition",
