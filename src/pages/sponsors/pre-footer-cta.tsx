@@ -16,14 +16,14 @@ export default function PreFooterCta() {
         </div>
       </div> */}
       <div className="mt-20 text-[#1F1F1F] md:mt-32">
-        <span className="text-4xl font-bold md:text-5xl">Sponsor APIConf Lagos 2025</span>
+        <span className="text-4xl font-bold md:text-5xl">Sponsor APIConf Lagos 2026</span>
         <p className="mb-12 mt-4 max-w-[37.5rem] text-pretty text-2xl font-medium">
           Get access to an engaged audience and give your brand visibility! Partner with the leading
           API Conference in Africa
         </p>
         <div className="flex flex-col gap-x-8 gap-y-12 md:flex-row">
           <a
-            href="https://docs.google.com/presentation/d/1DtU1WKhuVRtVoCCc0FD7l3PYzHHEZ6alI_a1HboUdyo/edit"
+            href="https://drive.google.com/file/d/1i5eUM2ZHzFrKOaQ1TFo9snj06I6N8Av3/view"
             rel="noopener noreferrer"
             target="_blank"
             className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-[20rem] bg-[#2F20BF] p-6 sm:px-4 sm:py-8 md:w-fit md:px-16 lg:py-8"

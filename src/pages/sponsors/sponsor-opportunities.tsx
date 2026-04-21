@@ -107,7 +107,7 @@ export default function SponsorOpportunities() {
           </p>
           <div className="flex w-full flex-col gap-x-8 gap-y-12 md:mx-auto md:w-fit md:flex-row">
             <a
-              href="https://docs.google.com/presentation/d/1DtU1WKhuVRtVoCCc0FD7l3PYzHHEZ6alI_a1HboUdyo/edit"
+              href="https://drive.google.com/file/d/1i5eUM2ZHzFrKOaQ1TFo9snj06I6N8Av3/view"
               rel="noopener noreferrer"
               target="_blank"
               className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-[20rem] bg-[#E1EF9A] p-6 sm:px-4 sm:py-8 md:w-fit md:px-16 lg:py-8"

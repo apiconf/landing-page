@@ -36,7 +36,7 @@ export default function Hero() {
               ease: 'easeOut',
               delay: 0.2,
             }}
-            className="mb-[-5px] text-xl font-bold hero-fluid-heading 3xl:text-[64px] leading-none align-middle xl:"
+            className="hero-fluid-heading xl: mb-[-5px] align-middle text-xl font-bold leading-none 3xl:text-[64px]"
           >
             API Conference Lagos
           </motion.h1>
@@ -47,12 +47,10 @@ export default function Hero() {
             transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
             className="flex flex-col space-y-3 lg:hidden"
           >
-            <p className="text-lg font-bold text-white md:text-2xl">
-              18th - 19th July 2025
-            </p>
+            <p className="text-lg font-bold text-white md:text-2xl">25th July 2026</p>
             <div>
               <p className="text-base font-bold text-white md:text-lg">The Zone</p>
-              <p className="text-sm text-gray-200 leading-tight">
+              <p className="text-gray-200 text-sm leading-tight">
                 Gbagada Industrial Scheme, Lagos
               </p>
             </div>
@@ -66,33 +64,33 @@ export default function Hero() {
             ref={buttonsRef}
             animate={isButtonsVisible ? 'visible' : 'hidden'}
             variants={buttonContainerVariants}
-            className="relative z-40 flex sm:flex-row flex-wrap flex-col gap-2 2xl:gap-4 !mt-14"
+            className="relative z-40 !mt-14 flex flex-col flex-wrap gap-2 sm:flex-row 2xl:gap-4"
           >
-            <motion.a href="/register" target='_blank' variants={buttonVariants}>
-              <button className="relative z-50 w-full cursor-pointer  bg-[#E1EF9A] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full hover:shadow-lg transition-shadow">
+            <motion.a href="/register" target="_blank" variants={buttonVariants}>
+              <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#E1EF9A] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 Register To Attend
               </button>
             </motion.a>
 
-            <motion.a href="/speakers" variants={buttonVariants}>
-              <button className="relative z-50 w-full cursor-pointer  bg-[#ECC89D] text-primary-black font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full hover:shadow-lg transition-shadow">
+            {/* <motion.a href="/speakers" variants={buttonVariants}>
+              <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#ECC89D] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 See All Speakers
               </button>
-            </motion.a>
+            </motion.a> */}
 
-            <motion.a href="/schedule" variants={buttonVariants}>
-              <button className="text-md relative z-50 w-full cursor-pointer  rounded-full bg-[#90EAF2] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
+            {/* <motion.a href="/schedule" variants={buttonVariants}>
+              <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#90EAF2] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 See Event Schedule
               </button>
-            </motion.a>
+            </motion.a> */}
 
-            <motion.a href="/sponsors/form" variants={buttonVariants} target='_blank'>
-              <button className="relative z-50 w-full cursor-pointer  bg-[#FFFFFF] text-[#2F20BF] font-bold text-md md:text-lg 2xl:text-2xl py-2 2xl:py-4 px-4 2xl:px-8 rounded-full hover:shadow-lg transition-shadow">
+            <motion.a href="/sponsors/form" variants={buttonVariants} target="_blank">
+              <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#FFFFFF] px-4 py-2 font-bold text-[#2F20BF] transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 Become A Sponsor
               </button>
             </motion.a>
 
-            <motion.a
+            {/* <motion.a
               href="/teams"
               variants={buttonVariants}
               target="_blank"
@@ -101,7 +99,7 @@ export default function Hero() {
               <button className="text-md relative z-50 w-full cursor-pointer whitespace-nowrap rounded-full bg-[#ECC89D] px-4 py-2 font-bold text-[#2F20BF] transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 Meet the Team
               </button>
-            </motion.a>
+            </motion.a> */}
           </motion.div>
         </div>
 
@@ -120,10 +118,10 @@ export default function Hero() {
                 }}
                 className="mb-[-5px] align-middle text-[1.75rem] font-bold leading-none lg:text-[2.125rem] 3xl:text-[2.25rem]"
               >
-                18th - 19th July 2025
+                25th July 2026
               </motion.p>
             </div>
-            
+
             <div>
               <p>Venue</p>
               <motion.div
@@ -139,7 +137,7 @@ export default function Hero() {
                 <p className="text-[1.25rem] font-bold leading-tight lg:text-[1.5rem] 3xl:text-[1.75rem]">
                   The Zone
                 </p>
-                <p className="text-sm font-normal leading-[1.4] text-gray-200 lg:text-base 3xl:text-lg">
+                <p className="text-gray-200 text-sm font-normal leading-[1.4] lg:text-base 3xl:text-lg">
                   Gbagada Industrial Scheme, Lagos
                 </p>
               </motion.div>
@@ -150,7 +148,7 @@ export default function Hero() {
       <Marquee autoFill={true} className="relative z-30 flex w-full overflow-hidden bg-white py-3">
         <h4 className="flex items-center justify-between">
           <span className="mx-8 text-4xl font-bold lg:text-[64px] lg:leading-[52.52px]">
-            API Conference Lagos 2025
+            API Conference Lagos 2026
           </span>
           <img src={scrollImg} alt="" className="w-[56.6px]" />
         </h4>
