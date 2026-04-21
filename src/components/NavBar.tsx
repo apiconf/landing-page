@@ -17,13 +17,13 @@ export default function NavBar() {
           ease: [0, 0, 0.25, 1],
           delay: 0.5,
         }}
-        className="flex items-center gap-x-10 sm:gap-x-20 justify-between py-4 px-[3.98%] md:px-[7.4074%] border-b border-solid border-[#251377]"
+        className="flex items-center justify-between gap-x-10 border-b border-solid border-[#251377] px-[3.98%] py-4 sm:gap-x-20 md:px-[7.4074%]"
       >
         <Link to="/" rel="noopener noreferrer">
-          <img className="w-full max-w-[155.36px] h-auto" src="/logo2025.svg" alt="apiconf logo" />
+          <img className="h-auto w-full max-w-[155.36px]" src="/logo2026.svg" alt="apiconf logo" />
         </Link>
 
-        <ul className="flex gap-x-4 sm:gap-x-8 items-center text-white font-bold text-lg lg:text-2xl leading-none">
+        <ul className="flex items-center gap-x-4 text-lg font-bold leading-none text-white sm:gap-x-8 lg:text-2xl">
           <li>
             {' '}
             <a href="/#spaces" rel="noopener noreferrer" className="">
@@ -36,7 +36,7 @@ export default function NavBar() {
               FAQs
             </a>
           </li>
-          <li className='hidden sm:block'>
+          <li className="hidden sm:block">
             {' '}
             <a href="/teams" rel="noopener noreferrer" className="whitespace-nowrap">
               Meet the team

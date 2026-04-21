@@ -43,18 +43,18 @@ const router = createBrowserRouter([
   {
     path: '/sponsor',
     element: (
-      <Redirect to="https://docs.google.com/presentation/d/1DtU1WKhuVRtVoCCc0FD7l3PYzHHEZ6alI_a1HboUdyo/edit" />
+      <Redirect to="https://drive.google.com/file/d/1i5eUM2ZHzFrKOaQ1TFo9snj06I6N8Av3/view" />
     ),
     errorElement: <NotFound />,
   },
   {
     path: '/register',
-    element: <Redirect to="https://lu.ma/ltp8u2bb" />,
+    element: <Redirect to="https://luma.com/588n962h" />,
     errorElement: <NotFound />,
   },
   {
     path: '/cfp',
-    element: <Redirect to="https://sessionize.com/api-conf-lagos-2025/" />,
+    element: <Redirect to="https://sessionize.com/api-conf-lagos-2026/" />,
     errorElement: <NotFound />,
   },
   {
