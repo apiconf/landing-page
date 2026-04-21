@@ -14,7 +14,7 @@ export default function Recap() {
           /> */}
           <iframe
             className="h-full w-full"
-            src="https://www.youtube.com/embed/n27XIo2J9tA?si=tDrOnm2oYFG9cwk_"
+            src="https://www.youtube.com/embed/YgjzPyGBPQk?si=yteuYiIlT4Xd_poD"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
