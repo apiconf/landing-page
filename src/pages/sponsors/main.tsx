@@ -7,13 +7,13 @@ export default function Main() {
             <h1 className="text-balance font-sans text-4xl font-bold leading-[100%] tracking-[-0.045rem] text-primary-black sm:text-5xl md:text-[3.5rem] md:tracking-[-0.08rem] lg:text-[4rem]">
               API Conference Lagos,
               <br />
-              2025 Sponsorship.
+              2026 Sponsorship.
             </h1>
             <div className="mt-4 flex max-w-fit flex-1 flex-col items-end justify-end md:mt-8">
               <p className="font-base font-sans text-3xl text-primary-black md:text-4xl lg:text-5xl">
                 July
-                <time dateTime="2025-07-18"> 18th</time> - <time dateTime="2025-07-19">19th</time>,
-                2025
+                {/* <time dateTime="2025-07-18"> 18th</time> - <time dateTime="2025-07-19">19th</time>, */}
+                <time dateTime="2026-07-25"> 25th</time>, 2026
               </p>
             </div>
           </div>

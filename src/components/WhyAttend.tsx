@@ -14,7 +14,10 @@ const WhyAttend = () => {
   const isImgVisible = useIsVisible(imgRef);
 
   return (
-    <div className="bg-white px-[5.9701%] md:px-[7.4074%] py-[82px] md:py-16 flex flex-col md:flex-row items-center gap-16 sm:gap-x-20" id="about">
+    <div
+      className="flex flex-col items-center gap-16 bg-white px-[5.9701%] py-[82px] sm:gap-x-20 md:flex-row md:px-[7.4074%] md:py-16"
+      id="about"
+    >
       <div className="flex-1 space-y-8">
         <motion.span
           ref={eventDetailsRef}
@@ -24,7 +27,7 @@ const WhyAttend = () => {
             duration: 1,
             ease: [0, 0, 0.25, 1],
           }}
-          className="w-[148px] h-[28px] bg-[#FFF] border border-solid border-[#F7E7D4] shadow-[inset_0_0_12px_0_#ECC89D] rounded-2xl flex justify-center items-center text-lg text-[#6E6E6E] font-bold leading-none"
+          className="flex h-[28px] w-[148px] items-center justify-center rounded-2xl border border-solid border-[#F7E7D4] bg-[#FFF] text-lg font-bold leading-none text-[#6E6E6E] shadow-[inset_0_0_12px_0_#ECC89D]"
         >
           EVENT DETAILS
         </motion.span>
@@ -36,7 +39,7 @@ const WhyAttend = () => {
             duration: 1,
             ease: [0, 0, 0.25, 1],
           }}
-          className="font-bold text-3xl lg:text-5xl"
+          className="text-3xl font-bold lg:text-5xl"
         >
           Why Attend?
         </motion.h3>
@@ -50,8 +53,10 @@ const WhyAttend = () => {
           }}
           className="max-w-[600px]"
         >
-API Conf Lagos 2025 is Africa’s premier API literacy and innovation conference, uniting experts and industry leaders to drive digital transformation. This is an opportunity to explore real-world use cases, engage with leaders and disruptors in the ecosystem, and gain insights that will shape the future of technology.
-
+          API Conf Lagos 2026 is Africa&apos;s premier API literacy and innovation conference,
+          uniting experts and industry leaders to drive digital transformation. This is an
+          opportunity to explore real-world use cases, engage with leaders and disruptors in the
+          ecosystem, and gain insights that will shape the future of technology.
         </motion.p>
       </div>
 
