@@ -82,18 +82,18 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
             </Link>
             <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
           </li>
-          <li className={footerDetailStyle.link}>
+          {/* <li className={footerDetailStyle.link}>
             <Link to="/schedule" className={footerDetailStyle.linkText}>
               Event Schedule
             </Link>
             <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
-          </li>
-          <li className={footerDetailStyle.link}>
+          </li> */}
+          {/* <li className={footerDetailStyle.link}>
             <a href="/speakers" className={footerDetailStyle.linkText}>
               speakers
             </a>
             <img className={footerDetailStyle.linkIcon} src={arrow} alt="arrow-icon" />
-          </li>
+          </li> */}
         </motion.ul>
         <motion.div
           ref={footerSaluteRef}
@@ -108,7 +108,7 @@ const FooterDetails = ({ newYear }: { newYear?: boolean }) => {
           }}
           className={footerDetailStyle.footerSalute}
         >
-          <img src={newYear ? '/logo2025.svg' : conf2024} alt="api_conference_logo" />
+          <img src={newYear ? '/logo2026.svg' : conf2024} alt="api_conference_logo" />
           <div className={footerDetailStyle.salutation}>
             <p>made with love,</p>
             <p>{newYear ? currentYear : '2024'} API conference team</p>

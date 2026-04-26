@@ -25,7 +25,7 @@ export default function Sponsor() {
 
   const cards = [
     {
-      title: 'Sponsor APIConf Lagos 2025',
+      title: 'Sponsor APIConf Lagos 2026',
       description: 'Learn more details to sponsor API Conference',
       buttonText: 'View Sponsorship Deck',
       buttonTextsm: 'Sponsor',
