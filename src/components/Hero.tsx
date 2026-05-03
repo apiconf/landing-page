@@ -48,12 +48,12 @@ export default function Hero() {
             className="flex flex-col space-y-3 lg:hidden"
           >
             <p className="text-lg font-bold text-white md:text-2xl">25th July 2026</p>
-            <div>
+            {/* <div>
               <p className="text-base font-bold text-white md:text-lg">The Zone</p>
               <p className="text-gray-200 text-sm leading-tight">
                 Gbagada Industrial Scheme, Lagos
               </p>
-            </div>
+            </div> */}
           </motion.div>
           <motion.p className="max-w-[640px] text-lg font-normal leading-[22px]">
             Elevating API Literacy for Mass Innovation.
@@ -122,7 +122,7 @@ export default function Hero() {
               </motion.p>
             </div>
 
-            <div>
+            {/* <div>
               <p>Venue</p>
               <motion.div
                 initial={{ y: 30, opacity: 0 }}
@@ -141,7 +141,7 @@ export default function Hero() {
                   Gbagada Industrial Scheme, Lagos
                 </p>
               </motion.div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
