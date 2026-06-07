@@ -3,7 +3,7 @@ import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import App from './App.tsx';
-
+import App2025 from './pages/2025/index.tsx';
 import { AppContextProvider } from './context';
 import ChatWidget from './components/ChatWidget.tsx';
 import CodeOfConduct from './pages/Code-of-conduct/index.tsx';
@@ -17,7 +17,6 @@ import Sessions from './pages/sessions/index.tsx';
 import Speakers from './pages/speakers';
 import Sponsors from './pages/sponsors/index.tsx';
 import Teams from './pages/team';
-import App2025 from './pages/2025/index.tsx';
 
 const router = createBrowserRouter([
   {
@@ -55,6 +54,11 @@ const router = createBrowserRouter([
   {
     path: '/cfp',
     element: <Redirect to="https://sessionize.com/api-conf-lagos-2026/" />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/workshop',
+    element: <Redirect to="https://meetumo.ai/e/api-conf-lagos-workshop-2026" />,
     errorElement: <NotFound />,
   },
   {
