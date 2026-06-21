@@ -11,7 +11,7 @@ import Sponsor from './components/sponsor_cfp/index';
 import SponsorList from './components/SponsorList';
 import WhyAttend from './components/WhyAttend';
 
-// import SpeakersInHome from './components/speaker';
+import SpeakersInHome from './components/speaker';
 
 
 
@@ -92,7 +92,7 @@ export default function App() {
       <Spaces spaces={spaceItems} />
       <SponsorList />
       <Events />
-      {/* <SpeakersInHome /> */}
+      <SpeakersInHome />
       <Sponsor />
       <Footer />
     </div>
