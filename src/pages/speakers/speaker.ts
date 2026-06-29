@@ -235,4 +235,22 @@ export const speakers: person[] = [
     image: 'https://sessionize.com/image/3740-400o400o1-DMEyK4cyRS3hQUKdHDgT7C.jpg',
     sessionFormat: 'Session',
   },
+  {
+    index: 25,
+    name: 'Peterson Nwoko',
+    jobTitle: 'Senior Cloud Engineer',
+    employer: 'Wolters Kluwer',
+    bio: 'From Prompts to Autonomous Systems: Architecting Production-Ready AI Agents on Google Cloud',
+    image: 'https://sessionize.com/image/3634-400o400o1-DTJHje4NZwykabHb4dtunh.jpg',
+    sessionFormat: 'Keynote',
+  },
+  {
+    index: 26,
+    name: 'Ayomide Ariyo',
+    jobTitle: 'Senior Software Engineer',
+    employer: 'Selar',
+    bio: 'The Assumptions That Break APIs in Production',
+    image: 'https://sessionize.com/image/6caa-400o400o1-MmzkeKEdNGWvKHEUrXUmD3.jpg',
+    sessionFormat: 'Lightning talk',
+  },
 ];
