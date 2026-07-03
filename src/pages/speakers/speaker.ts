@@ -66,15 +66,6 @@ export const speakers: person[] = [
   },
   {
     index: 6,
-    name: 'Mustapha Rufai',
-    jobTitle: 'Software Engineer',
-    employer: '',
-    bio: 'The Zombie API: A Performance Forensics Guide to Finding and Killing your API Bottlenecks',
-    image: 'https://sessionize.com/image/8f54-400o400o1-hnBaf77doRjnxYPeEYtX31.jpg',
-    sessionFormat: 'Workshop',
-  },
-  {
-    index: 7,
     name: 'Tes Sal',
     jobTitle: 'Cybersecurity Specialist',
     employer: 'PureSec Agency',
@@ -83,7 +74,7 @@ export const speakers: person[] = [
     sessionFormat: 'Workshop',
   },
   {
-    index: 8,
+    index: 7,
     name: 'Abdulqudus Abubakre',
     jobTitle: 'Front end developer',
     employer: '',
@@ -92,7 +83,7 @@ export const speakers: person[] = [
     sessionFormat: 'Workshop',
   },
   {
-    index: 9,
+    index: 8,
     name: 'Usman Soliu',
     jobTitle: 'Technical Lead',
     employer: '',
@@ -101,7 +92,7 @@ export const speakers: person[] = [
     sessionFormat: 'Workshop',
   },
   {
-    index: 10,
+    index: 9,
     name: 'Nasihudeen Jimoh',
     jobTitle: 'Developer Experience Engineer',
     employer: '',
@@ -110,7 +101,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 11,
+    index: 10,
     name: 'Ibukun Adedeji',
     jobTitle: 'Product Lead',
     employer: 'Moniepoint',
@@ -119,7 +110,7 @@ export const speakers: person[] = [
     sessionFormat: 'Lightning talk',
   },
   {
-    index: 12,
+    index: 11,
     name: 'Obi Uchenna David',
     jobTitle: 'Associate Vice President, Engineering',
     employer: 'Cowrywise',
@@ -128,7 +119,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 13,
+    index: 12,
     name: 'Onyedikachi Hope Amaechi-Okorie',
     jobTitle: 'Technical Community Advocate',
     employer: 'JSON Schema & AI Ethics Researcher, Aula Fellowship for AI Science, Tech, and Policy',
@@ -137,7 +128,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 14,
+    index: 13,
     name: 'Joel Olawanle',
     jobTitle: 'Software Engineer & Technical Writer',
     employer: '',
@@ -146,7 +137,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 15,
+    index: 14,
     name: 'Amarachi Iheanacho',
     jobTitle: 'Developer Advocate for Eyer',
     employer: '',
@@ -155,7 +146,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 16,
+    index: 15,
     name: 'Cindy Shontan',
     jobTitle: 'Lead Product Designer',
     employer: '',
@@ -164,7 +155,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 17,
+    index: 16,
     name: 'Chigozie Madubuko',
     jobTitle: 'Team Lead, Senior Software Engineer',
     employer: 'Kora',
@@ -173,7 +164,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 18,
+    index: 17,
     name: 'Oluwatoni Akinmolayan',
     jobTitle: 'Senior Software Engineer',
     employer: 'Busha',
@@ -182,7 +173,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 19,
+    index: 18,
     name: 'Motunrayo Koyejo',
     jobTitle: 'Software Engineer',
     employer: '',
@@ -191,7 +182,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 20,
+    index: 19,
     name: 'Ifeanyi Echereobia',
     jobTitle: 'Technical Business Analyst',
     employer: 'Guaranty Trust Bank',
@@ -200,7 +191,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 21,
+    index: 20,
     name: 'Jamiu Adam',
     jobTitle: 'Senior Backend Engineer',
     employer: 'Deel',
@@ -209,7 +200,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 22,
+    index: 21,
     name: 'Somtochi Onyekwere',
     jobTitle: 'Software Engineer',
     employer: 'Fly.io',
@@ -218,7 +209,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 23,
+    index: 22,
     name: 'Kelechi Oliver Azorji',
     jobTitle: 'Software Engineer',
     employer: '',
@@ -227,7 +218,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 24,
+    index: 23,
     name: 'Progress Ochuko Eyaadah (Koxy)',
     jobTitle: 'Blockchain Engineer',
     employer: '',
@@ -236,7 +227,7 @@ export const speakers: person[] = [
     sessionFormat: 'Session',
   },
   {
-    index: 25,
+    index: 24,
     name: 'Peterson Nwoko',
     jobTitle: 'Senior Cloud Engineer',
     employer: 'Wolters Kluwer',
@@ -245,12 +236,21 @@ export const speakers: person[] = [
     sessionFormat: 'Keynote',
   },
   {
-    index: 26,
+    index: 25,
     name: 'Ayomide Ariyo',
     jobTitle: 'Senior Software Engineer',
     employer: 'Selar',
     bio: 'The Assumptions That Break APIs in Production',
     image: 'https://sessionize.com/image/6caa-400o400o1-MmzkeKEdNGWvKHEUrXUmD3.jpg',
     sessionFormat: 'Lightning talk',
+  },
+  {
+    index: 26,
+    name: 'Timothy Ogunwemimo',
+    jobTitle: 'Cloud Engineer',
+    employer: 'Appspace',
+    bio: 'Building Robust, Secure, and Scalable API Infrastructure with Microsoft Azure Services',
+    image: 'https://cdn.sessionize.com/image/6674-400o400o1-BzUhJSwDN3TMdiAeJjAnHW.jpg',
+    sessionFormat: 'Workshop',
   },
 ];
