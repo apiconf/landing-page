@@ -3,11 +3,9 @@ import NavBar from '@/components/2025/NavBar';
 import { Schedule } from './schedule';
 import ScrollToAnchor from '@/components/2025/ScrollToAnchor';
 import { useEffect } from 'react';
-import { useSchedule } from '@/hooks/useSchedule';
+import { scheduleData } from './scheduleData';
 
 const Main = () => {
-  const { scheduleData } = useSchedule();
-
   return (
     <main className="">
       <div className="">
