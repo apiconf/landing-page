@@ -95,7 +95,9 @@ export const DayColumn = ({ day }: DayColumnProps) => {
   const renderSessions = (grouped: Record<string, SessionDetails[]>) => {
     return Object.entries(grouped).map(([key, group]) => {
       const hasGridableItems = group.some(session => 
-        session.type === 'session' || session.type === 'workshop'
+        session.type === 'session' ||
+        session.type === 'workshop' ||
+        session.type === 'Lightning'
       );
 
       if (!hasGridableItems || (group.length === 1 && !hasGridableItems)) {
