@@ -1,6 +1,7 @@
 import { CtaButton } from './CtaButton';
 import { FadeIn } from './FadeIn';
 import { LINKS } from './constants';
+import { PAGE_GUTTER } from './layout';
 
 export function ClosingCta() {
   return (
@@ -9,12 +10,12 @@ export function ClosingCta() {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(225,239,154,0.12),transparent_60%)]"
       />
-      <div className="relative z-10 mx-auto max-w-5xl px-[5.9701%] py-20 text-center md:px-[7.4074%] md:py-28">
+      <div className={`relative z-10 ${PAGE_GUTTER} py-20 text-center md:py-28`}>
         <FadeIn>
           <h2 className="mb-6 text-3xl font-bold leading-tight text-white md:text-5xl">
             Ready to build?
           </h2>
-          <p className="mx-auto mb-4 max-w-2xl text-lg leading-relaxed text-white/85">
+          <p className="mx-auto mb-4 max-w-4xl text-lg leading-relaxed text-white/85">
             Whether you&apos;re building your first side project or your next big startup, this is
             your opportunity to create something meaningful, experiment with AI, and showcase your
             work to hundreds of developers, founders, and technology leaders.
