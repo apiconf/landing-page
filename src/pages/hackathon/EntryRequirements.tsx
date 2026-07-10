@@ -29,7 +29,7 @@ export function EntryRequirements() {
         <li className="pl-2">Be submitted by 12pm WAT on July 21, 2026.</li>
       </ol>
 
-      <div className="max-w-2xl border-l-4 border-[#90EAF2] pl-5">
+      <div className="max-w-4xl border-l-4 border-[#90EAF2] pl-5">
         <p className="text-lg leading-relaxed text-white/90">
           <span className="font-bold text-white">Note:</span> You must be a registered attendee of
           API Conference Lagos 2026 and attend in person to qualify. Winners will be announced live
