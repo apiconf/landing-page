@@ -8,6 +8,7 @@ import { AppContextProvider } from './context';
 import ChatWidget from './components/ChatWidget.tsx';
 import CodeOfConduct from './pages/Code-of-conduct/index.tsx';
 import Confirmation from './components/Confirmation';
+import Hackathon from './pages/hackathon/index.tsx';
 import NotFound from './NotFound.tsx';
 import QR from './pages/Qr/index.tsx';
 import React from 'react';
@@ -84,6 +85,11 @@ const router = createBrowserRouter([
   {
     path: '/code-of-conduct',
     element: <CodeOfConduct />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/hackathon',
+    element: <Hackathon />,
     errorElement: <NotFound />,
   },
   {
