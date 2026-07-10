@@ -19,8 +19,13 @@ export function Hero() {
         </FadeIn>
 
         <FadeIn onMount delay={0.1}>
-          <h1 className="hero-fluid-heading mb-6 max-w-5xl font-bold leading-none text-white">
-            Build With Monnify
+          <h1 className="hero-fluid-heading mb-6 flex max-w-5xl flex-wrap items-center gap-x-3 gap-y-2 font-bold leading-none text-white md:gap-x-4">
+            <span>Build With</span>
+            <img
+              src="/hackathon/monnify-logo-on-dark.svg"
+              alt="Monnify"
+              className="h-[0.85em] w-auto max-w-[min(100%,280px)] md:max-w-[min(100%,360px)]"
+            />
           </h1>
         </FadeIn>
 
@@ -38,7 +43,7 @@ export function Hero() {
           className="mb-10 max-w-4xl text-lg leading-relaxed text-white/85"
         >
           We&apos;ve partnered with Monnify Payment Gateway to bring you the official API Conference
-          Lagos 2026 Developer Challenge. Build an application powered by Monnify APIs — win up to
+          Lagos 2026 Developer Challenge. Build an application powered by Monnify APIs and win up to
           ₦800,000, exclusive swag, and recognition from Africa&apos;s leading payment gateway.
         </FadeIn>
 
@@ -46,9 +51,19 @@ export function Hero() {
           <CtaButton href={LINKS.monnifyApp} external>
             Get Sandbox Keys
           </CtaButton>
-          <CtaButton href={LINKS.register} variant="white">
-            Register To Attend
-          </CtaButton>
+          {LINKS.hackathonForm ? (
+            <CtaButton href={LINKS.hackathonForm} variant="white" external>
+              Join the Hackathon
+            </CtaButton>
+          ) : (
+            <button
+              type="button"
+              disabled
+              className="w-full cursor-not-allowed rounded-full bg-white/70 px-6 py-3 text-lg font-bold text-[#2F20BF] sm:w-auto md:px-8 md:py-4 md:text-xl"
+            >
+              Join the Hackathon
+            </button>
+          )}
         </FadeIn>
       </div>
     </section>
