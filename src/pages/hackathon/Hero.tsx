@@ -22,9 +22,9 @@ export function Hero() {
           <h1 className="hero-fluid-heading mb-6 flex max-w-5xl flex-wrap items-center gap-x-3 gap-y-2 font-bold leading-none text-white md:gap-x-4">
             <span>Build With</span>
             <img
-              src="/hackathon/monnify-logo-on-dark.svg"
+              src="/hackathon/monnify-logo-white.png"
               alt="Monnify"
-              className="h-[0.85em] w-auto max-w-[min(100%,280px)] md:max-w-[min(100%,360px)]"
+              className="h-[0.85em] w-auto max-w-[min(100%,280px)] md:max-w-[min(100%,420px)]"
             />
           </h1>
         </FadeIn>
