@@ -25,9 +25,19 @@ export function ClosingCta() {
             <CtaButton href={LINKS.monnifyApp} external>
               Get Sandbox Keys
             </CtaButton>
-            <CtaButton href={LINKS.register} variant="white">
-              Register To Attend
-            </CtaButton>
+            {LINKS.hackathonForm ? (
+              <CtaButton href={LINKS.hackathonForm} variant="white" external>
+                Join the Hackathon
+              </CtaButton>
+            ) : (
+              <button
+                type="button"
+                disabled
+                className="w-full cursor-not-allowed rounded-full bg-white/70 px-6 py-3 text-lg font-bold text-[#2F20BF] sm:w-auto md:px-8 md:py-4 md:text-xl"
+              >
+                Join the Hackathon
+              </button>
+            )}
           </div>
           <p className="mt-8 text-base text-white/70">We can&apos;t wait to see what you create.</p>
         </FadeIn>

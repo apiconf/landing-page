@@ -1,4 +1,4 @@
-import { LINKS } from './constants';
+import { HASHTAGS, LINKS } from './constants';
 import { Section } from './Section';
 
 export function EntryRequirements() {
@@ -23,8 +23,14 @@ export function EntryRequirements() {
           if you help others out while you&apos;re in that channel.
         </li>
         <li className="pl-2">
-          Share on social media with the hashtag{' '}
-          <span className="font-bold text-[#ECC89D]">#APIConfMonnifyDeveloperChallenge</span>.
+          Share on social media with{' '}
+          {HASHTAGS.map((tag, i) => (
+            <span key={tag}>
+              {i > 0 ? ' and ' : null}
+              <span className="font-bold text-[#ECC89D]">{tag}</span>
+            </span>
+          ))}
+          .
         </li>
         <li className="pl-2">Be submitted by 12pm WAT on July 21, 2026.</li>
       </ol>
@@ -34,11 +40,8 @@ export function EntryRequirements() {
           <span className="font-bold text-white">Note:</span> You must be a registered attendee of
           API Conference Lagos 2026 and attend in person to qualify. Winners will be announced live
           on stage.{' '}
-          <a
-            href={LINKS.register}
-            className="font-bold text-[#90EAF2] underline underline-offset-4"
-          >
-            Register at apiconf.net
+          <a href={LINKS.register} className="font-bold text-[#90EAF2] underline underline-offset-4">
+            Get your conference ticket
           </a>
         </p>
       </div>

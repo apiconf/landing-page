@@ -3,7 +3,11 @@ export const LINKS = {
   monnifyDocs: 'https://developers.monnify.com/',
   monnifyYoutube: 'https://www.youtube.com/@Monnify',
   register: '/register',
+  /** Interest form for the hackathon. Paste the live form URL here. */
+  hackathonForm: '',
 } as const;
+
+export const HASHTAGS = ['#APIConfXMonnify', '#DeveloperChallenge'] as const;
 
 export const PRIZES = [
   { place: 'Grand Winner', amount: '₦800,000', accent: '#E1EF9A' },
