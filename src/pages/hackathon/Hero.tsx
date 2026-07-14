@@ -19,8 +19,13 @@ export function Hero() {
         </FadeIn>
 
         <FadeIn onMount delay={0.1}>
-          <h1 className="hero-fluid-heading mb-6 max-w-5xl font-bold leading-none text-white">
-            Build With Monnify
+          <h1 className="hero-fluid-heading mb-6 flex max-w-5xl flex-wrap items-center gap-x-3 gap-y-2 font-bold leading-none text-white md:gap-x-4">
+            <span>Build With</span>
+            <img
+              src="/hackathon/monnify-logo-white.png"
+              alt="Monnify"
+              className="h-[0.85em] w-auto max-w-[min(100%,280px)] md:max-w-[min(100%,420px)]"
+            />
           </h1>
         </FadeIn>
 
@@ -38,16 +43,16 @@ export function Hero() {
           className="mb-10 max-w-4xl text-lg leading-relaxed text-white/85"
         >
           We&apos;ve partnered with Monnify Payment Gateway to bring you the official API Conference
-          Lagos 2026 Developer Challenge. Build an application powered by Monnify APIs — win up to
-          ₦800,000, exclusive swag, and recognition from Africa&apos;s leading payment gateway.
+          Lagos 2026 Developer Challenge. Build an application powered by Monnify APIs and win up to
+          ₦2,000,000, exclusive swag, and recognition from Africa&apos;s leading payment gateway.
         </FadeIn>
 
         <FadeIn onMount delay={0.4} className="flex flex-col flex-wrap gap-3 sm:flex-row">
           <CtaButton href={LINKS.monnifyApp} external>
             Get Sandbox Keys
           </CtaButton>
-          <CtaButton href={LINKS.register} variant="white">
-            Register To Attend
+          <CtaButton href={LINKS.monnifySlack} variant="white" external>
+            Join apiconf-hackathon on Slack
           </CtaButton>
         </FadeIn>
       </div>

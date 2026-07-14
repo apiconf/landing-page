@@ -3,12 +3,15 @@ export const LINKS = {
   monnifyDocs: 'https://developers.monnify.com/',
   monnifyYoutube: 'https://www.youtube.com/@Monnify',
   register: '/register',
+  monnifySlack: 'https://slack.monnify.com',
 } as const;
 
+export const HASHTAGS = ['#APIConfXMonnify', '#DeveloperChallenge'] as const;
+
 export const PRIZES = [
-  { place: 'Grand Winner', amount: '₦800,000', accent: '#E1EF9A' },
-  { place: '2nd Place', amount: '₦500,000', accent: '#90EAF2' },
-  { place: '3rd Place', amount: '₦250,000', accent: '#ECC89D' },
+  { place: '1st Place', amount: '₦2,000,000', accent: '#E1EF9A' },
+  { place: '2nd Place', amount: '₦1,000,000', accent: '#90EAF2' },
+  { place: '3rd Place', amount: '₦500,000', accent: '#ECC89D' },
 ] as const;
 
 export const JUDGING_CRITERIA = [
@@ -22,6 +25,7 @@ export const RESOURCES = [
   { label: 'Monnify Developer Documentation', href: LINKS.monnifyDocs },
   { label: 'Monnify YouTube Channel', href: LINKS.monnifyYoutube },
   { label: 'Get sandbox keys', href: LINKS.monnifyApp },
+  { label: 'Join apiconf-hackathon on Slack', href: LINKS.monnifySlack },
 ] as const;
 
 export const SUBMISSION_DEADLINE = '12pm WAT on the 21st of July, 2026';
