@@ -21,8 +21,9 @@ export function ClosingCta() {
             work to hundreds of developers, founders, and technology leaders.
           </p>
           <p className="mx-auto mb-4 max-w-3xl text-base leading-relaxed text-white/80">
-            Join the developer challenge on Slack immediately — introduce yourself in{' '}
-            <span className="font-bold text-[#90EAF2]">apiconf-hackathon</span>, then turn on
+            Compete as a team of 2. Join{' '}
+            <span className="font-bold text-[#90EAF2]">apiconf-hackathon</span> on Slack
+            immediately — introduce yourself, find a teammate if you need one, then turn on
             notifications. The submission link and all further communications will be shared there.
           </p>
           <p className="mb-10 text-2xl font-bold text-[#E1EF9A] md:text-3xl">Build. Learn. Ship.</p>
