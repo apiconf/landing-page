@@ -1,4 +1,4 @@
-import { RESOURCES } from './constants';
+import { LINKS, RESOURCES } from './constants';
 import { Section } from './Section';
 
 export function Resources() {
@@ -9,9 +9,16 @@ export function Resources() {
       tone="deep"
       lead={
         <>
-          Explore Monnify docs, tutorials, and sandbox access — and ask questions in{' '}
-          <span className="font-bold text-white">#apiconf-hackathon</span> on Monnify Developer
-          Slack.
+          Explore Monnify docs, tutorials, and sandbox access — and join{' '}
+          <a
+            href={LINKS.monnifySlack}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-[#90EAF2] underline decoration-[#90EAF2]/40 underline-offset-4"
+          >
+            apiconf-hackathon
+          </a>{' '}
+          on Monnify Developer Slack for questions, intros, and the submission link.
         </>
       }
     >
