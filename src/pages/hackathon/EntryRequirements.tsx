@@ -6,6 +6,18 @@ export function EntryRequirements() {
     <Section id="requirements" title="Entry requirements" tone="deep" lead="To qualify, you must:">
       <ol className="mb-10 list-decimal space-y-4 pl-5 text-lg leading-relaxed text-white/90 marker:font-bold marker:text-[#E1EF9A]">
         <li className="pl-2">
+          Compete as a team of 2. If you still need a teammate, join{' '}
+          <a
+            href={LINKS.monnifySlack}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-[#90EAF2] underline decoration-[#90EAF2]/40 underline-offset-4"
+          >
+            apiconf-hackathon
+          </a>{' '}
+          on Slack and we&apos;ll help you find one there.
+        </li>
+        <li className="pl-2">
           Use a Monnify Sandbox API (no live APIs). Get your developer keys on{' '}
           <a
             href={LINKS.monnifyApp}

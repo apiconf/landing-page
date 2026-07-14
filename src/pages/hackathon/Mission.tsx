@@ -1,3 +1,4 @@
+import { LINKS } from './constants';
 import { Section } from './Section';
 
 export function Mission() {
@@ -8,7 +9,16 @@ export function Mission() {
       </p>
       <p className="max-w-4xl text-lg leading-relaxed text-white/85">
         That&apos;s it. We&apos;re intentionally leaving the challenge open because great ideas come
-        from every industry. Participants may compete individually or as teams of up to two people.
+        from every industry. Compete as a team of 2 — or join{' '}
+        <a
+          href={LINKS.monnifySlack}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-bold text-[#90EAF2] underline decoration-[#90EAF2]/40 underline-offset-4"
+        >
+          apiconf-hackathon
+        </a>{' '}
+        on Slack and we&apos;ll help you find a teammate there.
       </p>
     </Section>
   );
