@@ -44,26 +44,16 @@ export function Hero() {
         >
           We&apos;ve partnered with Monnify Payment Gateway to bring you the official API Conference
           Lagos 2026 Developer Challenge. Build an application powered by Monnify APIs and win up to
-          ₦800,000, exclusive swag, and recognition from Africa&apos;s leading payment gateway.
+          ₦2,000,000, exclusive swag, and recognition from Africa&apos;s leading payment gateway.
         </FadeIn>
 
         <FadeIn onMount delay={0.4} className="flex flex-col flex-wrap gap-3 sm:flex-row">
           <CtaButton href={LINKS.monnifyApp} external>
             Get Sandbox Keys
           </CtaButton>
-          {LINKS.hackathonForm ? (
-            <CtaButton href={LINKS.hackathonForm} variant="white" external>
-              Join the Hackathon
-            </CtaButton>
-          ) : (
-            <button
-              type="button"
-              disabled
-              className="w-full cursor-not-allowed rounded-full bg-white/70 px-6 py-3 text-lg font-bold text-[#2F20BF] sm:w-auto md:px-8 md:py-4 md:text-xl"
-            >
-              Join the Hackathon
-            </button>
-          )}
+          <CtaButton href={LINKS.monnifySlack} variant="white" external>
+            Join #apiconf-hackathon on Slack
+          </CtaButton>
         </FadeIn>
       </div>
     </section>

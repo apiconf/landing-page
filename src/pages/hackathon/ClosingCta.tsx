@@ -20,24 +20,19 @@ export function ClosingCta() {
             your opportunity to create something meaningful, experiment with AI, and showcase your
             work to hundreds of developers, founders, and technology leaders.
           </p>
+          <p className="mx-auto mb-4 max-w-3xl text-base leading-relaxed text-white/80">
+            Join the developer challenge on Slack immediately — introduce yourself in{' '}
+            <span className="font-bold text-[#90EAF2]">#apiconf-hackathon</span>, then turn on
+            notifications. The submission link and all further communications will be shared there.
+          </p>
           <p className="mb-10 text-2xl font-bold text-[#E1EF9A] md:text-3xl">Build. Learn. Ship.</p>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <CtaButton href={LINKS.monnifyApp} external>
               Get Sandbox Keys
             </CtaButton>
-            {LINKS.hackathonForm ? (
-              <CtaButton href={LINKS.hackathonForm} variant="white" external>
-                Join the Hackathon
-              </CtaButton>
-            ) : (
-              <button
-                type="button"
-                disabled
-                className="w-full cursor-not-allowed rounded-full bg-white/70 px-6 py-3 text-lg font-bold text-[#2F20BF] sm:w-auto md:px-8 md:py-4 md:text-xl"
-              >
-                Join the Hackathon
-              </button>
-            )}
+            <CtaButton href={LINKS.monnifySlack} variant="white" external>
+              Join #apiconf-hackathon on Slack
+            </CtaButton>
           </div>
           <p className="mt-8 text-base text-white/70">We can&apos;t wait to see what you create.</p>
         </FadeIn>
