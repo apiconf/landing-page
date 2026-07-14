@@ -18,9 +18,19 @@ export function EntryRequirements() {
           .
         </li>
         <li className="pl-2">
-          Join <span className="font-bold text-[#90EAF2]">#apiconf-hackathon</span> on the Monnify
-          Slack channel to meet other hackers, ask questions, or share your excitement. Bonus points
-          if you help others out while you&apos;re in that channel.
+          Join the developer challenge on{' '}
+          <a
+            href={LINKS.monnifySlack}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-[#90EAF2] underline decoration-[#90EAF2]/40 underline-offset-4"
+          >
+            Monnify Slack
+          </a>{' '}
+          — specifically <span className="font-bold text-[#90EAF2]">#apiconf-hackathon</span>.
+          Introduce yourself (name, technologies you work with, and one fun activity outside coding),
+          then turn on notifications. The submission link and all further communications will be
+          shared in that channel. Bonus points if you help others out while you&apos;re there.
         </li>
         <li className="pl-2">
           Share on social media with{' '}
