@@ -16,7 +16,7 @@ export function Resources() {
             rel="noopener noreferrer"
             className="font-bold text-[#90EAF2] underline decoration-[#90EAF2]/40 underline-offset-4"
           >
-            #apiconf-hackathon
+            apiconf-hackathon
           </a>{' '}
           on Monnify Developer Slack for questions, intros, and the submission link.
         </>
