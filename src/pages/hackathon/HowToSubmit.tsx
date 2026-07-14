@@ -25,7 +25,7 @@ export function HowToSubmit() {
             >
               slack.monnify.com
             </a>{' '}
-            and head to <span className="font-bold text-[#90EAF2]">#apiconf-hackathon</span>.
+            and head to <span className="font-bold text-[#90EAF2]">apiconf-hackathon</span>.
           </li>
           <li className="pl-2">
             Introduce yourself. Tell us your name, what technologies you work with, and one fun
@@ -38,7 +38,7 @@ export function HowToSubmit() {
         </ol>
         <div className="pt-2">
           <CtaButton href={LINKS.monnifySlack} variant="white" external>
-            Join #apiconf-hackathon on Slack
+            Join apiconf-hackathon on Slack
           </CtaButton>
         </div>
       </div>

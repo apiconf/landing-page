@@ -52,7 +52,7 @@ export function Hero() {
             Get Sandbox Keys
           </CtaButton>
           <CtaButton href={LINKS.monnifySlack} variant="white" external>
-            Join #apiconf-hackathon on Slack
+            Join apiconf-hackathon on Slack
           </CtaButton>
         </FadeIn>
       </div>

@@ -25,7 +25,7 @@ export const RESOURCES = [
   { label: 'Monnify Developer Documentation', href: LINKS.monnifyDocs },
   { label: 'Monnify YouTube Channel', href: LINKS.monnifyYoutube },
   { label: 'Get sandbox keys', href: LINKS.monnifyApp },
-  { label: 'Join #apiconf-hackathon on Slack', href: LINKS.monnifySlack },
+  { label: 'Join apiconf-hackathon on Slack', href: LINKS.monnifySlack },
 ] as const;
 
 export const SUBMISSION_DEADLINE = '12pm WAT on the 21st of July, 2026';

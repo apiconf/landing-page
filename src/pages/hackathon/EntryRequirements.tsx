@@ -27,7 +27,7 @@ export function EntryRequirements() {
           >
             Monnify Slack
           </a>{' '}
-          — specifically <span className="font-bold text-[#90EAF2]">#apiconf-hackathon</span>.
+          specifically <span className="font-bold text-[#90EAF2]">apiconf-hackathon</span>.
           Introduce yourself (name, technologies you work with, and one fun activity outside coding),
           then turn on notifications. The submission link and all further communications will be
           shared in that channel. Bonus points if you help others out while you&apos;re there.
