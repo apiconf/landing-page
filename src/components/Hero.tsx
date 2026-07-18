@@ -78,6 +78,12 @@ export default function Hero() {
               </button>
             </motion.a>
 
+            <motion.a href="/hackathon" variants={buttonVariants}>
+              <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#ECC89D] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
+                Join The Hackathon
+              </button>
+            </motion.a>
+
             {/* <motion.a href="/speakers" variants={buttonVariants}>
               <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#ECC89D] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 See All Speakers
