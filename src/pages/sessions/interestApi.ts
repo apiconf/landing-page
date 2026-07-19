@@ -24,7 +24,71 @@ type MockVote = {
 };
 
 const EMAIL_STORAGE_KEY = 'apiconf_breakout_email';
+/** Dev-only simulated Sheet rows. Never used when VITE_BREAKOUT_INTEREST_URL is set. */
 const MOCK_VOTES_KEY = 'apiconf_breakout_votes_mock';
+/**
+ * UX-only cache of this browser's choices: { "1|10:00am - 11:00am": "session-id" }.
+ * Not a security control — anyone can edit DevTools. Real uniqueness is enforced in Apps Script.
+ */
+const PICKS_STORAGE_KEY = 'apiconf_breakout_picks';
+
+function readStorage(storage: Storage, key: string): string | null {
+  try {
+    return storage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeStorage(storage: Storage, key: string, value: string): void {
+  try {
+    storage.setItem(key, value);
+  } catch {
+    // ignore quota / private mode
+  }
+}
+
+function removeStorage(storage: Storage, key: string): void {
+  try {
+    storage.removeItem(key);
+  } catch {
+    // ignore
+  }
+}
+
+export type SlotPicks = Record<string, string>;
+
+export function slotPickKey(dayNumber: number, timeSlot: string): string {
+  return `${dayNumber}|${timeSlot}`;
+}
+
+export function getSlotPicks(): SlotPicks {
+  const raw = readStorage(localStorage, PICKS_STORAGE_KEY);
+  if (!raw) return {};
+  try {
+    const parsed = JSON.parse(raw) as SlotPicks;
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+export function getSlotPick(dayNumber: number, timeSlot: string): string | undefined {
+  return getSlotPicks()[slotPickKey(dayNumber, timeSlot)];
+}
+
+export function storeSlotPick(
+  dayNumber: number,
+  timeSlot: string,
+  sessionId: string
+): void {
+  const next = { ...getSlotPicks(), [slotPickKey(dayNumber, timeSlot)]: sessionId };
+  writeStorage(localStorage, PICKS_STORAGE_KEY, JSON.stringify(next));
+}
+
+export function clearSlotPicks(): void {
+  removeStorage(localStorage, PICKS_STORAGE_KEY);
+}
 
 export function getBreakoutInterestUrl(): string | undefined {
   const url = import.meta.env.VITE_BREAKOUT_INTEREST_URL;
@@ -40,26 +104,22 @@ export function isBreakoutInterestEnabled(): boolean {
   return Boolean(getBreakoutInterestUrl()) || isBreakoutInterestMock();
 }
 
+/** Prefill only for this tab — avoids long-lived email in localStorage. */
 export function getStoredInterestEmail(): string {
-  try {
-    return localStorage.getItem(EMAIL_STORAGE_KEY) ?? '';
-  } catch {
-    return '';
-  }
+  return readStorage(sessionStorage, EMAIL_STORAGE_KEY) ?? '';
 }
 
 export function storeInterestEmail(email: string): void {
-  try {
-    localStorage.setItem(EMAIL_STORAGE_KEY, email.trim().toLowerCase());
-  } catch {
-    // ignore quota / private mode
-  }
+  writeStorage(sessionStorage, EMAIL_STORAGE_KEY, email.trim().toLowerCase());
+  // Drop any older long-lived copy from earlier builds
+  removeStorage(localStorage, EMAIL_STORAGE_KEY);
 }
 
 function readMockVotes(): MockVote[] {
+  if (!isBreakoutInterestMock()) return [];
+  const raw = readStorage(localStorage, MOCK_VOTES_KEY);
+  if (!raw) return [];
   try {
-    const raw = localStorage.getItem(MOCK_VOTES_KEY);
-    if (!raw) return [];
     const parsed = JSON.parse(raw) as MockVote[];
     return Array.isArray(parsed) ? parsed : [];
   } catch {
@@ -68,7 +128,8 @@ function readMockVotes(): MockVote[] {
 }
 
 function writeMockVotes(votes: MockVote[]): void {
-  localStorage.setItem(MOCK_VOTES_KEY, JSON.stringify(votes));
+  if (!isBreakoutInterestMock()) return;
+  writeStorage(localStorage, MOCK_VOTES_KEY, JSON.stringify(votes));
 }
 
 function countsFromVotes(votes: MockVote[]): InterestCounts {
@@ -165,7 +226,7 @@ export async function fetchInterestCounts(): Promise<InterestCounts> {
   const base = getBreakoutInterestUrl();
   if (!base) return {};
 
-  const url = `${base}${base.includes('?') ? '&' : '?'}action=counts`;
+  const url = `${base}${base.includes('?') ? '&' : '?'}action=counts&op=counts`;
   const res = await fetch(url, { method: 'GET', redirect: 'follow' });
   if (!res.ok) throw new Error(`Counts request failed (${res.status})`);
 
@@ -175,38 +236,58 @@ export async function fetchInterestCounts(): Promise<InterestCounts> {
 }
 
 /**
- * Apps Script web apps: send text/plain JSON to avoid CORS preflight.
- * In dev without a URL, uses a localStorage mock with the same upsert rules.
+ * Live path uses GET so Interest.gs can share an Apps Script project with AdeBomi
+ * (which owns doPost). Sends both `action` and `op` for older/newer script versions.
+ * Requires `saved: true` so a counts fallback can never look like a successful vote.
  */
 export async function submitInterest(
   payload: SubmitInterestPayload
 ): Promise<InterestCounts> {
+  let counts: InterestCounts;
+
   if (isBreakoutInterestMock()) {
-    return submitMockInterest(payload);
+    counts = await submitMockInterest(payload);
+  } else {
+    const base = getBreakoutInterestUrl();
+    if (!base) throw new Error('Interest API is not configured');
+
+    const params = new URLSearchParams({
+      action: 'submit',
+      op: 'submit',
+      email: payload.email.trim().toLowerCase(),
+      dayNumber: String(payload.dayNumber),
+      timeSlot: payload.timeSlot,
+      sessionId: payload.sessionId,
+      title: payload.title,
+    });
+    const joiner = base.includes('?') ? '&' : '?';
+    const res = await fetch(`${base}${joiner}${params.toString()}`, {
+      method: 'GET',
+      redirect: 'follow',
+    });
+
+    if (!res.ok) throw new Error(`Interest submit failed (${res.status})`);
+
+    const data = (await res.json()) as ApiResponse & { saved?: boolean };
+    if (!data.ok) throw new Error(data.error || 'Could not save interest');
+    // Live Interest.gs returns saved:true. Older deploys that ignore submit and
+    // return counts-only would otherwise lock the UI without writing the Sheet.
+    if (data.saved !== true) {
+      throw new Error(
+        'Interest API did not confirm save. Paste latest Interest.gs and redeploy a New version.'
+      );
+    }
+    counts = data.counts ?? {};
   }
 
-  const base = getBreakoutInterestUrl();
-  if (!base) throw new Error('Interest API is not configured');
-
-  const res = await fetch(base, {
-    method: 'POST',
-    redirect: 'follow',
-    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-    body: JSON.stringify(payload),
-  });
-
-  if (!res.ok) throw new Error(`Interest submit failed (${res.status})`);
-
-  const data = (await res.json()) as ApiResponse;
-  if (!data.ok) throw new Error(data.error || 'Could not save interest');
-  return data.counts ?? {};
+  storeSlotPick(payload.dayNumber, payload.timeSlot, payload.sessionId);
+  return counts;
 }
 
 /** Dev helper: wipe simulated votes from the browser. */
 export function clearMockInterestVotes(): void {
-  try {
-    localStorage.removeItem(MOCK_VOTES_KEY);
-  } catch {
-    // ignore
-  }
+  removeStorage(localStorage, MOCK_VOTES_KEY);
+  clearSlotPicks();
+  removeStorage(sessionStorage, EMAIL_STORAGE_KEY);
+  removeStorage(localStorage, EMAIL_STORAGE_KEY);
 }

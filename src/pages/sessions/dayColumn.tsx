@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { SessionCard } from './sessionCard';
+import { SessionCard, type InterestButtonState } from './sessionCard';
 import { SessionDetails } from './types';
 import { isBreakoutSession } from './breakouts';
-import type { InterestCounts } from './interestApi';
+import { getSlotPick } from './interestApi';
 
 interface DayColumnProps {
   day: {
@@ -12,7 +12,8 @@ interface DayColumnProps {
     sessions: SessionDetails[];
   };
   interestEnabled?: boolean;
-  interestCounts?: InterestCounts;
+  /** Bump to re-read local picks after save. */
+  picksVersion?: number;
   onIndicateInterest?: (session: SessionDetails) => void;
 }
 
@@ -39,7 +40,7 @@ function normalizeSession(session: SessionDetails): SessionDetails {
 export const DayColumn = ({
   day,
   interestEnabled = false,
-  interestCounts = {},
+  picksVersion = 0,
   onIndicateInterest,
 }: DayColumnProps) => {
   const verticalSpanSession = day.sessions.find((s) => s.isFullSpan);
@@ -107,6 +108,14 @@ export const DayColumn = ({
 
   const renderCard = (session: SessionDetails, hideMeta = false, extraTopPadding = false) => {
     const breakout = interestEnabled && isBreakoutSession(session, day.sessions);
+    const slotPick = breakout ? getSlotPick(day.dayNumber, session.timeSlot) : undefined;
+    // picksVersion forces re-render after localStorage pick changes
+    void picksVersion;
+
+    let interestState: InterestButtonState = 'available';
+    if (slotPick) {
+      interestState = slotPick === session.id ? 'selected' : 'locked';
+    }
 
     return (
       <SessionCard
@@ -115,9 +124,12 @@ export const DayColumn = ({
         hideMeta={hideMeta}
         extraTopPadding={extraTopPadding}
         showInterest={breakout}
-        interestCount={breakout ? (interestCounts[session.id] ?? 0) : undefined}
+        interestCount={undefined}
+        interestState={interestState}
         onIndicateInterest={
-          breakout && onIndicateInterest ? () => onIndicateInterest(session) : undefined
+          breakout && interestState === 'available' && onIndicateInterest
+            ? () => onIndicateInterest(session)
+            : undefined
         }
       />
     );
@@ -152,7 +164,7 @@ export const DayColumn = ({
                   : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3';
 
             return (
-              <div key={idx} className={`grid ${cols} gap-4`}>
+              <div key={idx} className={`grid ${cols} items-stretch gap-4`}>
                 {chunk.map((session) => renderCard(session))}
               </div>
             );

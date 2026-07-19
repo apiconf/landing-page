@@ -1,27 +1,34 @@
 import { SessionDetails } from './types';
 
+export type InterestButtonState = 'available' | 'selected' | 'locked';
+
 export const SessionCard = ({
   session,
   hideMeta = false,
   extraTopPadding = false,
-  interestCount,
   showInterest,
+  interestState = 'available',
   onIndicateInterest,
 }: {
   session: SessionDetails;
   hideMeta?: boolean;
   extraTopPadding?: boolean;
+  /** @deprecated Counts are organizer-only (Sheet); kept optional for call-site compatibility. */
   interestCount?: number;
   showInterest?: boolean;
+  interestState?: InterestButtonState;
   onIndicateInterest?: () => void;
 }) => {
+  const locked = interestState === 'locked';
+  const selected = interestState === 'selected';
+
   return (
     <div
-      className={`flex flex-col gap-[9px] rounded-[.75rem] py-6 px-4 ${extraTopPadding ? 'mt-8' : ''}`}
+      className={`flex h-full flex-col gap-3 rounded-[.75rem] px-4 py-6 ${extraTopPadding ? 'mt-8' : ''}`}
       style={{ backgroundColor: session.color }}
     >
-      <div className="flex w-full items-center justify-between">
-        <div className="flex gap-3 rounded-[3.25rem] bg-white px-2 py-1">
+      <div className="flex w-full items-center justify-between gap-2">
+        <div className="rounded-[3.25rem] bg-white px-2 py-1">
           <p className="whitespace-nowrap text-[.625rem] uppercase text-[#6E6E6E] md:text-sm">
             {session.type}
           </p>
@@ -58,22 +65,22 @@ export const SessionCard = ({
         </div>
       )}
 
-      {showInterest ? (
-        <div className="mt-1 flex flex-wrap items-center justify-between gap-2 border-t border-black/10 pt-3">
-          <p className="text-xs font-bold text-gray-800 md:text-sm">
-            {typeof interestCount === 'number' && interestCount > 0
-              ? `${interestCount} interested`
-              : 'No interest yet'}
-          </p>
-          {onIndicateInterest ? (
+      {showInterest && !locked ? (
+        <div className="mt-auto flex justify-end pt-3">
+          {selected ? (
+            <span className="rounded-[3.25rem] bg-[#1F1F1F] px-3 py-1.5 text-[.625rem] font-bold text-white md:px-4 md:text-sm">
+              Locked in
+            </span>
+          ) : (
             <button
               type="button"
               onClick={onIndicateInterest}
-              className="rounded-full bg-[#1F1F1F] px-3 py-1.5 text-xs font-bold text-white transition hover:bg-black md:text-sm"
+              disabled={!onIndicateInterest}
+              className="rounded-[3.25rem] bg-dark-purple px-3 py-1.5 text-[.625rem] font-bold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 md:px-4 md:text-sm"
             >
-              I&apos;m going
+              I&apos;ll be there
             </button>
-          ) : null}
+          )}
         </div>
       ) : null}
     </div>
