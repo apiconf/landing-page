@@ -1,7 +1,7 @@
 import { DayColumn } from './dayColumn';
 import { InterestModal } from './InterestModal';
 import { ScheduleData, SessionDetails } from './types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getSlotPeers } from './breakouts';
 import { useBreakoutInterest } from './useBreakoutInterest';
 
@@ -9,14 +9,70 @@ interface ScheduleProps {
   data: ScheduleData;
 }
 
+function dayHash(dayNumber: number): string {
+  return `#day${dayNumber}`;
+}
+
+/** Accepts #day2, #day-2, #!day2, #!/day2 */
+function dayFromHash(hash: string, validDays: number[]): number | null {
+  const match = hash.match(/^#!?\/?day-?(\d+)$/i);
+  if (!match) return null;
+  const n = Number(match[1]);
+  return validDays.includes(n) ? n : null;
+}
+
+function initialDay(validDays: number[]): number {
+  if (typeof window === 'undefined') return validDays[0] ?? 1;
+  return dayFromHash(window.location.hash, validDays) ?? validDays[0] ?? 1;
+}
+
 export const Schedule = ({ data }: ScheduleProps) => {
-  const [activeDay, setActiveDay] = useState<number>(1);
+  const validDays = data.days.map((d) => d.dayNumber);
+  const [activeDay, setActiveDay] = useState<number>(() => initialDay(validDays));
   const activeDayData = data.days.find((day) => day.dayNumber === activeDay);
   const { enabled } = useBreakoutInterest();
 
   const [modalOpen, setModalOpen] = useState(false);
   const [focusSession, setFocusSession] = useState<SessionDetails | null>(null);
   const [picksVersion, setPicksVersion] = useState(0);
+
+  useEffect(() => {
+    const fromHash = dayFromHash(window.location.hash, validDays);
+    if (fromHash && fromHash !== activeDay) {
+      setActiveDay(fromHash);
+      return;
+    }
+    // Seed URL when landing with no/unknown hash
+    if (!fromHash && validDays.includes(activeDay)) {
+      const next = dayHash(activeDay);
+      if (window.location.hash !== next) {
+        window.history.replaceState(
+          null,
+          '',
+          `${window.location.pathname}${window.location.search}${next}`
+        );
+      }
+    }
+    // Only re-sync when schedule days payload changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data.days]);
+
+  useEffect(() => {
+    const onHashChange = () => {
+      const fromHash = dayFromHash(window.location.hash, validDays);
+      if (fromHash) setActiveDay(fromHash);
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, [validDays.join(',')]);
+
+  const selectDay = (dayNumber: number) => {
+    setActiveDay(dayNumber);
+    const next = dayHash(dayNumber);
+    if (window.location.hash !== next) {
+      window.location.hash = next;
+    }
+  };
 
   const slotOptions =
     activeDayData && focusSession
@@ -66,7 +122,8 @@ export const Schedule = ({ data }: ScheduleProps) => {
               return (
                 <button
                   key={day.dayNumber}
-                  onClick={() => setActiveDay(day.dayNumber)}
+                  type="button"
+                  onClick={() => selectDay(day.dayNumber)}
                   className={`
                                         whitespace-nowrap border-2 px-6 py-3 text-sm font-bold transition-all duration-200 md:text-xl
                                         ${
