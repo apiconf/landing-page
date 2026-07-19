@@ -94,12 +94,10 @@ export function InterestModal({
         {done ? (
           <div className="space-y-4">
             <h2 id={titleId} className="text-2xl font-bold text-dark-purple">
-              You&apos;re down for this one
+              You&apos;re locked in
             </h2>
             <p className="text-base leading-relaxed text-gray-700">
-              Interest recorded for <span className="font-bold">{selected?.title}</span>. Change
-              your mind? Pick again anytime with the same email. We&apos;ll move your vote, not
-              double-count it.
+              You&apos;re set for <span className="font-bold">{selected?.title}</span>.
             </p>
             <button
               type="button"
@@ -119,7 +117,7 @@ export function InterestModal({
                 Which breakout are you attending?
               </h2>
               <p className="mt-2 text-sm text-gray-600">
-                Pick one talk in this slot. We use this to size halls. One choice per email per slot.
+                Pick one talk in this slot so we can put the right halls where they&apos;re needed.
               </p>
             </div>
 
@@ -177,7 +175,7 @@ export function InterestModal({
                 disabled={submitting}
                 className="flex-1 rounded-full bg-dark-purple px-5 py-3 text-base font-bold text-white disabled:opacity-60"
               >
-                {submitting ? 'Saving…' : 'Save my pick'}
+                {submitting ? 'Saving…' : 'Lock it in'}
               </button>
               <button
                 type="button"
