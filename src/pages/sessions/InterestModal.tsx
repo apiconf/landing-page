@@ -6,6 +6,7 @@ import {
   submitInterest,
   type InterestCounts,
 } from './interestApi';
+import { buildGoogleCalendarUrl } from './googleCalendar';
 
 type InterestModalProps = {
   open: boolean;
@@ -54,6 +55,7 @@ export function InterestModal({
   if (!open) return null;
 
   const selected = options.find((o) => o.id === sessionId);
+  const gcalUrl = selected ? buildGoogleCalendarUrl(selected, dayNumber) : null;
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -99,13 +101,35 @@ export function InterestModal({
             <p className="text-base leading-relaxed text-gray-700">
               You&apos;re set for <span className="font-bold">{selected?.title}</span>.
             </p>
-            <button
-              type="button"
-              onClick={onClose}
-              className="w-full rounded-full bg-dark-purple px-5 py-3 text-base font-bold text-white"
-            >
-              Back to schedule
-            </button>
+            <div className="flex items-center justify-between gap-3">
+              {gcalUrl ? (
+                <a
+                  href={gcalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Add to Google Calendar"
+                  title="Add to Google Calendar"
+                  className="inline-flex shrink-0 transition hover:opacity-80"
+                >
+                  <img
+                    src="/google-calendar.svg"
+                    alt=""
+                    width={36}
+                    height={36}
+                    className="h-9 w-9"
+                  />
+                </a>
+              ) : (
+                <span />
+              )}
+              <button
+                type="button"
+                onClick={onClose}
+                className="rounded-full bg-dark-purple px-5 py-3 text-base font-bold text-white"
+              >
+                Back to schedule
+              </button>
+            </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-5">

@@ -126,6 +126,7 @@ export const DayColumn = ({
         showInterest={breakout}
         interestCount={undefined}
         interestState={interestState}
+        dayNumber={day.dayNumber}
         onIndicateInterest={
           breakout && interestState === 'available' && onIndicateInterest
             ? () => onIndicateInterest(session)
