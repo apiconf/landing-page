@@ -3,6 +3,7 @@ import { InterestModal } from './InterestModal';
 import { ScheduleData, SessionDetails } from './types';
 import { useState } from 'react';
 import { getSlotPeers } from './breakouts';
+import { clearMockInterestVotes, isBreakoutInterestMock } from './interestApi';
 import { useBreakoutInterest } from './useBreakoutInterest';
 
 interface ScheduleProps {
@@ -12,7 +13,8 @@ interface ScheduleProps {
 export const Schedule = ({ data }: ScheduleProps) => {
   const [activeDay, setActiveDay] = useState<number>(1);
   const activeDayData = data.days.find((day) => day.dayNumber === activeDay);
-  const { enabled, counts, mergeCounts } = useBreakoutInterest();
+  const { enabled, counts, mergeCounts, refresh } = useBreakoutInterest();
+  const mockMode = isBreakoutInterestMock();
 
   const [modalOpen, setModalOpen] = useState(false);
   const [focusSession, setFocusSession] = useState<SessionDetails | null>(null);
@@ -51,10 +53,28 @@ export const Schedule = ({ data }: ScheduleProps) => {
             {data.title}
           </h1>
           {enabled ? (
-            <p className="max-w-2xl text-center text-sm text-gray-600 md:text-left md:text-base">
-              Breakouts show live interest. Tap <span className="font-bold">I&apos;m going</span> on
-              a talk so we can put popular sessions in the right halls.
-            </p>
+            <div className="max-w-2xl space-y-2 text-center md:text-left">
+              <p className="text-sm text-gray-600 md:text-base">
+                Breakouts show live interest. Tap{' '}
+                <span className="font-bold">I&apos;m going</span> on a talk so we can put popular
+                sessions in the right halls.
+              </p>
+              {mockMode ? (
+                <p className="rounded-xl bg-[#FFF6D8] px-3 py-2 text-sm font-bold text-[#5C4B00]">
+                  Dev mock mode: votes stay in this browser (localStorage), not Google Sheets.{' '}
+                  <button
+                    type="button"
+                    className="underline"
+                    onClick={() => {
+                      clearMockInterestVotes();
+                      void refresh();
+                    }}
+                  >
+                    Reset mock votes
+                  </button>
+                </p>
+              ) : null}
+            </div>
           ) : null}
           <div className="flex justify-center md:justify-start md:gap-2">
             {data.days.map((day) => {
