@@ -1,4 +1,5 @@
 import { SessionDetails } from './types';
+import { buildGoogleCalendarUrl } from './googleCalendar';
 
 export type InterestButtonState = 'available' | 'selected' | 'locked';
 
@@ -8,6 +9,7 @@ export const SessionCard = ({
   extraTopPadding = false,
   showInterest,
   interestState = 'available',
+  dayNumber,
   onIndicateInterest,
 }: {
   session: SessionDetails;
@@ -17,10 +19,15 @@ export const SessionCard = ({
   interestCount?: number;
   showInterest?: boolean;
   interestState?: InterestButtonState;
+  dayNumber?: number;
   onIndicateInterest?: () => void;
 }) => {
   const locked = interestState === 'locked';
   const selected = interestState === 'selected';
+  const gcalUrl =
+    selected && dayNumber
+      ? buildGoogleCalendarUrl(session, dayNumber)
+      : null;
 
   return (
     <div
@@ -66,11 +73,37 @@ export const SessionCard = ({
       )}
 
       {showInterest && !locked ? (
-        <div className="mt-auto flex justify-end pt-3">
+        <div
+          className={`mt-auto flex items-center pt-3 ${
+            selected ? 'justify-between' : 'justify-end'
+          }`}
+        >
           {selected ? (
-            <span className="rounded-[3.25rem] bg-[#1F1F1F] px-3 py-1.5 text-[.625rem] font-bold text-white md:px-4 md:text-sm">
-              Locked in
-            </span>
+            <>
+              {gcalUrl ? (
+                <a
+                  href={gcalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Add to Google Calendar"
+                  title="Add to Google Calendar"
+                  className="inline-flex shrink-0 transition hover:opacity-80"
+                >
+                  <img
+                    src="/google-calendar.svg"
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="h-7 w-7 md:h-8 md:w-8"
+                  />
+                </a>
+              ) : (
+                <span />
+              )}
+              <span className="rounded-[3.25rem] bg-[#1F1F1F] px-3 py-1.5 text-[.625rem] font-bold text-white md:px-4 md:text-sm">
+                Locked in
+              </span>
+            </>
           ) : (
             <button
               type="button"
