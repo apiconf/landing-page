@@ -11,70 +11,38 @@ type Sponsors = {
   link: string;
 };
 
+/** Display order = array order within the same tier (sort is stable). GSMA first. */
 const sponsors: Sponsors[] = [
-  { name: 'ALATPay', logo: '/sponsors/alat-pay.png', tier: 'Gold', link: 'https://alatpay.ng/' },
+  {
+    name: 'GSMA',
+    logo: '/sponsors/gsma.svg',
+    tier: 'Gold',
+    link: 'https://www.gsma.com/',
+  },
+  {
+    name: 'Monnify',
+    logo: '/sponsors/monnify-logo.png',
+    tier: 'Gold',
+    link: 'https://monnify.com/',
+  },
   {
     name: 'Google for Developers',
     logo: '/sponsors/Google-for-Developers.svg',
     tier: 'Silver',
     link: 'https://developers.google.com/',
   },
-  {
-    name: 'MyCover AI',
-    logo: '/sponsors/mycover-ai.png',
-    tier: 'Silver',
-    link: 'https://mycover.ai/',
-  },
-  {
-    name: 'Interswitch',
-    logo: '/sponsors/Interswitch.png',
-    tier: 'Silver',
-    link: 'https://docs.interswitchgroup.com/docs/home',
-  },
-  {
-    name: 'APItoolkit',
-    logo: '/sponsors/monoscope.svg',
-    tier: 'Bronze',
-    link: 'https://apitoolkit.io/',
-  },
-  {
-    name: 'Yamify',
-    logo: '/sponsors/yamify.svg',
-    tier: 'Bronze',
-    link: 'https://www.yamify.co/',
-  },
-  {
-    name: 'Globarman',
-    logo: '/sponsors/globarman-logo-new.png',
-    tier: 'Bronze',
-    link: 'https://www.globarman.com/',
-  },
 ];
 
 const communityPartners: Array<Omit<Sponsors, 'tier'>> = [
-  { name: 'APIlayer', logo: '/sponsors/APILayer.svg', link: 'https://apilayer.com/' },
-  { name: 'CloudPlexo', logo: '/sponsors/Cloudplexo-Logo.png', link: 'https://cloudplexo.com/' },
   {
     name: 'AsyncAPI',
     logo: '/sponsors/asyncapi-logo--primary-dark.svg',
     link: 'https://www.asyncapi.com/',
   },
   {
-    name: 'APIdays',
-    logo: '/sponsors/apidays-2025_Logo-min.png',
-    link: 'https://www.apidays.global/',
-  },
-  { name: 'Bump.sh', logo: '/sponsors/bumpsh.svg', link: 'https://bump.sh/' },
-  { name: 'Postman', logo: '/sponsors/Postman-Logo.png', link: 'https://www.postman.com/' },
-  {
-    name: 'GithubCampusExpert',
-    logo: '/sponsors/GitHubCampusExperts-Logo.png',
-    link: 'https://github.com/campus-experts',
-  },
-  {
-    name: 'WriteTheDocs NG',
-    logo: '/sponsors/WTD-LOGO.png',
-    link: 'https://www.meetup.com/Write-the-Docs-Nigeria/',
+    name: 'MergeForward',
+    logo: '/sponsors/mergeforward.svg',
+    link: 'https://community.cncf.io/merge-forward/',
   },
 ];
 
@@ -113,7 +81,7 @@ export default function SponsorList() {
         className="mb-16 w-full text-center"
       >
         <h2 className="mb-2 text-4xl font-bold md:text-[64px] md:leading-[100%]">
-          API Conference Lagos 2025 Sponsors
+          API Conference Lagos 2026 Sponsors
         </h2>
         <p>
           <span className="mx-auto block max-w-[594px] font-medium md:text-2xl">
@@ -138,7 +106,7 @@ export default function SponsorList() {
                 <img
                   src={sponsor.logo}
                   alt={sponsor.name}
-                  className="size-full max-h-14 max-w-48 md:max-w-52"
+                  className="size-full max-h-14 max-w-48 object-contain md:max-w-52"
                 />
               </a>
             </div>
@@ -160,7 +128,7 @@ export default function SponsorList() {
         ref={sponsorRef}
         className="my-16"
       >
-        <h3 className="mb-16 text-center text-3xl font-bold md:text-5xl">Community Partners</h3>
+        <h3 className="mb-16 text-center text-3xl font-bold md:text-5xl">Partners</h3>
         <div className="flex w-full flex-col gap-6 md:flex-row md:flex-wrap md:items-center md:gap-11 md:px-10 xl:justify-between xl:gap-x-16">
           {communityPartners.map((partner) => (
             <div
@@ -171,7 +139,7 @@ export default function SponsorList() {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="aspect-auto h-full max-h-14 min-h-8 max-w-64 md:max-w-36"
+                  className="aspect-auto h-full max-h-14 min-h-8 max-w-64 object-contain md:max-w-36"
                 />
               </a>
             </div>
