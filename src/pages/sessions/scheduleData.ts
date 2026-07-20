@@ -254,12 +254,14 @@ export const scheduleData = {
         },
         {
           id: 'gsma-keynote-sat',
-          title: 'GSMA Keynote',
+          title:
+            "The Network Knows: Leveraging Telco Capabilities to Solve Fintech's Hardest Problems",
           timeSlot: '10:50am - 11:05am',
           room: 'Main Stage',
           duration: '15m',
           timeFrame: '10am',
           type: 'session',
+          speaker: 'Chilezie Unachukwu',
           color: '#D9D9D9',
         },
         {
