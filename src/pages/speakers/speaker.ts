@@ -253,4 +253,13 @@ export const speakers: person[] = [
     image: 'https://cdn.sessionize.com/image/6674-400o400o1-BzUhJSwDN3TMdiAeJjAnHW.jpg',
     sessionFormat: 'Workshop',
   },
+  {
+    index: 27,
+    name: 'Chilezie Unachukwu',
+    jobTitle: 'Product Manager, WECA',
+    employer: 'MTN-i',
+    bio: "The Network Knows: Leveraging Telco Capabilities to Solve Fintech's Hardest Problems",
+    image: '/speakers/chilezie-unachukwu.png',
+    sessionFormat: 'Keynote',
+  },
 ];

@@ -26,6 +26,11 @@ dist-ssr
 # Local Netlify folder
 .netlify
 
+# Env (keep .env.example)
+.env
+.env.*
+!.env.example
+
 .dockerignore
 Dockerfile
 .qodo

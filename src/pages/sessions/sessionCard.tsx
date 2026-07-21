@@ -1,23 +1,42 @@
-import { SessionDetails } from "./types";
+import { SessionDetails } from './types';
+import { buildGoogleCalendarUrl } from './googleCalendar';
+
+export type InterestButtonState = 'available' | 'selected' | 'locked';
 
 export const SessionCard = ({
   session,
   hideMeta = false,
   extraTopPadding = false,
+  showInterest,
+  interestState = 'available',
+  dayNumber,
+  onIndicateInterest,
 }: {
   session: SessionDetails;
   hideMeta?: boolean;
   extraTopPadding?: boolean;
+  /** @deprecated Counts are organizer-only (Sheet); kept optional for call-site compatibility. */
+  interestCount?: number;
+  showInterest?: boolean;
+  interestState?: InterestButtonState;
+  dayNumber?: number;
+  onIndicateInterest?: () => void;
 }) => {
+  const locked = interestState === 'locked';
+  const selected = interestState === 'selected';
+  const gcalUrl =
+    selected && dayNumber
+      ? buildGoogleCalendarUrl(session, dayNumber)
+      : null;
+
   return (
     <div
-      className={`flex flex-col gap-[9px] rounded-[.75rem] py-6 px-4 ${extraTopPadding ? 'mt-8' : ''}`}
+      className={`flex h-full flex-col gap-3 rounded-[.75rem] px-4 py-6 ${extraTopPadding ? 'mt-8' : ''}`}
       style={{ backgroundColor: session.color }}
     >
-      {/* Top metadata row */}
-      <div className="flex w-full items-center justify-between">
-        <div className="flex gap-3 bg-white rounded-[3.25rem] py-1 px-2">
-          <p className="text-[#6E6E6E] text-[.625rem] whitespace-nowrap uppercase md:text-sm">
+      <div className="flex w-full items-center justify-between gap-2">
+        <div className="rounded-[3.25rem] bg-white px-2 py-1">
+          <p className="whitespace-nowrap text-[.625rem] uppercase text-[#6E6E6E] md:text-sm">
             {session.type}
           </p>
         </div>
@@ -33,27 +52,70 @@ export const SessionCard = ({
         )}
       </div>
 
-      <p className="font-bold text-sm md:text-base">{session.title}</p>
+      <p className="text-sm font-bold md:text-base">{session.title}</p>
 
       {(session.speaker || session.host || session.panelist) && (
-        <div className="flex flex-col lg:flex-row lg:justify-between gap-1 lg:gap-0">
+        <div className="flex flex-col gap-1 lg:flex-row lg:justify-between lg:gap-0">
           {session.speaker && (
-            <p className="font-bold text-sm md:text-base text-gray-700">
-              {session.speaker}
-            </p>
+            <p className="text-sm font-bold text-gray-700 md:text-base">{session.speaker}</p>
           )}
           {session.host && (
-            <p className="font-bold text-[.625rem] md:text-base text-gray-700">
+            <p className="text-[.625rem] font-bold text-gray-700 md:text-base">
               Moderator: {session.host}
             </p>
           )}
           {session.panelist && (
-            <p className="font-bold text-[.65rem] md:text-base text-gray-700">
+            <p className="text-[.65rem] font-bold text-gray-700 md:text-base">
               Panelist: {session.panelist}
             </p>
           )}
         </div>
       )}
+
+      {showInterest && !locked ? (
+        <div
+          className={`mt-auto flex items-center pt-3 ${
+            selected ? 'justify-between' : 'justify-end'
+          }`}
+        >
+          {selected ? (
+            <>
+              {gcalUrl ? (
+                <a
+                  href={gcalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Add to Google Calendar"
+                  title="Add to Google Calendar"
+                  className="inline-flex shrink-0 transition hover:opacity-80"
+                >
+                  <img
+                    src="/google-calendar.svg"
+                    alt=""
+                    width={32}
+                    height={32}
+                    className="h-7 w-7 md:h-8 md:w-8"
+                  />
+                </a>
+              ) : (
+                <span />
+              )}
+              <span className="rounded-[3.25rem] bg-[#1F1F1F] px-3 py-1.5 text-[.625rem] font-bold text-white md:px-4 md:text-sm">
+                Locked in
+              </span>
+            </>
+          ) : (
+            <button
+              type="button"
+              onClick={onIndicateInterest}
+              disabled={!onIndicateInterest}
+              className="rounded-[3.25rem] bg-dark-purple px-3 py-1.5 text-[.625rem] font-bold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 md:px-4 md:text-sm"
+            >
+              I&apos;ll be there
+            </button>
+          )}
+        </div>
+      ) : null}
     </div>
   );
 };
