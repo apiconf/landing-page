@@ -41,7 +41,7 @@ const communityPartners: Array<Omit<Sponsors, 'tier'>> = [
   },
   {
     name: 'MergeForward',
-    logo: '/sponsors/mergeforward.svg',
+    logo: '/sponsors/mergeforward.png',
     link: 'https://community.cncf.io/merge-forward/',
   },
 ];
