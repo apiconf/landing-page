@@ -85,14 +85,6 @@ export const SessionCard = ({
 
       {session.speaker ? (
         <>
-          <button
-            type="button"
-            onClick={() => setShowSessionDetails(true)}
-            className="w-fit rounded-full border border-[#2F20BF] px-3 py-1.5 text-xs font-bold text-[#2F20BF] transition hover:bg-white/60 md:text-sm"
-          >
-            View session details
-          </button>
-
           {showSessionDetails ? (
             <div
               className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-4 sm:items-center"
@@ -282,49 +274,55 @@ export const SessionCard = ({
         </div>
       ) : null}
 
-      {showInterest && !locked ? (
-        <div
-          className={`mt-auto flex items-center pt-3 ${
-            selected ? 'justify-between' : 'justify-end'
-          }`}
-        >
-          {selected ? (
-            <>
-              {gcalUrl ? (
-                <a
-                  href={gcalUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Add to Google Calendar"
-                  title="Add to Google Calendar"
-                  className="inline-flex shrink-0 items-center gap-2 text-xs font-bold text-[#2F20BF] transition hover:opacity-80 md:text-sm"
-                >
-                  <img
-                    src="/google-calendar.svg"
-                    alt=""
-                    width={32}
-                    height={32}
-                    className="h-7 w-7 md:h-8 md:w-8"
-                  />
-                  <span>Add to Calendar</span>
-                </a>
-              ) : (
-                <span />
-              )}
-              <span className="rounded-[3.25rem] bg-[#1F1F1F] px-3 py-1.5 text-[.625rem] font-bold text-white md:px-4 md:text-sm">
-                Locked in
-              </span>
-            </>
-          ) : (
+      {session.speaker || (showInterest && !locked) ? (
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-2 pt-3">
+          {session.speaker ? (
             <button
               type="button"
-              onClick={onIndicateInterest}
-              disabled={!onIndicateInterest}
-              className="rounded-[3.25rem] bg-dark-purple px-3 py-1.5 text-[.625rem] font-bold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 md:px-4 md:text-sm"
+              onClick={() => setShowSessionDetails(true)}
+              className="rounded-full border border-[#2F20BF] px-3 py-1.5 text-[.625rem] font-bold text-[#2F20BF] transition hover:bg-white/60 md:text-sm"
             >
-              I&apos;ll be there
+              View session details
             </button>
-          )}
+          ) : null}
+
+          {showInterest && !locked ? (
+            selected ? (
+              <div className="flex flex-wrap items-center gap-2">
+                {gcalUrl ? (
+                  <a
+                    href={gcalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Add to Google Calendar"
+                    title="Add to Google Calendar"
+                    className="inline-flex shrink-0 items-center gap-2 text-[.625rem] font-bold text-[#2F20BF] transition hover:opacity-80 md:text-sm"
+                  >
+                    <img
+                      src="/google-calendar.svg"
+                      alt=""
+                      width={32}
+                      height={32}
+                      className="h-7 w-7 md:h-8 md:w-8"
+                    />
+                    <span>Add to Calendar</span>
+                  </a>
+                ) : null}
+                <span className="rounded-[3.25rem] bg-[#1F1F1F] px-3 py-1.5 text-[.625rem] font-bold text-white md:px-4 md:text-sm">
+                  Locked in
+                </span>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={onIndicateInterest}
+                disabled={!onIndicateInterest}
+                className="rounded-[3.25rem] bg-dark-purple px-3 py-1.5 text-[.625rem] font-bold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 md:px-4 md:text-sm"
+              >
+                I&apos;ll be there
+              </button>
+            )
+          ) : null}
         </div>
       ) : null}
     </div>
