@@ -24,6 +24,7 @@ export const SessionCard = ({
   onIndicateInterest?: () => void;
 }) => {
   const [showPanelDetails, setShowPanelDetails] = useState(false);
+  const [activePanelSpeaker, setActivePanelSpeaker] = useState<string | null>(null);
   const locked = interestState === 'locked';
   const selected = interestState === 'selected';
   const gcalUrl =
@@ -81,25 +82,107 @@ export const SessionCard = ({
           </p>
           <button
             type="button"
-            onClick={() => setShowPanelDetails((visible) => !visible)}
-            aria-expanded={showPanelDetails}
+            onClick={() => setShowPanelDetails(true)}
             className="w-fit rounded-full border border-[#2F20BF] px-3 py-1.5 text-xs font-bold text-[#2F20BF] transition hover:bg-white/60 md:text-sm"
           >
-            {showPanelDetails ? 'Hide panel details' : 'View panel details'}
+            View panel details
           </button>
           {showPanelDetails ? (
-            <div className="flex flex-col gap-4 border-t border-black/10 pt-3">
-              {session.panelSpeakers.map((speaker) => (
-                <div key={speaker.name}>
-                  <p className="text-sm font-bold md:text-base">{speaker.name}</p>
-                  <p className="text-xs font-semibold text-gray-700 md:text-sm">{speaker.role}</p>
-                  {speaker.bio ? (
-                    <p className="mt-2 text-xs leading-relaxed text-gray-700 md:text-sm">
-                      {speaker.bio}
+            <div
+              className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 p-4 sm:items-center"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Panel session speakers"
+              onClick={() => setShowPanelDetails(false)}
+            >
+              <div
+                className="max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-3xl bg-white p-5 shadow-2xl sm:p-8"
+                onClick={(event) => event.stopPropagation()}
+              >
+                <div className="mb-6 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-bold uppercase tracking-wide text-[#2F20BF]">
+                      Panel session
                     </p>
-                  ) : null}
+                    <h2 className="mt-1 text-2xl font-bold text-[#1F1F1F] sm:text-3xl">
+                      Meet the panel
+                    </h2>
+                    <p className="mt-2 text-sm text-gray-600">
+                      {session.timeSlot} · {session.room}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowPanelDetails(false)}
+                    aria-label="Close panel details"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-xl font-bold text-[#1F1F1F] transition hover:bg-gray-200"
+                  >
+                    ×
+                  </button>
                 </div>
-              ))}
+
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {session.panelSpeakers.map((speaker) => {
+                    const initials = speaker.name
+                      .split(' ')
+                      .slice(0, 2)
+                      .map((part) => part[0])
+                      .join('');
+                    const isActive = activePanelSpeaker === speaker.name;
+
+                    return (
+                      <button
+                        key={speaker.name}
+                        type="button"
+                        onClick={() =>
+                          speaker.bio &&
+                          setActivePanelSpeaker((current) =>
+                            current === speaker.name ? null : speaker.name
+                          )
+                        }
+                        aria-expanded={speaker.bio ? isActive : undefined}
+                        className={`relative min-h-[25rem] overflow-hidden rounded-2xl bg-[#2F20BF] text-left text-white shadow-md ${
+                          speaker.bio ? 'cursor-pointer' : 'cursor-default'
+                        }`}
+                      >
+                        <div className="flex h-full min-h-[25rem] flex-col">
+                          <div className="flex min-h-56 flex-1 items-center justify-center overflow-hidden bg-[#251377] p-8">
+                            {speaker.image ? (
+                              <img
+                                src={speaker.image}
+                                alt={speaker.name}
+                                className="h-40 w-40 rounded-full object-cover ring-4 ring-white/20"
+                              />
+                            ) : (
+                              <span className="flex h-40 w-40 items-center justify-center rounded-full bg-[#E1EF9A] text-5xl font-bold text-[#251377] ring-4 ring-white/20">
+                                {initials}
+                              </span>
+                            )}
+                          </div>
+                          <div className="min-h-36 p-5">
+                            <p className="text-xl font-bold leading-tight">{speaker.name}</p>
+                            <p className="mt-2 text-sm leading-snug text-white/75">{speaker.role}</p>
+                            {speaker.bio ? (
+                              <p className="mt-4 text-sm font-bold text-[#E1EF9A]">
+                                {isActive ? 'Hide profile' : 'View profile'}
+                              </p>
+                            ) : null}
+                          </div>
+                        </div>
+
+                        {speaker.bio && isActive ? (
+                          <div className="absolute inset-0 overflow-y-auto bg-[#E1EF9A] p-6 text-[#1F1F1F]">
+                            <p className="text-xl font-bold">{speaker.name}</p>
+                            <p className="mt-2 text-sm font-semibold text-gray-700">{speaker.role}</p>
+                            <p className="mt-6 text-sm leading-relaxed">{speaker.bio}</p>
+                            <p className="mt-6 text-sm font-bold text-[#2F20BF]">Back to profile</p>
+                          </div>
+                        ) : null}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           ) : null}
         </div>

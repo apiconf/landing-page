@@ -392,6 +392,7 @@ export const scheduleData = {
             {
               name: 'Femi Taiwo',
               role: 'Chief Technology Officer, INITS Limited',
+              image: '/Femi-Taiwo.png',
             },
             {
               name: 'Kanwulia Okafor',
