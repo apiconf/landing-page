@@ -28,6 +28,17 @@ function parseHour(tf: string): number {
   return h;
 }
 
+function parseStartMinutes(timeSlot: string): number {
+  const start = timeSlot.split(' - ')[0];
+  const match = start.match(/(\d+):(\d+)(am|pm)/i);
+  if (!match) return 0;
+  const [, hour, minute, meridian] = match;
+  let h = parseInt(hour, 10);
+  if (meridian.toLowerCase() === 'pm' && h !== 12) h += 12;
+  if (meridian.toLowerCase() === 'am' && h === 12) h = 0;
+  return h * 60 + parseInt(minute, 10);
+}
+
 function normalizeSession(session: SessionDetails): SessionDetails {
   if (session.type === 'session') {
     return { ...session, color: '#E1EF8B' };
@@ -60,8 +71,9 @@ export const DayColumn = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const sessionsByTimeFrame = day.sessions
+  const sessionsByTimeFrame = [...day.sessions]
     .filter((s) => !s.isFullSpan)
+    .sort((a, b) => parseStartMinutes(a.timeSlot) - parseStartMinutes(b.timeSlot))
     .reduce(
       (acc, session) => {
         if (!acc[session.timeFrame]) acc[session.timeFrame] = [];
