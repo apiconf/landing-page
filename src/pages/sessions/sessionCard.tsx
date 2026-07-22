@@ -120,7 +120,7 @@ export const SessionCard = ({
                 </div>
 
                 <div className="mt-7 rounded-2xl bg-[#F3F0FF] p-5 sm:p-6">
-                  <p className="leading-relaxed text-gray-700">
+                  <p className="whitespace-pre-line leading-relaxed text-gray-700">
                     {session.abstract ??
                       `Join ${session.speaker} for a focused session exploring “${session.title}” and its practical relevance for today’s API ecosystem.`}
                   </p>
