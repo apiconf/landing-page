@@ -162,6 +162,18 @@ export const scheduleData: ScheduleData = {
           color: '#F0E6FF',
         },
         {
+          id: 'stop-re-prompting-reusable-ai-skills-fri',
+          title:
+            'Stop Re-Prompting: How Reusable AI Skills Make Vibe Coding Actually Work',
+          timeSlot: '02:00pm - 02:45pm',
+          room: 'Mauve Hall',
+          duration: '45m',
+          timeFrame: '2pm',
+          type: 'workshop',
+          speaker: 'Oluwadamilola Oshungboye',
+          color: '#F0E6FF',
+        },
+        {
           id: 'break-1445-fri',
           title: 'Break',
           timeSlot: '02:45pm - 03:00pm',
