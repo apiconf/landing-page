@@ -1,4 +1,7 @@
-export const scheduleData = {
+import { sessionAbstracts } from './sessionAbstracts';
+import type { ScheduleData } from './types';
+
+export const scheduleData: ScheduleData = {
   title: 'Your Day at a Glance',
   days: [
     {
@@ -50,14 +53,15 @@ export const scheduleData = {
           color: '#F0E6FF',
         },
         {
-          id: 'sponsor-workshop-1-fri',
-          title: 'Sponsor Workshop 1',
+          id: 'hacking-apis-in-the-wild-fri',
+          title:
+            'Hacking APIs in the Wild: Finding, Exploiting & Reporting Modern API Vulnerabilities',
           timeSlot: '11:00am - 11:45am',
           room: 'Iris Hall',
           duration: '45m',
           timeFrame: '11am',
           type: 'workshop',
-          speaker: 'TBH',
+          speaker: 'Tes Sal',
           color: '#F0E6FF',
         },
         {
@@ -72,27 +76,14 @@ export const scheduleData = {
           color: '#F0E6FF',
         },
         {
-          id: 'rethinking-caching-agentic-systems-fri',
-          title:
-            'Rethinking Caching: Building APIs For The Unpredictable Traffic from Agentic Systems',
+          id: 'building-your-first-ai-agent-with-genkit-fri',
+          title: 'Building Your First AI Agent with Genkit',
           timeSlot: '11:00am - 11:45am',
           room: 'Pastel Hall',
           duration: '45m',
           timeFrame: '11am',
           type: 'workshop',
-          speaker: 'Alayesanmi Femi',
-          color: '#F0E6FF',
-        },
-        {
-          id: 'hacking-apis-in-the-wild-fri',
-          title:
-            'Hacking APIs in the Wild: Finding, Exploiting & Reporting Modern API Vulnerabilities',
-          timeSlot: '12:00pm - 12:45pm',
-          room: 'Iris Hall',
-          duration: '45m',
-          timeFrame: '12pm',
-          type: 'workshop',
-          speaker: 'Tes Sal',
+          speaker: 'Jamiu Okanlawon',
           color: '#F0E6FF',
         },
         {
@@ -104,17 +95,6 @@ export const scheduleData = {
           timeFrame: '12pm',
           type: 'workshop',
           speaker: 'Muhammad Samu',
-          color: '#F0E6FF',
-        },
-        {
-          id: 'building-your-first-ai-agent-with-genkit-fri',
-          title: 'Building Your First AI Agent with Genkit',
-          timeSlot: '12:00pm - 12:45pm',
-          room: 'Pastel Hall',
-          duration: '45m',
-          timeFrame: '12pm',
-          type: 'workshop',
-          speaker: 'Jamiu Okanlawon',
           color: '#F0E6FF',
         },
         {
@@ -152,6 +132,18 @@ export const scheduleData = {
           color: '#F0E6FF',
         },
         {
+          id: 'rethinking-caching-agentic-systems-fri',
+          title:
+            'Rethinking Caching: Building APIs For The Unpredictable Traffic from Agentic Systems',
+          timeSlot: '02:00pm - 02:45pm',
+          room: 'Pastel Hall',
+          duration: '45m',
+          timeFrame: '2pm',
+          type: 'workshop',
+          speaker: 'Alayesanmi Femi',
+          color: '#F0E6FF',
+        },
+        {
           id: 'from-rest-to-mcp-fastmcp-fri',
           title: 'From REST to MCP: Making Your Backend AI-Ready with FastMCP',
           timeSlot: '03:00pm - 03:45pm',
@@ -160,6 +152,17 @@ export const scheduleData = {
           timeFrame: '3pm',
           type: 'workshop',
           speaker: 'Abdulqudus Abubakre',
+          color: '#F0E6FF',
+        },
+        {
+          id: 'chat-charge-trace-agentic-checkout-fri',
+          title: 'Chat, Charge, Trace: Instrumenting an Agentic Checkout Live',
+          timeSlot: '03:00pm - 03:45pm',
+          room: 'Mauve Hall',
+          duration: '45m',
+          timeFrame: '3pm',
+          type: 'workshop',
+          speaker: 'Claret Ibeawuchi',
           color: '#F0E6FF',
         },
         {
@@ -191,11 +194,21 @@ export const scheduleData = {
       date: 'Sat 25 Jul',
       sessions: [
         {
-          id: 'welcome-address-and-opening-sat',
-          title: 'Welcome Address and Opening',
-          timeSlot: '09:00am - 10:00am',
+          id: 'welcome-and-networking-sat',
+          title: 'Welcome and Networking',
+          timeSlot: '09:00am - 09:50am',
           room: 'All Halls',
-          duration: '1hr',
+          duration: '50m',
+          timeFrame: '9am',
+          type: 'Welcome',
+          color: '#D9D9D9',
+        },
+        {
+          id: 'opening-address-sat',
+          title: 'Opening Address',
+          timeSlot: '09:50am - 10:00am',
+          room: 'All Halls',
+          duration: '10m',
           timeFrame: '9am',
           type: 'Welcome',
           color: '#D9D9D9',
@@ -518,3 +531,10 @@ export const scheduleData = {
     },
   ],
 };
+
+for (const day of scheduleData.days) {
+  for (const session of day.sessions) {
+    const abstract = sessionAbstracts[session.id];
+    if (abstract) session.abstract = abstract;
+  }
+}

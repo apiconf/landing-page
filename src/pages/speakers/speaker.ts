@@ -271,4 +271,13 @@ export const speakers: person[] = [
     image: '/speakers/auwal-ms.jpg',
     sessionFormat: 'Keynote',
   },
+  {
+    index: 29,
+    name: 'Claret Ibeawuchi',
+    jobTitle: 'Head of Engineering',
+    employer: 'Dockie',
+    bio: 'Chat, Charge, Trace: Instrumenting an Agentic Checkout Live',
+    image: '/claret.jpg',
+    sessionFormat: 'Workshop',
+  },
 ];
