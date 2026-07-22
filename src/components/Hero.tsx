@@ -68,19 +68,13 @@ export default function Hero() {
           >
             <motion.a href="/register" target="_blank" variants={buttonVariants}>
               <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#E1EF9A] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
-                Register To Attend
+                Register For Event
               </button>
             </motion.a>
 
             <motion.a href="/workshop" target="_blank" variants={buttonVariants}>
               <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#90EAF2] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 Register For Workshop
-              </button>
-            </motion.a>
-
-            <motion.a href="/hackathon" variants={buttonVariants}>
-              <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#ECC89D] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
-                Join The Hackathon
               </button>
             </motion.a>
 
@@ -93,12 +87,6 @@ export default function Hero() {
             <motion.a href="/schedule" variants={buttonVariants}>
               <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#90EAF2] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 See Event Schedule
-              </button>
-            </motion.a>
-
-            <motion.a href="/sponsors/form" variants={buttonVariants} target="_blank">
-              <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#FFFFFF] px-4 py-2 font-bold text-[#2F20BF] transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
-                Become A Sponsor
               </button>
             </motion.a>
 

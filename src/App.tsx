@@ -10,6 +10,7 @@ import Spaces from './components/Talks/spaces';
 import Sponsor from './components/sponsor_cfp/index';
 import SponsorList from './components/SponsorList';
 import WhyAttend from './components/WhyAttend';
+import { HackathonSpotlight, WorkshopSpotlight } from './components/ProgramHighlights';
 
 import SpeakersInHome from './components/speaker';
 
@@ -87,6 +88,8 @@ export default function App() {
         <NavBar />
         <Hero />
       </header>
+      <WorkshopSpotlight />
+      <HackathonSpotlight />
       <WhyAttend />
       <Recap />
       <Spaces spaces={spaceItems} />
