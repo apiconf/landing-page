@@ -202,7 +202,20 @@ export const scheduleData: ScheduleData = {
           duration: '45m',
           timeFrame: '3pm',
           type: 'workshop',
-          speaker: 'Claret Ibeawuchi',
+          speaker: 'Claret Ibeawuchi & Chukwuemeka Chukwurah',
+          sessionSpeakers: [
+            {
+              name: 'Claret Ibeawuchi',
+              role: 'Head of Engineering · Dockie',
+              image: '/claret.jpg',
+            },
+            {
+              name: 'Chukwuemeka Chukwurah',
+              role: 'Senior Software Engineer · Rocksteady Technologies',
+              image:
+                'https://cdn.sessionize.com/image/564f-400o400o2-JYMeYKCoeZ7rMDrRwyT4HB.jpg',
+            },
+          ],
           color: '#F0E6FF',
         },
         {

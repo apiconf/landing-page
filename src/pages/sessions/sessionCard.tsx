@@ -32,6 +32,18 @@ export const SessionCard = ({
         (speaker) => speaker.name.toLowerCase() === session.speaker?.toLowerCase()
       )
     : undefined;
+  const sessionSpeakerProfiles = session.sessionSpeakers ??
+    (session.speaker
+      ? [
+          {
+            name: session.speaker,
+            role: speakerProfile
+              ? [speakerProfile.jobTitle, speakerProfile.employer].filter(Boolean).join(' · ')
+              : undefined,
+            image: speakerProfile?.image,
+          },
+        ]
+      : []);
   const locked = interestState === 'locked';
   const selected = interestState === 'selected';
   const gcalUrl =
@@ -126,34 +138,35 @@ export const SessionCard = ({
                   </p>
                 </div>
 
-                <div className="mt-6 flex flex-col gap-5 rounded-2xl bg-[#2F20BF] p-5 text-white sm:flex-row sm:items-center sm:p-6">
-                  {speakerProfile?.image ? (
-                    <img
-                      src={speakerProfile.image}
-                      alt={session.speaker}
-                      className="h-28 w-28 shrink-0 rounded-full object-cover ring-4 ring-white/20"
-                    />
-                  ) : (
-                    <span className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full bg-[#E1EF9A] text-3xl font-bold text-[#251377] ring-4 ring-white/20">
-                      {session.speaker
-                        .split(' ')
-                        .slice(0, 2)
-                        .map((part) => part[0])
-                        .join('')}
-                    </span>
-                  )}
-                  <div>
-                    <h3 className="text-xl font-bold">{session.speaker}</h3>
-                    {speakerProfile ? (
-                      <>
-                        <p className="mt-1 text-sm text-white/75">
-                          {[speakerProfile.jobTitle, speakerProfile.employer]
-                            .filter(Boolean)
-                            .join(' · ')}
-                        </p>
-                      </>
-                    ) : null}
-                  </div>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {sessionSpeakerProfiles.map((profile) => (
+                    <div
+                      key={profile.name}
+                      className="flex flex-col gap-5 rounded-2xl bg-[#2F20BF] p-5 text-white sm:flex-row sm:items-center sm:p-6"
+                    >
+                      {profile.image ? (
+                        <img
+                          src={profile.image}
+                          alt={profile.name}
+                          className="h-28 w-28 shrink-0 rounded-full object-cover ring-4 ring-white/20"
+                        />
+                      ) : (
+                        <span className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full bg-[#E1EF9A] text-3xl font-bold text-[#251377] ring-4 ring-white/20">
+                          {profile.name
+                            .split(' ')
+                            .slice(0, 2)
+                            .map((part) => part[0])
+                            .join('')}
+                        </span>
+                      )}
+                      <div>
+                        <h3 className="text-xl font-bold">{profile.name}</h3>
+                        {profile.role ? (
+                          <p className="mt-1 text-sm text-white/75">{profile.role}</p>
+                        ) : null}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

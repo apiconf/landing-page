@@ -156,6 +156,20 @@ export function InterestModal({
                       (speaker) => speaker.name.toLowerCase() === option.speaker?.toLowerCase()
                     )
                   : undefined;
+                const optionSpeakerProfiles = option.sessionSpeakers ??
+                  (option.speaker
+                    ? [
+                        {
+                          name: option.speaker,
+                          role: optionSpeakerProfile
+                            ? [optionSpeakerProfile.jobTitle, optionSpeakerProfile.employer]
+                                .filter(Boolean)
+                                .join(' · ')
+                            : undefined,
+                          image: optionSpeakerProfile?.image,
+                        },
+                      ]
+                    : []);
 
                 return (
                   <div
@@ -199,28 +213,28 @@ export function InterestModal({
                           </p>
                         </div>
 
-                        {option.speaker ? (
-                          <div className="flex items-center gap-3 border-t border-gray-200 pt-4">
-                            {optionSpeakerProfile?.image ? (
-                              <img
-                                src={optionSpeakerProfile.image}
-                                alt={option.speaker}
-                                className="h-12 w-12 shrink-0 rounded-full object-cover"
-                              />
-                            ) : null}
-                            <div>
-                              <p className="text-xs font-bold uppercase tracking-wide text-dark-purple">
-                                Speaker
-                              </p>
-                              <p className="font-bold">{option.speaker}</p>
-                              {optionSpeakerProfile ? (
-                                <p className="text-sm text-gray-600">
-                                  {[optionSpeakerProfile.jobTitle, optionSpeakerProfile.employer]
-                                    .filter(Boolean)
-                                    .join(' · ')}
-                                </p>
-                              ) : null}
-                            </div>
+                        {optionSpeakerProfiles.length ? (
+                          <div className="grid gap-3 border-t border-gray-200 pt-4 sm:grid-cols-2">
+                            {optionSpeakerProfiles.map((profile) => (
+                              <div key={profile.name} className="flex items-center gap-3">
+                                {profile.image ? (
+                                  <img
+                                    src={profile.image}
+                                    alt={profile.name}
+                                    className="h-12 w-12 shrink-0 rounded-full object-cover"
+                                  />
+                                ) : null}
+                                <div>
+                                  <p className="text-xs font-bold uppercase tracking-wide text-dark-purple">
+                                    Speaker
+                                  </p>
+                                  <p className="font-bold">{profile.name}</p>
+                                  {profile.role ? (
+                                    <p className="text-sm text-gray-600">{profile.role}</p>
+                                  ) : null}
+                                </div>
+                              </div>
+                            ))}
                           </div>
                         ) : null}
                       </section>
