@@ -280,4 +280,13 @@ export const speakers: person[] = [
     image: '/claret.jpg',
     sessionFormat: 'Workshop',
   },
+  {
+    index: 30,
+    name: 'Oluwadamilola Oshungboye',
+    jobTitle: 'Software Engineer',
+    employer: 'SeamlessHR',
+    bio: 'Stop Re-Prompting: How Reusable AI Skills Make Vibe Coding Actually Work',
+    image: 'https://i.ibb.co/6RGTQ8kn/Dami-s-Potrait.jpg',
+    sessionFormat: 'Workshop',
+  },
 ];
