@@ -139,7 +139,11 @@ export default function SponsorList() {
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="aspect-auto h-full max-h-14 min-h-8 max-w-64 object-contain md:max-w-36"
+                  className={`h-auto object-contain ${
+                    partner.name === 'MergeForward'
+                      ? 'w-full max-w-72 md:max-w-64'
+                      : 'max-h-14 min-h-8 max-w-64 md:max-w-36'
+                  }`}
                 />
               </a>
             </div>

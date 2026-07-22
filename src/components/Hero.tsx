@@ -90,11 +90,11 @@ export default function Hero() {
               </button>
             </motion.a> */}
 
-            {/* <motion.a href="/schedule" variants={buttonVariants}>
+            <motion.a href="/schedule" variants={buttonVariants}>
               <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#90EAF2] px-4 py-2 font-bold text-primary-black transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">
                 See Event Schedule
               </button>
-            </motion.a> */}
+            </motion.a>
 
             <motion.a href="/sponsors/form" variants={buttonVariants} target="_blank">
               <button className="text-md relative z-50 w-full cursor-pointer rounded-full bg-[#FFFFFF] px-4 py-2 font-bold text-[#2F20BF] transition-shadow hover:shadow-lg md:text-lg 2xl:px-8 2xl:py-4 2xl:text-2xl">

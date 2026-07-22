@@ -8,6 +8,7 @@ import { getSlotPick } from './interestApi';
 interface DayColumnProps {
   day: {
     dayNumber: number;
+    label: string;
     date: string;
     sessions: SessionDetails[];
   };

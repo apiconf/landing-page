@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { SessionDetails } from './types';
 import { buildGoogleCalendarUrl } from './googleCalendar';
 
@@ -22,6 +23,7 @@ export const SessionCard = ({
   dayNumber?: number;
   onIndicateInterest?: () => void;
 }) => {
+  const [showPanelDetails, setShowPanelDetails] = useState(false);
   const locked = interestState === 'locked';
   const selected = interestState === 'selected';
   const gcalUrl =
@@ -72,6 +74,37 @@ export const SessionCard = ({
         </div>
       )}
 
+      {session.panelSpeakers?.length ? (
+        <div className="flex flex-col gap-3">
+          <p className="text-sm font-bold text-gray-700 md:text-base">
+            {session.panelSpeakers.map((speaker) => speaker.name).join(' • ')}
+          </p>
+          <button
+            type="button"
+            onClick={() => setShowPanelDetails((visible) => !visible)}
+            aria-expanded={showPanelDetails}
+            className="w-fit rounded-full border border-[#2F20BF] px-3 py-1.5 text-xs font-bold text-[#2F20BF] transition hover:bg-white/60 md:text-sm"
+          >
+            {showPanelDetails ? 'Hide panel details' : 'View panel details'}
+          </button>
+          {showPanelDetails ? (
+            <div className="flex flex-col gap-4 border-t border-black/10 pt-3">
+              {session.panelSpeakers.map((speaker) => (
+                <div key={speaker.name}>
+                  <p className="text-sm font-bold md:text-base">{speaker.name}</p>
+                  <p className="text-xs font-semibold text-gray-700 md:text-sm">{speaker.role}</p>
+                  {speaker.bio ? (
+                    <p className="mt-2 text-xs leading-relaxed text-gray-700 md:text-sm">
+                      {speaker.bio}
+                    </p>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+
       {showInterest && !locked ? (
         <div
           className={`mt-auto flex items-center pt-3 ${
@@ -87,7 +120,7 @@ export const SessionCard = ({
                   rel="noopener noreferrer"
                   aria-label="Add to Google Calendar"
                   title="Add to Google Calendar"
-                  className="inline-flex shrink-0 transition hover:opacity-80"
+                  className="inline-flex shrink-0 items-center gap-2 text-xs font-bold text-[#2F20BF] transition hover:opacity-80 md:text-sm"
                 >
                   <img
                     src="/google-calendar.svg"
@@ -96,6 +129,7 @@ export const SessionCard = ({
                     height={32}
                     className="h-7 w-7 md:h-8 md:w-8"
                   />
+                  <span>Add to Calendar</span>
                 </a>
               ) : (
                 <span />
