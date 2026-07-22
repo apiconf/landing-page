@@ -1,4 +1,7 @@
-export const scheduleData = {
+import { sessionAbstracts } from './sessionAbstracts';
+import type { ScheduleData } from './types';
+
+export const scheduleData: ScheduleData = {
   title: 'Your Day at a Glance',
   days: [
     {
@@ -518,3 +521,10 @@ export const scheduleData = {
     },
   ],
 };
+
+for (const day of scheduleData.days) {
+  for (const session of day.sessions) {
+    const abstract = sessionAbstracts[session.id];
+    if (abstract) session.abstract = abstract;
+  }
+}
