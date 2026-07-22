@@ -259,7 +259,7 @@ export function InterestModal({
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 rounded-full bg-gray-100 px-5 py-3 text-base font-bold text-[#1F1F1F]"
+                className="flex-1 rounded-full border-2 border-dark-purple bg-[#E9E5FF] px-5 py-3 text-base font-bold text-dark-purple transition hover:bg-[#DCD5FF]"
               >
                 Cancel
               </button>
