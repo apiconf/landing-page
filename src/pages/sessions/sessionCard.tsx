@@ -288,7 +288,7 @@ export const SessionCard = ({
 
           {showInterest && !locked ? (
             selected ? (
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex w-full items-center justify-between gap-3">
                 {gcalUrl ? (
                   <a
                     href={gcalUrl}
