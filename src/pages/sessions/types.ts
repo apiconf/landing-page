@@ -7,6 +7,11 @@ export type SessionDetails = {
   type: string;
   room: string;
   speaker?: string;
+  sessionSpeakers?: {
+    name: string;
+    role?: string;
+    image?: string;
+  }[];
   abstract?: string;
   host?: string;
   panelist?: string;

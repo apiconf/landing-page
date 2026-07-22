@@ -289,4 +289,13 @@ export const speakers: person[] = [
     image: 'https://i.ibb.co/6RGTQ8kn/Dami-s-Potrait.jpg',
     sessionFormat: 'Workshop',
   },
+  {
+    index: 31,
+    name: 'Chukwuemeka Chukwurah',
+    jobTitle: 'Senior Software Engineer',
+    employer: 'Rocksteady Technologies',
+    bio: 'Chat, Charge, Trace: Instrumenting an Agentic Checkout Live',
+    image: 'https://cdn.sessionize.com/image/564f-400o400o2-JYMeYKCoeZ7rMDrRwyT4HB.jpg',
+    sessionFormat: 'Workshop',
+  },
 ];
