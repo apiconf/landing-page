@@ -262,4 +262,13 @@ export const speakers: person[] = [
     image: '/speakers/chilezie-unachukwu.png',
     sessionFormat: 'Keynote',
   },
+  {
+    index: 28,
+    name: 'Auwal MS',
+    jobTitle: 'Software Engineering & Developer Relations',
+    employer: 'Moniepoint',
+    bio: 'Are Your APIs Ready for Agents',
+    image: '/speakers/auwal-ms.jpg',
+    sessionFormat: 'Keynote',
+  },
 ];
