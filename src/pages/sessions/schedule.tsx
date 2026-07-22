@@ -133,7 +133,7 @@ export const Schedule = ({ data }: ScheduleProps) => {
                                         }
                                     `}
                 >
-                  Day {day.dayNumber} - {day.date}
+                  {day.label} - {day.date}
                 </button>
               );
             })}

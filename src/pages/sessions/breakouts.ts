@@ -7,14 +7,21 @@ export function isBreakoutRoom(room: string): boolean {
   return !PLENARY_ROOM_MARKERS.some((marker) => normalized.includes(marker));
 }
 
+function isSelectableBreakout(session: SessionDetails): boolean {
+  return (
+    isBreakoutRoom(session.room) &&
+    session.type.toLowerCase() !== 'panel session'
+  );
+}
+
 /** Sessions in the same day that share this timeSlot and are in breakout halls. */
 export function getSlotPeers(
   session: SessionDetails,
   daySessions: SessionDetails[]
 ): SessionDetails[] {
-  if (!isBreakoutRoom(session.room)) return [];
+  if (!isSelectableBreakout(session)) return [];
   return daySessions.filter(
-    (s) => s.timeSlot === session.timeSlot && isBreakoutRoom(s.room)
+    (s) => s.timeSlot === session.timeSlot && isSelectableBreakout(s)
   );
 }
 
@@ -34,7 +41,7 @@ export function getBreakoutSlots(daySessions: SessionDetails[]): BreakoutSlot[] 
   const bySlot = new Map<string, SessionDetails[]>();
 
   for (const session of daySessions) {
-    if (!isBreakoutRoom(session.room)) continue;
+    if (!isSelectableBreakout(session)) continue;
     const list = bySlot.get(session.timeSlot) ?? [];
     list.push(session);
     bySlot.set(session.timeSlot, list);

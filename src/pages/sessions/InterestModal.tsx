@@ -1,4 +1,5 @@
 import { useEffect, useId, useState, type FormEvent } from 'react';
+import { speakers } from '../speakers/speaker';
 import type { SessionDetails } from './types';
 import {
   getStoredInterestEmail,
@@ -90,7 +91,7 @@ export function InterestModal({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-lg rounded-2xl bg-white p-6 text-[#1F1F1F] shadow-xl"
+        className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-6 text-[#1F1F1F] shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         {done ? (
@@ -109,7 +110,7 @@ export function InterestModal({
                   rel="noopener noreferrer"
                   aria-label="Add to Google Calendar"
                   title="Add to Google Calendar"
-                  className="inline-flex shrink-0 transition hover:opacity-80"
+                  className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-dark-purple transition hover:opacity-80"
                 >
                   <img
                     src="/google-calendar.svg"
@@ -118,6 +119,7 @@ export function InterestModal({
                     height={36}
                     className="h-9 w-9"
                   />
+                  <span>Add to Calendar</span>
                 </a>
               ) : (
                 <span />
@@ -147,32 +149,85 @@ export function InterestModal({
 
             <fieldset className="space-y-3">
               <legend className="sr-only">Sessions</legend>
-              {options.map((option) => (
-                <label
-                  key={option.id}
-                  className={`flex cursor-pointer gap-3 rounded-xl border-2 p-3 transition ${
-                    sessionId === option.id
-                      ? 'border-dark-purple bg-[#F3F0FF]'
-                      : 'border-gray-200 hover:border-gray-300'
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="breakout-session"
-                    value={option.id}
-                    checked={sessionId === option.id}
-                    onChange={() => setSessionId(option.id)}
-                    className="mt-1"
-                  />
-                  <span className="min-w-0">
-                    <span className="block font-bold leading-snug">{option.title}</span>
-                    <span className="mt-1 block text-sm text-gray-600">
-                      {option.room}
-                      {option.speaker ? ` · ${option.speaker}` : ''}
-                    </span>
-                  </span>
-                </label>
-              ))}
+              {options.map((option) => {
+                const isSelected = sessionId === option.id;
+                const optionSpeakerProfile = option.speaker
+                  ? speakers.find(
+                      (speaker) => speaker.name.toLowerCase() === option.speaker?.toLowerCase()
+                    )
+                  : undefined;
+
+                return (
+                  <div
+                    key={option.id}
+                    className={`overflow-hidden rounded-xl border-2 transition ${
+                      isSelected
+                        ? 'border-dark-purple bg-[#F3F0FF]'
+                        : 'border-gray-200 hover:border-gray-300'
+                    }`}
+                  >
+                    <label className="flex cursor-pointer gap-3 p-3">
+                      <input
+                        type="radio"
+                        name="breakout-session"
+                        value={option.id}
+                        checked={isSelected}
+                        onChange={() => setSessionId(option.id)}
+                        className="mt-1"
+                      />
+                      <span className="min-w-0">
+                        <span className="block font-bold leading-snug">{option.title}</span>
+                        <span className="mt-1 block text-sm text-gray-600">
+                          {option.room}
+                          {option.speaker ? ` · ${option.speaker}` : ''}
+                        </span>
+                      </span>
+                    </label>
+
+                    {isSelected ? (
+                      <section
+                        className="space-y-4 border-t border-dark-purple/15 bg-white/60 p-4"
+                        aria-live="polite"
+                      >
+                        <div>
+                          <p className="text-xs font-bold uppercase tracking-wide text-dark-purple">
+                            About this session
+                          </p>
+                          <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                            {option.abstract ??
+                              `Join ${option.speaker ?? 'the facilitator'} for a session exploring “${option.title}”.`}
+                          </p>
+                        </div>
+
+                        {option.speaker ? (
+                          <div className="flex items-center gap-3 border-t border-gray-200 pt-4">
+                            {optionSpeakerProfile?.image ? (
+                              <img
+                                src={optionSpeakerProfile.image}
+                                alt={option.speaker}
+                                className="h-12 w-12 shrink-0 rounded-full object-cover"
+                              />
+                            ) : null}
+                            <div>
+                              <p className="text-xs font-bold uppercase tracking-wide text-dark-purple">
+                                Speaker
+                              </p>
+                              <p className="font-bold">{option.speaker}</p>
+                              {optionSpeakerProfile ? (
+                                <p className="text-sm text-gray-600">
+                                  {[optionSpeakerProfile.jobTitle, optionSpeakerProfile.employer]
+                                    .filter(Boolean)
+                                    .join(' · ')}
+                                </p>
+                              ) : null}
+                            </div>
+                          </div>
+                        ) : null}
+                      </section>
+                    ) : null}
+                  </div>
+                );
+              })}
             </fieldset>
 
             <div>
@@ -204,7 +259,7 @@ export function InterestModal({
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 rounded-full bg-gray-100 px-5 py-3 text-base font-bold text-[#1F1F1F]"
+                className="flex-1 rounded-full border-2 border-dark-purple bg-[#E9E5FF] px-5 py-3 text-base font-bold text-dark-purple transition hover:bg-[#DCD5FF]"
               >
                 Cancel
               </button>
