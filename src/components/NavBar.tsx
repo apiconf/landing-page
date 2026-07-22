@@ -25,12 +25,15 @@ export default function NavBar() {
 
         <ul className="flex items-center gap-x-4 text-lg font-bold leading-none text-white sm:gap-x-8 lg:text-2xl">
           <li>
+            <Link to="/schedule">Schedule</Link>
+          </li>
+          <li>
             {' '}
             <a href="/#spaces" rel="noopener noreferrer" className="">
               Spaces
             </a>
           </li>
-          <li>
+          <li className="hidden md:block">
             {' '}
             <a href="#faqs" rel="noopener noreferrer" className="">
               FAQs

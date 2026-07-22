@@ -3,6 +3,7 @@ export const scheduleData = {
   days: [
     {
       dayNumber: 1,
+      label: 'Workshop',
       date: 'Fri 24 Jul',
       sessions: [
         {
@@ -186,6 +187,7 @@ export const scheduleData = {
     },
     {
       dayNumber: 2,
+      label: 'Conference',
       date: 'Sat 25 Jul',
       sessions: [
         {
@@ -253,16 +255,6 @@ export const scheduleData = {
           type: 'Lightning',
           speaker: 'Chilezie Unachukwu',
           color: '#D9D9D9',
-        },
-        {
-          id: 'gsma-panel-session-sat',
-          title: 'GSMA panel session',
-          timeSlot: '11:00am - 11:25am',
-          room: 'Emerald Hall',
-          duration: '25m',
-          timeFrame: '11am',
-          type: 'Panel session',
-          color: '#D8CCFE',
         },
         {
           id: 'ai-agents-need-guardrails-sat',
@@ -374,7 +366,7 @@ export const scheduleData = {
         },
         {
           id: 'main-stage-3-sat',
-          title: 'Main stage 3',
+          title: 'Moniepoint',
           timeSlot: '02:30pm - 02:45pm',
           room: 'Emerald Hall',
           duration: '15m',
@@ -391,6 +383,22 @@ export const scheduleData = {
           timeFrame: '2pm',
           type: 'Panel session',
           color: '#D8CCFE',
+          panelSpeakers: [
+            {
+              name: 'Tunji David Obidokun',
+              role: 'ML/AI Engineer, ALAT by Wema Bank',
+              bio: 'Tunji David Obidokun is an AI/ML Engineer at ALAT by Wema Bank, where he builds and deploys production-grade AI systems that solve real-world enterprise challenges. His work spans fraud detection, computer vision for facial and identity verification, intelligent document processing, conversational AI, and large language model applications, with a strong focus on scalable, secure, and reliable production systems. His expertise covers the end-to-end AI lifecycle, from data engineering and model development to MLOps, cloud deployment, monitoring, and continuous model improvement. Beyond financial services, Tunji has developed AI-powered learning solutions that adapt to the unique learning patterns of neurodivergent children. He enjoys sharing practical lessons from deploying AI in enterprise environments, including scaling machine learning systems, operationalizing LLMs, and building solutions that deliver measurable business value.',
+            },
+            {
+              name: 'Femi Taiwo',
+              role: 'Chief Technology Officer, INITS Limited',
+            },
+            {
+              name: 'Kanwulia Okafor',
+              role: 'Director, Industry Services (Africa), GSMA',
+              bio: 'Kanwulia Okafor is Director of Industry Services for Africa at the GSMA, where she leads initiatives at the intersection of mobile technology, artificial intelligence, and digital transformation across the continent. Her work includes advancing GSMA Open Gateway, supporting the development and deployment of African-language AI, and building partnerships across mobile operators, governments, technology companies, and the wider digital ecosystem. Kanwulia is particularly focused on how trusted mobile network capabilities and standardised APIs can support scalable AI applications, including secure user onboarding, identity verification, authentication, and fraud prevention. She works with stakeholders across Africa to translate emerging technologies into practical use cases, partnerships, and market-led pilots that address locally relevant challenges.',
+            },
+          ],
         },
         {
           id: 'building-compliant-fintech-apis-sat',
