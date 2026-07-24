@@ -110,7 +110,7 @@ export const scheduleData: ScheduleData = {
           id: 'teaching-ai-coding-assistants-mcp-fri',
           title: 'Teaching AI Coding Assistants to Talk to Real APIs via MCP',
           timeSlot: '12:00pm - 12:45pm',
-          room: 'Mauve Hall',
+          room: 'Mulberry Hall',
           duration: '45m',
           timeFrame: '12pm',
           type: 'workshop',
