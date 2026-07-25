@@ -74,9 +74,9 @@
       @apply col-span-6;
     }
 
-    /* Silver sponsors (3 sponsors) - half width each */
+    /* Silver sponsor - full width */
     .sponsor-item[data-tier='Silver'] {
-      @apply col-span-2;
+      @apply col-span-6;
     }
 
     /* Bronze sponsors (3 sponsors) - one-third width each */

@@ -28,6 +28,9 @@ export default function NavBar() {
             <Link to="/schedule">Schedule</Link>
           </li>
           <li>
+            <Link to="/venue">Venue</Link>
+          </li>
+          <li>
             {' '}
             <a href="/#spaces" rel="noopener noreferrer" className="">
               Spaces

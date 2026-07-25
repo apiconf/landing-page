@@ -18,6 +18,7 @@ import Sessions from './pages/sessions/index.tsx';
 import Speakers from './pages/speakers';
 import Sponsors from './pages/sponsors/index.tsx';
 import Teams from './pages/team';
+import Venue from './pages/venue';
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,11 @@ const router = createBrowserRouter([
   {
     path: '/schedule',
     element: <Sessions />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: '/venue',
+    element: <Venue />,
     errorElement: <NotFound />,
   },
   {
