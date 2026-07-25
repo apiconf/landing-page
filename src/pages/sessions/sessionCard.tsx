@@ -254,7 +254,9 @@ export const SessionCard = ({
                               <img
                                 src={speaker.image}
                                 alt={speaker.name}
-                                className="h-40 w-40 rounded-full object-cover ring-4 ring-white/20"
+                                className={`h-40 w-40 rounded-full object-cover ring-4 ring-white/20 ${
+                                  speaker.imagePosition === 'top' ? 'object-top' : 'object-center'
+                                }`}
                               />
                             ) : (
                               <span className="flex h-40 w-40 items-center justify-center rounded-full bg-[#E1EF9A] text-5xl font-bold text-[#251377] ring-4 ring-white/20">

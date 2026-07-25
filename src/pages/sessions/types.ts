@@ -20,6 +20,7 @@ export type SessionDetails = {
     role: string;
     bio?: string;
     image?: string;
+    imagePosition?: 'center' | 'top';
   }[];
   color?: string;
   isFullSpan?: boolean,

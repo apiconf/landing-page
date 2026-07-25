@@ -1,4 +1,4 @@
-import Footer from '../../components/Footer';
+import Footer from '../../components/Footer/index';
 import NavBar from '../../components/NavBar';
 import ScrollToAnchor from '../../components/ScrollToAnchor';
 
@@ -45,6 +45,10 @@ export default function Venue() {
                 <h2 className="text-2xl font-bold text-[#1F1F1F]">The Zone</h2>
                 <p className="mt-2 max-w-2xl text-base leading-relaxed text-gray-700">
                   {venueAddress}
+                </p>
+                <p className="mt-3 max-w-2xl text-sm font-semibold leading-relaxed text-[#2F20BF]">
+                  Hall access: Ruby is the main hall. Emerald and Sapphire are accessible through
+                  the main reception.
                 </p>
               </div>
 
